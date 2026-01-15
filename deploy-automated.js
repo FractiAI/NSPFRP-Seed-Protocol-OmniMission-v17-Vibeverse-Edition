@@ -5,9 +5,9 @@
  * Supports: Vercel (with token), GitHub Pages (automatic)
  */
 
-const { execSync } = require('child_process');
-const fs = require('fs');
-const path = require('path');
+import { execSync } from 'child_process';
+import fs from 'fs';
+import path from 'path';
 
 const DEPLOYMENT_TARGET = process.env.DEPLOY_TARGET || 'github-pages';
 const VERCEL_TOKEN = process.env.VERCEL_TOKEN;
