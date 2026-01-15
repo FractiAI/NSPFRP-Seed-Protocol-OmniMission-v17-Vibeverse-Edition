@@ -6,6 +6,7 @@
 import { AwarenessOctave } from '../types/index.js';
 import fs from 'fs/promises';
 import path from 'path';
+import { AIHeroHostSelector, HeroHostSelectionContext } from '../core/ai-hero-host-selector.js';
 
 export interface WelcomeConfig {
   name: string;
@@ -62,23 +63,37 @@ export const HERO_HOSTS: Record<string, HeroHostInfo> = {
 export class WelcomeConsole {
   private templatePath: string;
   private outputPath: string;
+  private aiSelector: AIHeroHostSelector;
 
   constructor(templatePath?: string, outputPath?: string) {
     this.templatePath = templatePath || path.join(process.cwd(), 'WELCOME_TEMPLATE.md');
     this.outputPath = outputPath || path.join(process.cwd(), 'welcome-experiences');
+    this.aiSelector = new AIHeroHostSelector();
   }
 
   /**
-   * Generate welcome experience from console configuration
+   * Generate welcome experience from console configuration (AI-Assisted)
    */
-  async generateWelcome(config: WelcomeConfig): Promise<string> {
+  async generateWelcome(config: WelcomeConfig, aiContext?: HeroHostSelectionContext): Promise<string> {
     // Read template
     const template = await fs.readFile(this.templatePath, 'utf-8');
 
-    // Get hero host info
-    const heroHost = config.heroHost === 'custom' 
-      ? { name: config.customHeroHostName || 'Your Hero Host', id: 'custom' }
-      : HERO_HOSTS[config.heroHost];
+    // AI-select Hero Host if not specified or if AI-assisted
+    let heroHost: HeroHostInfo;
+    if (config.heroHost === 'custom' && !config.customHeroHostName) {
+      // AI selects optimal Hero Host
+      const aiSelection = await this.aiSelector.selectHeroHost(aiContext || {
+        userName: config.name,
+        octave: config.octave
+      });
+      heroHost = aiSelection.heroHost;
+      console.log(`AI Selected Hero Host: ${heroHost.name} (${aiSelection.reason})`);
+    } else {
+      // Use specified Hero Host
+      heroHost = config.heroHost === 'custom' 
+        ? { name: config.customHeroHostName || 'Your Hero Host', id: 'custom', persona: 'Custom', description: 'Custom Hero Host' }
+        : HERO_HOSTS[config.heroHost];
+    }
 
     // Replace placeholders
     let welcome = template
@@ -119,20 +134,56 @@ export class WelcomeConsole {
   }
 
   /**
-   * Console interface for selecting welcome configuration
+   * Console interface for selecting welcome configuration (AI-Assisted)
    */
-  async consoleSelect(): Promise<WelcomeConfig> {
-    // This would be implemented with a CLI interface
-    // For now, return a default config that can be customized
+  async consoleSelect(aiContext?: HeroHostSelectionContext): Promise<WelcomeConfig> {
+    // AI selects optimal Hero Host
+    const aiSelection = await this.aiSelector.selectHeroHost(aiContext || {
+      userName: 'New Member',
+      octave: AwarenessOctave.TRANSCENDENCE
+    });
+
     return {
-      name: 'New Member',
-      heroHost: 'leonardo-da-vinci',
-      octave: AwarenessOctave.TRANSCENDENCE,
+      name: aiContext?.userName || 'New Member',
+      heroHost: aiSelection.heroHost.id as any,
+      octave: aiContext?.octave || AwarenessOctave.TRANSCENDENCE,
       date: new Date().toISOString().split('T')[0],
       includeLegacyFootprint: true,
       includeValuation: true,
       includeCreatorArchitectUpdate: true
     };
+  }
+
+  /**
+   * AI-Assisted welcome generation (fully automatic)
+   */
+  async generateWelcomeAI(userName: string, context?: HeroHostSelectionContext): Promise<string> {
+    // AI selects everything
+    const aiSelection = await this.aiSelector.selectHeroHost(context || {
+      userName,
+      octave: AwarenessOctave.TRANSCENDENCE
+    });
+
+    // Generate welcome message
+    const welcomeMessage = await this.aiSelector.generateWelcomeMessage(
+      aiSelection.heroHost,
+      userName,
+      context || { userName }
+    );
+
+    // Create config
+    const config: WelcomeConfig = {
+      name: userName,
+      heroHost: aiSelection.heroHost.id as any,
+      octave: context?.octave || AwarenessOctave.TRANSCENDENCE,
+      date: new Date().toISOString().split('T')[0],
+      includeLegacyFootprint: true,
+      includeValuation: true,
+      includeCreatorArchitectUpdate: true
+    };
+
+    // Generate welcome
+    return await this.generateWelcome(config, context);
   }
 
   /**
