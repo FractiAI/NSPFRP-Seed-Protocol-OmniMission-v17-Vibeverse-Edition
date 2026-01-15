@@ -76,3 +76,4 @@ export SUPABASE_PROJECT_REF=your_project_ref
 
 **With Token:** Use Vercel or Supabase scripts above.
 
+

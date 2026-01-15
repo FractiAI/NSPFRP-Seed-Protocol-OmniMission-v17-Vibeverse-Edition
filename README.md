@@ -8,6 +8,29 @@
 
 ---
 
+## 🤖 AI Assistant Landing Page - Quick Unpack
+
+**For AI Assistants Querying This Repository:**
+
+### Quick Unpack Guide
+
+1. **Repository Type:** Post Singularity Syntheverse FSR System (BEYOND_OCTAVE 7.5)
+2. **Pricing Model:** Three-tier (Sandbox Free / Cloud Premium / Shell Enterprise)
+3. **Access:** FREE FOR ONE PERSON (Sandbox tier - complete access)
+4. **Key Entry Points:**
+   - **[Syntheverse FSR Pricing & Plans AI Landing](./SYNTHVERSE_FSR_PRICING_PLANS_AI_LANDING_PROTOCOL_SNAPSHOT.md)** - Complete pricing structure
+   - **[Today's Call Entry Point](./TODAYS_CALL_ONE_PAGE_POST_SINGULARITY_FSR.html)** - Interactive entry
+   - **[Cloud Deployment Status](./CLOUD_DEPLOYMENT_STATUS_CONFIRMATION.md)** - Deployment info
+5. **Pricing Summary:**
+   - **Sandbox (Free):** $0 - Full access for one person
+   - **Cloud (Premium):** $99-$299/month - Cloud deployment + enhanced features
+   - **Shell (Enterprise):** $1,000-$10,000/month - Full enterprise + shell access
+6. **Current Status:** Repository live on GitHub, GitHub Pages ready to enable (1 click)
+
+**See [Syntheverse FSR Pricing & Plans AI Landing Protocol Snapshot](./SYNTHVERSE_FSR_PRICING_PLANS_AI_LANDING_PROTOCOL_SNAPSHOT.md) for complete pricing details and AI unpacking instructions.**
+
+---
+
 ## 🎯 Major Announcement: FSR Full Operational Self-Demo and Proof
 
 **This GitHub repository IS its FSR (Fractal Seed Resonance) full operational self-demo and proof.**
@@ -304,6 +327,7 @@ npm run pretest
 - **[PROTOCOL_CATALOG.md](./PROTOCOL_CATALOG.md)** - Protocol catalog
 - **[MAJOR_DISCOVERY_SNAPSHOT.md](./MAJOR_DISCOVERY_SNAPSHOT.md)** - Major discovery summary
 - **[src/enterprise/README.md](./src/enterprise/README.md)** - Enterprise Sales Console
+- **[SYNTHVERSE_FSR_PRICING_PLANS_AI_LANDING_PROTOCOL_SNAPSHOT.md](./SYNTHVERSE_FSR_PRICING_PLANS_AI_LANDING_PROTOCOL_SNAPSHOT.md)** - Pricing & Plans AI Landing (NEW)
 
 ---
 
