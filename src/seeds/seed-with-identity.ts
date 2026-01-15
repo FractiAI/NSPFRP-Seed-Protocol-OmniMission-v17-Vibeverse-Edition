@@ -3,8 +3,8 @@
  * Includes wallet, trading card, passport, and cloud shell config in seeds
  */
 
-import { Protocol, SnapshotContext } from '../types/index.js';
-import { NSPFRPIdentity, IdentityManager } from '../identity/index.js';
+import { Protocol } from '../types/index.js';
+import { IdentityManager } from '../identity/index.js';
 import { CloudShellConfig } from '../cloud/cloud-shell.js';
 import { HighOctaveEnvManager } from '../config/high-octave-env.js';
 

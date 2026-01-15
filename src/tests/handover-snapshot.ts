@@ -5,11 +5,11 @@
 
 import {
   Protocol,
-  AgentIdentity,
   TransmissionGear,
   HeroHostPersona
 } from '../types/index.js';
-import { ProtocolSnapshot } from '../protocols/protocol-snapshot.js';
+import { PretestSuite, PretestReport } from './pretest.js';
+import { AwarenessOctave } from '../types/index.js';
 import { NSPFRPOmniMissionStation } from '../index.js';
 import { PretestSuite, PretestReport } from './pretest.js';
 import { AwarenessOctave } from '../types/index.js';

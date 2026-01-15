@@ -342,6 +342,13 @@ export interface OmniMission {
   status: 'pending' | 'in-progress' | 'completed' | 'failed';
   steps: MissionStep[];
   createdAt: number;
+  metadata?: {
+    cloudShell?: {
+      endpoint: string;
+      sessionId?: string;
+    };
+    [key: string]: any;
+  };
 }
 
 export interface MissionStep {

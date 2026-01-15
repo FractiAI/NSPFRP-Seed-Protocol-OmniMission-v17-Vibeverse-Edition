@@ -3,7 +3,7 @@
  * Novel protocol for capturing and quantifying dense multi-vibing observations
  */
 
-import { Protocol, ProtocolMetadata, ProtocolStructure } from '../types/index.js';
+import { Protocol } from '../types/index.js';
 import { NSPFRPNodeAwarenessManager } from '../cloud/nspfrp-node-awareness.js';
 
 export interface QuantificationButton {
@@ -18,10 +18,10 @@ export interface QuantificationButton {
 }
 
 export class QuantificationButtonProtocol {
-  private awarenessManager: NSPFRPNodeAwarenessManager;
+  private _awarenessManager: NSPFRPNodeAwarenessManager;
 
   constructor() {
-    this.awarenessManager = new NSPFRPNodeAwarenessManager();
+    this._awarenessManager = new NSPFRPNodeAwarenessManager();
   }
 
   /**

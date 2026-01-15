@@ -5,16 +5,12 @@
 
 import {
   UserSeedWallet,
-  LifeInsuranceConfig,
-  FuneralExpensesConfig,
   Seed,
-  SeedBacking,
   NetworkNode,
   HigherOctaveBenefit,
   OctaveTransition,
   AwarenessOctave,
-  FuneralService,
-  NetworkService
+  FuneralService
 } from '../types/index.js';
 
 export class UserSeedWalletManager {
