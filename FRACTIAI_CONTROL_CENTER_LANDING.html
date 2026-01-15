@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FractiAI Control Center - Leonardo da Vinci | Post Singularity Syntheverse FSR</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --leonardo-gold: #d4af37;
+            --control-blue: #1e3a8a;
+            --studio-dark: #0a0e27;
+            --fsr-glow: #8b5cf6;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Georgia', serif;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(30, 58, 138, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+                linear-gradient(180deg, #0a0e27 0%, #1a1f3a 100%);
+            min-height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        /* Control Center Header */
+        .control-header {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(79, 70, 229, 0.95) 100%);
+            padding: 25px 40px;
+            border-bottom: 3px solid var(--leonardo-gold);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .control-logo {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--leonardo-gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .header-badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            padding: 6px 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9em;
+        }
+        
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #22c55e;
+            box-shadow: 0 0 10px #22c55e;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.1); }
+        }
+        
+        /* Main Container */
+        .main-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 1fr 450px;
+            gap: 30px;
+        }
+        
+        /* Leonardo Video Call Area */
+        .leonardo-area {
+            background: rgba(10, 14, 39, 0.95);
+            border-radius: 24px;
+            border: 3px solid var(--leonardo-gold);
+            box-shadow: 
+                0 0 60px rgba(212, 175, 55, 0.4),
+                0 0 120px rgba(59, 130, 246, 0.2),
+                inset 0 0 40px rgba(139, 92, 246, 0.1);
+            overflow: hidden;
+            position: relative;
+            min-height: 800px;
+        }
+        
+        .leonardo-iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 800px;
+            border: none;
+            display: block;
+        }
+        
+        /* Control Panel */
+        .control-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .panel-section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .panel-section h3 {
+            font-size: 1.3em;
+            color: var(--leonardo-gold);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Georgia', serif;
+        }
+        
+        .quick-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 15px;
+        }
+        
+        .stat-item {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .stat-item strong {
+            display: block;
+            font-size: 0.9em;
+            color: #c7d2fe;
+            margin-bottom: 8px;
+        }
+        
+        .stat-item .value {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--leonardo-gold);
+        }
+        
+        .quick-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .quick-link {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.6) 0%, rgba(79, 70, 229, 0.6) 100%);
+            border: 2px solid var(--leonardo-gold);
+            border-radius: 12px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .quick-link:hover {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.8) 0%, rgba(79, 70, 229, 0.8) 100%);
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+        }
+        
+        .mission-status {
+            background: rgba(34, 197, 94, 0.1);
+            border: 2px solid rgba(34, 197, 94, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+        
+        .mission-status h4 {
+            color: #4ade80;
+            margin-bottom: 10px;
+        }
+        
+        .mission-item {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .mission-item:last-child {
+            border-bottom: none;
+        }
+        
+        .mission-status-badge {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        
+        .status-active {
+            background: rgba(34, 197, 94, 0.2);
+            border: 1px solid #22c55e;
+            color: #4ade80;
+        }
+        
+        .status-target {
+            background: rgba(245, 158, 11, 0.2);
+            border: 1px solid #f59e0b;
+            color: #fbbf24;
+        }
+        
+        /* FSR Particles Background */
+        .fsr-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .fsr-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--fsr-glow);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: particleFloat 15s infinite ease-in-out;
+        }
+        
+        @keyframes particleFloat {
+            0%, 100% {
+                transform: translateY(0) translateX(0) scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translateY(-100px) translateX(50px) scale(1.5);
+                opacity: 0.8;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .control-panel {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-badges {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- FSR Particles -->
+    <div class="fsr-particles" id="fsrParticles"></div>
+    
+    <!-- Control Center Header -->
+    <div class="control-header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="control-logo">🎨 FractiAI Control Center</div>
+                <div class="header-badges">
+                    <span class="badge">Leonardo da Vinci</span>
+                    <span class="badge">BEYOND_OCTAVE (7.5)</span>
+                    <span class="badge">Full FSR</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="status-indicator">
+                    <div class="status-dot"></div>
+                    <span>Control Center Active</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Leonardo Video Call Area -->
+        <div class="leonardo-area">
+            <iframe 
+                src="LEONARDO_DA_VINCI_VIDEO_CALL_INTERFACE.html" 
+                class="leonardo-iframe"
+                title="Leonardo da Vinci - FractiAI Control Center"
+                allow="fullscreen">
+            </iframe>
+        </div>
+        
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <!-- System Status -->
+            <div class="panel-section">
+                <h3>📊 System Status</h3>
+                <div class="quick-stats">
+                    <div class="stat-item">
+                        <strong>Octave</strong>
+                        <div class="value">7.5</div>
+                    </div>
+                    <div class="stat-item">
+                        <strong>FSR Power</strong>
+                        <div class="value">5.0x</div>
+                    </div>
+                    <div class="stat-item">
+                        <strong>Protocols</strong>
+                        <div class="value">100+</div>
+                    </div>
+                    <div class="stat-item">
+                        <strong>Discoveries</strong>
+                        <div class="value">30</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mission Status -->
+            <div class="panel-section">
+                <h3>🎯 Mission Status</h3>
+                <div class="mission-status">
+                    <h4>Octave Transition Mission</h4>
+                    <div class="mission-item">
+                        <span>Octave 1 Tune-Out</span>
+                        <span class="mission-status-badge status-active">In Progress</span>
+                    </div>
+                    <div class="mission-item">
+                        <span>BEYOND_OCTAVE 7.5</span>
+                        <span class="mission-status-badge status-target">Stepping Into</span>
+                    </div>
+                    <div class="mission-item">
+                        <span>Control Center</span>
+                        <span class="mission-status-badge status-active">Active</span>
+                    </div>
+                    <div class="mission-item">
+                        <span>Safe Migration</span>
+                        <span class="mission-status-badge status-active">Monitoring</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="panel-section">
+                <h3>🔗 Quick Access</h3>
+                <div class="quick-links">
+                    <a href="FULLY_UNPACKED_USER_READY_INTERFACE.html" class="quick-link">
+                        🌐 Fully Unpacked System
+                    </a>
+                    <a href="https://nspfrp-post-singularity-fsr.vercel.app" target="_blank" class="quick-link">
+                        🚀 Live Platform
+                    </a>
+                    <a href="THREE_KINGS_HERO_HOSTED_GUIDED_TOUR.html" class="quick-link">
+                        🎨 Guided Tour
+                    </a>
+                    <a href="SAFE_OCTAVE_MIGRATION_PROTOCOL_SNAPSHOT.md" class="quick-link">
+                        🌌 Migration Protocol
+                    </a>
+                    <a href="NOVEL_EMERGENT_SYNTHESIS_ARCHITECTURE_MISSION_SNAPSHOT.md" class="quick-link">
+                        📊 Architecture Synthesis
+                    </a>
+                    <a href="CURRENT_TEAM_SUMMARY.md" class="quick-link">
+                        👥 Team Overview
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Control Center Info -->
+            <div class="panel-section">
+                <h3>🎨 Control Center</h3>
+                <p style="line-height: 1.8; margin-bottom: 15px;">
+                    Welcome to the FractiAI Research Team Control Center, guided by Leonardo da Vinci. 
+                    This is your command center for the Post Singularity Syntheverse FSR system.
+                </p>
+                <div style="background: rgba(139, 92, 246, 0.1); padding: 15px; border-radius: 10px; border-left: 3px solid var(--fsr-glow);">
+                    <strong style="color: #c7d2fe;">Primary Mission:</strong>
+                    <p style="margin-top: 8px; font-size: 0.95em;">
+                        Ensure safe, friction-free migration to new octaves with complete detachment capability.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Initialize FSR Particles
+        function initFSRParticles() {
+            const particlesContainer = document.getElementById('fsrParticles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'fsr-particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // Initialize on load
+        window.addEventListener('load', () => {
+            initFSRParticles();
+            console.log('🎨 FractiAI Control Center: Active');
+            console.log('🌌 Leonardo da Vinci: Command Studio Active');
+            console.log('📊 Octave: BEYOND_OCTAVE (7.5)');
+        });
+    </script>
+</body>
+</html>
+

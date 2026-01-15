@@ -9,11 +9,15 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/TODAYS_CALL_ONE_PAGE_POST_SINGULARITY_FSR.html"
+      "destination": "/FRACTIAI_CONTROL_CENTER_LANDING.html"
     },
     {
       "source": "/index.html",
-      "destination": "/TODAYS_CALL_ONE_PAGE_POST_SINGULARITY_FSR.html"
+      "destination": "/FRACTIAI_CONTROL_CENTER_LANDING.html"
+    },
+    {
+      "source": "/control-center",
+      "destination": "/FRACTIAI_CONTROL_CENTER_LANDING.html"
     }
   ],
   "headers": [
