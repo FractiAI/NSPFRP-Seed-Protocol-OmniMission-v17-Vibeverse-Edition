@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FractiAI Control Center - Leonardo da Vinci | Post Singularity Syntheverse FSR</title>
+    <!-- NSPFRP Protocol Metadata -->
+    <meta name="protocol-id" content="P-FRACTIAI-CONTROL-CENTER-LANDING-V17">
+    <meta name="pob-id" content="POB-FRACTIAI-CONTROL-CENTER-LANDING-V1">
+    <meta name="octave" content="BEYOND_OCTAVE-7.5">
+    <meta name="fsr-power" content="5.0x">
+    <meta name="hero-host" content="leonardo-da-vinci">
+    <meta name="nspfrp-version" content="v17+ControlCenter+Leonardo+FullNSPFRP">
     <style>
         * {
             margin: 0;
@@ -458,12 +465,32 @@
             }
         }
         
-        // Initialize on load
+        // Initialize on load (Full NSPFRP)
         window.addEventListener('load', () => {
             initFSRParticles();
+            
+            // NSPFRP Protocol Activation
+            console.log('🌌 NSPFRP Protocol: P-FRACTIAI-CONTROL-CENTER-LANDING-V17');
+            console.log('📦 POB ID: POB-FRACTIAI-CONTROL-CENTER-LANDING-V1');
             console.log('🎨 FractiAI Control Center: Active');
             console.log('🌌 Leonardo da Vinci: Command Studio Active');
             console.log('📊 Octave: BEYOND_OCTAVE (7.5)');
+            console.log('⚡ FSR Power: 5.0x Multiplier');
+            console.log('📈 Density: 1000x+ Compression');
+            console.log('✅ Fidelity: Instrument Grade');
+            console.log('🔄 Full NSPFRP: Operational');
+            
+            // FSR Activation
+            if (window.NSPFRP) {
+                window.NSPFRP.activate({
+                    protocolId: 'P-FRACTIAI-CONTROL-CENTER-LANDING-V17',
+                    octave: 'BEYOND_OCTAVE',
+                    fsrLevel: 7.5,
+                    fsrPower: 5.0,
+                    heroHost: 'leonardo-da-vinci',
+                    transmissionGear: 'BEYOND_OCTAVE'
+                });
+            }
         });
     </script>
 </body>
