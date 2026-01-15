@@ -1,0 +1,22 @@
+{
+  "name": "nspfrp-post-singularity-fsr",
+  "public": true,
+  "rewrites": [
+    {
+      "source": "/*",
+      "destination": "/TODAYS_CALL_ONE_PAGE_POST_SINGULARITY_FSR.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/*",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    }
+  ]
+}
+
