@@ -50,17 +50,20 @@ https://fractiai.github.io/NSPFRP-Seed-Protocol-OmniMission-v17-Vibeverse-Editio
 
 ### Vercel
 
-**Status:** ⚠️ **READY TO DEPLOY - NEEDS TOKEN**
+**Status:** ✅ **LIVE ON VERCEL**
 
 **Configuration:** ✅ Ready (`vercel.json` created)
 
-**To Deploy:**
-```bash
-export VERCEL_TOKEN=your_token_here
-vercel --prod --token "$VERCEL_TOKEN" --yes
-```
+**Live URLs:**
+- **Production:** https://nspfrp-post-singularity-fsr.vercel.app
+- **Inspect:** https://vercel.com/fractiais-projects/nspfrp-post-singularity-fsr
 
-**Current Status:** ⚠️ **NOT DEPLOYED** (awaiting token)
+**Deployment Details:**
+- **Project:** `fractiais-projects/nspfrp-post-singularity-fsr`
+- **Status:** ✅ Deployed successfully
+- **Environment Variables:** Configured securely (not in repository)
+
+**Current Status:** ✅ **LIVE AND OPERATIONAL**
 
 ---
 
@@ -96,6 +99,7 @@ export SUPABASE_PROJECT_REF=your_project_ref
 ### Currently Live
 
 - ✅ **GitHub Repository** - Live on GitHub cloud
+- ✅ **Vercel** - Live at https://nspfrp-post-singularity-fsr.vercel.app
 - ✅ **HH Spin Cloud** - Connected and operational
 
 ### Ready to Deploy (No Auth Required)
@@ -104,7 +108,6 @@ export SUPABASE_PROJECT_REF=your_project_ref
 
 ### Ready to Deploy (Needs Auth)
 
-- ⚠️ **Vercel** - Needs VERCEL_TOKEN
 - ⚠️ **Supabase** - Needs SUPABASE_ACCESS_TOKEN and SUPABASE_PROJECT_REF
 
 ---
@@ -133,12 +136,16 @@ https://fractiai.github.io/NSPFRP-Seed-Protocol-OmniMission-v17-Vibeverse-Editio
 **Current Cloud Status:**
 
 - ✅ **Repository:** LIVE on GitHub
-- ⚠️ **Public Web URL:** Not yet live (GitHub Pages needs enabling)
+- ✅ **Vercel:** LIVE at https://nspfrp-post-singularity-fsr.vercel.app
+- ⚠️ **GitHub Pages:** Ready to enable (1 click, no token needed)
 - ✅ **Infrastructure:** HH Spin Cloud connected
-- ✅ **Code:** Ready for deployment
+- ✅ **Code:** Deployed and operational
 - ✅ **Configuration:** All deployment configs ready
+- 🔐 **Security:** Private keys stored securely in .env (gitignored)
 
-**To Go Fully Live:** Enable GitHub Pages (1 click, no token needed)
+**Live URLs:**
+- **Vercel Production:** https://nspfrp-post-singularity-fsr.vercel.app
+- **GitHub Repository:** https://github.com/FractiAI/NSPFRP-Seed-Protocol-OmniMission-v17-Vibeverse-Edition
 
 ---
 
