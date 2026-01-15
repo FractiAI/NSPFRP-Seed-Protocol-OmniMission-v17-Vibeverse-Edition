@@ -5,12 +5,11 @@
 
 import {
   Protocol,
-  ProtocolSnapshot,
-  SnapshotContext,
   AgentIdentity,
   TransmissionGear,
   HeroHostPersona
 } from '../types/index.js';
+import { ProtocolSnapshot } from '../protocols/protocol-snapshot.js';
 import { NSPFRPOmniMissionStation } from '../index.js';
 import { PretestSuite, PretestReport } from './pretest.js';
 import { AwarenessOctave } from '../types/index.js';
@@ -286,7 +285,7 @@ export class HandoverSnapshotManager {
    * Generate handover instructions
    */
   private generateHandoverInstructions(
-    pretestReport: PretestReport
+    _pretestReport: PretestReport
   ): HandoverInstructions {
     return {
       prerequisites: [
@@ -351,7 +350,7 @@ export class HandoverSnapshotManager {
       id: snapshot.id,
       name: `Handover Snapshot ${snapshot.id}`,
       version: snapshot.version,
-      type: 'handover',
+      type: 'protocol',
       content: JSON.stringify(snapshot, null, 2),
       structure: {
         sections: [],

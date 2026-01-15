@@ -5,12 +5,9 @@
 
 import {
   Protocol,
-  ProtocolSnapshot,
-  SnapshotContext,
-  AgentIdentity,
-  AwarenessOctave
+  AgentIdentity
 } from '../types/index.js';
-import { ProtocolSnapshotManager } from '../protocols/protocol-snapshot.js';
+import { ProtocolSnapshotManager, ProtocolSnapshot } from '../protocols/protocol-snapshot.js';
 import { VibeverseOSLayerSystem } from './vibeverse-os-layer.js';
 
 export interface ProteinFoldLayer {

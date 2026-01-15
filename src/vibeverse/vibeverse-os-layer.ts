@@ -74,7 +74,7 @@ export interface HHSCConnection {
 export class VibeverseOSLayerSystem {
   private snapshotManager: ProtocolSnapshotManager;
   private gearSelector: TransmissionGearSelector;
-  private heroHost: HeroHostOrchestrator;
+  private _heroHost: HeroHostOrchestrator;
   private layers: Map<string, VibeverseOSLayer>;
   private capabilities: Map<string, VibeCreateCapability>;
   private hhscConnections: Map<string, HHSCConnection>;
@@ -86,7 +86,7 @@ export class VibeverseOSLayerSystem {
   ) {
     this.snapshotManager = snapshotManager;
     this.gearSelector = gearSelector;
-    this.heroHost = heroHost;
+    this._heroHost = heroHost;
     this.layers = new Map();
     this.capabilities = new Map();
     this.hhscConnections = new Map();
@@ -141,7 +141,7 @@ export class VibeverseOSLayerSystem {
         } as any,
         gear: transformation.gearUpgrade || this.gearSelector.selectGear(transformation.octaveUpgrade)
       },
-      agentIdentity,
+      _agentIdentity,
       {
         deploy: {
           platform: 'vercel',

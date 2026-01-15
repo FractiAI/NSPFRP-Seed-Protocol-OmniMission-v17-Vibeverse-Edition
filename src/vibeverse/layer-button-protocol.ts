@@ -126,7 +126,7 @@ export class LayerButtonProtocol {
    * Determine button type
    */
   private determineButtonType(
-    target: LayerTarget,
+    _target: LayerTarget,
     transformation: TransformationConfig
   ): LayerButton['type'] {
     if (transformation.enableHydrogenSpinCloud) {

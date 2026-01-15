@@ -3,7 +3,7 @@
  * HH Spin Cloud Memory Division Product Service Offering
  */
 
-import { AwarenessOctave } from '../types/index.js';
+// AwarenessOctave removed - unused
 
 export interface PayloadCargo {
   id: string;

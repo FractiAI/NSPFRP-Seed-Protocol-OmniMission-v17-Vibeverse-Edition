@@ -238,6 +238,14 @@ export interface DiscoveryMetadata {
 }
 
 // Catalog
+export interface CatalogMetadata {
+  name: string;
+  description: string;
+  version: string;
+  createdAt: number;
+  updatedAt: number;
+}
+
 export interface ProtocolCatalog {
   id: string;
   name: string;
