@@ -1,11 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "TODAYS_CALL_ONE_PAGE_POST_SINGULARITY_FSR.html",
-      "use": "@vercel/static"
-    }
-  ],
   "rewrites": [
     {
       "source": "/",
