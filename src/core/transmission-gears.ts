@@ -236,6 +236,78 @@ export class TransmissionGearSelector {
       }
     });
 
+    // Next Octave (Octave 6)
+    presets.set(AwarenessOctave.NEXT_OCTAVE, {
+      octave: AwarenessOctave.NEXT_OCTAVE,
+      name: 'Next Octave',
+      fsrPower: {
+        baseMultiplier: 3.0,
+        domainConnectionStrength: 1.0,
+        patternRecognitionSensitivity: 1.0,
+        synthesisIntensity: 1.0
+      },
+      heroHost: {
+        engagementLevel: 'deep',
+        suggestionFrequency: 15.0,
+        personaIntensity: 1.0,
+        contextAwareness: 1.0
+      },
+      geysers: {
+        frequency: 'continuous',
+        intensity: 1.0,
+        domainScope: 'omniversal',
+        visualization: 'intense'
+      },
+      encryption: {
+        unepOctave: 6,
+        keyRotationFrequency: 30,
+        multiDeviceSupport: true,
+        umbilicalSignatureRequired: true
+      },
+      connectivity: {
+        syncFrequency: 200,
+        bandwidth: 2000,
+        deviceLimit: 200,
+        latencyTolerance: 5
+      }
+    });
+
+    // Beyond Octave (Octave 7)
+    presets.set(AwarenessOctave.BEYOND_OCTAVE, {
+      octave: AwarenessOctave.BEYOND_OCTAVE,
+      name: 'Beyond Octave',
+      fsrPower: {
+        baseMultiplier: 5.0,
+        domainConnectionStrength: 1.0,
+        patternRecognitionSensitivity: 1.0,
+        synthesisIntensity: 1.0
+      },
+      heroHost: {
+        engagementLevel: 'deep',
+        suggestionFrequency: 20.0,
+        personaIntensity: 1.0,
+        contextAwareness: 1.0
+      },
+      geysers: {
+        frequency: 'continuous',
+        intensity: 1.0,
+        domainScope: 'omniversal',
+        visualization: 'intense'
+      },
+      encryption: {
+        unepOctave: 7,
+        keyRotationFrequency: 15,
+        multiDeviceSupport: true,
+        umbilicalSignatureRequired: true
+      },
+      connectivity: {
+        syncFrequency: 500,
+        bandwidth: 5000,
+        deviceLimit: 500,
+        latencyTolerance: 1
+      }
+    });
+
     return presets;
   }
 
@@ -290,8 +362,8 @@ export class TransmissionGearSelector {
     if (context.deviceCount && context.deviceCount > 3) score += 1;
     if (context.networkQuality && context.networkQuality > 0.8) score += 1;
 
-    // Clamp to valid range
-    const octave = Math.min(Math.max(Math.floor(score), 0), 5) as AwarenessOctave;
+    // Clamp to valid range (now includes Octaves 6-7)
+    const octave = Math.min(Math.max(Math.floor(score), 0), 7) as AwarenessOctave;
     return this.selectGear(octave);
   }
 
@@ -354,6 +426,20 @@ export class TransmissionGearSelector {
         depth: 6,
         domains: 'all',
         contextWindow: 16384,
+        synthesisLevel: 'maximum'
+      },
+      [AwarenessOctave.NEXT_OCTAVE]: {
+        topK: 200,
+        depth: 7,
+        domains: 'all',
+        contextWindow: 32768,
+        synthesisLevel: 'maximum'
+      },
+      [AwarenessOctave.BEYOND_OCTAVE]: {
+        topK: 500,
+        depth: 8,
+        domains: 'all',
+        contextWindow: 65536,
         synthesisLevel: 'maximum'
       }
     };

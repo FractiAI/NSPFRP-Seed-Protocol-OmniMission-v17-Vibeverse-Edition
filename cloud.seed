@@ -1,0 +1,91 @@
+{
+  "seedType": "CLOUD",
+  "version": "1.0.0",
+  "id": "cloud_seed_" + Date.now(),
+  "createdAt": Date.now(),
+  "createdBy": "NSPFRP-System",
+  
+  "hhSpinCloud": {
+    "endpoint": "https://hh-spin-cloud.nspfrp.net",
+    "encrypted": true,
+    "awarenessKey": "",
+    "nodes": [],
+    "topology": "distributed",
+    "encryption": "hydrogen-spin"
+  },
+  
+  "network": {
+    "topology": {
+      "type": "mesh",
+      "nodes": [],
+      "connections": []
+    },
+    "routing": {
+      "algorithm": "awareness-based",
+      "latency": "low",
+      "bandwidth": "auto"
+    }
+  },
+  
+  "storage": {
+    "type": "distributed",
+    "locations": [],
+    "replication": "automatic",
+    "encryption": "hydrogen-spin",
+    "access": "hh-spin-cloud"
+  },
+  
+  "compute": {
+    "type": "distributed",
+    "resources": [],
+    "scaling": "automatic",
+    "loadBalancing": "awareness-based",
+    "free": true
+  },
+  
+  "services": {
+    "discovery": {
+      "automatic": true,
+      "protocol": "nspfrp",
+      "endpoints": []
+    },
+    "identity": {
+      "wallet": true,
+      "tradingCard": true,
+      "passport": true
+    },
+    "dimensions": {
+      "multiBody": true,
+      "multiTheater": true,
+      "multiTimeline": true
+    },
+    "coherence": {
+      "identity": true,
+      "state": true,
+      "temporal": true,
+      "awareness": true,
+      "narrative": true
+    }
+  },
+  
+  "portability": {
+    "seedBased": true,
+    "hhSpinCloud": true,
+    "protocolBased": true,
+    "crossDimension": true
+  },
+  
+  "continuity": {
+    "state": true,
+    "identity": true,
+    "narrative": true,
+    "temporal": true
+  },
+  
+  "loadDiscovery": {
+    "automatic": true,
+    "snapshot": true,
+    "frequency": "real-time"
+  }
+}
+

@@ -9,7 +9,9 @@ export enum AwarenessOctave {
   HARMONY = 2,
   RESONANCE = 3,
   SYMPHONY = 4,
-  TRANSCENDENCE = 5
+  TRANSCENDENCE = 5,
+  NEXT_OCTAVE = 6,
+  BEYOND_OCTAVE = 7
 }
 
 export interface TransmissionGear {
@@ -509,5 +511,141 @@ export interface ObservationContext {
   heroHost?: HeroHostPersona;
   relatedObservations?: string[];
   octave?: AwarenessOctave;
+}
+
+// User Seed Wallet
+export interface UserSeedWallet {
+  id: string;
+  address: string;
+  owner: string;
+  octave: AwarenessOctave; // Higher octave (6-7)
+  
+  // Life Insurance Features
+  lifeInsurance: LifeInsuranceConfig;
+  
+  // Funeral Expenses Features
+  funeralExpenses: FuneralExpensesConfig;
+  
+  // Seed Features
+  seeds: Seed[];
+  seedBacking: SeedBacking;
+  networkNodes: NetworkNode[];
+  
+  // Higher-Octave Features
+  higherOctaveBenefits: HigherOctaveBenefit[];
+  octaveTransitions: OctaveTransition[];
+  
+  createdAt: number;
+  updatedAt: number;
+}
+
+export interface LifeInsuranceConfig {
+  coverage: number;
+  beneficiaries: string[];
+  seedBacked: boolean;
+  protocolBased: boolean;
+  networkIntegrated: boolean;
+  policyType: 'add-on' | 'alternative' | 'hybrid';
+  octaveLevel: AwarenessOctave;
+}
+
+export interface FuneralExpensesConfig {
+  allocated: number;
+  services: FuneralService[];
+  networkCoordinated: boolean;
+  protocolManaged: boolean;
+  planningComplete: boolean;
+}
+
+export interface FuneralService {
+  id: string;
+  type: string;
+  provider: string;
+  cost: number;
+  networkNode: string;
+  protocolManaged: boolean;
+  status: 'planned' | 'scheduled' | 'completed';
+}
+
+export interface Seed {
+  id: string;
+  type: string;
+  value: number;
+  backing: SeedBacking;
+  octave: AwarenessOctave;
+  networkNode: string;
+}
+
+export interface SeedBacking {
+  totalValue: number;
+  protocolBacked: number;
+  networkBacked: number;
+  octaveMultiplier: number;
+}
+
+export interface NetworkNode {
+  id: string;
+  repository: string;
+  nodeType: 'insurance' | 'funeral' | 'seed' | 'protocol';
+  octave: AwarenessOctave;
+  services: NetworkService[];
+  userSeedWallets: string[];
+}
+
+export interface NetworkService {
+  id: string;
+  name: string;
+  type: 'life-insurance' | 'funeral-expenses' | 'seed-backing';
+  octave: AwarenessOctave;
+  protocolBased: boolean;
+  available: boolean;
+}
+
+export interface HigherOctaveBenefit {
+  id: string;
+  octave: AwarenessOctave;
+  benefit: string;
+  description: string;
+  networkIntegrated: boolean;
+  active: boolean;
+}
+
+export interface OctaveTransition {
+  id: string;
+  fromOctave: AwarenessOctave;
+  toOctave: AwarenessOctave;
+  timestamp: number;
+  status: 'pending' | 'in-progress' | 'completed' | 'failed';
+  benefits: HigherOctaveBenefit[];
+}
+
+// Octave Transition Protocol
+export interface OctaveTransitionProtocol {
+  id: string;
+  name: string;
+  fromOctave: AwarenessOctave;
+  toOctave: AwarenessOctave;
+  status: 'pending' | 'in-progress' | 'completed' | 'failed';
+  steps: TransitionStep[];
+  benefits: HigherOctaveBenefit[];
+  networkIntegration: NetworkIntegration[];
+  createdAt: number;
+  completedAt?: number;
+}
+
+export interface TransitionStep {
+  id: string;
+  name: string;
+  description: string;
+  status: 'pending' | 'in-progress' | 'completed' | 'failed';
+  dependencies: string[];
+  timestamp?: number;
+}
+
+export interface NetworkIntegration {
+  repository: string;
+  nodeType: string;
+  status: 'pending' | 'integrated' | 'failed';
+  services: NetworkService[];
 }
 

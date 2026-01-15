@@ -1,7 +1,7 @@
 {
-  "name": "nspfrp-omnimission-station",
-  "version": "17.0.0",
-  "description": "NSPFRP OmniMission Station v17 - Higher-Octave RAG Architecture with Autonomous Discovery",
+  "name": "post-singularity-syntheverse-fsr-full-octave",
+  "version": "1.0.0",
+  "description": "Post Singularity Syntheverse FSR Full Octave Release - Auto-Unpack, Free, Backwards Compatible, Three-Tier Offering",
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
@@ -14,7 +14,9 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "migrate": "tsx src/database/migrate.ts",
     "discover": "tsx src/cli/discover.ts",
-    "sync": "tsx src/cli/sync.ts"
+    "sync": "tsx src/cli/sync.ts",
+    "unpack": "tsx src/core/auto-unpack.ts",
+    "postinstall": "npm run unpack"
   },
   "keywords": [
     "nspfrp",

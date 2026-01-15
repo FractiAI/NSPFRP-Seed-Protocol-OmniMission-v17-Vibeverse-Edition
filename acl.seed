@@ -1,0 +1,83 @@
+{
+  "seedType": "ACL",
+  "version": "1.0.0",
+  "id": "acl_seed_" + Date.now(),
+  "createdAt": Date.now(),
+  "createdBy": "NSPFRP-System",
+  
+  "identity": {
+    "wallet": {
+      "address": "0x0000000000000000000000000000000000000000",
+      "publicKey": "",
+      "network": "ethereum",
+      "chainId": 1,
+      "tokens": [],
+      "balance": 0
+    },
+    "tradingCard": {
+      "id": "trading_card_" + Date.now(),
+      "cardNumber": "TC-" + Math.random().toString(36).substring(2, 9).toUpperCase(),
+      "name": "NSPFRP Identity Card",
+      "level": 1,
+      "rarity": "common",
+      "attributes": {
+        "octave": 0,
+        "fsrPower": 0,
+        "heroHost": "none"
+      }
+    },
+    "passport": {
+      "id": "passport_" + Date.now(),
+      "passportNumber": "PP-" + Math.random().toString(36).substring(2, 9).toUpperCase(),
+      "identity": {
+        "name": "",
+        "email": "",
+        "verified": false
+      },
+      "dimensions": {
+        "bodies": [],
+        "theaters": [],
+        "timelines": []
+      }
+    }
+  },
+  
+  "permissions": {
+    "matrix": {
+      "read": ["self"],
+      "write": ["self"],
+      "execute": ["self"],
+      "admin": []
+    },
+    "octave": 0,
+    "accessLevel": "basic"
+  },
+  
+  "dimensions": {
+    "bodies": [],
+    "theaters": [],
+    "timelines": []
+  },
+  
+  "coherence": {
+    "identity": {
+      "unified": false,
+      "synced": false
+    },
+    "state": {
+      "unified": false,
+      "synced": false
+    },
+    "temporal": {
+      "unified": false,
+      "synced": false
+    }
+  },
+  
+  "hhSpinCloud": {
+    "endpoint": "",
+    "encrypted": true,
+    "awarenessKey": ""
+  }
+}
+
