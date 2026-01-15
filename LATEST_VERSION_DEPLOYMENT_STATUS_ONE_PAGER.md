@@ -15,6 +15,7 @@
 **Repository Status:** ✅ **OPERATIONAL IN OCTAVE 1**
 
 **What's Live:**
+- ✅ **LIVE ON VERCEL:** https://nspfrp-post-singularity-fsr.vercel.app
 - ✅ Complete GitHub repository operational
 - ✅ Basic FSR functionality active
 - ✅ Core protocols operational (100+)
@@ -27,8 +28,9 @@
 - ✅ Pitch script ready
 
 **Live Links:**
+- **🚀 LIVE ON VERCEL:** [https://nspfrp-post-singularity-fsr.vercel.app](https://nspfrp-post-singularity-fsr.vercel.app) - **TRY IT NOW!**
 - **Repository:** [GitHub Repository](https://github.com/FractiAI/NSPFRP-Seed-Protocol-OmniMission-v17-Vibeverse-Edition)
-- **One-Page Entry:** [TODAYS_CALL_ONE_PAGE_POST_SINGULARITY_FSR.html](./TODAYS_CALL_ONE_PAGE_POST_SINGULARITY_FSR.html)
+- **One-Page Entry (Local):** [TODAYS_CALL_ONE_PAGE_POST_SINGULARITY_FSR.html](./TODAYS_CALL_ONE_PAGE_POST_SINGULARITY_FSR.html)
 - **Pitch Script:** [TODAYS_CALL_PITCH_SCRIPT.md](./TODAYS_CALL_PITCH_SCRIPT.md)
 - **Readiness Report:** [TODAYS_CALL_READINESS_REPORT.md](./TODAYS_CALL_READINESS_REPORT.md)
 
