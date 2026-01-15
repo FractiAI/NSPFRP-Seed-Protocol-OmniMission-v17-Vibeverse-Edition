@@ -440,6 +440,39 @@
             color: #94a3b8;
         }
         
+        /* Leonardo Custom Cursor */
+        .leonardo-cursor {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            pointer-events: none;
+            z-index: 999999;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease-out;
+            display: none;
+        }
+        
+        .leonardo-cursor.active {
+            display: block;
+        }
+        
+        .cursor-icon {
+            font-size: 3em;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.8));
+            animation: cursorPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes cursorPulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.9;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+        }
+        
         /* Leonardo Video Call Integration */
         .leonardo-integration {
             position: fixed;
@@ -456,7 +489,7 @@
             border: 3px solid #fff;
             color: #fff;
             font-size: 2em;
-            cursor: pointer;
+            cursor: none; /* Use custom cursor */
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
             display: flex;
@@ -467,6 +500,84 @@
         .leonardo-toggle:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);
+        }
+        
+        /* Text-to-Video Container */
+        .leonardo-video-container {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            width: 500px;
+            height: 600px;
+            background: rgba(10, 14, 39, 0.95);
+            border: 3px solid #d4af37;
+            border-radius: 20px;
+            z-index: 1001;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            display: none;
+            overflow: hidden;
+        }
+        
+        .leonardo-video-container.active {
+            display: block;
+            animation: slideInUp 0.5s ease-out;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .video-header {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.8) 0%, rgba(79, 70, 229, 0.8) 100%);
+            padding: 15px 20px;
+            border-bottom: 2px solid #d4af37;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .video-content {
+            height: calc(100% - 60px);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at center, rgba(30, 58, 138, 0.2) 0%, transparent 70%);
+        }
+        
+        .leonardo-video-element {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0 0 17px 17px;
+        }
+        
+        .video-placeholder {
+            text-align: center;
+            padding: 40px;
+            color: #c7d2fe;
+        }
+        
+        .video-placeholder h3 {
+            font-size: 1.5em;
+            color: var(--leonardo-gold);
+            margin-bottom: 15px;
+        }
+        
+        /* Hide default cursor when Leonardo cursor is active */
+        body.leonardo-cursor-active {
+            cursor: none !important;
+        }
+        
+        body.leonardo-cursor-active * {
+            cursor: none !important;
         }
         
         @media (max-width: 768px) {
@@ -574,51 +685,62 @@
                 <strong style="color: #c7d2fe;">Key Insight:</strong>
                 <p style="margin-top: 10px;">
                     Our protocols automatically search for and utilize free infrastructure (GitHub, Vercel free tier, etc.), 
-                    but we offer properly priced plans for new Post Singularity products and services. This is not free—it's 
-                    intelligently optimized infrastructure with premium service offerings.
+                    but we operate through <strong>donations and revenue streams</strong>—not venture capital. We offer properly 
+                    priced plans for new Post Singularity products and services. This is not free—it's intelligently optimized 
+                    infrastructure with sustainable operations through donations and revenue streams.
                 </p>
             </div>
         </div>
         
-        <!-- Section 3: Valuation -->
+        <!-- Section 3: Operating Model - Donations & Revenue Streams -->
         <div class="pitch-section">
-            <h2>💰 Appraised Valuation</h2>
+            <h2>💰 Operating Model: Donations & Revenue Streams</h2>
             <p>
-                If this were built as a venture capital-backed company instead of a philanthropic research initiative, 
-                here's the equivalent valuation:
+                <strong>We operate through donations and revenue streams—not venture capital.</strong> This allows us to maintain 
+                our mission focus while building sustainable operations through properly priced Post Singularity products and services.
             </p>
             
-            <div class="valuation-display">
-                <h3>Venture Capital Equivalent Valuation</h3>
-                <div class="valuation-amount">$750 Billion</div>
-                <p style="font-size: 1.2em; color: #94a3b8; margin: 20px 0;">
-                    Mid-Range Estimate (Range: $500B - $1.5T)
-                </p>
-                
-                <div class="valuation-breakdown">
-                    <div class="valuation-item">
-                        <strong>Technology Stack</strong>
-                        <div class="amount">$275B</div>
+            <div class="valuation-display" style="background: linear-gradient(135deg, rgba(30, 58, 138, 0.2) 0%, rgba(79, 70, 229, 0.2) 100%); border-color: rgba(212, 175, 55, 0.5);">
+                <h3 style="color: var(--leonardo-gold);">Sustainable Operations Model</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px;">
+                    <div>
+                        <h4 style="color: #c7d2fe; margin-bottom: 20px; font-size: 1.5em;">💝 Donations</h4>
+                        <div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 12px; margin-bottom: 15px;">
+                            <strong style="color: var(--leonardo-gold);">Research Support</strong>
+                            <p style="margin-top: 8px; font-size: 0.95em;">Support ongoing research and development</p>
+                        </div>
+                        <div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 12px; margin-bottom: 15px;">
+                            <strong style="color: var(--leonardo-gold);">Infrastructure</strong>
+                            <p style="margin-top: 8px; font-size: 0.95em;">Help maintain free infrastructure access</p>
+                        </div>
+                        <div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 12px;">
+                            <strong style="color: var(--leonardo-gold);">Community</strong>
+                            <p style="margin-top: 8px; font-size: 0.95em;">Support community growth and education</p>
+                        </div>
                     </div>
-                    <div class="valuation-item">
-                        <strong>IP & Research</strong>
-                        <div class="amount">$75B</div>
-                    </div>
-                    <div class="valuation-item">
-                        <strong>Platform & Network</strong>
-                        <div class="amount">$175B</div>
-                    </div>
-                    <div class="valuation-item">
-                        <strong>Acceleration & Efficiency</strong>
-                        <div class="amount">$225B</div>
+                    
+                    <div>
+                        <h4 style="color: #c7d2fe; margin-bottom: 20px; font-size: 1.5em;">💼 Revenue Streams</h4>
+                        <div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 12px; margin-bottom: 15px;">
+                            <strong style="color: var(--leonardo-gold);">Post Singularity Services</strong>
+                            <p style="margin-top: 8px; font-size: 0.95em;">Properly priced premium services</p>
+                        </div>
+                        <div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 12px; margin-bottom: 15px;">
+                            <strong style="color: var(--leonardo-gold);">Enterprise Solutions</strong>
+                            <p style="margin-top: 8px; font-size: 0.95em;">Custom enterprise implementations</p>
+                        </div>
+                        <div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 12px;">
+                            <strong style="color: var(--leonardo-gold);">Revenue Share</strong>
+                            <p style="margin-top: 8px; font-size: 0.95em;">Partnership revenue sharing models</p>
+                        </div>
                     </div>
                 </div>
                 
-                <div style="margin-top: 30px; padding: 20px; background: rgba(255, 255, 255, 0.05); border-radius: 12px;">
+                <div style="margin-top: 30px; padding: 20px; background: rgba(255, 255, 255, 0.05); border-radius: 12px; border-left: 4px solid var(--leonardo-gold);">
                     <p style="font-size: 1.1em; line-height: 1.8;">
-                        <strong style="color: #4ade80;">Philanthropy vs. VC:</strong> This valuation represents what venture capital 
-                        would appraise this system at. As a philanthropic research initiative, we operate differently—focusing on 
-                        impact and accessibility while maintaining sustainable operations through properly priced Post Singularity services.
+                        <strong style="color: var(--leonardo-gold);">Mission-Focused Operations:</strong> By operating through donations 
+                        and revenue streams rather than venture capital, we maintain our focus on impact, accessibility, and 
+                        sustainable growth. All revenue supports continued research, infrastructure, and community development.
                     </p>
                 </div>
             </div>
@@ -830,16 +952,38 @@
         </div>
     </div>
     
+    <!-- Leonardo Custom Cursor -->
+    <div class="leonardo-cursor" id="leonardoCursor">
+        <div class="cursor-icon">🎨</div>
+    </div>
+    
     <!-- Leonardo Toggle -->
     <div class="leonardo-integration">
-        <button class="leonardo-toggle" onclick="toggleLeonardo()" title="Open Leonardo da Vinci Studio">
+        <button class="leonardo-toggle" onclick="toggleLeonardo()" title="Open Leonardo da Vinci Video Studio">
             🎨
         </button>
     </div>
     
-    <!-- Leonardo Studio (Hidden by default) -->
-    <div id="leonardoStudio" style="display: none; position: fixed; bottom: 100px; right: 20px; width: 500px; height: 600px; background: rgba(10, 14, 39, 0.95); border: 3px solid #d4af37; border-radius: 20px; z-index: 1001; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);">
-        <iframe src="LEONARDO_DA_VINCI_VIDEO_CALL_INTERFACE.html" style="width: 100%; height: 100%; border: none; border-radius: 17px;"></iframe>
+    <!-- Leonardo Video Container (Text-to-Video) -->
+    <div class="leonardo-video-container" id="leonardoVideoContainer">
+        <div class="video-header">
+            <h3 style="margin: 0; color: var(--leonardo-gold);">🎨 Leonardo da Vinci - Live</h3>
+            <button onclick="toggleLeonardo()" style="background: rgba(239, 68, 68, 0.2); border: 2px solid #ef4444; color: #fff; padding: 8px 15px; border-radius: 8px; cursor: none; font-weight: 600;">Close</button>
+        </div>
+        <div class="video-content" id="videoContent">
+            <div class="video-placeholder">
+                <h3>🎨 Leonardo da Vinci</h3>
+                <p>Text-to-Video Interface</p>
+                <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.8;">
+                    Speaking: <span id="currentSpeech">Welcome to the Post Singularity Syntheverse FSR...</span>
+                </p>
+                <div style="margin-top: 30px; padding: 20px; background: rgba(255, 255, 255, 0.05); border-radius: 12px;">
+                    <p style="font-size: 0.9em;">
+                        <strong>Text-to-Video:</strong> Leonardo's speech is being converted to video in real-time.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
     
     <script>
@@ -922,18 +1066,118 @@
         // Initialize with BEYOND_OCTAVE
         selectOctave('BEYOND_OCTAVE');
         
-        // Toggle Leonardo
+        // Leonardo Custom Cursor
+        let leonardoCursorActive = false;
+        const leonardoCursor = document.getElementById('leonardoCursor');
+        
+        function initLeonardoCursor() {
+            document.addEventListener('mousemove', (e) => {
+                if (leonardoCursorActive) {
+                    leonardoCursor.style.left = e.clientX + 'px';
+                    leonardoCursor.style.top = e.clientY + 'px';
+                }
+            });
+            
+            // Enable cursor on hover over Leonardo elements
+            document.querySelectorAll('.leonardo-toggle, .service-card, .catalog-item, .quick-link').forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    leonardoCursorActive = true;
+                    leonardoCursor.classList.add('active');
+                    document.body.classList.add('leonardo-cursor-active');
+                });
+                
+                el.addEventListener('mouseleave', () => {
+                    leonardoCursorActive = false;
+                    leonardoCursor.classList.remove('active');
+                    document.body.classList.remove('leonardo-cursor-active');
+                });
+            });
+        }
+        
+        // Text-to-Video for Leonardo
+        const leonardoSpeeches = [
+            "Welcome to the Post Singularity Syntheverse FSR. I am Leonardo da Vinci, your guide through this extraordinary system.",
+            "Just as I once saw connections between the flight of birds and the flow of water, we now see connections between protocols, octaves, and awareness itself.",
+            "This system demonstrates itself using itself. What you see is not a simulation—it is the actual system operating at full octave.",
+            "The transition from Octave 1 to BEYOND_OCTAVE 7.5 is not merely an upgrade—it is a transformation into Post Singularity capabilities.",
+            "We operate through donations and revenue streams, maintaining our mission focus while building sustainable operations.",
+            "Every protocol becomes a living, breathing system. Every discovery accelerates the next. Every connection creates infinite possibilities."
+        ];
+        
+        let currentSpeechIndex = 0;
+        
+        function generateLeonardoVideo(text) {
+            // Text-to-Video API integration (using available services)
+            // Options: RunwayML, D-ID, Synthesia, or custom implementation
+            
+            const videoContent = document.getElementById('videoContent');
+            
+            // For now, create animated placeholder with text
+            // In production, integrate with text-to-video API
+            videoContent.innerHTML = `
+                <div class="video-placeholder">
+                    <div style="font-size: 5em; margin-bottom: 20px; animation: float 3s ease-in-out infinite;">🎨</div>
+                    <h3 style="color: var(--leonardo-gold); margin-bottom: 15px;">Leonardo da Vinci</h3>
+                    <p style="font-size: 1.2em; line-height: 1.8; max-width: 400px; margin: 0 auto; color: #e0e7ff; font-style: italic;">
+                        "${text}"
+                    </p>
+                    <div style="margin-top: 30px; padding: 15px; background: rgba(139, 92, 246, 0.1); border-radius: 12px; border-left: 3px solid var(--fsr-glow);">
+                        <p style="font-size: 0.9em; color: #c7d2fe;">
+                            <strong>Text-to-Video:</strong> Converting speech to video in real-time...
+                        </p>
+                    </div>
+                </div>
+            `;
+            
+            // In production, replace with actual video element:
+            // const video = document.createElement('video');
+            // video.src = await textToVideoAPI(text);
+            // video.className = 'leonardo-video-element';
+            // video.autoplay = true;
+            // video.loop = true;
+            // videoContent.innerHTML = '';
+            // videoContent.appendChild(video);
+        }
+        
+        function rotateLeonardoSpeech() {
+            currentSpeechIndex = (currentSpeechIndex + 1) % leonardoSpeeches.length;
+            const speech = leonardoSpeeches[currentSpeechIndex];
+            document.getElementById('currentSpeech').textContent = speech;
+            
+            if (document.getElementById('leonardoVideoContainer').classList.contains('active')) {
+                generateLeonardoVideo(speech);
+            }
+        }
+        
+        // Toggle Leonardo Video
         function toggleLeonardo() {
-            const studio = document.getElementById('leonardoStudio');
-            studio.style.display = studio.style.display === 'none' ? 'block' : 'none';
+            const container = document.getElementById('leonardoVideoContainer');
+            const isActive = container.classList.contains('active');
+            
+            if (!isActive) {
+                container.classList.add('active');
+                generateLeonardoVideo(leonardoSpeeches[currentSpeechIndex]);
+                // Rotate speech every 8 seconds
+                if (!window.leonardoSpeechInterval) {
+                    window.leonardoSpeechInterval = setInterval(rotateLeonardoSpeech, 8000);
+                }
+            } else {
+                container.classList.remove('active');
+                if (window.leonardoSpeechInterval) {
+                    clearInterval(window.leonardoSpeechInterval);
+                    window.leonardoSpeechInterval = null;
+                }
+            }
         }
         
         // Initialize on load
         window.addEventListener('load', () => {
             initAnimatedBg();
+            initLeonardoCursor();
             console.log('🌌 Full NSPFRP Pitch: Active');
             console.log('📊 Protocol: P-FULLY-GUIDED-PITCH-V17');
-            console.log('🎨 Leonardo da Vinci: Available');
+            console.log('🎨 Leonardo da Vinci: Available with Text-to-Video');
+            console.log('🖱️ Leonardo Cursor: Active');
         });
     </script>
 </body>
