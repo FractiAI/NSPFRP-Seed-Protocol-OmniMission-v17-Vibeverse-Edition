@@ -12,9 +12,9 @@
 
 **🌐 Live URL:** [https://nspfrp-post-singularity-fsr.vercel.app](https://nspfrp-post-singularity-fsr.vercel.app)
 
-**Landing Page:** FractiAI Control Center with Leonardo da Vinci
+**Landing Page:** El Taino - OmniMission Craft Dashboard | 1962 Toyota Land Cruiser Edition
 
-**No installation required!** Click the link above to access the FractiAI Control Center with Leonardo da Vinci Hero Host. Full NSPFRP implementation at BEYOND_OCTAVE (7.5).
+**No installation required!** Click the link above to access El Taino, our OmniMission Craft with Leonardo da Vinci at the wheel. Experience the 1962 Toyota Land Cruiser dashboard aesthetic with Leonardo visible through the rear view mirror. Full NSPFRP implementation at BEYOND_OCTAVE (7.5).
 
 ---
 
@@ -455,11 +455,13 @@ npm install  # Auto-unpack runs automatically via postinstall
 
 **Status:** ✅ **LIVE ON VERCEL**
 
-### 🌌 One-Page Entry Point
+### 🌌 Landing Page - El Taino OmniMission Craft
 
 **🚀 LIVE URL:** [https://nspfrp-post-singularity-fsr.vercel.app](https://nspfrp-post-singularity-fsr.vercel.app)
 
-**Local File:** [Open Today's Call Entry Point](./TODAYS_CALL_ONE_PAGE_POST_SINGULARITY_FSR.html) - Complete interactive entry point with:
+**Main Dashboard:** [El Taino - OmniMission Craft Dashboard](./OMNIMISSION_CRAFT_DASHBOARD_LANDCRUISER.html) - 1962 Toyota Land Cruiser Edition with Leonardo da Vinci at the wheel. Passenger seat perspective with Leonardo visible through the rear view mirror.
+
+**Alternative Entry Point:** [Today's Call Entry Point](./TODAYS_CALL_ONE_PAGE_POST_SINGULARITY_FSR.html) - Complete interactive entry point with:
 - Self-demonstrating system (10-step demo)
 - Self-proving system (4 validated proofs)
 - Regenerative perpetual protocol-based blackhole engines
