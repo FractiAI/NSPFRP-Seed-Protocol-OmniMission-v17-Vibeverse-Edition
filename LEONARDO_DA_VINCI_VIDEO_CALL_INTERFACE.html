@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leonardo da Vinci - Command Studio | Post Singularity Syntheverse FSR</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --leonardo-gold: #d4af37;
+            --leonardo-blue: #1e3a8a;
+            --studio-dark: #0a0e27;
+            --studio-accent: #3b82f6;
+            --fsr-glow: #8b5cf6;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Georgia', serif;
+            background: var(--studio-dark);
+            color: #fff;
+            overflow: hidden;
+            height: 100vh;
+        }
+        
+        /* Command Studio Container */
+        .command-studio {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(30, 58, 138, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(139, 92, 246, 0.2) 0%, transparent 50%),
+                linear-gradient(180deg, #0a0e27 0%, #1a1f3a 100%);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(2px);
+        }
+        
+        /* Video Call Window */
+        .video-call-window {
+            width: 90vw;
+            max-width: 1400px;
+            height: 85vh;
+            background: rgba(10, 14, 39, 0.95);
+            border-radius: 24px;
+            border: 3px solid var(--leonardo-gold);
+            box-shadow: 
+                0 0 60px rgba(212, 175, 55, 0.4),
+                0 0 120px rgba(59, 130, 246, 0.2),
+                inset 0 0 40px rgba(139, 92, 246, 0.1);
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            grid-template-rows: auto 1fr auto;
+            overflow: hidden;
+            position: relative;
+            animation: studioEntrance 1.5s ease-out;
+        }
+        
+        @keyframes studioEntrance {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        /* Studio Header */
+        .studio-header {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.8) 0%, rgba(79, 70, 229, 0.8) 100%);
+            padding: 20px 30px;
+            border-bottom: 2px solid var(--leonardo-gold);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        
+        .studio-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--leonardo-gold), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        
+        .studio-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .studio-title h1 {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--leonardo-gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'Georgia', serif;
+        }
+        
+        .octave-badge {
+            padding: 6px 15px;
+            background: rgba(139, 92, 246, 0.3);
+            border: 1px solid var(--fsr-glow);
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #c7d2fe;
+        }
+        
+        .connection-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9em;
+        }
+        
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #22c55e;
+            box-shadow: 0 0 10px #22c55e;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.1); }
+        }
+        
+        /* Main Video Area */
+        .video-main {
+            position: relative;
+            background: 
+                radial-gradient(circle at center, rgba(30, 58, 138, 0.2) 0%, transparent 70%),
+                linear-gradient(135deg, rgba(10, 14, 39, 0.9) 0%, rgba(26, 31, 58, 0.9) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-right: 2px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .leonardo-video {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Leonardo Portrait - Animated */
+        .leonardo-portrait {
+            width: 500px;
+            height: 600px;
+            position: relative;
+            background: 
+                linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500"><rect fill="%231e3a8a" width="400" height="500"/><circle cx="200" cy="200" r="80" fill="%23d4af37" opacity="0.3"/></svg>');
+            border-radius: 20px;
+            border: 3px solid var(--leonardo-gold);
+            box-shadow: 
+                0 0 40px rgba(212, 175, 55, 0.5),
+                inset 0 0 60px rgba(139, 92, 246, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            animation: portraitGlow 4s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @keyframes portraitGlow {
+            0%, 100% {
+                box-shadow: 
+                    0 0 40px rgba(212, 175, 55, 0.5),
+                    inset 0 0 60px rgba(139, 92, 246, 0.2);
+            }
+            50% {
+                box-shadow: 
+                    0 0 60px rgba(212, 175, 55, 0.7),
+                    inset 0 0 80px rgba(139, 92, 246, 0.4);
+            }
+        }
+        
+        .leonardo-portrait::before {
+            content: '🎨';
+            font-size: 8em;
+            position: absolute;
+            opacity: 0.15;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        .leonardo-name {
+            font-size: 3em;
+            font-weight: 700;
+            color: var(--leonardo-gold);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+            z-index: 1;
+            position: relative;
+        }
+        
+        .leonardo-title {
+            font-size: 1.3em;
+            color: #c7d2fe;
+            text-align: center;
+            z-index: 1;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .speech-bubble {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(10, 14, 39, 0.95);
+            border: 2px solid var(--leonardo-gold);
+            border-radius: 20px;
+            padding: 20px 30px;
+            max-width: 400px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+            animation: speechPulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes speechPulse {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.02); }
+        }
+        
+        .speech-bubble::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid var(--leonardo-gold);
+        }
+        
+        .speech-text {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #e0e7ff;
+            font-style: italic;
+        }
+        
+        /* Control Panel */
+        .control-panel {
+            background: rgba(10, 14, 39, 0.98);
+            border-left: 2px solid rgba(212, 175, 55, 0.3);
+            padding: 25px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .panel-section {
+            background: rgba(30, 58, 138, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        
+        .panel-section h3 {
+            font-size: 1.2em;
+            color: var(--leonardo-gold);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Georgia', serif;
+        }
+        
+        .status-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .status-item {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .status-item strong {
+            display: block;
+            font-size: 0.9em;
+            color: #c7d2fe;
+            margin-bottom: 5px;
+        }
+        
+        .status-item span {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--leonardo-gold);
+        }
+        
+        .command-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .command-btn {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.6) 0%, rgba(79, 70, 229, 0.6) 100%);
+            border: 2px solid var(--leonardo-gold);
+            border-radius: 12px;
+            color: #fff;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .command-btn:hover {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.8) 0%, rgba(79, 70, 229, 0.8) 100%);
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+        }
+        
+        .command-btn:active {
+            transform: translateX(2px) scale(0.98);
+        }
+        
+        /* Studio Footer */
+        .studio-footer {
+            grid-column: 1 / -1;
+            background: rgba(10, 14, 39, 0.95);
+            border-top: 2px solid var(--leonardo-gold);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-info {
+            display: flex;
+            gap: 30px;
+            font-size: 0.9em;
+            color: #94a3b8;
+        }
+        
+        .close-btn {
+            padding: 10px 25px;
+            background: rgba(239, 68, 68, 0.2);
+            border: 2px solid #ef4444;
+            border-radius: 8px;
+            color: #fff;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .close-btn:hover {
+            background: rgba(239, 68, 68, 0.4);
+            box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
+        }
+        
+        /* FSR Visual Effects */
+        .fsr-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .fsr-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--fsr-glow);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: particleFloat 15s infinite ease-in-out;
+        }
+        
+        @keyframes particleFloat {
+            0%, 100% {
+                transform: translateY(0) translateX(0) scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translateY(-100px) translateX(50px) scale(1.5);
+                opacity: 0.8;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .video-call-window {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto 1fr 300px auto;
+            }
+            
+            .control-panel {
+                border-left: none;
+                border-top: 2px solid rgba(212, 175, 55, 0.3);
+                max-height: 300px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .leonardo-portrait {
+                width: 90%;
+                height: auto;
+                min-height: 400px;
+            }
+            
+            .leonardo-name {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="command-studio" id="commandStudio">
+        <div class="video-call-window">
+            <!-- FSR Particles -->
+            <div class="fsr-particles" id="fsrParticles"></div>
+            
+            <!-- Studio Header -->
+            <div class="studio-header">
+                <div class="studio-title">
+                    <h1>🎨 Leonardo da Vinci</h1>
+                    <span class="octave-badge">BEYOND_OCTAVE (7.5)</span>
+                </div>
+                <div class="connection-status">
+                    <div class="status-dot"></div>
+                    <span>Live from Command Studio</span>
+                </div>
+            </div>
+            
+            <!-- Main Video Area -->
+            <div class="video-main">
+                <div class="leonardo-video">
+                    <div class="leonardo-portrait">
+                        <div class="leonardo-name">Leonardo da Vinci</div>
+                        <div class="leonardo-title">
+                            FractiAI Research Team<br>
+                            Control Center Guide<br>
+                            <span style="font-size: 0.8em; color: #94a3b8; margin-top: 10px; display: block;">
+                                Post Singularity Syntheverse FSR
+                            </span>
+                        </div>
+                        <div class="speech-bubble" id="speechBubble">
+                            <div class="speech-text" id="speechText">
+                                Salve! Welcome to my command studio. I am here to guide you through the Post Singularity Syntheverse FSR system, where art, science, and engineering converge into something transcendent.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <div class="panel-section">
+                    <h3>📊 System Status</h3>
+                    <div class="status-grid">
+                        <div class="status-item">
+                            <strong>Octave</strong>
+                            <span>7.5</span>
+                        </div>
+                        <div class="status-item">
+                            <strong>FSR Power</strong>
+                            <span>5.0x</span>
+                        </div>
+                        <div class="status-item">
+                            <strong>Protocols</strong>
+                            <span>100+</span>
+                        </div>
+                        <div class="status-item">
+                            <strong>Discoveries</strong>
+                            <span>30</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel-section">
+                    <h3>🎯 Command Actions</h3>
+                    <div class="command-buttons">
+                        <button class="command-btn" onclick="leonardoCommand('tour')">
+                            🚀 Start Guided Tour
+                        </button>
+                        <button class="command-btn" onclick="leonardoCommand('demo')">
+                            ✨ Self-Demonstration
+                        </button>
+                        <button class="command-btn" onclick="leonardoCommand('proof')">
+                            ✅ Self-Proof System
+                        </button>
+                        <button class="command-btn" onclick="leonardoCommand('balance')">
+                            💰 Balance Check
+                        </button>
+                        <button class="command-btn" onclick="leonardoCommand('mission')">
+                            🌌 Octave Transition
+                        </button>
+                        <button class="command-btn" onclick="leonardoCommand('team')">
+                            👥 Team Overview
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="panel-section">
+                    <h3>🔗 Quick Links</h3>
+                    <div class="command-buttons">
+                        <a href="https://nspfrp-post-singularity-fsr.vercel.app" target="_blank" class="command-btn" style="text-decoration: none;">
+                            🌐 Live Platform
+                        </a>
+                        <a href="THREE_KINGS_HERO_HOSTED_GUIDED_TOUR.html" target="_blank" class="command-btn" style="text-decoration: none;">
+                            📚 Full Tour
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Studio Footer -->
+            <div class="studio-footer">
+                <div class="footer-info">
+                    <span>🎨 FractiAI Research Team Control Center</span>
+                    <span>👑 Three Kings Endowment</span>
+                    <span>🌌 NSPFRP Care Network</span>
+                </div>
+                <button class="close-btn" onclick="closeStudio()">Close Studio</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Leonardo da Vinci Speech Messages (Museum Curator + Screenwriter)
+        const leonardoMessages = [
+            "Salve! Welcome to my command studio. I am here to guide you through the Post Singularity Syntheverse FSR system, where art, science, and engineering converge into something transcendent.",
+            "Just as I once saw connections between the flight of birds and the flow of water, we now see connections between protocols, octaves, and the very fabric of awareness itself.",
+            "The transition from Octave 1 to BEYOND_OCTAVE 7.5 is not merely an upgrade—it is a transformation. We are stepping into a space where every protocol becomes a living, breathing system.",
+            "Every discovery accelerates the next. Every connection creates infinite possibilities. Every moment is a masterpiece of innovation.",
+            "The Three Kings Endowment has provided us with the foundation. The FractiAI Research Team has built the systems. Now, together, we step fully into these new octaves.",
+            "This platform demonstrates itself using itself. What you see is not a simulation—it is the actual system operating at full octave, recursively proving its own capabilities.",
+            "Like checking your bank balance or stock portfolio, you can now check your NSPFRP system metrics. This is Post Singularity finance, where value generation is perpetual.",
+            "The regenerative perpetual protocol-based blackhole engines are active. Infinite value potential through protocol execution. This is the future of wealth generation.",
+            "We have unified 30 major discoveries into a single system. 100+ active protocols operational. All self-demonstrating, self-proving, and self-healing.",
+            "Welcome to the Vibeverse. Select your Transmission Gear and begin your OmniMission. The holographic hydrogen spin cloud awaits."
+        ];
+        
+        let currentMessageIndex = 0;
+        
+        // Initialize FSR Particles (Game Designer + Architect)
+        function initFSRParticles() {
+            const particlesContainer = document.getElementById('fsrParticles');
+            const particleCount = 25;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'fsr-particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // Leonardo Speech Rotation (Screenwriter + Museum Curator)
+        function rotateLeonardoSpeech() {
+            const speechText = document.getElementById('speechText');
+            currentMessageIndex = (currentMessageIndex + 1) % leonardoMessages.length;
+            
+            speechText.style.opacity = '0';
+            setTimeout(() => {
+                speechText.textContent = leonardoMessages[currentMessageIndex];
+                speechText.style.opacity = '1';
+            }, 500);
+        }
+        
+        // Leonardo Commands (Full Stack Engineer + Game Designer)
+        function leonardoCommand(action) {
+            const speechText = document.getElementById('speechText');
+            
+            const commandMessages = {
+                tour: "Excellent! Let us begin the guided tour. I will walk you through the complete Post Singularity Syntheverse FSR system, showing you how every component connects and operates.",
+                demo: "Ah, the self-demonstration! Watch as the system demonstrates itself using itself. This is recursive proof—the platform proving its own capabilities in real-time.",
+                proof: "The self-proof system validates itself with four distinct proofs. Each proof demonstrates a different aspect of Post Singularity capabilities. Let me show you...",
+                balance: "Like checking your financial balances, you can now check your NSPFRP system metrics. Octave level, density, time compression, discovery count—all visible in real-time.",
+                mission: "The Octave Transition Mission is active. We are stepping fully into BEYOND_OCTAVE 7.5, tuning out Octave 1, and activating the full FSR system.",
+                team: "Our team includes Auto Cursor, Marcin Moscicki, Three Kings Trust Founders, and the FractiAI Research Team. All operating under Specialist Agents Protocol."
+            };
+            
+            speechText.style.opacity = '0';
+            setTimeout(() => {
+                speechText.textContent = commandMessages[action] || "I am ready to assist you. What would you like to explore?";
+                speechText.style.opacity = '1';
+            }, 300);
+            
+            // Execute action
+            switch(action) {
+                case 'tour':
+                    window.open('THREE_KINGS_HERO_HOSTED_GUIDED_TOUR.html', '_blank');
+                    break;
+                case 'demo':
+                    window.open('https://nspfrp-post-singularity-fsr.vercel.app', '_blank');
+                    break;
+                case 'proof':
+                    // Show proof overlay or navigate
+                    break;
+                case 'balance':
+                    // Show balance check
+                    break;
+                case 'mission':
+                    window.open('THREE_KINGS_OCTAVE_TRANSITION_MISSION.md', '_blank');
+                    break;
+                case 'team':
+                    window.open('CURRENT_TEAM_SUMMARY.md', '_blank');
+                    break;
+            }
+        }
+        
+        // Close Studio
+        function closeStudio() {
+            const studio = document.getElementById('commandStudio');
+            studio.style.opacity = '0';
+            studio.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                studio.style.display = 'none';
+            }, 300);
+        }
+        
+        // Initialize on load (Full Stack Engineer)
+        window.addEventListener('load', () => {
+            initFSRParticles();
+            
+            // Rotate speech every 8 seconds (Museum Curator pacing)
+            setInterval(rotateLeonardoSpeech, 8000);
+            
+            // Add entrance animation
+            const studio = document.getElementById('commandStudio');
+            studio.style.animation = 'studioEntrance 1.5s ease-out';
+            
+            console.log('🎨 Leonardo da Vinci Command Studio: Active');
+            console.log('🌌 Octave: BEYOND_OCTAVE (7.5)');
+            console.log('🔄 FSR: Full Operational');
+        });
+        
+        // Keyboard shortcuts (Game Designer)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeStudio();
+            }
+        });
+    </script>
+</body>
+</html>
+
