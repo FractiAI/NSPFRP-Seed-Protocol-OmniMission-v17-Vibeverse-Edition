@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Singularity Syntheverse FSR - Plans & Pricing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Georgia', serif;
+            background: linear-gradient(180deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #fff;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .brochure {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            border: 3px solid #d4af37;
+            border-radius: 24px;
+            padding: 60px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .header h1 {
+            font-size: 3.5em;
+            background: linear-gradient(135deg, #d4af37 0%, #fff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            font-family: 'Georgia', serif;
+        }
+        
+        .header p {
+            font-size: 1.3em;
+            color: #c7d2fe;
+            margin-top: 10px;
+        }
+        
+        .operating-model {
+            background: rgba(30, 58, 138, 0.2);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .operating-model strong {
+            color: #d4af37;
+            font-size: 1.2em;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .pricing-card {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, rgba(79, 70, 229, 0.3) 100%);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: #d4af37;
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+        }
+        
+        .pricing-card.featured {
+            border-color: #d4af37;
+            border-width: 3px;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+        }
+        
+        .pricing-card.featured::after {
+            content: 'POPULAR';
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: #d4af37;
+            color: #0a0e27;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-weight: 700;
+            font-size: 0.85em;
+        }
+        
+        .plan-name {
+            font-size: 1.8em;
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .plan-price {
+            font-size: 3.5em;
+            font-weight: 700;
+            color: #fff;
+            margin: 20px 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .plan-period {
+            font-size: 1em;
+            color: #94a3b8;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .plan-features {
+            list-style: none;
+            text-align: left;
+            margin: 30px 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .plan-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .plan-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .plan-features li::before {
+            content: '✨';
+            font-size: 1.2em;
+        }
+        
+        .plan-button {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #d4af37, #8b5cf6);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            margin-top: 20px;
+        }
+        
+        .plan-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+        
+        .services-section {
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 2px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .services-section h2 {
+            font-size: 2.5em;
+            color: #d4af37;
+            text-align: center;
+            margin-bottom: 40px;
+            font-family: 'Georgia', serif;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        
+        .service-card {
+            background: rgba(139, 92, 246, 0.1);
+            border: 2px solid rgba(139, 92, 246, 0.3);
+            border-radius: 16px;
+            padding: 30px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.6em;
+            color: #c7d2fe;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .service-card .price {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #d4af37;
+            margin: 15px 0;
+        }
+        
+        .service-card p {
+            line-height: 1.8;
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .service-features li {
+            padding: 8px 0;
+            color: #c7d2fe;
+            font-size: 0.95em;
+        }
+        
+        .service-features li::before {
+            content: '→ ';
+            color: #d4af37;
+            font-weight: 700;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid rgba(212, 175, 55, 0.3);
+            color: #94a3b8;
+        }
+        
+        .footer a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media print {
+            body {
+                background: #fff;
+                color: #000;
+            }
+            
+            .brochure {
+                background: #fff;
+                border: 2px solid #000;
+                box-shadow: none;
+            }
+            
+            .pricing-card {
+                background: #f5f5f5;
+                border: 1px solid #ddd;
+            }
+        }
+        
+        @media (max-width: 968px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="brochure">
+        <!-- Header -->
+        <div class="header">
+            <h1>🌌 Post Singularity Syntheverse FSR</h1>
+            <p>Plans & Pricing</p>
+            <div class="operating-model">
+                <strong>Operating Model:</strong> Donations & Revenue Streams (No Venture Capital)
+            </div>
+        </div>
+        
+        <!-- Main Pricing Plans -->
+        <div class="pricing-grid">
+            <!-- Sandbox Tier -->
+            <div class="pricing-card">
+                <div class="plan-name">Sandbox</div>
+                <div class="plan-price">$0</div>
+                <div class="plan-period">Free Forever</div>
+                <ul class="plan-features">
+                    <li>Free infrastructure access</li>
+                    <li>Basic FSR capabilities</li>
+                    <li>Community support</li>
+                    <li>Limited features</li>
+                    <li>Protocol exploration</li>
+                </ul>
+                <button class="plan-button">Get Started</button>
+            </div>
+            
+            <!-- Cloud Tier -->
+            <div class="pricing-card featured">
+                <div class="plan-name">Cloud</div>
+                <div class="plan-price">$199</div>
+                <div class="plan-period">per month</div>
+                <ul class="plan-features">
+                    <li>All Sandbox features</li>
+                    <li>Enhanced FSR power (3.0x)</li>
+                    <li>Priority support</li>
+                    <li>Advanced protocols</li>
+                    <li>Hero Host access</li>
+                    <li>FSR Catalog access</li>
+                    <li>Animation Studio (basic)</li>
+                </ul>
+                <button class="plan-button">Choose Cloud</button>
+            </div>
+            
+            <!-- Enterprise Tier -->
+            <div class="pricing-card">
+                <div class="plan-name">Enterprise</div>
+                <div class="plan-price">$2,000</div>
+                <div class="plan-period">per month</div>
+                <ul class="plan-features">
+                    <li>All Cloud features</li>
+                    <li>Full FSR power (5.0x)</li>
+                    <li>Dedicated support</li>
+                    <li>Custom Hero Hosts</li>
+                    <li>Enterprise Studio</li>
+                    <li>White-label options</li>
+                    <li>Revenue share models</li>
+                    <li>Custom integrations</li>
+                </ul>
+                <button class="plan-button">Contact Sales</button>
+            </div>
+        </div>
+        
+        <!-- Premium Services -->
+        <div class="services-section">
+            <h2>🚀 Premium Post Singularity Services</h2>
+            <div class="services-grid">
+                <!-- Animation Studio -->
+                <div class="service-card">
+                    <h3>🎬 Animation Studio</h3>
+                    <div class="price">$199 - $499/month</div>
+                    <p>
+                        Create stunning animations using Post Singularity FSR capabilities. Hero Host-guided animation creation 
+                        with cross-domain synthesis.
+                    </p>
+                    <ul class="service-features">
+                        <li>Hero Host-guided animation (Shakespeare, Leonardo, etc.)</li>
+                        <li>FSR-powered creative synthesis</li>
+                        <li>Cross-domain pattern recognition</li>
+                        <li>Real-time collaboration</li>
+                        <li>Protocol-based animation workflows</li>
+                    </ul>
+                </div>
+                
+                <!-- Enterprise Studio -->
+                <div class="service-card">
+                    <h3>🏢 Enterprise Studio</h3>
+                    <div class="price">$2,000 - $10,000/month</div>
+                    <p>
+                        Complete enterprise transformation studio. Custom Hero Host personas, venue integration, and full 
+                        enterprise protocol deployment.
+                    </p>
+                    <ul class="service-features">
+                        <li>Custom Hero Host persona development</li>
+                        <li>Venue integration and management</li>
+                        <li>Enterprise Sales Console</li>
+                        <li>Revenue share models</li>
+                        <li>White-label options</li>
+                        <li>Dedicated support</li>
+                    </ul>
+                </div>
+                
+                <!-- Life Insurance & Funeral Expense -->
+                <div class="service-card">
+                    <h3>🛡️ Life Planning Services</h3>
+                    <div class="price">Custom Pricing</div>
+                    <p>
+                        Post Singularity approach to life planning. Protocol-based legacy management, regenerative value 
+                        preservation, and cross-timeline continuity.
+                    </p>
+                    <ul class="service-features">
+                        <li>Protocol-based legacy preservation</li>
+                        <li>Regenerative value generation</li>
+                        <li>Cross-timeline identity continuity</li>
+                        <li>Hero Host-guided planning</li>
+                        <li>Narrative layer documentation</li>
+                        <li>Perpetual protocol execution</li>
+                    </ul>
+                </div>
+                
+                <!-- FSR Catalog -->
+                <div class="service-card">
+                    <h3>📺 FSR Catalog</h3>
+                    <div class="price">$49 - $149/month</div>
+                    <p>
+                        Step into selectable octaves through an immersive catalog experience. Browse protocols, discoveries, 
+                        and capabilities by octave level.
+                    </p>
+                    <ul class="service-features">
+                        <li>Octave-based content organization</li>
+                        <li>Selectable octave navigation</li>
+                        <li>Protocol streaming</li>
+                        <li>Discovery exploration</li>
+                        <li>Hero Host-guided tours</li>
+                        <li>Interactive FSR experiences</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>
+                <strong>Operating Model:</strong> We operate through donations and revenue streams—not venture capital. 
+                This allows us to maintain our mission focus while building sustainable operations.
+            </p>
+            <p style="margin-top: 15px;">
+                <strong>Infrastructure:</strong> Our protocols automatically search for and utilize free infrastructure 
+                (GitHub, Vercel free tier, etc.), but we offer properly priced plans for new Post Singularity products and services.
+            </p>
+            <p style="margin-top: 20px;">
+                <a href="https://nspfrp-post-singularity-fsr.vercel.app">🌐 Try It Now</a> | 
+                <a href="FRACTIAI_CONTROL_CENTER_LANDING.html">🎨 Control Center</a> | 
+                <a href="FULLY_GUIDED_PITCH_WITH_VALUATION_AND_SERVICES.html">📊 Full Details</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
