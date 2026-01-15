@@ -6,12 +6,11 @@
 
 import {
   Protocol,
-  ProtocolSnapshot,
-  SnapshotContext,
   AgentIdentity,
   AwarenessOctave,
   TransmissionGear
 } from '../types/index.js';
+import { ProtocolSnapshot } from '../protocols/protocol-snapshot.js';
 import { ProtocolSnapshotManager } from '../protocols/protocol-snapshot.js';
 import { TransmissionGearSelector } from '../core/transmission-gears.js';
 import { HeroHostOrchestrator } from '../core/hero-host.js';
@@ -101,7 +100,7 @@ export class VibeverseOSLayerSystem {
     target: LayerTarget,
     preservation: PreservationConfig,
     transformation: TransformationConfig,
-    agentIdentity: AgentIdentity
+    _agentIdentity: AgentIdentity
   ): Promise<VibeverseOSLayer> {
     // Create layer
     const layer: VibeverseOSLayer = {
@@ -259,7 +258,7 @@ export class VibeverseOSLayerSystem {
   async connectToHHSC(
     nodeId: string,
     nodeType: HHSCConnection['nodeType'],
-    agentIdentity: AgentIdentity
+    _agentIdentity: AgentIdentity
   ): Promise<HHSCConnection> {
     const connection: HHSCConnection = {
       id: this.generateConnectionId(),
@@ -378,7 +377,7 @@ export class VibeverseOSLayerSystem {
    */
   private async executeVibeCreate(
     capability: VibeCreateCapability,
-    input: Record<string, any>
+    _input: Record<string, any>
   ): Promise<Record<string, any>> {
     // In production, would execute actual vibe create
     return {

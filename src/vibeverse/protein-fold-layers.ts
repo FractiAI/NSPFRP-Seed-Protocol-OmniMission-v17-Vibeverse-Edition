@@ -138,7 +138,7 @@ export interface Layer {
 }
 
 export class ProteinFoldLayersSystem {
-  private layerSystem: VibeverseOSLayerSystem;
+  private _layerSystem: VibeverseOSLayerSystem;
   private snapshotManager: ProtocolSnapshotManager;
   private folds: Map<string, ProteinFoldLayer>;
   private densities: Map<string, MegaDensity>;
@@ -148,7 +148,7 @@ export class ProteinFoldLayersSystem {
     layerSystem: VibeverseOSLayerSystem,
     snapshotManager: ProtocolSnapshotManager
   ) {
-    this.layerSystem = layerSystem;
+    this._layerSystem = layerSystem;
     this.snapshotManager = snapshotManager;
     this.folds = new Map();
     this.densities = new Map();
@@ -161,7 +161,7 @@ export class ProteinFoldLayersSystem {
   async createProteinFoldLayer(
     seed: EverythingAsSeed,
     foldType: FoldType,
-    agentIdentity: AgentIdentity
+    _agentIdentity: AgentIdentity
   ): Promise<ProteinFoldLayer> {
     // Analyze seed structure
     const foldStructure = await this.analyzeSeedFold(seed, foldType);
@@ -194,22 +194,38 @@ export class ProteinFoldLayersSystem {
   async createMegaDensityLayer(
     seed: EverythingAsSeed,
     algorithm: DensityAlgorithm,
-    agentIdentity: AgentIdentity
+    _agentIdentity: AgentIdentity
   ): Promise<MegaDensity> {
     // Calculate mega density
-    const density = await this.calculateMegaDensity(seed, algorithm);
+    const densityCalc = await this.calculateMegaDensity(seed, algorithm);
 
     // Create density layers
     const layers = await this.createDensityLayers(seed, algorithm);
 
+    // Create temporary MegaDensity for mapping
+    const tempDensity: MegaDensity = {
+      algorithm,
+      density: densityCalc.totalDensity,
+      compression: densityCalc.compression,
+      efficiency: densityCalc.efficiency,
+      layers,
+      seedMapping: {
+        seedId: seed.id,
+        density: densityCalc.totalDensity,
+        position: [0, 0, 0],
+        neighbors: [],
+        interactions: 0
+      }
+    };
+
     // Map seed to density
-    const seedMapping = await this.mapSeedToDensity(seed, density);
+    const seedMapping = await this.mapSeedToDensity(seed, tempDensity);
 
     const megaDensity: MegaDensity = {
       algorithm,
-      density: density.totalDensity,
-      compression: density.compression,
-      efficiency: density.efficiency,
+      density: densityCalc.totalDensity,
+      compression: densityCalc.compression,
+      efficiency: densityCalc.efficiency,
       layers,
       seedMapping
     };
@@ -229,15 +245,24 @@ export class ProteinFoldLayersSystem {
     agentIdentity: AgentIdentity
   ): Promise<EverythingAsSeed> {
     // Encode entity as seed
-    const seed = await this.encodeAsSeed(entity, entityType);
+    const seedStructure = await this.encodeAsSeed(entity, entityType);
 
-    // Create layers
-    const layers = await this.createLayersForSeed(seed);
-
-    const everythingAsSeed: EverythingAsSeed = {
+    // Create temporary seed for layer creation
+    const tempSeed: EverythingAsSeed = {
       id: this.generateSeedId(),
       type: entityType,
-      seed,
+      seed: seedStructure,
+      layers: [],
+      createdAt: Date.now()
+    };
+
+    // Create layers
+    const layers = await this.createLayersForSeed(tempSeed);
+
+    const everythingAsSeed: EverythingAsSeed = {
+      id: tempSeed.id,
+      type: entityType,
+      seed: seedStructure,
       layers,
       createdAt: Date.now()
     };
@@ -349,8 +374,8 @@ export class ProteinFoldLayersSystem {
    */
   private async predictTertiaryStructure(
     primary: string,
-    secondary: string[],
-    foldType: FoldType
+    _secondary: string[],
+    _foldType: FoldType
   ): Promise<number[][]> {
     // In production, would use 3D structure prediction
     const coordinates: number[][] = [];
@@ -371,7 +396,7 @@ export class ProteinFoldLayersSystem {
    */
   private async predictQuaternaryStructure(
     tertiary: number[][],
-    seed: EverythingAsSeed
+    _seed: EverythingAsSeed
   ): Promise<QuaternaryStructure[]> {
     // In production, would predict multi-subunit structures
     return [{
@@ -384,7 +409,7 @@ export class ProteinFoldLayersSystem {
   /**
    * Calculate stability
    */
-  private async calculateStability(fold: FoldStructure): Promise<number> {
+  private async calculateStability(_fold: FoldStructure): Promise<number> {
     // In production, would use stability prediction algorithms
     return 0.85; // 0-1 scale
   }
@@ -392,7 +417,7 @@ export class ProteinFoldLayersSystem {
   /**
    * Calculate energy
    */
-  private async calculateEnergy(fold: FoldStructure): Promise<number> {
+  private async calculateEnergy(_fold: FoldStructure): Promise<number> {
     // In production, would calculate folding energy
     return -100; // kcal/mol (negative = stable)
   }
@@ -540,7 +565,7 @@ export class ProteinFoldLayersSystem {
    */
   private async encodeAsSeed(
     entity: any,
-    entityType: EverythingAsSeed['type']
+    _entityType: EverythingAsSeed['type']
   ): Promise<SeedStructure> {
     // Encode entity to seed sequence
     const sequence = this.encodeToSequence(entity);
