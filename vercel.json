@@ -3,11 +3,15 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/FRACTIAI_CONTROL_CENTER_LANDING.html"
+      "destination": "/OMNIMISSION_CRAFT_DASHBOARD_LANDCRUISER.html"
     },
     {
       "source": "/index.html",
-      "destination": "/FRACTIAI_CONTROL_CENTER_LANDING.html"
+      "destination": "/OMNIMISSION_CRAFT_DASHBOARD_LANDCRUISER.html"
+    },
+    {
+      "source": "/lewie",
+      "destination": "/OMNIMISSION_CRAFT_DASHBOARD_LANDCRUISER.html"
     },
     {
       "source": "/control-center",
