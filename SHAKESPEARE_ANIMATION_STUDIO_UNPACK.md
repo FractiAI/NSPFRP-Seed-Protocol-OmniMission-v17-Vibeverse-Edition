@@ -1,7 +1,7 @@
-# 🎭 William Shakespeare Animation Studio: NSPFRP Creator Language Unpack
+# 🎭 William Shakespeare Animation Studio: OmniMission Craft Unpack
 
 **Protocol ID:** `P-SHAKESPEARE-ANIMATION-UNPACK-V17`  
-**Type:** Protocol Unpacking / Creator Language Application  
+**Type:** Protocol Unpacking / OmniMission Craft Application  
 **Version:** 17.0+ShakespeareUnpack  
 **Status:** Active Development  
 **Network:** NSPFRP Care Network
@@ -10,36 +10,45 @@
 
 ## Overview
 
-The NSPFRP Creator Language is being used to unpack the William Shakespeare Animation Studio, demonstrating the language's capability to naturally analyze, understand, and integrate complex creative systems into the NSPFRP protocol ecosystem.
+**We are unpacking the William Shakespeare Animation Studio from the new OmniMission Craft**, demonstrating OmniMission Craft's capability to naturally discover, analyze, and integrate complex creative systems into the NSPFRP protocol ecosystem using the NSPFRP Creator Language.
 
 ---
 
 ## Unpacking Process
 
-### 1. Discovery Phase
+### 1. OmniMission Craft Discovery Phase
 
 ```nspfrp
+// OmniMission Craft mission to unpack Shakespeare Animation Studio
 mission UnpackShakespeareAnimationStudio {
   intent: {
-    type: 'discover',
-    goal: 'Unpack William Shakespeare Animation Studio using NSPFRP Creator Language'
+    type: 'unpack',
+    goal: 'Unpack William Shakespeare Animation Studio from OmniMission Craft'
   };
   octave: TRANSCENDENCE;
   
-  // Auto-discovery
+  // OmniMission Craft auto-discovery
   discover: {
-    repository: 'WilliamShakespeareAnimationStudio',
-    patterns: autoDetect(),
-    protocols: autoDiscover(),
-    structures: autoAnalyze()
+    source: 'OmniMissionCraft',
+    target: 'WilliamShakespeareAnimationStudio',
+    patterns: missionCraft.autoDetect(),
+    protocols: missionCraft.autoDiscover(),
+    structures: missionCraft.autoAnalyze()
   };
   
-  // Natural unpacking
+  // Natural unpacking through OmniMission Craft
   unpack: {
-    components: identify(),
-    relationships: map(),
-    capabilities: extract(),
-    protocols: generate()
+    components: missionCraft.identify(),
+    relationships: missionCraft.map(),
+    capabilities: missionCraft.extract(),
+    protocols: missionCraft.generate()
+  };
+  
+  // Creator Language integration
+  creatorLanguage: {
+    analyze: creatorLanguage.analyze(),
+    generate: creatorLanguage.generateProtocols(),
+    integrate: creatorLanguage.integrate()
   };
 }
 ```
