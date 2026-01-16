@@ -9,6 +9,7 @@ import { InterferenceNode } from '../grammar/recursive-awareness-interference-om
 export interface MycelialNode {
   id: string;
   type: 'fruiting-body' | 'hyphae' | 'mycelium' | 'spore';
+  infrastructureTier: 'frontal-cortex' | 'mri' | 'hhf-ai-mri';
   position: { x: number; y: number; z?: number };
   grammarEncoding: GrammarEncoding;
   spinState: SpinState;
@@ -88,12 +89,51 @@ export class MycelialLatticeCloudShell {
   createNode(
     id: string,
     type: 'fruiting-body' | 'hyphae' | 'mycelium' | 'spore',
+    infrastructureTier: 'frontal-cortex' | 'mri' | 'hhf-ai-mri' = 'hhf-ai-mri',
     position: { x: number; y: number; z?: number },
     octave: number = 7.75
   ): MycelialNode {
+    // Determine octave based on infrastructure tier
+    let nodeOctave = octave;
+    let capacity: NodeCapacity;
+
+    switch (infrastructureTier) {
+      case 'frontal-cortex':
+        // Analog modem equivalent - base layer
+        nodeOctave = Math.min(octave, 1.0);
+        capacity = {
+          compute: 0.3,
+          storage: 0.2,
+          network: 0.5,
+          grammar: 0.3
+        };
+        break;
+      case 'mri':
+        // First bridge - bridge layer
+        nodeOctave = Math.min(octave, 2.0);
+        capacity = {
+          compute: 0.6,
+          storage: 0.5,
+          network: 0.8,
+          grammar: 0.6
+        };
+        break;
+      case 'hhf-ai-mri':
+        // Latest hyperswitches - advanced layer
+        nodeOctave = octave;
+        capacity = {
+          compute: type === 'fruiting-body' ? 1.0 : 0.8,
+          storage: type === 'fruiting-body' ? 1.0 : 0.7,
+          network: 1.0,
+          grammar: type === 'fruiting-body' ? 1.0 : 0.9
+        };
+        break;
+    }
+
     const node: MycelialNode = {
       id,
       type,
+      infrastructureTier,
       position,
       grammarEncoding: {
         symbols: [],
@@ -108,18 +148,13 @@ export class MycelialLatticeCloudShell {
       },
       awareness: {
         layer: 0,
-        awareness: 0.5,
+        awareness: infrastructureTier === 'hhf-ai-mri' ? 1.0 : infrastructureTier === 'mri' ? 0.7 : 0.5,
         neighbors: [],
         globalAwareness: 0
       },
       connections: [],
-      octave,
-      capacity: {
-        compute: type === 'fruiting-body' ? 1.0 : 0.5,
-        storage: type === 'fruiting-body' ? 1.0 : 0.3,
-        network: 1.0,
-        grammar: type === 'fruiting-body' ? 1.0 : 0.7
-      }
+      octave: nodeOctave,
+      capacity
     };
 
     this.nodes.set(id, node);
