@@ -495,23 +495,23 @@ ${this.generateRecommendations(checks, overall).slice(0, 3).map(r => `- ${r}`).j
   }
 
   // Helper methods (stubs - implement based on actual protocol structure)
-  private extractDependenciesFromProtocol(protocol: Protocol | ProtocolObject): string[] {
+  private extractDependenciesFromProtocol(_protocol: Protocol | ProtocolObject): string[] {
     return []; // Implement based on protocol structure
   }
 
-  private isDependencyPortable(dep: string): boolean {
+  private isDependencyPortable(_dep: string): boolean {
     return true; // Implement dependency portability check
   }
 
-  private extractPlatformRequirements(protocol: Protocol | ProtocolObject): string[] {
+  private extractPlatformRequirements(_protocol: Protocol | ProtocolObject): string[] {
     return []; // Implement platform extraction
   }
 
-  private extractEnvVarsFromProtocol(protocol: Protocol | ProtocolObject): string[] {
+  private extractEnvVarsFromProtocol(_protocol: Protocol | ProtocolObject): string[] {
     return []; // Implement env var extraction
   }
 
-  private extractFileStructure(protocol: Protocol | ProtocolObject): any {
+  private extractFileStructure(_protocol: Protocol | ProtocolObject): any {
     return {}; // Implement file structure extraction
   }
 

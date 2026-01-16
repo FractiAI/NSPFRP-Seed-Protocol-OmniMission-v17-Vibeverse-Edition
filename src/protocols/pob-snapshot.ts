@@ -248,7 +248,7 @@ export class POBSnapshotManager {
   /**
    * Find parent POB for protocol
    */
-  private async findParentPOB(protocol: Protocol): Promise<ProtocolObject | null> {
+  private async findParentPOB(protocol: Protocol): Promise<ProtocolObject | undefined> {
     // Search for POBs with same protocol ID but earlier version
     const allPOBs = Array.from(this.pobs.values());
     const candidates = allPOBs
@@ -258,7 +258,7 @@ export class POBSnapshotManager {
       )
       .sort((a, b) => this.compareVersions(b.version, a.version));
 
-    return candidates[0] || null;
+    return candidates[0];
   }
 
   /**
@@ -286,8 +286,9 @@ export class POBSnapshotManager {
   private async loadPOB(pobId: string): Promise<ProtocolObject> {
     let pob = this.pobs.get(pobId);
     if (!pob) {
-      pob = await this.storage.load(pobId);
-      if (pob) {
+      const loadedPOB = await this.storage.load(pobId);
+      if (loadedPOB) {
+        pob = loadedPOB;
         this.pobs.set(pobId, pob);
       }
     }
@@ -338,7 +339,7 @@ export class POBSnapshotManager {
     if (protocol.dependencies && protocol.dependencies.length > 0) {
       const missing = protocol.dependencies.filter(d => !d.required).length;
       if (missing > 0) {
-        warnings.push(`${missing} optional dependencies may be missing`);
+        suggestions.push(`${missing} optional dependencies may be missing`);
       }
     }
 
@@ -363,18 +364,14 @@ export class POBSnapshotManager {
     // Apply context-specific adaptations
     if (newContext.gear && newContext.gear !== oldContext.gear) {
       // Adapt for different transmission gear
-      adapted.metadata = {
-        ...adapted.metadata,
-        adaptedForGear: newContext.gear.octave
-      };
+      // Store adaptation info in metadata (extended)
+      (adapted.metadata as any).adaptedForGear = newContext.gear.octave;
     }
 
     if (newContext.heroHost && newContext.heroHost !== oldContext.heroHost) {
       // Adapt for different hero host
-      adapted.metadata = {
-        ...adapted.metadata,
-        adaptedForHeroHost: newContext.heroHost.id
-      };
+      // Store adaptation info in metadata (extended)
+      (adapted.metadata as any).adaptedForHeroHost = newContext.heroHost.id;
     }
 
     return adapted;
@@ -402,11 +399,9 @@ export class POBSnapshotManager {
     evolved.version = this.incrementVersion(evolved.version);
 
     // Update metadata
-    evolved.metadata = {
-      ...evolved.metadata,
-      evolution: evolution.description,
-      evolvedAt: Date.now()
-    };
+    // Store evolution info in metadata (extended)
+    (evolved.metadata as any).evolution = evolution.description;
+    (evolved.metadata as any).evolvedAt = Date.now();
 
     return evolved;
   }
