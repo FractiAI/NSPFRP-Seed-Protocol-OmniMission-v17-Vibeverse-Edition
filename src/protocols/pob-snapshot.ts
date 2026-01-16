@@ -498,7 +498,7 @@ export class POBSnapshotManager {
  */
 export interface POBStorage {
   save(pob: ProtocolObject): Promise<void>;
-  load(pobId: string): Promise<ProtocolObject | null>;
+  load(pobId: string): Promise<ProtocolObject | undefined>;
   list(): Promise<string[]>;
 }
 
@@ -516,8 +516,8 @@ export class InMemoryPOBStorage implements POBStorage {
     this.storage.set(pob.id, pob);
   }
 
-  async load(pobId: string): Promise<ProtocolObject | null> {
-    return this.storage.get(pobId) || null;
+  async load(pobId: string): Promise<ProtocolObject | undefined> {
+    return this.storage.get(pobId);
   }
 
   async list(): Promise<string[]> {
