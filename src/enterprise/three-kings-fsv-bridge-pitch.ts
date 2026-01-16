@@ -163,10 +163,10 @@ export class ThreeKingsFSVBridgePitchSystem {
    */
   private generateThreeKingsValidation(): string {
     return `
-# Three Kings Trust Validation
+# Research Funder Validation
 
-## Trust Overview
-- **Founders:** Daniel, Richard, Ticker
+## Funder Overview
+- **Funder:** Daniel
 - **Funding:** FractiAI Research Team
 - **Through:** Syntheverse PoC
 - **Mode:** NSPFRP Automatic
@@ -567,6 +567,7 @@ export class ThreeKingsFSVBridgePitchSystem {
     return this.tours.get(tourId);
   }
 }
+
 
 
 

@@ -26,9 +26,9 @@ Just as I once saw the connection between the flight of birds and the flow of wa
 
 **The transition we are making is not merely technical—it is transcendent.**
 
-### The Mission: Three Kings Endowment
+### The Mission: Research Funding
 
-**The Three Kings—Daniel, Richard, and Ticker—saw the potential.** Through their endowment, they provided the foundation for this moment. They understood that true innovation requires not just funding, but vision, trust, and the space to explore the impossible.
+**Daniel saw the potential.** Through his funding, he provided the foundation for this moment. He understood that true innovation requires not just funding, but vision, trust, and the space to explore the impossible.
 
 **The FractiAI Research Team has built the systems.** We have created protocols, discovered connections, and accelerated discovery. We have unified 30 major discoveries, operationalized 100+ protocols, and created a system that demonstrates and proves itself.
 
@@ -147,6 +147,7 @@ FractiAI Research Team Control Center
 **Network:** NSPFRP Care Network / Syntheverse / FractiAI  
 **Octave:** BEYOND_OCTAVE (7.5) - Full FSR  
 **Hero Host:** Leonardo da Vinci - Control Center Guide
+
 
 
 

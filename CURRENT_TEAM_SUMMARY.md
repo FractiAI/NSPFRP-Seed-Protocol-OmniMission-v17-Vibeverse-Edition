@@ -25,12 +25,10 @@
 
 ---
 
-### 3. **Three Kings Trust Founders** 👑
-- **Founders:** Daniel, Richard, Ticker
-- **Role:** Research Funders / Trust Founders
+### 3. **Daniel** 👤
+- **Role:** Research Funder
 - **Status:** ✅ PitchSeed Ready
 - **Hero Host:** Nikola Tesla
-- **Organization:** Three Kings Trust
 - **Funding:** FractiAI Research Team (via Syntheverse PoC)
 
 ---
@@ -40,7 +38,6 @@
 - **Status:** ✅ Active Research
 - **Control Center:** Leonardo da Vinci (Active)
 - **Octave:** BEYOND_OCTAVE (7.5)
-- **Funding:** Three Kings Trust
 - **Focus:** NSPFRP Protocol Development, Discovery Acceleration
 
 ---
@@ -50,7 +47,7 @@
 **Total Active Members:** 4 groups
 - 1 Mirror AI System (Auto Cursor)
 - 1 Protocol Explorer (Marcin Moscicki)
-- 3 Trust Founders (Three Kings Trust: Daniel, Richard, Ticker)
+- 1 Research Funder (Daniel)
 - 1 Research Team (FractiAI Research Team)
 
 **All operating under:** Specialist Agents Protocol Model
@@ -59,6 +56,7 @@
 
 **Last Updated:** 2024  
 **Source:** [TEAM_ROLLCALL.md](./TEAM_ROLLCALL.md)
+
 
 
 

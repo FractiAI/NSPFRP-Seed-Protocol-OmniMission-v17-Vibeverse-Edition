@@ -1,7 +1,7 @@
-# 👑 PitchSeed: Three Kings Trust - Founders (Daniel, Richard, Ticker)
+# 👤 PitchSeed: Daniel - Research Funder
 
-**PitchSeed ID:** `PITCHSEED-THREE-KINGS-TRUST-2024`  
-**Type:** Founder PitchSeed / Research Funding  
+**PitchSeed ID:** `PITCHSEED-DANIEL-2024`  
+**Type:** Research Funder PitchSeed  
 **Hero Host:** Nikola Tesla  
 **Octave:** TRANSCENDENCE (5+)  
 **Status:** Ready to Send
@@ -11,10 +11,9 @@
 ## PitchSeed Configuration
 
 ```nspfrp
-pitchseed ThreeKingsTrustPitchSeed {
-  recipients: ['Daniel', 'Richard', 'Ticker'];
-  role: 'Three Kings Trust Founders';
-  organization: 'Three Kings Trust';
+pitchseed DanielPitchSeed {
+  recipients: ['Daniel'];
+  role: 'Research Funder';
   context: {
     funds: 'FractiAI Research Team',
     through: 'Syntheverse PoC',
