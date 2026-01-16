@@ -515,39 +515,39 @@ ${this.generateRecommendations(checks, overall).slice(0, 3).map(r => `- ${r}`).j
     return {}; // Implement file structure extraction
   }
 
-  private isStandardStructure(structure: any): boolean {
+  private isStandardStructure(_structure: any): boolean {
     return true; // Implement structure validation
   }
 
-  private extractAPIs(protocol: Protocol | ProtocolObject): string[] {
+  private extractAPIs(_protocol: Protocol | ProtocolObject): string[] {
     return []; // Implement API extraction
   }
 
-  private isAPIPortable(api: string): boolean {
+  private isAPIPortable(_api: string): boolean {
     return true; // Implement API portability check
   }
 
-  private requiresDataMigration(protocol: Protocol | ProtocolObject): boolean {
+  private requiresDataMigration(_protocol: Protocol | ProtocolObject): boolean {
     return false; // Implement migration check
   }
 
-  private extractConfiguration(protocol: Protocol | ProtocolObject): any {
+  private extractConfiguration(_protocol: Protocol | ProtocolObject): any {
     return {}; // Implement configuration extraction
   }
 
-  private isConfigurationPortable(config: any): boolean {
+  private isConfigurationPortable(_config: any): boolean {
     return true; // Implement configuration portability check
   }
 
-  private extractSecurityFeatures(protocol: Protocol | ProtocolObject): string[] {
+  private extractSecurityFeatures(_protocol: Protocol | ProtocolObject): string[] {
     return []; // Implement security feature extraction
   }
 
-  private analyzePerformance(protocol: Protocol | ProtocolObject): { isOptimal: boolean } {
+  private analyzePerformance(_protocol: Protocol | ProtocolObject): { isOptimal: boolean } {
     return { isOptimal: true }; // Implement performance analysis
   }
 
-  private hasDocumentation(protocol: Protocol | ProtocolObject): boolean {
+  private hasDocumentation(_protocol: Protocol | ProtocolObject): boolean {
     return true; // Implement documentation check
   }
 

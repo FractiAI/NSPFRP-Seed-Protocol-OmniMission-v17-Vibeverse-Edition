@@ -18,10 +18,10 @@ export interface QuantificationButton {
 }
 
 export class QuantificationButtonProtocol {
-  private _awarenessManager: NSPFRPNodeAwarenessManager;
+  // private _awarenessManager: NSPFRPNodeAwarenessManager; // Reserved for future use
 
   constructor() {
-    this._awarenessManager = new NSPFRPNodeAwarenessManager();
+    // this._awarenessManager = new NSPFRPNodeAwarenessManager(); // Reserved for future use
   }
 
   /**
