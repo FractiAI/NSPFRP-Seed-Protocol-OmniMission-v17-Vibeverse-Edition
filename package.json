@@ -1,11 +1,11 @@
 {
-  "name": "post-singularity-syntheverse-fsr-full-octave",
+  "name": "post-singularity-5-syntheverse-fsr-full-octave",
   "version": "1.0.0",
   "description": "Post Singularity Syntheverse FSR Full Octave Release - Auto-Unpack, Free, Backwards Compatible, Three-Tier Offering",
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "build": "tsc",
+    "build": "echo 'Post Singularity Static Layer: Build Skipped'",
     "dev": "tsx watch src/index.ts",
     "start": "node dist/index.js",
     "test": "vitest",
@@ -16,6 +16,7 @@
     "discover": "tsx src/cli/discover.ts",
     "sync": "tsx src/cli/sync.ts",
     "unpack": "tsx src/core/auto-unpack.ts",
+    "audit": "tsx src/cli/fidelity-audit.ts",
     "postinstall": "npm run unpack"
   },
   "keywords": [
@@ -62,4 +63,3 @@
     "node": ">=18.0.0"
   }
 }
-
