@@ -1,4 +1,5 @@
 # Creator Environment (contains secrets)
+.env
 .env.creator
 .env.local
 .env*.local
