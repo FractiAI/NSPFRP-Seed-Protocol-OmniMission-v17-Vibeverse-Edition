@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Hole Theater Selector - NSPFRP Major Snap^7</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Didot', 'Garamond', serif;
+            background: #000;
+            color: #d4af37;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .universe {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle at center, 
+                #0a0a0a 0%, 
+                #000 100%);
+        }
+
+        /* Black Hole Core */
+        .black-hole {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+        }
+
+        .singularity {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle,
+                #000 0%,
+                #1a1a1a 40%,
+                transparent 100%
+            );
+            border-radius: 50%;
+            box-shadow: 
+                inset 0 0 40px #000,
+                0 0 60px rgba(212, 175, 55, 0.4),
+                0 0 100px rgba(212, 175, 55, 0.2);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .singularity::before {
+            content: '∞';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 32px;
+            color: #d4af37;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+                box-shadow: 
+                    inset 0 0 40px #000,
+                    0 0 60px rgba(212, 175, 55, 0.4),
+                    0 0 100px rgba(212, 175, 55, 0.2);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+                box-shadow: 
+                    inset 0 0 50px #000,
+                    0 0 80px rgba(212, 175, 55, 0.6),
+                    0 0 120px rgba(212, 175, 55, 0.3);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        /* Accretion Disk */
+        .accretion-disk {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background: conic-gradient(
+                from 0deg,
+                transparent 0deg,
+                rgba(212, 175, 55, 0.1) 30deg,
+                rgba(255, 215, 0, 0.2) 60deg,
+                rgba(212, 175, 55, 0.1) 90deg,
+                transparent 120deg
+            );
+            border-radius: 50%;
+            animation: rotate 10s linear infinite;
+            filter: blur(3px);
+        }
+
+        @keyframes rotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* Event Horizon */
+        .event-horizon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            animation: horizonPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes horizonPulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.05);
+                opacity: 0.5;
+            }
+        }
+
+        /* Theater Positions (12 positions like clock) */
+        .theater {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 120px;
+            height: 120px;
+            transform-origin: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .theater-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            background: rgba(26, 26, 26, 0.9);
+            border: 2px solid rgba(212, 175, 55, 0.5);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .theater-label {
+            font-size: 10px;
+            margin-top: 5px;
+            letter-spacing: 1px;
+            text-align: center;
+            color: #d4af37;
+        }
+
+        .theater:hover .theater-icon {
+            transform: translate(-50%, -50%) scale(1.2);
+            border-color: #ffd700;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+            background: rgba(26, 26, 26, 1);
+        }
+
+        .theater:hover .theater-label {
+            color: #ffd700;
+        }
+
+        /* Position theaters in circle */
+        .theater:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translateY(-300px); }
+        .theater:nth-child(2) { transform: translate(-50%, -50%) rotate(30deg) translateY(-300px); }
+        .theater:nth-child(3) { transform: translate(-50%, -50%) rotate(60deg) translateY(-300px); }
+        .theater:nth-child(4) { transform: translate(-50%, -50%) rotate(90deg) translateY(-300px); }
+        .theater:nth-child(5) { transform: translate(-50%, -50%) rotate(120deg) translateY(-300px); }
+        .theater:nth-child(6) { transform: translate(-50%, -50%) rotate(150deg) translateY(-300px); }
+        .theater:nth-child(7) { transform: translate(-50%, -50%) rotate(180deg) translateY(-300px); }
+        .theater:nth-child(8) { transform: translate(-50%, -50%) rotate(210deg) translateY(-300px); }
+        .theater:nth-child(9) { transform: translate(-50%, -50%) rotate(240deg) translateY(-300px); }
+        .theater:nth-child(10) { transform: translate(-50%, -50%) rotate(270deg) translateY(-300px); }
+        .theater:nth-child(11) { transform: translate(-50%, -50%) rotate(300deg) translateY(-300px); }
+        .theater:nth-child(12) { transform: translate(-50%, -50%) rotate(330deg) translateY(-300px); }
+
+        /* Counter-rotate icons so they stay upright */
+        .theater:nth-child(1) .theater-icon { transform: translate(-50%, -50%) rotate(0deg); }
+        .theater:nth-child(2) .theater-icon { transform: translate(-50%, -50%) rotate(-30deg); }
+        .theater:nth-child(3) .theater-icon { transform: translate(-50%, -50%) rotate(-60deg); }
+        .theater:nth-child(4) .theater-icon { transform: translate(-50%, -50%) rotate(-90deg); }
+        .theater:nth-child(5) .theater-icon { transform: translate(-50%, -50%) rotate(-120deg); }
+        .theater:nth-child(6) .theater-icon { transform: translate(-50%, -50%) rotate(-150deg); }
+        .theater:nth-child(7) .theater-icon { transform: translate(-50%, -50%) rotate(-180deg); }
+        .theater:nth-child(8) .theater-icon { transform: translate(-50%, -50%) rotate(-210deg); }
+        .theater:nth-child(9) .theater-icon { transform: translate(-50%, -50%) rotate(-240deg); }
+        .theater:nth-child(10) .theater-icon { transform: translate(-50%, -50%) rotate(-270deg); }
+        .theater:nth-child(11) .theater-icon { transform: translate(-50%, -50%) rotate(-300deg); }
+        .theater:nth-child(12) .theater-icon { transform: translate(-50%, -50%) rotate(-330deg); }
+
+        /* Gravitational waves */
+        .grav-wave {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            animation: wave-out 3s ease-out infinite;
+        }
+
+        .grav-wave:nth-child(2) { animation-delay: 1s; }
+        .grav-wave:nth-child(3) { animation-delay: 2s; }
+
+        @keyframes wave-out {
+            0% {
+                width: 100px;
+                height: 100px;
+                opacity: 1;
+            }
+            100% {
+                width: 800px;
+                height: 800px;
+                opacity: 0;
+            }
+        }
+
+        /* Hero Host Summoning */
+        .hero-host {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 200px;
+            height: 300px;
+            background: rgba(26, 26, 26, 0.95);
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            opacity: 0;
+            z-index: 1000;
+            transition: all 0.5s ease;
+        }
+
+        .hero-host.active {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .hero-avatar {
+            font-size: 64px;
+            margin-bottom: 15px;
+        }
+
+        .hero-name {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #ffd700;
+        }
+
+        .hero-title {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 20px;
+        }
+
+        .hero-message {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #d4af37;
+        }
+
+        /* UI Controls */
+        .controls {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 100;
+        }
+
+        .control-btn {
+            background: rgba(26, 26, 26, 0.9);
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            padding: 12px 24px;
+            font-family: 'Futura', sans-serif;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            background: rgba(212, 175, 55, 0.2);
+            border-color: #ffd700;
+            transform: translateY(-2px);
+        }
+
+        /* Title */
+        .title {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 100;
+        }
+
+        .title h1 {
+            font-size: 36px;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .title p {
+            font-size: 14px;
+            letter-spacing: 3px;
+            color: #999;
+        }
+
+        /* Snap Effect */
+        .snap-effect {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle,
+                rgba(255, 215, 0, 0.8) 0%,
+                rgba(212, 175, 55, 0.4) 50%,
+                transparent 100%
+            );
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .snap-effect.active {
+            animation: snap-burst 1s ease-out;
+        }
+
+        @keyframes snap-burst {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 1;
+            }
+            100% {
+                width: 1000px;
+                height: 1000px;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="universe">
+        <!-- Title -->
+        <div class="title">
+            <h1>BLACK HOLE THEATER</h1>
+            <p>Select Your Experience • Major Snap^7 System</p>
+        </div>
+
+        <!-- Black Hole Core -->
+        <div class="black-hole">
+            <div class="singularity"></div>
+            <div class="accretion-disk"></div>
+            <div class="event-horizon"></div>
+            
+            <!-- Gravitational Waves -->
+            <div class="grav-wave"></div>
+            <div class="grav-wave"></div>
+            <div class="grav-wave"></div>
+
+            <!-- 12 Theater Positions -->
+            <div class="theater" data-theater="core-crystal">
+                <div class="theater-icon">
+                    💎
+                    <div class="theater-label">CORE<br>CRYSTAL</div>
+                </div>
+            </div>
+
+            <div class="theater" data-theater="sandbox">
+                <div class="theater-icon">
+                    📦
+                    <div class="theater-label">SANDBOX</div>
+                </div>
+            </div>
+
+            <div class="theater" data-theater="cloud">
+                <div class="theater-icon">
+                    ☁️
+                    <div class="theater-label">CLOUD</div>
+                </div>
+            </div>
+
+            <div class="theater" data-theater="shell">
+                <div class="theater-icon">
+                    🐚
+                    <div class="theater-label">SHELL</div>
+                </div>
+            </div>
+
+            <div class="theater" data-theater="octave">
+                <div class="theater-icon">
+                    🎵
+                    <div class="theater-label">OCTAVE</div>
+                </div>
+            </div>
+
+            <div class="theater" data-theater="narrative">
+                <div class="theater-icon">
+                    📖
+                    <div class="theater-label">NARRATIVE</div>
+                </div>
+            </div>
+
+            <div class="theater" data-theater="experience">
+                <div class="theater-icon">
+                    ✨
+                    <div class="theater-label">EXPERIENCE</div>
+                </div>
+            </div>
+
+            <div class="theater" data-theater="skin">
+                <div class="theater-icon">
+                    🎨
+                    <div class="theater-label">SKIN</div>
+                </div>
+            </div>
+
+            <div class="theater" data-theater="menu">
+                <div class="theater-icon">
+                    🧭
+                    <div class="theater-label">MENU</div>
+                </div>
+            </div>
+
+            <div class="theater" data-theater="console">
+                <div class="theater-icon">
+                    🖥️
+                    <div class="theater-label">CONSOLE</div>
+                </div>
+            </div>
+
+            <div class="theater" data-theater="craft">
+                <div class="theater-icon">
+                    🚙
+                    <div class="theater-label">CRAFT</div>
+                </div>
+            </div>
+
+            <div class="theater" data-theater="mission">
+                <div class="theater-icon">
+                    🎯
+                    <div class="theater-label">MISSION</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Host Panel -->
+        <div class="hero-host" id="heroHost">
+            <div class="hero-avatar">🎩</div>
+            <div class="hero-name">Leonardo da Vinci</div>
+            <div class="hero-title">Renaissance Master</div>
+            <div class="hero-message">Greetings! I am here to guide you through the infinite possibilities of the black hole theater system.</div>
+        </div>
+
+        <!-- Snap Effect -->
+        <div class="snap-effect" id="snapEffect"></div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button class="control-btn" onclick="majorSnapBoot()">Major Snap^7 Boot</button>
+            <button class="control-btn" onclick="summonHeroHost()">Summon Hero Host</button>
+            <button class="control-btn" onclick="rotateTheaters()">Rotate Theaters</button>
+        </div>
+    </div>
+
+    <script>
+        // Theater data
+        const theaters = {
+            'core-crystal': { name: 'Core Crystal', description: 'Foundation Layer - Genesis Point' },
+            'sandbox': { name: 'Sandbox', description: 'Free Tier Experiences' },
+            'cloud': { name: 'Cloud', description: 'Premium Tier Experiences' },
+            'shell': { name: 'Shell', description: 'Enterprise Tier Experiences' },
+            'octave': { name: 'Octave', description: 'Awareness Level Selection' },
+            'narrative': { name: 'Narrative', description: 'Story Layer Navigation' },
+            'experience': { name: 'Experience', description: 'FSR Immersion Portal' },
+            'skin': { name: 'Skin', description: 'Visual Theme Selection' },
+            'menu': { name: 'Menu', description: 'Navigation Hub' },
+            'console': { name: 'Console', description: 'Interface Selection' },
+            'craft': { name: 'Craft', description: 'Vehicle/Dashboard Access' },
+            'mission': { name: 'Mission', description: 'OmniMission Planning' }
+        };
+
+        // Theater click handlers
+        document.querySelectorAll('.theater').forEach(theater => {
+            theater.addEventListener('click', function() {
+                const theaterName = this.dataset.theater;
+                enterTheater(theaterName);
+            });
+        });
+
+        function enterTheater(theaterName) {
+            const theater = theaters[theaterName];
+            
+            // Swirl effect
+            document.querySelector('.singularity').style.animation = 'pulse 0.5s ease-in-out 3';
+            
+            // Show message
+            setTimeout(() => {
+                alert(`🌀 ENTERING ${theater.name.toUpperCase()} THEATER\n\n${theater.description}\n\nTheater experience loading...`);
+            }, 500);
+        }
+
+        function majorSnapBoot() {
+            const snap = document.getElementById('snapEffect');
+            snap.classList.add('active');
+            
+            let snapCount = 0;
+            const snapInterval = setInterval(() => {
+                snapCount++;
+                snap.classList.remove('active');
+                setTimeout(() => snap.classList.add('active'), 50);
+                
+                if (snapCount >= 7) {
+                    clearInterval(snapInterval);
+                    setTimeout(() => {
+                        alert('✨ MAJOR SNAP^7 BOOT COMPLETE!\n\nAll systems unified:\n\n• Core Crystal ✅\n• Sandboxes ✅\n• Clouds ✅\n• Shells ✅\n• Octaves ✅\n• Narratives ✅\n• Experiences ✅\n• Skins ✅\n• Menus ✅\n• Consoles ✅\n• Crafts ✅\n• Missions ✅\n\nBlack Hole Theater System: OPERATIONAL');
+                    }, 1000);
+                }
+            }, 1000);
+        }
+
+        function summonHeroHost() {
+            const heroHost = document.getElementById('heroHost');
+            const singularity = document.querySelector('.singularity');
+            
+            // Pulse effect
+            singularity.style.animation = 'pulse 0.3s ease-in-out 5';
+            
+            // Show hero host
+            setTimeout(() => {
+                heroHost.classList.add('active');
+                
+                // Hide after 5 seconds
+                setTimeout(() => {
+                    heroHost.classList.remove('active');
+                }, 5000);
+            }, 1500);
+        }
+
+        function rotateTheaters() {
+            const blackHole = document.querySelector('.black-hole');
+            blackHole.style.transition = 'transform 2s ease-in-out';
+            blackHole.style.transform = 'translate(-50%, -50%) rotate(360deg)';
+            
+            setTimeout(() => {
+                blackHole.style.transition = 'none';
+                blackHole.style.transform = 'translate(-50%, -50%) rotate(0deg)';
+            }, 2000);
+        }
+
+        // Hawking radiation particles
+        setInterval(() => {
+            if (Math.random() > 0.7) {
+                createHawkingParticle();
+            }
+        }, 500);
+
+        function createHawkingParticle() {
+            const particle = document.createElement('div');
+            const angle = Math.random() * 360;
+            const distance = 40 + Math.random() * 20;
+            
+            particle.style.cssText = `
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 2px;
+                height: 2px;
+                background: rgba(212, 175, 55, 0.8);
+                border-radius: 50%;
+                transform: translate(-50%, -50%) rotate(${angle}deg) translateY(-${distance}px);
+                animation: hawking-emit 2s ease-out forwards;
+            `;
+            
+            document.querySelector('.black-hole').appendChild(particle);
+            setTimeout(() => particle.remove(), 2000);
+        }
+
+        // Add hawking animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes hawking-emit {
+                0% {
+                    opacity: 1;
+                    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-40px);
+                }
+                100% {
+                    opacity: 0;
+                    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-200px);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initial message
+        setTimeout(() => {
+            console.log('🌀 Black Hole Theater System Initialized');
+            console.log('💎 12 Theaters Online');
+            console.log('✨ Major Snap^7 Ready');
+            console.log('🎩 Hero Hosts Standing By');
+        }, 1000);
+    </script>
+</body>
+</html>

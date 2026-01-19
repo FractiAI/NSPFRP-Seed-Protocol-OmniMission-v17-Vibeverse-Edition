@@ -1,0 +1,698 @@
+/**
+ * Members Only Men's Club - Infinite Octaves Edition
+ * Visual Skin & Stylesheet
+ * Version: 1.0.0
+ * Date: January 19, 2026
+ * 
+ * Brand: Timeless Sophistication Meets Infinite Possibility
+ * Style: Old School Class + New World Power
+ */
+
+/* ===================================
+   ROOT VARIABLES - Midnight Gold Standard
+   =================================== */
+
+:root {
+    /* Primary Colors */
+    --momc-midnight-black: #0a0a0a;
+    --momc-deep-charcoal: #1a1a1a;
+    --momc-burnished-gold: #d4af37;
+    --momc-champagne-gold: #ffd700;
+    --momc-cognac-bronze: #8b7355;
+    
+    /* Secondary Colors */
+    --momc-rich-mahogany: #4a2c2a;
+    --momc-deep-burgundy: #5c0a0a;
+    --momc-pearl-white: #f5f5f5;
+    --momc-steel-gray: #4a4a4a;
+    --momc-midnight-blue: #0f1419;
+    
+    /* Typography */
+    --momc-font-heading: 'Didot', 'Bodoni', 'Garamond', serif;
+    --momc-font-body: 'Minion Pro', 'Garamond', 'Georgia', serif;
+    --momc-font-accent: 'Futura', 'Avenir Next', sans-serif;
+    --momc-font-code: 'Monaco', 'Courier New', monospace;
+    
+    /* Type Scale */
+    --momc-text-mega: 72px;
+    --momc-text-huge: 48px;
+    --momc-text-large: 36px;
+    --momc-text-medium: 24px;
+    --momc-text-body: 18px;
+    --momc-text-small: 14px;
+    
+    /* Octave-Based Spacing */
+    --momc-space-0: 8px;
+    --momc-space-1: 16px;
+    --momc-space-2: 32px;
+    --momc-space-3: 64px;
+    --momc-space-4: 128px;
+    --momc-space-5: 256px;
+    --momc-space-6: 512px;
+    --momc-space-7: 1024px;
+    
+    /* Shadows & Effects */
+    --momc-shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --momc-shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --momc-shadow-strong: 0 8px 32px rgba(0, 0, 0, 0.5);
+    --momc-shadow-gold: 0 0 20px rgba(212, 175, 55, 0.4);
+    --momc-shadow-gold-strong: 0 0 40px rgba(212, 175, 55, 0.6);
+    
+    /* Borders */
+    --momc-border-thin: 1px solid var(--momc-burnished-gold);
+    --momc-border-medium: 2px solid var(--momc-burnished-gold);
+    --momc-border-thick: 4px solid var(--momc-burnished-gold);
+    
+    /* Transitions */
+    --momc-transition-fast: 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    --momc-transition-normal: 400ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    --momc-transition-slow: 600ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    --momc-transition-elegant: 800ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* ===================================
+   BASE STYLES
+   =================================== */
+
+body.momc-theme {
+    font-family: var(--momc-font-body);
+    font-size: var(--momc-text-body);
+    line-height: 1.618; /* Golden Ratio */
+    color: var(--momc-pearl-white);
+    background: var(--momc-midnight-black);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* ===================================
+   TYPOGRAPHY
+   =================================== */
+
+.momc-heading-mega {
+    font-family: var(--momc-font-heading);
+    font-size: var(--momc-text-mega);
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    margin: 0;
+    color: var(--momc-burnished-gold);
+    text-shadow: var(--momc-shadow-gold);
+}
+
+.momc-heading-huge {
+    font-family: var(--momc-font-heading);
+    font-size: var(--momc-text-huge);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    line-height: 1.3;
+    margin: 0;
+    color: var(--momc-burnished-gold);
+}
+
+.momc-heading-large {
+    font-family: var(--momc-font-heading);
+    font-size: var(--momc-text-large);
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+    margin: 0;
+    color: var(--momc-champagne-gold);
+}
+
+.momc-heading-medium {
+    font-family: var(--momc-font-heading);
+    font-size: var(--momc-text-medium);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--momc-pearl-white);
+}
+
+.momc-body-text {
+    font-family: var(--momc-font-body);
+    font-size: var(--momc-text-body);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.618;
+    color: var(--momc-pearl-white);
+}
+
+.momc-small-text {
+    font-family: var(--momc-font-body);
+    font-size: var(--momc-text-small);
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    line-height: 1.5;
+    color: rgba(245, 245, 245, 0.7);
+}
+
+.momc-accent-text {
+    font-family: var(--momc-font-accent);
+    font-size: var(--momc-text-body);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--momc-burnished-gold);
+}
+
+/* ===================================
+   LAYOUT COMPONENTS
+   =================================== */
+
+.momc-container {
+    max-width: 1618px; /* Golden ratio × 1000 */
+    margin: 0 auto;
+    padding: 0 var(--momc-space-3);
+}
+
+.momc-section {
+    padding: var(--momc-space-4) 0;
+    position: relative;
+}
+
+.momc-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--momc-space-2);
+}
+
+.momc-flex {
+    display: flex;
+    gap: var(--momc-space-2);
+}
+
+.momc-flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===================================
+   CARDS & PANELS
+   =================================== */
+
+.momc-card {
+    background: var(--momc-deep-charcoal);
+    border: var(--momc-border-thin);
+    border-radius: 4px;
+    padding: var(--momc-space-2);
+    transition: all var(--momc-transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.momc-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%,
+        var(--momc-burnished-gold) 50%,
+        transparent 100%
+    );
+    transform: translateX(-100%);
+    transition: transform var(--momc-transition-elegant);
+}
+
+.momc-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--momc-shadow-gold);
+    border-color: var(--momc-champagne-gold);
+}
+
+.momc-card:hover::before {
+    transform: translateX(100%);
+}
+
+.momc-panel {
+    background: linear-gradient(135deg, 
+        var(--momc-midnight-black) 0%,
+        var(--momc-deep-charcoal) 50%,
+        var(--momc-midnight-black) 100%
+    );
+    border: var(--momc-border-medium);
+    border-radius: 8px;
+    padding: var(--momc-space-3);
+    box-shadow: var(--momc-shadow-strong);
+    position: relative;
+}
+
+.momc-panel-luxury {
+    background: linear-gradient(135deg,
+        var(--momc-rich-mahogany) 0%,
+        var(--momc-deep-charcoal) 100%
+    );
+    border: var(--momc-border-medium);
+    border-radius: 8px;
+    padding: var(--momc-space-3);
+    box-shadow: 0 8px 32px rgba(74, 44, 42, 0.4);
+}
+
+/* ===================================
+   BUTTONS
+   =================================== */
+
+.momc-button {
+    font-family: var(--momc-font-accent);
+    font-size: var(--momc-text-body);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: var(--momc-space-1) var(--momc-space-3);
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all var(--momc-transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.momc-button-primary {
+    background: linear-gradient(135deg,
+        var(--momc-burnished-gold) 0%,
+        var(--momc-champagne-gold) 50%,
+        var(--momc-burnished-gold) 100%
+    );
+    color: var(--momc-midnight-black);
+    box-shadow: var(--momc-shadow-gold);
+}
+
+.momc-button-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--momc-shadow-gold-strong);
+}
+
+.momc-button-secondary {
+    background: transparent;
+    color: var(--momc-burnished-gold);
+    border: var(--momc-border-thin);
+}
+
+.momc-button-secondary:hover {
+    background: rgba(212, 175, 55, 0.1);
+    border-color: var(--momc-champagne-gold);
+}
+
+.momc-button-ghost {
+    background: transparent;
+    color: var(--momc-pearl-white);
+    border: 1px solid var(--momc-steel-gray);
+}
+
+.momc-button-ghost:hover {
+    border-color: var(--momc-burnished-gold);
+    color: var(--momc-burnished-gold);
+}
+
+/* ===================================
+   MEMBERSHIP TIERS
+   =================================== */
+
+.momc-tier-foundation {
+    border-color: var(--momc-burnished-gold);
+    background: linear-gradient(135deg,
+        rgba(212, 175, 55, 0.05) 0%,
+        transparent 100%
+    );
+}
+
+.momc-tier-foundation::before {
+    content: '●';
+    position: absolute;
+    top: var(--momc-space-1);
+    right: var(--momc-space-1);
+    font-size: var(--momc-text-medium);
+    color: var(--momc-burnished-gold);
+}
+
+.momc-tier-executive {
+    border-color: var(--momc-champagne-gold);
+    background: linear-gradient(135deg,
+        rgba(255, 215, 0, 0.08) 0%,
+        transparent 100%
+    );
+}
+
+.momc-tier-executive::before {
+    content: '◆';
+    position: absolute;
+    top: var(--momc-space-1);
+    right: var(--momc-space-1);
+    font-size: var(--momc-text-medium);
+    color: var(--momc-champagne-gold);
+}
+
+.momc-tier-infinite {
+    border: 2px solid transparent;
+    background: 
+        linear-gradient(var(--momc-deep-charcoal), var(--momc-deep-charcoal)) padding-box,
+        linear-gradient(135deg, 
+            var(--momc-burnished-gold) 0%,
+            var(--momc-champagne-gold) 50%,
+            var(--momc-pearl-white) 100%
+        ) border-box;
+}
+
+.momc-tier-infinite::before {
+    content: '∞';
+    position: absolute;
+    top: var(--momc-space-1);
+    right: var(--momc-space-1);
+    font-size: var(--momc-text-medium);
+    background: linear-gradient(135deg,
+        var(--momc-burnished-gold),
+        var(--momc-champagne-gold),
+        var(--momc-pearl-white)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ===================================
+   CLUB CREST
+   =================================== */
+
+.momc-crest {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    border: var(--momc-border-medium);
+    border-radius: 50%;
+    background: radial-gradient(circle,
+        var(--momc-deep-charcoal) 0%,
+        var(--momc-midnight-black) 100%
+    );
+    position: relative;
+    box-shadow: var(--momc-shadow-gold);
+}
+
+.momc-crest::before {
+    content: '∞';
+    font-size: 32px;
+    color: var(--momc-burnished-gold);
+    font-family: var(--momc-font-heading);
+}
+
+.momc-crest::after {
+    content: '🎩';
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+}
+
+/* ===================================
+   BACKGROUNDS & EFFECTS
+   =================================== */
+
+.momc-bg-black-hole {
+    background: radial-gradient(circle at center,
+        transparent 0%,
+        rgba(212, 175, 55, 0.03) 30%,
+        rgba(10, 10, 10, 0.8) 60%,
+        var(--momc-midnight-black) 100%
+    );
+    position: relative;
+}
+
+.momc-bg-black-hole::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    animation: momc-rotate 60s linear infinite;
+}
+
+@keyframes momc-rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.momc-bg-leather {
+    background-image: 
+        linear-gradient(rgba(74, 44, 42, 0.8), rgba(74, 44, 42, 0.8)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise"><feTurbulence baseFrequency="0.9" /></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.05" /></svg>');
+    background-blend-mode: overlay;
+}
+
+.momc-bg-mahogany {
+    background: 
+        linear-gradient(135deg,
+            rgba(74, 44, 42, 0.9) 0%,
+            rgba(26, 26, 26, 0.9) 100%
+        ),
+        repeating-linear-gradient(90deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.1) 2px,
+            rgba(0, 0, 0, 0.1) 4px
+        );
+}
+
+/* ===================================
+   INFINITE OCTAVE EFFECTS
+   =================================== */
+
+.momc-octave-pulse {
+    animation: momc-pulse 3s ease-in-out infinite;
+}
+
+@keyframes momc-pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    }
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
+    }
+}
+
+.momc-vortex-enter {
+    animation: momc-vortex 2s cubic-bezier(0.6, 0.0, 0.4, 1) forwards;
+}
+
+@keyframes momc-vortex {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.5) rotate(360deg);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(0) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.momc-fade-rise {
+    animation: momc-fade-rise 600ms cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+}
+
+@keyframes momc-fade-rise {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===================================
+   MEMBERSHIP BADGE
+   =================================== */
+
+.momc-membership-badge {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--momc-space-2);
+    background: var(--momc-deep-charcoal);
+    border: var(--momc-border-thin);
+    border-radius: 8px;
+    min-width: 200px;
+    text-align: center;
+}
+
+.momc-badge-symbol {
+    font-size: 48px;
+    margin-bottom: var(--momc-space-1);
+    color: var(--momc-burnished-gold);
+}
+
+.momc-badge-name {
+    font-family: var(--momc-font-heading);
+    font-size: var(--momc-text-medium);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    color: var(--momc-pearl-white);
+    margin-bottom: var(--momc-space-0);
+}
+
+.momc-badge-since {
+    font-family: var(--momc-font-accent);
+    font-size: var(--momc-text-small);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--momc-steel-gray);
+    margin-bottom: var(--momc-space-1);
+}
+
+.momc-badge-tier {
+    font-family: var(--momc-font-accent);
+    font-size: var(--momc-text-small);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--momc-burnished-gold);
+    padding: var(--momc-space-0) var(--momc-space-1);
+    border: 1px solid var(--momc-burnished-gold);
+    border-radius: 2px;
+}
+
+/* ===================================
+   DIVIDERS
+   =================================== */
+
+.momc-divider {
+    height: 1px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        var(--momc-burnished-gold) 50%,
+        transparent 100%
+    );
+    margin: var(--momc-space-3) 0;
+}
+
+.momc-divider-thick {
+    height: 2px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        var(--momc-champagne-gold) 50%,
+        transparent 100%
+    );
+    margin: var(--momc-space-3) 0;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+/* ===================================
+   SPARKLE EFFECTS
+   =================================== */
+
+.momc-sparkle {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: var(--momc-burnished-gold);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: momc-sparkle 1s ease-out forwards;
+    z-index: 9998;
+}
+
+@keyframes momc-sparkle {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+@media (max-width: 1024px) {
+    .momc-container {
+        padding: 0 var(--momc-space-2);
+    }
+    
+    .momc-heading-mega {
+        font-size: 48px;
+    }
+    
+    .momc-heading-huge {
+        font-size: 36px;
+    }
+    
+    .momc-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .momc-heading-mega {
+        font-size: 36px;
+        letter-spacing: 0.05em;
+    }
+    
+    .momc-heading-huge {
+        font-size: 28px;
+    }
+    
+    .momc-heading-large {
+        font-size: 24px;
+    }
+    
+    .momc-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .momc-section {
+        padding: var(--momc-space-3) 0;
+    }
+}
+
+/* ===================================
+   UTILITY CLASSES
+   =================================== */
+
+.momc-text-center { text-align: center; }
+.momc-text-left { text-align: left; }
+.momc-text-right { text-align: right; }
+
+.momc-gold { color: var(--momc-burnished-gold); }
+.momc-champagne { color: var(--momc-champagne-gold); }
+.momc-white { color: var(--momc-pearl-white); }
+
+.momc-mt-0 { margin-top: var(--momc-space-0); }
+.momc-mt-1 { margin-top: var(--momc-space-1); }
+.momc-mt-2 { margin-top: var(--momc-space-2); }
+.momc-mt-3 { margin-top: var(--momc-space-3); }
+.momc-mt-4 { margin-top: var(--momc-space-4); }
+
+.momc-mb-0 { margin-bottom: var(--momc-space-0); }
+.momc-mb-1 { margin-bottom: var(--momc-space-1); }
+.momc-mb-2 { margin-bottom: var(--momc-space-2); }
+.momc-mb-3 { margin-bottom: var(--momc-space-3); }
+.momc-mb-4 { margin-bottom: var(--momc-space-4); }
+
+.momc-p-0 { padding: var(--momc-space-0); }
+.momc-p-1 { padding: var(--momc-space-1); }
+.momc-p-2 { padding: var(--momc-space-2); }
+.momc-p-3 { padding: var(--momc-space-3); }
+.momc-p-4 { padding: var(--momc-space-4); }
+
+/* ===================================
+   END OF STYLESHEET
+   =================================== */
