@@ -27,7 +27,51 @@ export interface CertificationTrack {
   };
 }
 
-// ========== SNAP 12.2: ASSESSMENT SYSTEM ==========
+// ========== SNAP 12.2: ASSESSMENT SYSTEM (+ INTERACTIVE LABS) ==========
+
+export interface Lab {
+  id: string;
+  courseCode: string;
+  week: number;
+  title: string;
+  type: 'PHYSICAL' | 'FSR_IMMERSION' | 'HOLOGRAPHIC' | 'SIMULATION' | 'COLLABORATIVE' | 'FIELD';
+  duration: number; // minutes
+  objectives: string[];
+  equipment: string[];
+  procedure: string[];
+  safetyProtocols: string[];
+  deliverables: string[];
+  passingCriteria: string[];
+  weight: number; // % of course grade (labs = 30% total)
+}
+
+export interface LabReport {
+  labId: string;
+  studentId: string;
+  objective: string;
+  procedure: string;
+  observations: string;
+  data: any; // Measurements, photos, FSR recordings
+  analysis: string;
+  conclusions: string;
+  reflections: string;
+  submittedAt: Date;
+}
+
+export interface LabResult {
+  labId: string;
+  studentId: string;
+  preparation: number; // 0-10
+  participation: number; // 0-20
+  technique: number; // 0-30
+  results: number; // 0-20
+  documentation: number; // 0-20
+  totalScore: number; // 0-100
+  passed: boolean; // >= 70
+  feedback: string;
+  canRetry: boolean;
+  gradedAt: Date;
+}
 
 export interface Quiz {
   id: string;
@@ -555,7 +599,74 @@ export class CompleteUniversitySystem {
     };
   }
   
-  // ========== SNAP 12.2: ASSESSMENT SYSTEM ==========
+  // ========== SNAP 12.2: ASSESSMENT SYSTEM (+ INTERACTIVE LABS) ==========
+  
+  async submitLab(
+    studentId: string,
+    courseCode: string,
+    labId: string,
+    labReport: Partial<LabReport>
+  ): Promise<LabResult> {
+    
+    // Validate lab report
+    if (!labReport.objective || !labReport.observations || !labReport.conclusions) {
+      throw new Error('Incomplete lab report');
+    }
+    
+    // Grade lab (simulated - would use rubric)
+    const preparation = Math.floor(Math.random() * 3) + 8; // 8-10
+    const participation = Math.floor(Math.random() * 5) + 16; // 16-20
+    const technique = Math.floor(Math.random() * 10) + 21; // 21-30
+    const results = Math.floor(Math.random() * 5) + 16; // 16-20
+    const documentation = Math.floor(Math.random() * 5) + 16; // 16-20
+    
+    const totalScore = preparation + participation + technique + results + documentation;
+    const passed = totalScore >= 70;
+    
+    const labResult: LabResult = {
+      labId,
+      studentId,
+      preparation,
+      participation,
+      technique,
+      results,
+      documentation,
+      totalScore,
+      passed,
+      feedback: passed 
+        ? 'Excellent lab work! You demonstrated mastery of techniques.'
+        : 'Lab performance needs improvement. You may redo this lab once.',
+      canRetry: !passed,
+      gradedAt: new Date()
+    };
+    
+    // Record in grade book
+    this.recordGrade(studentId, courseCode, {
+      id: `LAB-${Date.now()}`,
+      studentId,
+      assessmentId: labId,
+      assessmentType: 'LAB',
+      score: totalScore,
+      pointsEarned: totalScore,
+      pointsTotal: 100,
+      letterGrade: this.calculateLetterGrade(totalScore),
+      passed,
+      feedback: labResult.feedback,
+      submittedAt: new Date(),
+      gradedAt: new Date(),
+      revisionAvailable: !passed,
+      attemptNumber: 1
+    });
+    
+    console.log(`🔬 Lab ${labId}: ${totalScore}% (${passed ? 'PASS' : 'FAIL - Retry available'})`);
+    console.log(`   Preparation: ${preparation}/10`);
+    console.log(`   Participation: ${participation}/20`);
+    console.log(`   Technique: ${technique}/30`);
+    console.log(`   Results: ${results}/20`);
+    console.log(`   Documentation: ${documentation}/20`);
+    
+    return labResult;
+  }
   
   async submitQuiz(
     studentId: string,
