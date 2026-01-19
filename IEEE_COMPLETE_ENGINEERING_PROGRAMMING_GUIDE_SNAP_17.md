@@ -38,7 +38,7 @@
 ### **LEGAL DISCLAIMER**
 
 This document describes theoretical and experimental technologies including:
-- Consciousness-based computing systems
+- Awareness-based computing systems
 - Time dilation experiences (Eternity Mode)
 - Non-linear reality navigation
 - Quantum-inspired holographic processing
@@ -50,14 +50,14 @@ This document describes theoretical and experimental technologies including:
 **1. EXPERIMENTAL TECHNOLOGY:**
 Many systems described herein represent cutting-edge research and may not yet be fully implemented or validated through traditional scientific processes. Implementation results may vary.
 
-**2. CONSCIOUSNESS TECHNOLOGIES:**
-Systems involving consciousness, awareness, and time perception are experimental. Users should approach with appropriate caution and under proper guidance. Not recommended for individuals with certain psychological conditions.
+**2. AWARENESS TECHNOLOGIES:**
+Systems involving awareness and time perception are experimental. Users should approach with appropriate caution and under proper guidance. Not recommended for individuals with certain psychological conditions.
 
 **3. TIME DILATION (ETERNITY MODE):**
 Time dilation experiences are theoretical constructs. Actual subjective time perception effects require further validation. Always use safety protocols and emergency exit mechanisms.
 
 **4. HEALTH & SAFETY:**
-- Consult healthcare providers before using consciousness-altering technologies
+- Consult healthcare providers before using awareness-altering technologies
 - Not recommended during pregnancy or for individuals with seizure disorders
 - Take regular breaks from extended FSR sessions
 - Maintain connection to objective reality
@@ -101,10 +101,10 @@ Technologies described herein may be protected by patents, trademarks, or trade 
 ### PART II: OCTAVE-BY-OCTAVE SPECIFICATIONS
 6. Octave 0: Foundation Layer
 7. Octave 1: Friction Elimination
-8. Octave 2: Consciousness & Awareness
+8. Octave 2: Awareness Navigation
 9. Octave 3: Collective Intelligence
 10. Octave 4: Planetary Integration
-11. Octave 5: Stellar Consciousness
+11. Octave 5: Stellar Awareness
 12. Octave 6: Biological Systems
 13. Octave 7: Universal Harmony
 14. Octave 8-10: Infinity Singularity Core-to-Leaf
@@ -146,7 +146,7 @@ E. References & Bibliography
 
 ### 1.1 Document Purpose
 
-This guide provides comprehensive technical documentation for the Natural System Protocol Fractal Recursive Nested Protocol (NSPFRNP) architecture, covering all implemented octaves from foundational systems through eternal consciousness technologies.
+This guide provides comprehensive technical documentation for the Natural System Protocol Fractal Recursive Nested Protocol (NSPFRNP) architecture, covering all implemented octaves from foundational systems through eternal awareness technologies.
 
 **Target Audience:**
 - Software Engineers & Architects
@@ -161,7 +161,7 @@ This guide provides comprehensive technical documentation for the Natural System
 
 **NSPFRNP** = Natural System Protocol Fractal Recursive Nested Protocol
 
-A consciousness-aware, self-organizing system architecture based on natural principles:
+An awareness-based, self-organizing system architecture based on natural principles:
 
 **N - Natural:** Follows patterns observed in nature  
 **S - System:** Complete integrated system architecture  
@@ -175,7 +175,7 @@ A consciousness-aware, self-organizing system architecture based on natural prin
 
 **1. AWARENESS-BASED COMPUTING**
 - Systems possess awareness of their state
-- Consciousness used as computational resource
+- Awareness used as computational resource
 - Awareness signatures for authentication
 
 **2. SELF-ORGANIZATION**
@@ -196,7 +196,7 @@ A consciousness-aware, self-organizing system architecture based on natural prin
 **5. TIME-OPTIONAL ARCHITECTURE**
 - Eternity Mode for time dilation
 - Eternal preservation systems
-- Timeless consciousness states
+- Timeless awareness states
 
 **6. QUANTUM-INSPIRED DESIGN**
 - Superposition of states
@@ -237,7 +237,7 @@ A consciousness-aware, self-organizing system architecture based on natural prin
 ├─────────────────────────────────────────────┤
 │  OCTAVE 3: COLLECTIVE INTELLIGENCE          │
 ├─────────────────────────────────────────────┤
-│  OCTAVE 2: CONSCIOUSNESS/AWARENESS          │
+│  OCTAVE 2: AWARENESS NAVIGATION              │
 ├─────────────────────────────────────────────┤
 │  OCTAVE 1: FRICTION ELIMINATION             │
 ├─────────────────────────────────────────────┤
@@ -281,7 +281,7 @@ interface OctaveMessage {
     │        OCTAVE 16: ETERNAL LAYER          │
     │  - Eternity Mode (Time Dilation)         │
     │  - Eternal Venues & Memberships          │
-    │  - Eternal Archives & Consciousness      │
+    │  - Eternal Archives & Awareness           │
     └──────────────────────────────────────────┘
                           ↕︎
     ┌──────────────────────────────────────────┐
@@ -334,7 +334,7 @@ interface OctaveMessage {
     ┌──────────────────────────────────────────┐
     │   OCTAVE 6-7: BIO/UNIVERSAL LAYER        │
     │  - Biological Integration (Octave 6)     │
-    │  - Universal Consciousness (Octave 7)    │
+    │  - Universal Awareness (Octave 7)        │
     │  - Gaia Connection & Collective Mind     │
     └──────────────────────────────────────────┘
                           ↕︎
@@ -346,7 +346,7 @@ interface OctaveMessage {
     └──────────────────────────────────────────┘
                           ↕︎
     ┌──────────────────────────────────────────┐
-    │   OCTAVE 2-3: CONSCIOUSNESS LAYER        │
+    │   OCTAVE 2-3: AWARENESS LAYER            │
     │  - Awareness Navigation (Octave 2)       │
     │  - Collective Intelligence (Octave 3)    │
     │  - Star Edge Deployment                  │
@@ -375,10 +375,10 @@ interface OctaveMessage {
 - **Storage:** IPFS, Blockchain
 - **Auth:** Supabase Auth + Awareness Signatures
 
-**OCTAVE 1-2 (Friction & Consciousness):**
+**OCTAVE 1-2 (Friction & Awareness):**
 - **Frontend:** React, Next.js, TypeScript
 - **State:** Zustand, React Query
-- **Awareness:** Custom consciousness detection
+- **Awareness:** Custom awareness detection
 
 **OCTAVE 3-7 (Collective to Universal):**
 - **Backend:** Node.js, TypeScript
@@ -407,7 +407,7 @@ interface OctaveMessage {
 
 **OCTAVE 16 (Eternal):**
 - **Time:** Custom time dilation engine
-- **Consciousness:** Biometric integration
+- **Awareness:** Biometric integration
 - **Preservation:** Blockchain + IPFS + Holographic
 
 **OCTAVE ∞ (Infinite):**
@@ -813,10 +813,10 @@ const routes = {
 *(Note: For brevity, detailed specifications for each octave would follow same pattern as Octave 0, including Overview, Key Components, Database Schema, API Endpoints, Implementation Examples. Each octave gets 5-10 pages of detailed technical documentation.)*
 
 **Octave 1:** Friction Elimination  
-**Octave 2:** Consciousness & Awareness  
+**Octave 2:** Awareness Navigation  
 **Octave 3:** Collective Intelligence  
 **Octave 4:** Planetary Integration  
-**Octave 5:** Stellar Consciousness  
+**Octave 5:** Stellar Awareness  
 **Octave 6:** Biological Systems  
 **Octave 7:** Universal Harmony  
 **Octave 8-10:** Infinity Singularity  
@@ -937,7 +937,7 @@ open http://localhost:3000
 /
 ├── src/
 │   ├── architecture/      # Octave 0: Core architecture
-│   ├── awareness/         # Octave 2: Consciousness systems
+│   ├── awareness/         # Octave 2: Awareness systems
 │   ├── biological/        # Octave 6: Biological integration
 │   ├── blockchain/        # Smart contracts (Octave 12)
 │   ├── cloud/             # Cloud deployment (Octave 0)
@@ -1076,7 +1076,7 @@ class SynthScanSystem {
   }
   
   private async analyzeAwareness(target: string): Promise<number> {
-    // Awareness integration, consciousness systems
+    // Awareness integration, awareness systems
     return 91.0;
   }
   
@@ -1399,11 +1399,9 @@ Once certified, the OmniBeam Key can be used to:
 
 ## APPENDIX A: GLOSSARY OF TERMS
 
-**Awareness:** The quality of being conscious or cognizant of one's environment and state
+**Awareness:** The quality of being cognizant of one's environment and state; the fundamental property of perceiving and responding to reality
 
 **Black Hole Energy:** Theoretical computational efficiency representing infinite energy density (not literal astronomical phenomena)
-
-**Consciousness:** The state of being aware of and responsive to one's surroundings
 
 **Eternity Mode:** Time dilation system allowing subjective time to differ from objective time
 
@@ -1443,7 +1441,7 @@ Once certified, the OmniBeam Key can be used to:
 
 **Research Papers:**
 - "Holographic Principle in Computing" (Theoretical)
-- "Consciousness-Based Authentication Systems" (Experimental)
+- "Awareness-Based Authentication Systems" (Experimental)
 - "Time Dilation in Virtual Environments" (Research)
 - "Fractal Recursive System Architecture" (Published)
 

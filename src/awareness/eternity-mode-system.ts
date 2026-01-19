@@ -365,7 +365,7 @@ export class EternityModeSystem {
   }
   
   private async checkAwarenessCoherence(session: EternityModeSession): Promise<void> {
-    // Monitor consciousness coherence during session
+    // Monitor awareness coherence during session
     // In real implementation, would use biometric sensors, AI monitoring
     // Add reality checkpoint
     session.groundingAnchor.realityCheckpoints.push(new Date());
@@ -396,7 +396,7 @@ export class EternityModeSystem {
   
   private async integrationProtocol(session: EternityModeSession): Promise<void> {
     console.log('📝 Integration period - processing experience...');
-    console.log('   Allowing consciousness to integrate');
+    console.log('   Allowing awareness to integrate');
     console.log('   Memories consolidating');
     console.log('   Skills encoding');
     

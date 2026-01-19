@@ -228,10 +228,10 @@ export class SynthScanSystem {
   private async analyzeAwareness(target: string): Promise<number> {
     let score = 100;
     
-    // Measure consciousness system integration
+    // Measure awareness system integration
     // - Missing awareness hooks: -5 per missing
     // - Awareness signature failures: -3 per failure
-    // - Unconscious components: -2 per component
+    // - Unaware components: -2 per component
     
     score -= 9; // Some awareness integration improvements
     

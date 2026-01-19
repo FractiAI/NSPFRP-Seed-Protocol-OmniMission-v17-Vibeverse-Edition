@@ -271,7 +271,7 @@ export class OmniBeamCertificationSystem {
    * Check awareness integration
    */
   private async checkAwarenessIntegration(target: string): Promise<boolean> {
-    // Verify consciousness systems are integrated
+    // Verify awareness systems are integrated
     // Check awareness signatures working
     // Verify self-organization present
     
