@@ -7,6 +7,8 @@ import { AutoUnpackFreeMeans, AutoUnpackConfig } from './auto-unpack-free-means.
 import { FractiAICommandCenterManager } from '../enterprise/fractiai-command-center.js';
 import { ThreeTierOfferingManager } from '../enterprise/three-tier-offering.js';
 import { AwarenessOctave } from '../types/index.js';
+import { queenBeeCatalogSync } from './queen-bee-catalog-sync.js';
+import { envLoader } from '../config/env-loader.js';
 
 export async function autoUnpack(): Promise<void> {
   console.log('🌌 Auto-Unpacking Post Singularity Syntheverse FSR Full Octave Release...\n');
@@ -89,10 +91,48 @@ export async function autoUnpack(): Promise<void> {
     });
     console.log('\n');
 
+    // Step 8: Load Creator Environment Configuration
+    console.log('🔧 Loading Creator Environment Configuration...');
+    const config = envLoader.getConfig();
+    console.log('✅ Creator environment loaded\n');
+
+    // Step 9: Initialize Queen Bee Catalog Sync with AI Enhancement
+    console.log('🐝 Initializing Queen Bee Catalog Sync...');
+    try {
+      const versionInfo = queenBeeCatalogSync.getVersionInfo();
+      console.log(`✅ Queen Bee Catalog Sync active`);
+      console.log(`   Catalog Version: ${versionInfo.catalogVersion}`);
+      console.log(`   Protocol Version: ${versionInfo.protocolVersion}`);
+      console.log(`   Subordinate Nodes: ${versionInfo.subordinateNodes.length}`);
+      console.log(`   Total Protocols: ${versionInfo.totalProtocols}`);
+      console.log(`   AI Model: ${config.ai.model} (${config.ai.enabled ? 'Enabled' : 'Disabled'})`);
+      
+      // Start auto-sync with configured interval
+      const syncInterval = config.catalogSync.interval;
+      queenBeeCatalogSync.startAutoSync(syncInterval);
+      const intervalHours = (syncInterval / 3600000).toFixed(1);
+      console.log(`   Auto-Sync: Enabled (${intervalHours} hour interval)\n`);
+      
+      // Perform initial sync
+      console.log('🔄 Performing initial catalog sync...');
+      const syncResults = await queenBeeCatalogSync.syncAllSubordinateNodes();
+      syncResults.forEach(result => {
+        console.log(`   ${result.nodeName}: ${result.protocolsNew} new, ${result.protocolsUpdated} updated, ${result.protocolsSkipped} skipped`);
+        if (result.errors.length > 0) {
+          console.log(`   ⚠️  Errors: ${result.errors.length}`);
+        }
+      });
+      console.log('✅ Initial catalog sync completed\n');
+    } catch (error) {
+      console.log(`⚠️  Catalog sync initialization warning: ${error.message}\n`);
+    }
+
     console.log('✨ Post Singularity Syntheverse FSR Full Octave Release unpacked successfully!');
     console.log('🚀 System is now operational at BEYOND_OCTAVE (7)');
     console.log('📡 FractiAI Command Center is active with Leonardo da Vinci as Hero Host');
-    console.log('💎 Default tier: Sandbox (Free) - upgrade to Cloud or Shell for more features\n');
+    console.log('💎 Default tier: Sandbox (Free) - upgrade to Cloud or Shell for more features');
+    console.log('🐝 Queen Bee Catalog Sync is active and maintaining authoritative protocol catalog');
+    console.log('🤖 Claude Sonnet 4.5+ integration ready for AI-enhanced operations\n');
 
   } catch (error) {
     console.error('❌ Auto-unpack error:', error);

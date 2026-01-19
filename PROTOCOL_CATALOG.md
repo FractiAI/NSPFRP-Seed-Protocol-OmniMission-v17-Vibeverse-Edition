@@ -76,7 +76,14 @@
    - **Status:** Active
    - **Documentation:** [AUTO_DISCOVERY_CATALOG_SYNC.md](./AUTO_DISCOVERY_CATALOG_SYNC.md)
 
-3. **Higher-Octave RAG Architecture**
+3. **Queen Bee Catalog Sync & Versioning**
+   - **Protocol ID:** `P-QUEEN-BEE-CATALOG-SYNC-V17`
+   - **Type:** Catalog Synchronization / Creator Authority Protocol
+   - **Status:** ✅ Active - Boot Integrated
+   - **Documentation:** [QUEEN_BEE_CATALOG_VERSIONING_PROTOCOL.md](./QUEEN_BEE_CATALOG_VERSIONING_PROTOCOL.md)
+   - **Boot Snapshot:** [QUEEN_BEE_CATALOG_SYNC_BOOT_SNAPSHOT.md](./QUEEN_BEE_CATALOG_SYNC_BOOT_SNAPSHOT.md)
+
+4. **Higher-Octave RAG Architecture**
    - **Protocol ID:** `P-RAG-OCTAVE-V17`
    - **Type:** Higher-Fidelity RAG Architecture / Autonomous Agent Framework
    - **Status:** Active

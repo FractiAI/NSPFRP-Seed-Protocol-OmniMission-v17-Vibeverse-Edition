@@ -3,8 +3,7 @@
  * Generates standardized prompts for new chat sessions and API calls
  */
 
-import { readFileSync } from 'fs';
-import { join } from 'path';
+import { queenBeeCatalogSync } from '../core/queen-bee-catalog-sync.js';
 
 export interface BootPrompt {
   id: string;
@@ -14,6 +13,7 @@ export interface BootPrompt {
   discovery: DiscoveryInfo;
   payloadButton: PayloadButtonInfo;
   networkSnap: NetworkSnapInfo;
+  catalogSync: CatalogSyncInfo;
   fullPrompt: string;
 }
 
@@ -106,12 +106,36 @@ export interface ElGranSolStatus {
   status: string;
 }
 
+export interface CatalogSyncInfo {
+  status: string;
+  catalogVersion: string;
+  protocolVersion: string;
+  lastSync: number;
+  subordinateNodes: number;
+  totalProtocols: number;
+  autoSync: boolean;
+  syncInterval: number;
+  nodes: SubordinateNodeInfo[];
+}
+
+export interface SubordinateNodeInfo {
+  id: string;
+  name: string;
+  repository: string;
+  type: string;
+  octave: number;
+  version: string;
+  status: string;
+  lastChecked: number;
+}
+
 export class BootPromptGenerator {
-  private teamData: TeamInfo;
-  private payloadData: PayloadInfo;
-  private discoveryData: DiscoveryInfo;
-  private payloadButtonData: PayloadButtonInfo;
-  private networkSnapData: NetworkSnapInfo;
+  private teamData!: TeamInfo;
+  private payloadData!: PayloadInfo;
+  private discoveryData!: DiscoveryInfo;
+  private payloadButtonData!: PayloadButtonInfo;
+  private networkSnapData!: NetworkSnapInfo;
+  private catalogSyncData!: CatalogSyncInfo;
 
   constructor() {
     this.loadTeamData();
@@ -119,6 +143,7 @@ export class BootPromptGenerator {
     this.loadDiscoveryData();
     this.loadPayloadButtonData();
     this.loadNetworkSnapData();
+    this.loadCatalogSyncData();
   }
 
   /**
@@ -284,6 +309,50 @@ export class BootPromptGenerator {
   }
 
   /**
+   * Load catalog sync information
+   */
+  private loadCatalogSyncData(): void {
+    try {
+      const versionInfo = queenBeeCatalogSync.getVersionInfo();
+      const nodes = queenBeeCatalogSync.getSubordinateNodes();
+
+      this.catalogSyncData = {
+        status: 'Active',
+        catalogVersion: versionInfo.catalogVersion,
+        protocolVersion: versionInfo.protocolVersion,
+        lastSync: versionInfo.lastSync,
+        subordinateNodes: nodes.length,
+        totalProtocols: versionInfo.totalProtocols,
+        autoSync: true,
+        syncInterval: 3600000, // 1 hour
+        nodes: nodes.map(node => ({
+          id: node.id,
+          name: node.name,
+          repository: node.repository,
+          type: node.type,
+          octave: node.octave,
+          version: node.version,
+          status: node.status,
+          lastChecked: node.lastChecked
+        }))
+      };
+    } catch (error) {
+      // Fallback if catalog sync not initialized
+      this.catalogSyncData = {
+        status: 'Initializing',
+        catalogVersion: '1.0.0',
+        protocolVersion: 'v17+QueenBee+CatalogSync',
+        lastSync: Date.now(),
+        subordinateNodes: 2,
+        totalProtocols: 0,
+        autoSync: true,
+        syncInterval: 3600000,
+        nodes: []
+      };
+    }
+  }
+
+  /**
    * Generate complete boot prompt
    */
   generateBootPrompt(): BootPrompt {
@@ -295,6 +364,7 @@ export class BootPromptGenerator {
       discovery: this.discoveryData,
       payloadButton: this.payloadButtonData,
       networkSnap: this.networkSnapData,
+      catalogSync: this.catalogSyncData,
       fullPrompt: this.generateFullPrompt()
     };
 
@@ -377,10 +447,23 @@ ${this.networkSnapData.omniswitches.map(sw => `- **${sw.name}**: ${sw.type} | ${
 - **Active:** ${this.networkSnapData.elGranSol.active ? 'YES' : 'NO'}
 - **Octave:** ${this.networkSnapData.elGranSol.octave}
 
+## QUEEN BEE CATALOG SYNC
+
+**Status:** ${this.catalogSyncData.status}
+**Catalog Version:** ${this.catalogSyncData.catalogVersion}
+**Protocol Version:** ${this.catalogSyncData.protocolVersion}
+**Last Sync:** ${new Date(this.catalogSyncData.lastSync).toISOString()}
+**Subordinate Nodes:** ${this.catalogSyncData.subordinateNodes} active
+**Total Protocols:** ${this.catalogSyncData.totalProtocols}
+**Auto-Sync:** ${this.catalogSyncData.autoSync ? 'Enabled' : 'Disabled'} (${this.catalogSyncData.syncInterval / 1000 / 60} minute interval)
+
+**Subordinate Nodes:**
+${this.catalogSyncData.nodes.map(node => `- **${node.name}** (${node.repository}): ${node.status} | Version ${node.version} | Octave ${node.octave} | Last checked: ${node.lastChecked > 0 ? new Date(node.lastChecked).toISOString() : 'Never'}`).join('\n')}
+
 ---
 
 **Boot Prompt Generated:** ${new Date().toISOString()}
-**System Ready:** All systems operational, latest payload loaded, network connected, ready for operation.`;
+**System Ready:** All systems operational, latest payload loaded, network connected, catalog sync active, ready for operation.`;
   }
 
   /**

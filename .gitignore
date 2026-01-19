@@ -1,24 +1,32 @@
-# Environment variables
-.env
+# Creator Environment (contains secrets)
+.env.creator
 .env.local
-.env.production
-.env.development
+.env*.local
 
-# Credentials and secrets
-*.pem
-*.key
-*secret*
-*credential*
-credentials.json
-secrets.json
+# Generated Catalogs (auto-generated on sync)
+catalogs/*.json
+catalogs/*.md
+catalogs/MASTER_CATALOG.md
+!catalogs/README.md
 
-# Node modules
+# Dependencies
 node_modules/
+.pnp
+.pnp.js
 
-# Build outputs
-dist/
+# Testing
+coverage/
+
+# Production
 build/
+dist/
+
+# Misc
+.DS_Store
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # IDE
 .vscode/
@@ -27,10 +35,7 @@ build/
 *.swo
 *~
 
-# OS
-.DS_Store
-Thumbs.db
-
-# Temporary files
-tmp/
+# Temp
+.tmp/
 temp/
+*.tmp
