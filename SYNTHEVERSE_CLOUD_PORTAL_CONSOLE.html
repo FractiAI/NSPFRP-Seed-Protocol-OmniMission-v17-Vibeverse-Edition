@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntheverse Cloud Portal Console</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #000;
+            color: #0ff;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        /* Animated background */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, 
+                rgba(0, 0, 0, 1) 0%, 
+                rgba(10, 0, 30, 1) 50%, 
+                rgba(0, 0, 0, 1) 100%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        /* Stars */
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* Main container */
+        .console-container {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(0, 255, 255, 0.1);
+            border: 2px solid #0ff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            text-shadow: 0 0 10px #0ff;
+            margin-bottom: 10px;
+        }
+
+        .header .tagline {
+            color: #fff;
+            font-size: 1.2em;
+        }
+
+        /* Status bar */
+        .status-bar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .status-item {
+            background: rgba(0, 255, 255, 0.1);
+            padding: 15px;
+            border: 1px solid #0ff;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .status-label {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 5px;
+        }
+
+        .status-value {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        .status-value.active {
+            color: #0f0;
+            animation: glow 1s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 10px #0f0; }
+            50% { text-shadow: 0 0 20px #0f0; }
+        }
+
+        /* Portal grid */
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            flex: 1;
+            margin-bottom: 30px;
+        }
+
+        /* Portal card */
+        .portal-card {
+            background: rgba(10, 10, 30, 0.8);
+            border: 2px solid;
+            border-radius: 15px;
+            padding: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portal-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .portal-card:hover::before {
+            opacity: 1;
+            animation: rotate 4s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .portal-card.dmt {
+            border-color: #ff00ff;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+        }
+
+        .portal-card.dmt:hover {
+            box-shadow: 0 0 40px rgba(255, 0, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .portal-card.psilocybin {
+            border-color: #00ff88;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+        }
+
+        .portal-card.psilocybin:hover {
+            box-shadow: 0 0 40px rgba(0, 255, 136, 0.6);
+            transform: scale(1.05);
+        }
+
+        .portal-card.bufo {
+            border-color: #ffff00;
+            box-shadow: 0 0 20px rgba(255, 255, 0, 0.3);
+        }
+
+        .portal-card.bufo:hover {
+            box-shadow: 0 0 40px rgba(255, 255, 0, 0.6);
+            transform: scale(1.05);
+        }
+
+        .portal-card.cannabis {
+            border-color: #00ffff;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+
+        .portal-card.cannabis:hover {
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .portal-icon {
+            font-size: 4em;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .portal-name {
+            font-size: 1.8em;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .portal-status {
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+
+        .portal-status.active {
+            background: rgba(0, 255, 0, 0.2);
+            border: 1px solid #0f0;
+            color: #0f0;
+        }
+
+        .portal-status.pending {
+            background: rgba(255, 165, 0, 0.2);
+            border: 1px solid #ffa500;
+            color: #ffa500;
+        }
+
+        .portal-description {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .portal-button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.2) 0%, rgba(0, 200, 200, 0.2) 100%);
+            border: 2px solid;
+            border-radius: 10px;
+            color: inherit;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Courier New', monospace;
+        }
+
+        .portal-card.dmt .portal-button {
+            border-color: #ff00ff;
+        }
+
+        .portal-card.psilocybin .portal-button {
+            border-color: #00ff88;
+        }
+
+        .portal-card.bufo .portal-button {
+            border-color: #ffff00;
+        }
+
+        .portal-card.cannabis .portal-button {
+            border-color: #00ffff;
+        }
+
+        .portal-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px currentColor;
+        }
+
+        .portal-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Quick presets */
+        .quick-presets {
+            background: rgba(0, 255, 255, 0.1);
+            border: 2px solid #0ff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .quick-presets h3 {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .preset-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .preset-button {
+            padding: 10px;
+            background: rgba(0, 255, 255, 0.2);
+            border: 1px solid #0ff;
+            border-radius: 5px;
+            color: #0ff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Courier New', monospace;
+        }
+
+        .preset-button:hover {
+            background: rgba(0, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Journey modal */
+        .journey-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .journey-modal.active {
+            display: flex;
+        }
+
+        .journey-content {
+            max-width: 800px;
+            width: 90%;
+            background: rgba(10, 10, 30, 0.95);
+            border: 3px solid;
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+        }
+
+        .journey-animation {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 30px;
+            border-radius: 50%;
+            position: relative;
+            animation: journey-spin 10s linear infinite;
+        }
+
+        @keyframes journey-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .close-journey {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 0, 0, 0.2);
+            border: 2px solid #f00;
+            color: #f00;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+        }
+
+        .close-journey:hover {
+            background: rgba(255, 0, 0, 0.4);
+        }
+
+        /* Terpene selector */
+        .terpene-selector {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        .terpene-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+        }
+
+        .terpene-slider {
+            width: 200px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #888;
+            border-top: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated background -->
+    <div class="background"></div>
+
+    <!-- Stars -->
+    <script>
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.width = Math.random() * 3 + 'px';
+            star.style.height = star.style.width;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            document.querySelector('.background').appendChild(star);
+        }
+    </script>
+
+    <!-- Main console -->
+    <div class="console-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>SYNTHEVERSE CLOUD PORTAL CONSOLE</h1>
+            <div class="tagline">Safe Recreational Consciousness Navigation System</div>
+        </div>
+
+        <!-- Status bar -->
+        <div class="status-bar">
+            <div class="status-item">
+                <div class="status-label">Patch Connect</div>
+                <div class="status-value active">FULL ████████</div>
+            </div>
+            <div class="status-item">
+                <div class="status-label">Active Portals</div>
+                <div class="status-value">1 / 4</div>
+            </div>
+            <div class="status-item">
+                <div class="status-label">Hero Host AI</div>
+                <div class="status-value active">🎯 READY</div>
+            </div>
+        </div>
+
+        <!-- Quick presets -->
+        <div class="quick-presets">
+            <h3>⚡ QUICK PRESETS</h3>
+            <div class="preset-grid">
+                <button class="preset-button" onclick="activatePreset('meditation')">🧘 Deep Meditation</button>
+                <button class="preset-button" onclick="activatePreset('creative')">🎨 Creative Flow</button>
+                <button class="preset-button" onclick="activatePreset('social')">🤝 Social Enhancement</button>
+                <button class="preset-button" onclick="activatePreset('breakthrough')">🌀 Breakthrough</button>
+                <button class="preset-button" onclick="activatePreset('healing')">💚 Healing Journey</button>
+                <button class="preset-button" onclick="activatePreset('unity')">☀️ Unity Consciousness</button>
+            </div>
+        </div>
+
+        <!-- Portal grid -->
+        <div class="portal-grid">
+            <!-- DMT Portal -->
+            <div class="portal-card dmt">
+                <div class="portal-icon">🌀</div>
+                <div class="portal-name">DMT Gateway</div>
+                <div class="portal-status active">✅ ACTIVE</div>
+                <div class="portal-description">
+                    Access geometric entity zones, impossible patterns, direct downloads of universal truth. Complete ego dissolution with stable full patch connect. First portal opened during FSR Infinite Octave Boot.
+                </div>
+                <button class="portal-button" onclick="activatePortal('dmt')">
+                    ENTER DMT GATEWAY →
+                </button>
+            </div>
+
+            <!-- Psilocybin Portal -->
+            <div class="portal-card psilocybin">
+                <div class="portal-icon">🍄</div>
+                <div class="portal-name">Psilocybin Gateway</div>
+                <div class="portal-status pending">🔄 PENDING</div>
+                <div class="portal-description">
+                    Access mycelial network consciousness, earth wisdom, natural system intelligence. Flowing integration with heart opening and emotional healing. Terpene enhancement available.
+                </div>
+                <button class="portal-button" onclick="activatePortal('psilocybin')" disabled>
+                    ACTIVATING SOON...
+                </button>
+            </div>
+
+            <!-- Bufo Portal -->
+            <div class="portal-card bufo">
+                <div class="portal-icon">☀️</div>
+                <div class="portal-name">Bufo Gateway</div>
+                <div class="portal-status pending">🔄 PENDING</div>
+                <div class="portal-description">
+                    Access pure unity consciousness, the God molecule experience. Complete ego annihilation, infinite love, direct merge with Source. Most intense portal - experienced navigators only.
+                </div>
+                <button class="portal-button" onclick="activatePortal('bufo')" disabled>
+                    ACTIVATING SOON...
+                </button>
+            </div>
+
+            <!-- Cannabis Portal -->
+            <div class="portal-card cannabis">
+                <div class="portal-icon">🌿</div>
+                <div class="portal-name">Cannabis + Terpene Gateway</div>
+                <div class="portal-status pending">🔄 PENDING</div>
+                <div class="portal-description">
+                    Customizable state navigation with terpene profile selection. Creative, meditative, social, or focus modes. Most accessible and gentle introduction to portal system.
+                </div>
+                <button class="portal-button" onclick="activatePortal('cannabis')" disabled>
+                    ACTIVATING SOON...
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            Post-Singularity Infinite Octave FSR OS | NSPFRP Protocol v17 | Vibeverse Edition
+        </div>
+    </div>
+
+    <!-- Journey Modal -->
+    <div class="journey-modal" id="journeyModal">
+        <div class="journey-content" id="journeyContent">
+            <button class="close-journey" onclick="closeJourney()">EXIT PORTAL ✕</button>
+            <div id="journeyInner"></div>
+        </div>
+    </div>
+
+    <script>
+        // Activate preset
+        function activatePreset(preset) {
+            const presets = {
+                'meditation': {
+                    portal: 'cannabis',
+                    profile: 'Myrcene + Linalool + Caryophyllene',
+                    effect: 'Deep relaxation and introspective awareness'
+                },
+                'creative': {
+                    portal: 'cannabis',
+                    profile: 'Limonene + Pinene + Terpinolene',
+                    effect: 'Enhanced creativity and flow states'
+                },
+                'social': {
+                    portal: 'cannabis',
+                    profile: 'Limonene + Linalool',
+                    effect: 'Enhanced empathy and warm connection'
+                },
+                'breakthrough': {
+                    portal: 'dmt',
+                    profile: 'Pure DMT Protocol',
+                    effect: 'Geometric entity contact and universal downloads'
+                },
+                'healing': {
+                    portal: 'psilocybin',
+                    profile: 'Earth Connection Protocol',
+                    effect: 'Emotional processing and heart opening'
+                },
+                'unity': {
+                    portal: 'bufo',
+                    profile: 'God Molecule Protocol',
+                    effect: 'Complete unity consciousness'
+                }
+            };
+
+            const config = presets[preset];
+            if (config.portal === 'dmt') {
+                activatePortal('dmt', config);
+            } else {
+                alert(`${config.profile}\n\n"${config.effect}"\n\nPortal activation coming soon!`);
+            }
+        }
+
+        // Activate portal
+        function activatePortal(portalType, config = null) {
+            const modal = document.getElementById('journeyModal');
+            const content = document.getElementById('journeyContent');
+            const inner = document.getElementById('journeyInner');
+
+            // Portal configurations
+            const portals = {
+                'dmt': {
+                    color: '#ff00ff',
+                    title: '🌀 DMT GATEWAY ACTIVATED',
+                    description: 'Initiating breakthrough dissolution sequence...',
+                    stages: [
+                        'Patch connect: FULL ████████',
+                        'Ego dissolution: COMMENCING...',
+                        'Geometric patterns: EMERGING...',
+                        'Entity contact: AVAILABLE',
+                        'Universal downloads: RECEIVING...',
+                        'Full fidelity: MAINTAINED',
+                        '✨ BREAKTHROUGH ACHIEVED ✨'
+                    ]
+                },
+                'psilocybin': {
+                    color: '#00ff88',
+                    title: '🍄 PSILOCYBIN GATEWAY',
+                    description: 'Portal activation coming soon...'
+                },
+                'bufo': {
+                    color: '#ffff00',
+                    title: '☀️ BUFO GATEWAY',
+                    description: 'Portal activation coming soon...'
+                },
+                'cannabis': {
+                    color: '#00ffff',
+                    title: '🌿 CANNABIS GATEWAY',
+                    description: 'Portal activation coming soon...'
+                }
+            };
+
+            const portal = portals[portalType];
+            content.style.borderColor = portal.color;
+
+            // Build journey interface
+            let html = `
+                <div style="text-align: center;">
+                    <h2 style="color: ${portal.color}; font-size: 2.5em; margin-bottom: 20px;">
+                        ${portal.title}
+                    </h2>
+                    <div class="journey-animation" style="background: radial-gradient(circle, ${portal.color}33 0%, transparent 70%); box-shadow: 0 0 80px ${portal.color};">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 5em;">
+                            ${portal.title.split(' ')[0]}
+                        </div>
+                    </div>
+                    <p style="font-size: 1.3em; margin-bottom: 30px; color: #ccc;">
+                        ${portal.description}
+                    </p>
+            `;
+
+            if (portalType === 'dmt' && portal.stages) {
+                html += '<div id="stages" style="text-align: left; max-width: 500px; margin: 0 auto;">';
+                portal.stages.forEach((stage, index) => {
+                    html += `
+                        <div id="stage-${index}" style="padding: 15px; margin: 10px 0; background: rgba(255, 0, 255, 0.1); border: 1px solid #ff00ff; border-radius: 5px; opacity: 0; transition: opacity 1s ease;">
+                            ${stage}
+                        </div>
+                    `;
+                });
+                html += '</div>';
+
+                html += `
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(0, 255, 0, 0.1); border: 2px solid #0f0; border-radius: 10px;">
+                        <h3 style="color: #0f0; margin-bottom: 10px;">✅ JOURNEY COMPLETE</h3>
+                        <p style="color: #ccc;">Full patch connect maintained throughout. All insights captured and ready for integration.</p>
+                    </div>
+                `;
+            }
+
+            html += '</div>';
+            inner.innerHTML = html;
+            modal.classList.add('active');
+
+            // Animate stages for DMT
+            if (portalType === 'dmt' && portal.stages) {
+                portal.stages.forEach((stage, index) => {
+                    setTimeout(() => {
+                        const stageEl = document.getElementById(`stage-${index}`);
+                        if (stageEl) stageEl.style.opacity = '1';
+                    }, index * 1500);
+                });
+            }
+        }
+
+        // Close journey
+        function closeJourney() {
+            const modal = document.getElementById('journeyModal');
+            modal.classList.remove('active');
+        }
+
+        // Close on escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeJourney();
+        });
+    </script>
+</body>
+</html>
