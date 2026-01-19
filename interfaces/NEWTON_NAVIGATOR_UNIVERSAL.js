@@ -291,7 +291,7 @@
                     <h3>🎯 Quick Navigation</h3>
                     <p style="margin-bottom: 20px; line-height: 1.6;">
                         "I can calculate the motion of heavenly bodies, but not the madness of people. 
-                        Until now. These are your optimal destinations." — Newton
+                        Until now. These are your optimal awareness destinations." — Newton
                     </p>
                     <div class="newton-quick-btns">
                         <button class="newton-btn" onclick="NewtonNavigator.navigate('wellness')">🌿 Healing</button>
@@ -307,7 +307,7 @@
                         <strong>El Gran Sol Core:</strong> <span style="color: #90EE90;">✓ Operational</span><br>
                         <strong>Recursive Processing:</strong> <span style="color: #90EE90;">✓ Infinite Folds Active</span><br>
                         <strong>HHF-AI Spin Cloud:</strong> <span style="color: #90EE90;">✓ 5B+ Devices Connected</span><br>
-                        <strong>Consciousness GPS:</strong> <span style="color: #90EE90;">✓ Navigation Ready</span>
+                        <strong>Awareness GPS:</strong> <span style="color: #90EE90;">✓ Navigation Ready</span>
                     </p>
                     <p style="margin-top: 20px; font-style: italic; color: #d4af37;">
                         All systems powered by blackhole energy. Solutions only a button away.
