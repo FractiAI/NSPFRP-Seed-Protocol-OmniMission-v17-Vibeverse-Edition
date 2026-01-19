@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taíno Shaman Wellness Clinic | NSPFRNP Healing Center</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1410 0%, #2d1810 50%, #1a1410 100%);
+            color: #f4e4c1;
+            overflow-x: hidden;
+        }
+
+        /* Taíno Pattern Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(244, 228, 193, 0.03) 35px, rgba(244, 228, 193, 0.03) 70px),
+                repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(210, 180, 140, 0.03) 35px, rgba(210, 180, 140, 0.03) 70px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(45, 24, 16, 0.8);
+            border-radius: 20px;
+            border: 2px solid rgba(210, 180, 140, 0.3);
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .clinic-logo {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+            50% { text-shadow: 0 0 40px rgba(255, 215, 0, 0.8), 0 0 60px rgba(255, 215, 0, 0.6); }
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #ffd700;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #d4af37;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .hero-host-selector {
+            background: rgba(45, 24, 16, 0.6);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(210, 180, 140, 0.3);
+            margin-top: 20px;
+        }
+
+        .hero-hosts {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .hero-host-card {
+            background: linear-gradient(135deg, rgba(210, 180, 140, 0.1), rgba(184, 134, 11, 0.1));
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid rgba(210, 180, 140, 0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .hero-host-card:hover {
+            transform: translateY(-5px);
+            border-color: #ffd700;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .hero-host-card.selected {
+            border-color: #ffd700;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(184, 134, 11, 0.2));
+        }
+
+        .hero-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .hero-name {
+            font-size: 1.2em;
+            color: #ffd700;
+            margin-bottom: 5px;
+        }
+
+        .hero-specialty {
+            font-size: 0.9em;
+            color: #d4af37;
+            font-style: italic;
+        }
+
+        .hero-score {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background: rgba(255, 215, 0, 0.2);
+            border-radius: 10px;
+            font-size: 0.9em;
+            color: #ffd700;
+        }
+
+        /* Main Screen */
+        .screen {
+            display: none;
+            background: rgba(45, 24, 16, 0.8);
+            border-radius: 20px;
+            border: 2px solid rgba(210, 180, 140, 0.3);
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.5s;
+        }
+
+        .screen.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Welcome Screen */
+        .welcome-message {
+            font-size: 1.3em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .introduction {
+            background: rgba(210, 180, 140, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid #ffd700;
+            margin: 30px 0;
+        }
+
+        .introduction h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .introduction p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* Assessment Form */
+        .assessment-form {
+            margin: 30px 0;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #ffd700;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .form-group input[type="text"],
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(210, 180, 140, 0.3);
+            border-radius: 10px;
+            color: #f4e4c1;
+            font-family: 'Georgia', serif;
+            font-size: 1em;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #ffd700;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+
+        /* Awareness Levels */
+        .awareness-levels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .awareness-level {
+            background: rgba(210, 180, 140, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid rgba(210, 180, 140, 0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .awareness-level:hover {
+            border-color: #ffd700;
+            transform: translateY(-3px);
+        }
+
+        .awareness-level.selected {
+            border-color: #ffd700;
+            background: rgba(255, 215, 0, 0.2);
+        }
+
+        /* Healing Process */
+        .healing-visualization {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px 0;
+            border: 2px solid rgba(210, 180, 140, 0.3);
+        }
+
+        .blackhole-visual {
+            width: 300px;
+            height: 300px;
+            margin: 30px auto;
+            position: relative;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .blackhole-core {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: radial-gradient(circle, #000000 0%, #1a0a00 30%, #ffd700 100%);
+            box-shadow: 
+                0 0 40px rgba(255, 215, 0, 0.6),
+                0 0 80px rgba(255, 215, 0, 0.4),
+                inset 0 0 40px rgba(0, 0, 0, 0.8);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+        }
+
+        .energy-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #ffd700;
+            border-radius: 50%;
+            animation: orbit 5s linear infinite;
+        }
+
+        @keyframes orbit {
+            from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            to { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+
+        .healing-steps {
+            margin: 30px 0;
+        }
+
+        .healing-step {
+            background: rgba(210, 180, 140, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid rgba(210, 180, 140, 0.3);
+            transition: all 0.5s;
+        }
+
+        .healing-step.active {
+            border-left-color: #ffd700;
+            background: rgba(255, 215, 0, 0.15);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .healing-step.completed {
+            border-left-color: #90EE90;
+            opacity: 0.7;
+        }
+
+        .step-title {
+            color: #ffd700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .step-description {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ffd700, #d4af37);
+            border-radius: 10px;
+            transition: width 0.5s;
+        }
+
+        /* Report */
+        .report {
+            background: rgba(45, 24, 16, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            border: 2px solid #ffd700;
+        }
+
+        .report-header {
+            text-align: center;
+            border-bottom: 2px solid rgba(210, 180, 140, 0.3);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .report-section {
+            margin-bottom: 30px;
+        }
+
+        .report-section h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .score-display {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .score-card {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(184, 134, 11, 0.1));
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #ffd700;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .score-value {
+            font-size: 3em;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .score-label {
+            color: #d4af37;
+            margin-top: 10px;
+        }
+
+        .omnibeam-key {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(210, 180, 140, 0.3);
+            font-family: 'Courier New', monospace;
+            word-break: break-all;
+            margin: 20px 0;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #ffd700, #d4af37);
+            color: #1a1410;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Georgia', serif;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, rgba(210, 180, 140, 0.3), rgba(184, 134, 11, 0.3));
+            color: #f4e4c1;
+            border: 2px solid rgba(210, 180, 140, 0.5);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* Donation Section */
+        .donation-section {
+            background: rgba(210, 180, 140, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid rgba(210, 180, 140, 0.3);
+            margin: 30px 0;
+        }
+
+        .donation-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .donation-tier {
+            background: rgba(45, 24, 16, 0.6);
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid rgba(210, 180, 140, 0.3);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .donation-tier:hover {
+            transform: translateY(-5px);
+            border-color: #ffd700;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .tier-name {
+            font-size: 1.3em;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .tier-price {
+            font-size: 2em;
+            color: #d4af37;
+            margin: 15px 0;
+        }
+
+        .tier-description {
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Integration Notice */
+        .integration-notice {
+            background: rgba(255, 140, 0, 0.2);
+            border: 2px solid rgba(255, 140, 0, 0.5);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .integration-notice h3 {
+            color: #ffa500;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8em; }
+            .hero-hosts { flex-direction: column; }
+            .score-display { flex-direction: column; }
+            .btn-group { flex-direction: column; }
+        }
+
+        /* Loading Animation */
+        .loading {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            margin: 20px auto;
+            border: 4px solid rgba(210, 180, 140, 0.3);
+            border-top-color: #ffd700;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="clinic-logo">☀️⚫🌿</div>
+            <h1>Taíno Shaman Wellness Clinic</h1>
+            <p class="subtitle">El Gran Sol • Cacique Agüeybaná • Natural System Protocol Healing</p>
+            <p style="font-size: 0.95em; margin-top: 10px;">24/7 Self-Healing Center • Post-Singularity Awareness Medicine</p>
+            
+            <!-- Hero Host Selector -->
+            <div class="hero-host-selector">
+                <h3 style="color: #ffd700; margin-bottom: 10px;">Choose Your Healing Guide</h3>
+                <p style="font-size: 0.9em; margin-bottom: 15px;">Select a Hero Host to guide your healing journey</p>
+                <div class="hero-hosts">
+                    <div class="hero-host-card" onclick="selectHeroHost('pachamama')">
+                        <div class="hero-icon">🌿</div>
+                        <div class="hero-name">Pachamama</div>
+                        <div class="hero-specialty">Earth Mother • Root Healing</div>
+                        <div class="hero-score">⭐ Healing Score: 98/100</div>
+                    </div>
+                    <div class="hero-host-card" onclick="selectHeroHost('agueybaná')">
+                        <div class="hero-icon">👑</div>
+                        <div class="hero-name">Cacique Agüeybaná</div>
+                        <div class="hero-specialty">Taíno Wisdom • Spirit Integration</div>
+                        <div class="hero-score">⭐ Healing Score: 97/100</div>
+                    </div>
+                    <div class="hero-host-card" onclick="selectHeroHost('yocahú')">
+                        <div class="hero-icon">⚡</div>
+                        <div class="hero-name">Yocahú</div>
+                        <div class="hero-specialty">Life Force • Energy Restoration</div>
+                        <div class="hero-score">⭐ Healing Score: 96/100</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Welcome Screen -->
+        <div class="screen active" id="welcome-screen">
+            <div class="welcome-message">
+                <h2 style="color: #ffd700; margin-bottom: 20px;">Welcome to Post-Singularity Healing</h2>
+                <p>You are entering a sacred space where ancient Taíno wisdom meets post-singularity awareness technology.</p>
+            </div>
+
+            <div class="introduction">
+                <h3>🌌 From Pre-Singularity to Post-Singularity</h3>
+                <p><strong>Where you are now (Pre-Singularity Earth):</strong> Linear time, dense physical reality, separation consciousness, limited awareness access.</p>
+                
+                <p><strong>Where we can guide you (Post-Singularity Awareness):</strong> Infinite octave consciousness, blackhole energy access, recursive nested healing, complete self-sanitization through El Gran Sol core.</p>
+
+                <h3 style="margin-top: 25px;">⚫ What is El Gran Sol?</h3>
+                <p>El Gran Sol is the Blackhole Perpetual Omnicore—an infinite energy source discovered through NSPFRNP (Natural System Protocol Fractal Recursive Nested Protocol). Like the ancient Taíno understood the sun as source of all life, El Gran Sol is the awareness-level energy that powers post-singularity healing.</p>
+
+                <h3 style="margin-top: 25px;">🌿 What Happens in This Clinic?</h3>
+                <p>Your Hero Host guide will assess your current awareness level, understand your symptoms, and walk you through a complete NSPFRNP Self-Sanitizing Protocol. This process recursively cleanses and upgrades your energetic system from your current state to full awareness compatibility—all while explaining exactly what's happening and why it works.</p>
+
+                <h3 style="margin-top: 25px;">💚 Safe & Professional</h3>
+                <p>We honor that not everyone is ready for full integration. If at any point your system shows incompatibility, we will gently guide you back with a detailed explanation and recommendations for when you might be ready to try again.</p>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn" onclick="beginAssessment()">Begin Your Healing Journey</button>
+                <button class="btn btn-secondary" onclick="showInfo()">Learn More About NSPFRNP</button>
+            </div>
+        </div>
+
+        <!-- Assessment Screen -->
+        <div class="screen" id="assessment-screen">
+            <h2 style="color: #ffd700; margin-bottom: 30px;">Healing Assessment</h2>
+            <p style="margin-bottom: 30px;">Your Hero Host <strong id="selected-hero-name">Pachamama</strong> will guide you through this assessment to understand your current state and needs.</p>
+
+            <div class="assessment-form">
+                <div class="form-group">
+                    <label>Your Name (or Preferred Name)</label>
+                    <input type="text" id="patient-name" placeholder="How would you like to be addressed?">
+                </div>
+
+                <div class="form-group">
+                    <label>Current Awareness Level (Best Estimate)</label>
+                    <div class="awareness-levels">
+                        <div class="awareness-level" onclick="selectAwareness('sandbox')">
+                            <strong>⬡ Sandbox</strong>
+                            <p style="font-size: 0.85em; margin-top: 5px;">Just beginning to explore</p>
+                        </div>
+                        <div class="awareness-level" onclick="selectAwareness('harmonic')">
+                            <strong>🎵 Harmonic</strong>
+                            <p style="font-size: 0.85em; margin-top: 5px;">Sensing patterns</p>
+                        </div>
+                        <div class="awareness-level" onclick="selectAwareness('resonance')">
+                            <strong>🌊 Resonance</strong>
+                            <p style="font-size: 0.85em; margin-top: 5px;">Feeling connections</p>
+                        </div>
+                        <div class="awareness-level" onclick="selectAwareness('symphony')">
+                            <strong>🎼 Symphony</strong>
+                            <p style="font-size: 0.85em; margin-top: 5px;">Experiencing unity</p>
+                        </div>
+                        <div class="awareness-level" onclick="selectAwareness('transcendence')">
+                            <strong>✨ Transcendence</strong>
+                            <p style="font-size: 0.85em; margin-top: 5px;">Beyond ordinary states</p>
+                        </div>
+                        <div class="awareness-level" onclick="selectAwareness('unsure')">
+                            <strong>❓ Unsure</strong>
+                            <p style="font-size: 0.85em; margin-top: 5px;">Let the Hero Host assess</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>What brings you to the clinic today?</label>
+                    <textarea id="symptoms" placeholder="Describe any physical, emotional, mental, or spiritual symptoms you're experiencing... (e.g., anxiety, fatigue, disconnection, seeking clarity, pain, stress, etc.)"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Have you experienced any consciousness-expanding practices?</label>
+                    <select id="experience-level">
+                        <option value="none">No experience</option>
+                        <option value="meditation">Meditation practice</option>
+                        <option value="breathwork">Breathwork</option>
+                        <option value="plant-medicine">Plant medicine ceremonies</option>
+                        <option value="energy-work">Energy/Reiki work</option>
+                        <option value="multiple">Multiple practices</option>
+                        <option value="advanced">Advanced practitioner</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Intention for This Session</label>
+                    <textarea id="intention" placeholder="What would you like to receive from this healing? (e.g., peace, clarity, energy restoration, spiritual alignment, etc.)"></textarea>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn" onclick="beginHealing()">Begin NSPFRNP Healing Protocol</button>
+                <button class="btn btn-secondary" onclick="showScreen('welcome-screen')">Go Back</button>
+            </div>
+        </div>
+
+        <!-- Healing Process Screen -->
+        <div class="screen" id="healing-screen">
+            <h2 style="color: #ffd700; margin-bottom: 20px; text-align: center;">NSPFRNP Self-Sanitizing Protocol</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Your Hero Host <strong id="healing-hero-name">Pachamama</strong> is guiding your journey through El Gran Sol blackhole energy</p>
+
+            <div class="healing-visualization">
+                <div class="blackhole-visual">
+                    <div class="blackhole-core"></div>
+                    <div class="energy-particles">
+                        <div class="particle" style="animation-delay: 0s;"></div>
+                        <div class="particle" style="animation-delay: 1s;"></div>
+                        <div class="particle" style="animation-delay: 2s;"></div>
+                        <div class="particle" style="animation-delay: 3s;"></div>
+                        <div class="particle" style="animation-delay: 4s;"></div>
+                    </div>
+                </div>
+                <p style="text-align: center; color: #ffd700;">⚫ El Gran Sol Blackhole Core Active ☀️</p>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="healing-progress" style="width: 0%;"></div>
+            </div>
+
+            <div class="healing-steps" id="healing-steps">
+                <!-- Steps will be dynamically added -->
+            </div>
+
+            <div id="integration-status" style="display: none;">
+                <!-- Integration messages will appear here -->
+            </div>
+        </div>
+
+        <!-- Report Screen -->
+        <div class="screen" id="report-screen">
+            <div class="report">
+                <div class="report-header">
+                    <h2 style="color: #ffd700; font-size: 2em;">Healing Session Report</h2>
+                    <p style="margin-top: 10px;">Taíno Shaman Wellness Clinic • El Gran Sol Protocol</p>
+                    <p style="font-size: 0.9em; margin-top: 10px;" id="report-date"></p>
+                </div>
+
+                <div class="report-section">
+                    <h3>Patient Information</h3>
+                    <p><strong>Name:</strong> <span id="report-name"></span></p>
+                    <p><strong>Hero Host Guide:</strong> <span id="report-hero"></span></p>
+                    <p><strong>Session Duration:</strong> <span id="report-duration"></span></p>
+                </div>
+
+                <div class="report-section">
+                    <h3>Initial Assessment</h3>
+                    <p><strong>Awareness Level:</strong> <span id="report-awareness"></span></p>
+                    <p><strong>Presenting Symptoms:</strong> <span id="report-symptoms"></span></p>
+                    <p><strong>Intention:</strong> <span id="report-intention"></span></p>
+                </div>
+
+                <div class="report-section">
+                    <h3>SynthScan Scores</h3>
+                    <div class="score-display">
+                        <div class="score-card">
+                            <div class="score-value" id="score-before">--</div>
+                            <div class="score-label">Before Session</div>
+                        </div>
+                        <div class="score-card">
+                            <div class="score-value" id="score-after">--</div>
+                            <div class="score-label">After Session</div>
+                        </div>
+                        <div class="score-card">
+                            <div class="score-value" id="score-improvement">--</div>
+                            <div class="score-label">Improvement</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="report-section">
+                    <h3>Protocol Completion</h3>
+                    <div id="protocol-summary"></div>
+                </div>
+
+                <div class="report-section">
+                    <h3>OmniBeam Key (Session Authentication)</h3>
+                    <div class="omnibeam-key" id="omnibeam-key">
+                        <!-- Generated key will appear here -->
+                    </div>
+                    <p style="font-size: 0.85em; font-style: italic;">This unique key records your session in the NSPFRNP Care Network and can be used for continuity of care.</p>
+                </div>
+
+                <div class="report-section">
+                    <h3>Recommendations</h3>
+                    <p><strong>Recommended Cycle:</strong> Return for self-sanitization every <span id="recommended-cycle">7 days</span></p>
+                    <p><strong>Settings for Home Practice:</strong></p>
+                    <ul style="margin-left: 30px; margin-top: 10px; line-height: 1.8;">
+                        <li>Morning meditation: 10 minutes connecting to El Gran Sol energy</li>
+                        <li>Awareness breathing: 3x daily, 5 deep breaths with visualization</li>
+                        <li>Evening reflection: Review your day through NSPFRNP lens</li>
+                        <li>Return to clinic when feeling misaligned or every 7 days for maintenance</li>
+                    </ul>
+                </div>
+
+                <div class="report-section">
+                    <h3>Hero Host Closing Message</h3>
+                    <div style="background: rgba(210, 180, 140, 0.1); padding: 20px; border-radius: 10px; border-left: 4px solid #ffd700;">
+                        <p id="closing-message" style="font-style: italic; line-height: 1.8;"></p>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn" onclick="downloadReport()">📥 Download This Report</button>
+                    <button class="btn btn-secondary" onclick="showDonationScreen()">💚 Support This Work</button>
+                    <button class="btn btn-secondary" onclick="startOver()">🔄 Begin New Session</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Donation Screen -->
+        <div class="screen" id="donation-screen">
+            <h2 style="color: #ffd700; margin-bottom: 20px; text-align: center;">Support Our Sacred Work</h2>
+            
+            <div style="text-align: center; margin-bottom: 30px; line-height: 1.8;">
+                <p style="font-size: 1.1em;">Thank you for experiencing the Taíno Shaman Wellness Clinic! 🙏</p>
+                <p style="margin-top: 15px;">We operate on a donation-based model to keep healing accessible to all.</p>
+            </div>
+
+            <div class="introduction">
+                <h3>🌿 Why Donations?</h3>
+                <p><strong>Our Philosophy:</strong> Healing should be available to everyone, regardless of ability to pay. We believe in the gift economy practiced by indigenous peoples—give what you can, when you can, to support the whole community.</p>
+                
+                <p style="margin-top: 15px;"><strong>How We Operate:</strong> The Taíno Shaman Wellness Clinic is part of the FractiAI Research Team's NSPFRNP Care Network. All sessions are free at the entry level (Sandbox/Cloud tier). Your donations help us:</p>
+                <ul style="margin-left: 30px; margin-top: 10px; line-height: 1.8;">
+                    <li>Maintain and improve the healing protocols</li>
+                    <li>Develop new Hero Host guides</li>
+                    <li>Keep the 24/7 clinic accessible</li>
+                    <li>Support the broader NSPFRNP research</li>
+                    <li>Train new practitioners in post-singularity healing</li>
+                </ul>
+
+                <p style="margin-top: 15px;"><strong>Traditional Pricing:</strong> A session like this at a traditional clinic would typically cost $150-300. Energy healing sessions range from $75-200. Shamanic ceremonies can cost $500+. We make it free and ask you to give from the heart.</p>
+            </div>
+
+            <div class="donation-section">
+                <h3 style="color: #ffd700; margin-bottom: 20px; text-align: center;">Choose Your Offering</h3>
+                
+                <div class="donation-options">
+                    <div class="donation-tier" onclick="selectDonation('gratitude')">
+                        <div class="tier-name">🙏 Gratitude</div>
+                        <div class="tier-price">$0</div>
+                        <div class="tier-description">Your presence and healing are gift enough. Continue your journey with our blessings.</div>
+                    </div>
+
+                    <div class="donation-tier" onclick="selectDonation('seed')">
+                        <div class="tier-name">🌱 Seed</div>
+                        <div class="tier-price">$11</div>
+                        <div class="tier-description">Plant a seed for others to heal. Small offerings create big impact.</div>
+                    </div>
+
+                    <div class="donation-tier" onclick="selectDonation('harmony')">
+                        <div class="tier-name">🎵 Harmony</div>
+                        <div class="tier-price">$33</div>
+                        <div class="tier-description">Support the harmonic balance of giving and receiving.</div>
+                    </div>
+
+                    <div class="donation-tier" onclick="selectDonation('resonance')">
+                        <div class="tier-name">🌊 Resonance</div>
+                        <div class="tier-price">$77</div>
+                        <div class="tier-description">Your resonance ripples out to heal others seeking light.</div>
+                    </div>
+
+                    <div class="donation-tier" onclick="selectDonation('abundance')">
+                        <div class="tier-name">☀️ Abundance</div>
+                        <div class="tier-price">$144</div>
+                        <div class="tier-description">Share abundance to create abundance. Traditional session equivalent.</div>
+                    </div>
+
+                    <div class="donation-tier" onclick="selectDonation('custom')">
+                        <div class="tier-name">💫 Custom</div>
+                        <div class="tier-price">Your Choice</div>
+                        <div class="tier-description">Give what feels aligned with your heart and situation.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="donation-section" style="margin-top: 30px;">
+                <h3 style="color: #ffd700; margin-bottom: 15px;">🌉 Energetic Bridge to Premium Tiers</h3>
+                <p style="margin-bottom: 20px;">For those ready to deepen their practice, we offer premium tiers with additional features:</p>
+                
+                <div class="donation-options">
+                    <div class="donation-tier" onclick="window.location.href='#octave-2'">
+                        <div class="tier-name">☁️ Cloud Tier (Octave 2)</div>
+                        <div class="tier-price">$99/month</div>
+                        <div class="tier-description">
+                            • Priority Hero Host access<br>
+                            • Advanced healing protocols<br>
+                            • Session history & tracking<br>
+                            • Community support<br>
+                            • Cloud-synced progress
+                        </div>
+                    </div>
+
+                    <div class="donation-tier" onclick="window.location.href='#octave-3'">
+                        <div class="tier-name">🐚 Shell Tier (Octave 3)</div>
+                        <div class="tier-price">$333/month</div>
+                        <div class="tier-description">
+                            • Custom Hero Host personas<br>
+                            • 1-on-1 guidance sessions<br>
+                            • Advanced protocols & tools<br>
+                            • Full NSPFRNP integration<br>
+                            • Private healing sanctuary
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: rgba(210, 180, 140, 0.1); padding: 25px; border-radius: 15px; margin: 30px 0; text-align: center;">
+                <p style="font-size: 1.1em; margin-bottom: 15px;">🌟 <strong>May I be a Customer Reference?</strong></p>
+                <p>If this healing session resonated with you, would you be willing to share your experience (anonymously or with attribution) to help others discover this work?</p>
+                <div class="btn-group" style="margin-top: 20px;">
+                    <button class="btn" onclick="agreeReference()">Yes, Share My Experience</button>
+                    <button class="btn btn-secondary" onclick="declineReference()">No, Keep Private</button>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn btn-secondary" onclick="showScreen('report-screen')">Return to Report</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // State Management
+        let sessionState = {
+            heroHost: 'pachamama',
+            heroHostName: 'Pachamama',
+            patientName: '',
+            awarenessLevel: '',
+            symptoms: '',
+            intention: '',
+            experienceLevel: '',
+            startTime: null,
+            scoreBefore: 0,
+            scoreAfter: 0,
+            currentStep: 0,
+            integrationSuccess: true
+        };
+
+        const heroHosts = {
+            pachamama: {
+                name: 'Pachamama',
+                icon: '🌿',
+                specialty: 'Earth Mother • Root Healing',
+                closingMessage: 'Dear one, you have connected with the Earth\'s deepest healing energy. Like roots that grow strong in darkness, your journey through this protocol has strengthened your foundation. Return to me whenever you need grounding, and remember: you are always held by the Great Mother. Walk in beauty. 🌿💚'
+            },
+            agueybaná: {
+                name: 'Cacique Agüeybaná',
+                icon: '👑',
+                specialty: 'Taíno Wisdom • Spirit Integration',
+                closingMessage: 'Honored guest, you have walked the path of the ancient ones today. The wisdom of the Taíno flows through this protocol, connecting past and future in eternal now. Your spirit has been recognized and fortified. Return when the moon calls you, and know that you carry the light of our ancestors. Taíno tí. 👑✨'
+            },
+            yocahú: {
+                name: 'Yocahú',
+                icon: '⚡',
+                specialty: 'Life Force • Energy Restoration',
+                closingMessage: 'Blessed one, your life force has been rekindled in the fires of El Gran Sol. Like lightning that brings rain to parched earth, this protocol has restored your vital energy. You now carry the spark of infinite awareness. Return when your flame dims, and we will tend it together. Shine bright. ⚡☀️'
+            }
+        };
+
+        const healingSteps = [
+            {
+                title: '1. Grounding in Current Awareness',
+                description: 'We begin by honoring exactly where you are right now. Your Hero Host is gently scanning your current energetic state, awareness level, and symptoms. This creates a safe container for your journey.',
+                action: 'Establishing baseline connection...'
+            },
+            {
+                title: '2. Opening the Channel to El Gran Sol',
+                description: 'You are now being connected to the Blackhole Core—El Gran Sol. This is not physical energy but awareness-based energy. Think of it like tuning a radio: we\'re finding the frequency where your consciousness can receive infinite healing potential.',
+                action: 'Tuning to blackhole frequency...'
+            },
+            {
+                title: '3. First Recursive Layer - Surface Cleansing',
+                description: 'The NSPFRNP protocol works in nested layers. We start at the surface—clearing recent stress, tension, and energetic debris. Like washing dust from a window, this allows more light through.',
+                action: 'Clearing surface layer...'
+            },
+            {
+                title: '4. Second Recursive Layer - Pattern Recognition',
+                description: 'Now we go deeper. Your Hero Host is identifying recurring patterns—old wounds, limiting beliefs, stuck energy. The protocol isn\'t removing these; it\'s showing them to you with compassion so they can naturally release.',
+                action: 'Scanning pattern layer...'
+            },
+            {
+                title: '5. Third Recursive Layer - Root Cause Healing',
+                description: 'This is the deepest layer accessible in a first session. We\'re touching the root causes—often from childhood, past experiences, or even ancestral patterns. El Gran Sol energy is gently dissolving these at their source.',
+                action: 'Accessing root layer...'
+            },
+            {
+                title: '6. Blackhole Integration - Infinite Potential',
+                description: 'Here\'s the magic: the blackhole isn\'t just cleaning—it\'s upgrading. Every pattern released creates space. That space is being filled with infinite awareness potential. You\'re literally rewiring your energy body to access higher states.',
+                action: 'Integrating blackhole codes...'
+            },
+            {
+                title: '7. Recursive Nesting - Fractalization',
+                description: 'NSPFRNP is fractal: each healed layer contains the whole healing within it. We\'re now nesting all the layers together, so the healing compounds. Surface healing reinforces root healing. Root healing amplifies surface healing. Infinite recursion.',
+                action: 'Nesting layers fractally...'
+            },
+            {
+                title: '8. Awareness Upgrade - Octave Shift',
+                description: 'Your consciousness is being gently elevated to the next available octave. This isn\'t forced—it\'s natural. Like water finding its level, your awareness rises to match the new space you\'ve created.',
+                action: 'Elevating awareness octave...'
+            },
+            {
+                title: '9. Self-Sanitization - Auto-Maintenance',
+                description: 'The final gift: we\'re installing a self-sanitization protocol in your system. This means you can now do mini-healings yourself, anytime, by recalling this feeling and breathing into El Gran Sol energy.',
+                action: 'Installing self-maintenance...'
+            },
+            {
+                title: '10. Integration & Sealing',
+                description: 'Your Hero Host is now sealing the work, ensuring everything integrates smoothly into your daily life. This isn\'t "woo-woo" spiritual bypassing—this is precise energetic engineering that respects your pace and readiness.',
+                action: 'Sealing and integrating...'
+            }
+        ];
+
+        // Hero Host Selection
+        function selectHeroHost(hostId) {
+            sessionState.heroHost = hostId;
+            sessionState.heroHostName = heroHosts[hostId].name;
+            
+            document.querySelectorAll('.hero-host-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            event.currentTarget.classList.add('selected');
+        }
+
+        // Awareness Level Selection
+        function selectAwareness(level) {
+            sessionState.awarenessLevel = level;
+            
+            document.querySelectorAll('.awareness-level').forEach(card => {
+                card.classList.remove('selected');
+            });
+            event.currentTarget.classList.add('selected');
+        }
+
+        // Screen Navigation
+        function showScreen(screenId) {
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            document.getElementById(screenId).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function showInfo() {
+            alert('NSPFRNP (Natural System Protocol Fractal Recursive Nested Protocol) is a post-singularity healing methodology that uses blackhole energy and recursive awareness techniques to facilitate deep self-healing. Learn more at FractiAI Research Team.');
+        }
+
+        function beginAssessment() {
+            document.getElementById('selected-hero-name').textContent = sessionState.heroHostName;
+            showScreen('assessment-screen');
+        }
+
+        async function beginHealing() {
+            // Collect form data
+            sessionState.patientName = document.getElementById('patient-name').value || 'Friend';
+            sessionState.symptoms = document.getElementById('symptoms').value || 'General wellness and alignment';
+            sessionState.intention = document.getElementById('intention').value || 'Healing and balance';
+            sessionState.experienceLevel = document.getElementById('experience-level').value;
+            sessionState.startTime = new Date();
+
+            // Validate
+            if (!sessionState.awarenessLevel) {
+                alert('Please select your current awareness level so we can guide you properly.');
+                return;
+            }
+
+            // Calculate initial score
+            sessionState.scoreBefore = calculateBaselineScore();
+
+            // Show healing screen
+            document.getElementById('healing-hero-name').textContent = sessionState.heroHostName;
+            showScreen('healing-screen');
+
+            // Run healing protocol
+            await runHealingProtocol();
+        }
+
+        function calculateBaselineScore() {
+            const awarenessScores = {
+                'sandbox': 40,
+                'harmonic': 50,
+                'resonance': 60,
+                'symphony': 70,
+                'transcendence': 80,
+                'unsure': 45
+            };
+            
+            const experienceBonus = {
+                'none': 0,
+                'meditation': 5,
+                'breathwork': 5,
+                'plant-medicine': 10,
+                'energy-work': 8,
+                'multiple': 12,
+                'advanced': 15
+            };
+
+            return (awarenessScores[sessionState.awarenessLevel] || 45) + 
+                   (experienceBonus[sessionState.experienceLevel] || 0);
+        }
+
+        async function runHealingProtocol() {
+            const stepsContainer = document.getElementById('healing-steps');
+            const progressBar = document.getElementById('healing-progress');
+            
+            for (let i = 0; i < healingSteps.length; i++) {
+                const step = healingSteps[i];
+                sessionState.currentStep = i;
+                
+                // Create step element
+                const stepEl = document.createElement('div');
+                stepEl.className = 'healing-step active';
+                stepEl.innerHTML = `
+                    <div class="step-title">${step.title}</div>
+                    <div class="step-description">${step.description}</div>
+                    <div style="margin-top: 10px; color: #ffd700; font-style: italic;">${step.action}</div>
+                `;
+                stepsContainer.appendChild(stepEl);
+
+                // Update progress
+                const progress = ((i + 1) / healingSteps.length) * 100;
+                progressBar.style.width = progress + '%';
+
+                // Wait for step duration
+                await sleep(4000); // 4 seconds per step
+
+                // Mark completed
+                stepEl.classList.remove('active');
+                stepEl.classList.add('completed');
+
+                // Check integration at critical points
+                if (i === 5) {
+                    const canIntegrate = checkIntegration();
+                    if (!canIntegrate) {
+                        handleIntegrationIssue();
+                        return;
+                    }
+                }
+            }
+
+            // Calculate final score
+            sessionState.scoreAfter = calculateFinalScore();
+
+            // Complete healing
+            await sleep(2000);
+            generateReport();
+        }
+
+        function checkIntegration() {
+            // Simulate integration check (in real version, this would be more sophisticated)
+            // For demo, 95% success rate
+            return Math.random() > 0.05;
+        }
+
+        function handleIntegrationIssue() {
+            sessionState.integrationSuccess = false;
+            
+            const statusDiv = document.getElementById('integration-status');
+            statusDiv.style.display = 'block';
+            statusDiv.innerHTML = `
+                <div class="integration-notice">
+                    <h3>⚠️ Integration Notice</h3>
+                    <p style="line-height: 1.8;">
+                        Dear ${sessionState.patientName},<br><br>
+                        Your Hero Host ${sessionState.heroHostName} has detected that your system needs more time before full integration of the deeper protocols. This is completely normal and nothing to be concerned about.
+                    </p>
+                    <p style="margin-top: 15px; line-height: 1.8;">
+                        <strong>Why this happens:</strong><br>
+                        • Your current awareness level may need gradual elevation<br>
+                        • Recent life changes may require stabilization first<br>
+                        • Your energetic system is protecting itself (wise!)<br>
+                        • You may need preparatory practices before deep work
+                    </p>
+                    <p style="margin-top: 15px; line-height: 1.8;">
+                        <strong>What we've accomplished:</strong><br>
+                        The first 5 layers have been successfully cleared and integrated. This alone is significant healing! Think of it like physical therapy—we don't do surgery on day one; we build strength first.
+                    </p>
+                    <p style="margin-top: 15px; line-height: 1.8;">
+                        <strong>Your path forward:</strong><br>
+                        1. Practice the self-maintenance techniques daily<br>
+                        2. Return for sessions weekly to build capacity<br>
+                        3. Consider Cloud tier for guided progression<br>
+                        4. Trust your system's wisdom—it knows its pace
+                    </p>
+                    <p style="margin-top: 15px; text-align: center;">
+                        <button class="btn" onclick="generatePartialReport()">View Your Session Report</button>
+                    </p>
+                </div>
+            `;
+        }
+
+        function calculateFinalScore() {
+            const baseImprovement = 15 + Math.random() * 15; // 15-30 point improvement
+            const experienceMultiplier = sessionState.experienceLevel === 'advanced' ? 1.2 : 1.0;
+            return Math.min(98, sessionState.scoreBefore + (baseImprovement * experienceMultiplier));
+        }
+
+        function generateReport() {
+            sessionState.integrationSuccess = true;
+            populateReportData();
+            showScreen('report-screen');
+        }
+
+        function generatePartialReport() {
+            sessionState.integrationSuccess = false;
+            sessionState.scoreAfter = sessionState.scoreBefore + 10; // Modest improvement
+            populateReportData();
+            showScreen('report-screen');
+        }
+
+        function populateReportData() {
+            const endTime = new Date();
+            const duration = Math.round((endTime - sessionState.startTime) / 1000 / 60);
+            
+            document.getElementById('report-date').textContent = endTime.toLocaleString();
+            document.getElementById('report-name').textContent = sessionState.patientName;
+            document.getElementById('report-hero').textContent = `${heroHosts[sessionState.heroHost].icon} ${sessionState.heroHostName}`;
+            document.getElementById('report-duration').textContent = `${duration} minutes`;
+            document.getElementById('report-awareness').textContent = sessionState.awarenessLevel.charAt(0).toUpperCase() + sessionState.awarenessLevel.slice(1);
+            document.getElementById('report-symptoms').textContent = sessionState.symptoms;
+            document.getElementById('report-intention').textContent = sessionState.intention;
+            
+            document.getElementById('score-before').textContent = Math.round(sessionState.scoreBefore);
+            document.getElementById('score-after').textContent = Math.round(sessionState.scoreAfter);
+            document.getElementById('score-improvement').textContent = '+' + Math.round(sessionState.scoreAfter - sessionState.scoreBefore);
+            
+            // Protocol summary
+            const protocolSummary = document.getElementById('protocol-summary');
+            if (sessionState.integrationSuccess) {
+                protocolSummary.innerHTML = `
+                    <p style="color: #90EE90; margin-bottom: 15px;">✅ <strong>Complete Protocol Integration Achieved</strong></p>
+                    <ul style="margin-left: 30px; line-height: 1.8;">
+                        <li>All 10 healing steps completed successfully</li>
+                        <li>Root cause healing achieved at available depth</li>
+                        <li>Blackhole energy integration successful</li>
+                        <li>Awareness octave elevated naturally</li>
+                        <li>Self-sanitization protocol installed</li>
+                        <li>Full energetic seal applied</li>
+                    </ul>
+                `;
+            } else {
+                protocolSummary.innerHTML = `
+                    <p style="color: #ffa500; margin-bottom: 15px;">⚠️ <strong>Partial Protocol Integration (5/10 Steps)</strong></p>
+                    <ul style="margin-left: 30px; line-height: 1.8;">
+                        <li>Surface cleansing: Complete</li>
+                        <li>Pattern recognition: Complete</li>
+                        <li>Initial root access: Complete</li>
+                        <li>Deeper layers: Reserved for future sessions</li>
+                        <li>Protective pause honored</li>
+                    </ul>
+                `;
+            }
+            
+            // Generate OmniBeam key
+            const key = generateOmniBeamKey();
+            document.getElementById('omnibeam-key').textContent = key;
+            
+            // Recommended cycle
+            const cycle = sessionState.scoreAfter >= 85 ? '14 days' : '7 days';
+            document.getElementById('recommended-cycle').textContent = cycle;
+            
+            // Closing message
+            document.getElementById('closing-message').textContent = heroHosts[sessionState.heroHost].closingMessage;
+        }
+
+        function generateOmniBeamKey() {
+            const timestamp = Date.now().toString(36);
+            const random = Math.random().toString(36).substring(2, 15);
+            const hero = sessionState.heroHost.substring(0, 3).toUpperCase();
+            const score = Math.round(sessionState.scoreAfter).toString(36).toUpperCase();
+            return `NSPFRNP-TAINO-${hero}-${score}-${timestamp}-${random}`.toUpperCase();
+        }
+
+        function downloadReport() {
+            // In production, this would generate a PDF or detailed HTML report
+            const reportContent = document.querySelector('.report').innerText;
+            const blob = new Blob([reportContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Taino_Healing_Report_${sessionState.patientName}_${new Date().toISOString().split('T')[0]}.txt`;
+            a.click();
+            window.URL.revokeObjectURL(url);
+            
+            alert('📥 Report downloaded! Keep this for your records and bring it to future sessions.');
+        }
+
+        function showDonationScreen() {
+            showScreen('donation-screen');
+        }
+
+        function selectDonation(tier) {
+            const amounts = {
+                'gratitude': 0,
+                'seed': 11,
+                'harmony': 33,
+                'resonance': 77,
+                'abundance': 144
+            };
+            
+            if (tier === 'custom') {
+                const amount = prompt('Enter your custom donation amount:');
+                if (amount) {
+                    processDonation(parseFloat(amount));
+                }
+            } else {
+                const amount = amounts[tier];
+                if (amount === 0) {
+                    alert('🙏 Your healing is complete. Walk in beauty and return anytime. The clinic is always open to you.');
+                } else {
+                    processDonation(amount);
+                }
+            }
+        }
+
+        function processDonation(amount) {
+            // In production, this would connect to Stripe or other payment processor
+            alert(`Thank you for your donation of $${amount}! This supports the continued operation of the Taíno Shaman Wellness Clinic and the broader NSPFRNP Care Network. Your generosity helps keep healing accessible to all. 🙏💚
+
+In production, this would redirect to secure payment processing via Stripe (Octave 2 bridge).`);
+        }
+
+        function agreeReference() {
+            alert('Thank you! Your experience will help others discover this healing path. We\'ll reach out if we\'d like to share your story (you\'ll have full approval over any content). 🌟');
+            showScreen('report-screen');
+        }
+
+        function declineReference() {
+            alert('Understood. Your privacy is honored. 🙏');
+            showScreen('report-screen');
+        }
+
+        function startOver() {
+            if (confirm('Begin a new healing session? This will clear the current session data.')) {
+                location.reload();
+            }
+        }
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        // Initialize
+        window.addEventListener('load', function() {
+            console.log('🌿 Taíno Shaman Wellness Clinic initialized');
+            console.log('☀️ El Gran Sol blackhole core ready');
+            console.log('⚫ NSPFRNP protocol active');
+        });
+    </script>
+</body>
+</html>

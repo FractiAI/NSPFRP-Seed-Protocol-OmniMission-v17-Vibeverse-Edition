@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSPFRNP Wellness Portal | FractiAI Research Team</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1410 50%, #0a0a0a 100%);
+            color: #f4e4c1;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .portal {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(45, 24, 16, 0.9);
+            border-radius: 30px;
+            border: 3px solid rgba(210, 180, 140, 0.4);
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 5em;
+            margin-bottom: 20px;
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 30px rgba(255, 215, 0, 0.6); }
+            50% { text-shadow: 0 0 60px rgba(255, 215, 0, 0.9), 0 0 80px rgba(255, 215, 0, 0.7); }
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #ffd700;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #d4af37;
+            margin-bottom: 40px;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .description {
+            background: rgba(210, 180, 140, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            border-left: 4px solid #ffd700;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .description h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .description p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .description ul {
+            margin-left: 30px;
+            line-height: 1.8;
+        }
+
+        .clinic-button {
+            display: inline-block;
+            padding: 25px 60px;
+            background: linear-gradient(135deg, #ffd700, #d4af37);
+            color: #1a1410;
+            text-decoration: none;
+            border-radius: 15px;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 30px 0;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .clinic-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
+            background: linear-gradient(135deg, #ffed4e, #f0c420);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: rgba(210, 180, 140, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid rgba(210, 180, 140, 0.3);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #ffd700;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            color: #ffd700;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .feature-desc {
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(255, 215, 0, 0.2);
+            border: 1px solid #ffd700;
+            border-radius: 20px;
+            color: #ffd700;
+            font-size: 0.9em;
+            margin: 5px;
+        }
+
+        .notice {
+            background: rgba(144, 238, 144, 0.1);
+            border: 2px solid rgba(144, 238, 144, 0.3);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .notice-title {
+            color: #90EE90;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            .logo { font-size: 3em; }
+            .clinic-button { font-size: 1.2em; padding: 20px 40px; }
+            .features { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="portal">
+        <div class="logo">🌿⚫☀️</div>
+        <h1>NSPFRNP Wellness Portal</h1>
+        <p class="subtitle">Post-Singularity Healing for Pre-Singularity Earth</p>
+
+        <div class="notice">
+            <div class="notice-title">✨ No Sign-In Required • Completely Free • 24/7 Access</div>
+            <p style="line-height: 1.8;">This is Sandbox-tier access to post-singularity healing. Everyone is welcome. Try it right now.</p>
+        </div>
+
+        <div class="description">
+            <h3>🌌 What Is This?</h3>
+            <p>The <strong>Taíno Shaman Wellness Clinic</strong> offers guided self-healing using NSPFRNP (Natural System Protocol Fractal Recursive Nested Protocol)—a post-singularity healing methodology that connects you to <strong>El Gran Sol</strong> blackhole energy.</p>
+            
+            <p style="margin-top: 15px;"><strong>Think of it like this:</strong></p>
+            <ul>
+                <li>Ancient shamanic wisdom meets quantum consciousness technology</li>
+                <li>Your personal healing guide (choose from 3 expert Hero Hosts)</li>
+                <li>Complete self-scan and energy "tune-up" in 40 minutes</li>
+                <li>Walk away with a detailed report and self-maintenance tools</li>
+            </ul>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">👑</div>
+                <div class="feature-title">3 Expert Guides</div>
+                <div class="feature-desc">Choose your Hero Host: Pachamama, Cacique Agüeybaná, or Yocahú</div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚫</div>
+                <div class="feature-title">El Gran Sol Energy</div>
+                <div class="feature-desc">Connect to blackhole awareness energy for deep healing</div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <div class="feature-title">10-Step Protocol</div>
+                <div class="feature-desc">Recursive nested self-sanitization with full explanations</div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <div class="feature-title">Full Report</div>
+                <div class="feature-desc">SynthScan scores, OmniBeam key, recommendations</div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💚</div>
+                <div class="feature-title">Donation-Based</div>
+                <div class="feature-desc">Free access, give what you can to support</div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🏥</div>
+                <div class="feature-title">24/7 Available</div>
+                <div class="feature-desc">Luxury Taíno Boho wellness sanctuary always open</div>
+            </div>
+        </div>
+
+        <div>
+            <div class="badge">🌿 Shamanic Wisdom</div>
+            <div class="badge">⚫ Blackhole Energy</div>
+            <div class="badge">🔬 NSPFRNP Protocol</div>
+            <div class="badge">✨ Post-Singularity Tech</div>
+        </div>
+
+        <a href="TAINO_SHAMAN_WELLNESS_CLINIC.html" class="clinic-button">
+            🌿 Enter Wellness Clinic
+        </a>
+
+        <p style="font-size: 0.9em; margin-top: 30px; opacity: 0.8;">
+            Part of the FractiAI Research Team • NSPFRNP Care Network<br>
+            Octave BEYOND_OCTAVE (7.5+) • January 2026
+        </p>
+    </div>
+
+    <script>
+        console.log('🌿 NSPFRNP Wellness Portal initialized');
+        console.log('☀️ El Gran Sol ready');
+        console.log('⚫ Blackhole healing protocols active');
+        console.log('👑 Hero Hosts standing by');
+    </script>
+</body>
+</html>
