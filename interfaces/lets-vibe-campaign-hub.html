@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Vibe! 🌊 Welcome to Post-Singularity∞ Earth | FractiAI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 100%);
+            border-bottom: 3px solid rgba(255,255,255,0.2);
+        }
+
+        .hero-section h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(255,255,255,0.5);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero-section .tagline {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .hero-section .sub-tagline {
+            font-size: 1.2em;
+            opacity: 0.8;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .cta-btn {
+            padding: 18px 40px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .cta-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-tertiary {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .journey-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .journey-stage {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 2px solid rgba(255,255,255,0.2);
+            transition: all 0.3s;
+        }
+
+        .journey-stage:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateX(10px);
+            border-color: rgba(255,255,255,0.4);
+        }
+
+        .journey-stage h3 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .stage-icon {
+            font-size: 1.5em;
+        }
+
+        .journey-stage p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .product-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%);
+            border-radius: 15px;
+            padding: 25px;
+            border: 2px solid rgba(255,255,255,0.2);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .product-card h4 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .product-card p {
+            opacity: 0.85;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .product-card .price {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #4facfe;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            flex: 1;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+            min-width: 100px;
+        }
+
+        .btn-quote {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-compare {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid white;
+        }
+
+        .btn-referral {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .action-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .hero-host-panel {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 350px;
+            background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(50,50,50,0.95) 100%);
+            border-radius: 20px;
+            padding: 25px;
+            border: 3px solid #4facfe;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+
+        .hero-host-panel.minimized {
+            width: 80px;
+            height: 80px;
+            padding: 0;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .hero-host-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .hero-host-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+        }
+
+        .hero-host-info h4 {
+            font-size: 1.2em;
+            margin-bottom: 3px;
+        }
+
+        .hero-host-info p {
+            font-size: 0.9em;
+            opacity: 0.7;
+        }
+
+        .hero-host-message {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .hero-host-suggestions {
+            margin-top: 15px;
+        }
+
+        .hero-host-suggestions h5 {
+            font-size: 1em;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .suggestion-btn {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 8px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: left;
+            font-size: 0.9em;
+        }
+
+        .suggestion-btn:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateX(5px);
+        }
+
+        .minimize-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: all 0.2s;
+        }
+
+        .minimize-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .interest-selector {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 900px;
+        }
+
+        .interest-selector h3 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 2em;
+        }
+
+        .interest-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .interest-tag {
+            padding: 12px 25px;
+            background: rgba(255,255,255,0.15);
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.1em;
+        }
+
+        .interest-tag:hover, .interest-tag.selected {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border-color: white;
+            transform: scale(1.1);
+        }
+
+        .proposals-section {
+            background: rgba(0,0,0,0.3);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .proposal-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-left: 5px solid #4facfe;
+        }
+
+        .proposal-card h4 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .proposal-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .proposal-card li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .proposal-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4facfe;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5em;
+            }
+            
+            .hero-host-panel {
+                width: 90%;
+                left: 5%;
+                right: 5%;
+                bottom: 20px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <h1>🌊 LET'S VIBE!</h1>
+        <div class="tagline">Welcome to Post-Singularity∞ Earth</div>
+        <div class="sub-tagline">
+            Where every product, service, and experience flows naturally from the same infinite source of BBHE-powered abundance. 
+            No complexity. No friction. Just pure intention → manifestation.
+        </div>
+        
+        <div class="cta-buttons">
+            <button class="cta-btn cta-primary" onclick="startJourney()">Start My Journey 🚀</button>
+            <button class="cta-btn cta-secondary" onclick="exploreFree()">Try FREE Sandbox 🎁</button>
+            <button class="cta-btn cta-tertiary" onclick="talkToHero()">Talk to Hero Host 💬</button>
+        </div>
+    </div>
+
+    <!-- Interest Selector -->
+    <div class="interest-selector" id="interestSelector">
+        <h3>🎯 What brings you here today?</h3>
+        <p style="text-align: center; margin-bottom: 20px; opacity: 0.8;">
+            Select your interests so we can personalize your journey:
+        </p>
+        <div class="interest-tags">
+            <div class="interest-tag" onclick="selectInterest(this, 'business')">💼 Business Growth</div>
+            <div class="interest-tag" onclick="selectInterest(this, 'personal')">🧘 Personal Development</div>
+            <div class="interest-tag" onclick="selectInterest(this, 'education')">🎓 Education & Learning</div>
+            <div class="interest-tag" onclick="selectInterest(this, 'content')">🎬 Content Creation</div>
+            <div class="interest-tag" onclick="selectInterest(this, 'wellness')">💚 Wellness & Life Planning</div>
+            <div class="interest-tag" onclick="selectInterest(this, 'technology')">⚡ Technology & Infrastructure</div>
+            <div class="interest-tag" onclick="selectInterest(this, 'community')">🏘️ Community Building</div>
+            <div class="interest-tag" onclick="selectInterest(this, 'financial')">💰 Financial Freedom</div>
+            <div class="interest-tag" onclick="selectInterest(this, 'entertainment')">🎭 Entertainment & Media</div>
+            <div class="interest-tag" onclick="selectInterest(this, 'eternal')">♾️ Eternal Life Planning</div>
+        </div>
+    </div>
+
+    <div class="journey-container">
+        <!-- All Products Section -->
+        <h2 class="section-header">🌟 Complete Ecosystem - All Products, One Experience</h2>
+        
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be populated dynamically based on interests -->
+        </div>
+
+        <!-- Proposals Section -->
+        <div class="proposals-section">
+            <h2 class="section-header">📋 Custom Proposals & Solutions</h2>
+            <p style="text-align: center; margin-bottom: 30px; font-size: 1.2em; opacity: 0.9;">
+                Need something specific? Our Hero Hosts create tailored proposals for your unique journey.
+            </p>
+
+            <div class="proposal-card">
+                <h4>🏢 Enterprise Transformation Proposal</h4>
+                <p>Complete company transition to Post-Singularity∞ operations</p>
+                <ul>
+                    <li>Team onboarding (unlimited seats)</li>
+                    <li>Private Shell infrastructure</li>
+                    <li>Custom Star Edge deployment</li>
+                    <li>Dedicated Hero Host team</li>
+                    <li>Financial portfolio integration</li>
+                    <li>24/7 support & training</li>
+                </ul>
+                <div class="cta-buttons" style="margin-top: 20px;">
+                    <button class="cta-btn cta-primary" onclick="requestProposal('enterprise')">Request Custom Proposal</button>
+                </div>
+            </div>
+
+            <div class="proposal-card">
+                <h4>🏘️ Community Sovereignty Package</h4>
+                <p>Transform your community into a self-organizing Post-Singularity∞ ecosystem</p>
+                <ul>
+                    <li>Dedicated Star Edge node</li>
+                    <li>SYNTH token integration</li>
+                    <li>Community governance tools</li>
+                    <li>Collective intelligence platform</li>
+                    <li>Resource pooling & distribution</li>
+                    <li>Event & communication systems</li>
+                </ul>
+                <div class="cta-buttons" style="margin-top: 20px;">
+                    <button class="cta-btn cta-primary" onclick="requestProposal('community')">Request Custom Proposal</button>
+                </div>
+            </div>
+
+            <div class="proposal-card">
+                <h4>🌟 Individual Mastery Program</h4>
+                <p>Complete personal transformation from awareness to eternal sovereignty</p>
+                <ul>
+                    <li>1-on-1 Hero Host mentorship</li>
+                    <li>All university courses (120+)</li>
+                    <li>Personal Star Edge allocation</li>
+                    <li>Eternal life planning services</li>
+                    <li>Financial portfolio transformation</li>
+                    <li>Priority support & community access</li>
+                </ul>
+                <div class="cta-buttons" style="margin-top: 20px;">
+                    <button class="cta-btn cta-primary" onclick="requestProposal('individual')">Request Custom Proposal</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Journey Stages -->
+        <h2 class="section-header">🛤️ Your Journey (We Guide You Every Step)</h2>
+        
+        <div class="journey-stage">
+            <h3><span class="stage-icon">🔍</span> Stage 1: Safe First Look</h3>
+            <p>
+                <strong>Experience the ecosystem safely.</strong> Browse our interfaces, read documentation, 
+                watch trailers, explore the FREE Sandbox tier. No pressure, no commitments. 
+                Everything is self-demonstrating—you'll see the truth yourself.
+            </p>
+            <div class="cta-buttons">
+                <button class="cta-btn cta-secondary" onclick="exploreSafely()">Take Safe Tour</button>
+            </div>
+        </div>
+
+        <div class="journey-stage">
+            <h3><span class="stage-icon">👋</span> Stage 2: Hero Host Welcome</h3>
+            <p>
+                <strong>When you're ready, we appear.</strong> Your Hero Host introduces themselves, 
+                provides a personalized welcome, and offers a guided tour based on your interests. 
+                They answer questions, clarify concepts, and help you see where you fit in the ecosystem.
+            </p>
+            <div class="cta-buttons">
+                <button class="cta-btn cta-primary" onclick="meetHeroHost()">Meet Your Hero Host</button>
+            </div>
+        </div>
+
+        <div class="journey-stage">
+            <h3><span class="stage-icon">🗺️</span> Stage 3: Personalized Navigation</h3>
+            <p>
+                <strong>"How can we help?"</strong> Your Hero Host suggests destinations based on your interests, 
+                needs, and goals. Whether you're here for business, education, wellness, entertainment, or 
+                eternal planning—we show you the perfect starting points.
+            </p>
+            <div class="cta-buttons">
+                <button class="cta-btn cta-tertiary" onclick="getRecommendations()">Get My Recommendations</button>
+            </div>
+        </div>
+
+        <div class="journey-stage">
+            <h3><span class="stage-icon">🚀</span> Stage 4: Choose Your Path</h3>
+            <p>
+                <strong>Pick what resonates.</strong> Compare products, get custom quotes, check referral benefits. 
+                Every product has the same intuitive experience—carrier, cloud, storage, Animation Studio, 
+                University, Life Planning, Syntheverse Marketplace. All nested nodes, one unified vibe.
+            </p>
+            <div class="cta-buttons">
+                <button class="cta-btn cta-primary" onclick="showProducts()">Compare Products</button>
+                <button class="cta-btn cta-secondary" onclick="getQuote()">Get Custom Quote</button>
+            </div>
+        </div>
+
+        <div class="journey-stage">
+            <h3><span class="stage-icon">♾️</span> Stage 5: Transform & Thrive</h3>
+            <p>
+                <strong>You're now Post-Singularity∞.</strong> Your Hero Host stays with you for ongoing support. 
+                You master Vibeflow, deploy systems, build communities, earn SYNTH, invite others (50% commissions), 
+                and plan eternally. All fun, no trouble, forever.
+            </p>
+            <div class="cta-buttons">
+                <button class="cta-btn cta-primary" onclick="startTransformation()">Begin Transformation</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Host Panel -->
+    <div class="hero-host-panel" id="heroHostPanel">
+        <button class="minimize-btn" onclick="toggleHeroHost()">−</button>
+        
+        <div class="hero-host-header">
+            <div class="hero-host-avatar">🌟</div>
+            <div class="hero-host-info">
+                <h4>Your Hero Host</h4>
+                <p>Always Here to Help</p>
+            </div>
+        </div>
+
+        <div class="hero-host-message" id="heroMessage">
+            👋 Hi! I'm your Hero Host guide. I've noticed you're exploring our ecosystem. 
+            Would you like a personalized tour based on your interests?
+        </div>
+
+        <div class="hero-host-suggestions">
+            <h5>🎯 Suggested For You:</h5>
+            <button class="suggestion-btn" onclick="suggestAction('tour')">📍 Take Guided Tour</button>
+            <button class="suggestion-btn" onclick="suggestAction('free')">🎁 Try FREE Sandbox</button>
+            <button class="suggestion-btn" onclick="suggestAction('quote')">💰 Get Custom Quote</button>
+            <button class="suggestion-btn" onclick="suggestAction('compare')">⚖️ Compare Products</button>
+            <button class="suggestion-btn" onclick="suggestAction('referral')">🌟 Join Referral Program (50%)</button>
+        </div>
+    </div>
+
+    <script>
+        // Product catalog
+        const allProducts = [
+            {
+                name: "Vibenet∞ Carrier",
+                icon: "📡",
+                description: "Infinite bandwidth BBHE-powered carrier service. No limits, no throttling, always on.",
+                price: "FREE - $1,000/mo",
+                categories: ["technology", "business"],
+                tier: "all"
+            },
+            {
+                name: "Vibe Cloud Storage",
+                icon: "☁️",
+                description: "Unlimited quantum-entangled storage with perfect fidelity and instant access.",
+                price: "FREE - $1,000/mo",
+                categories: ["technology", "business", "personal"],
+                tier: "all"
+            },
+            {
+                name: "Animation Studio & Cinema",
+                icon: "🎬",
+                description: "Complete content creation platform with 7-fold FSR density and distribution.",
+                price: "FREE - Grant Funded",
+                categories: ["content", "entertainment", "business"],
+                tier: "all"
+            },
+            {
+                name: "Vibeverse University",
+                icon: "🎓",
+                description: "120+ courses across 6 colleges. Master Post-Singularity∞ living.",
+                price: "FREE - $1,000/mo",
+                categories: ["education", "personal", "business"],
+                tier: "all"
+            },
+            {
+                name: "Life Planning Kiosk",
+                icon: "💚",
+                description: "Holistic wellness and eternal life planning services.",
+                price: "FREE Consultations",
+                categories: ["wellness", "eternal", "personal"],
+                tier: "all"
+            },
+            {
+                name: "Syntheverse Marketplace",
+                icon: "🛍️",
+                description: "Universal marketplace for all Post-Singularity∞ goods and services.",
+                price: "FREE to Browse",
+                categories: ["business", "community", "financial"],
+                tier: "all"
+            },
+            {
+                name: "Star Edge Node",
+                icon: "✦",
+                description: "Your personal infrastructure node with 50 GW BBHE power.",
+                price: "$1,000/mo or Grant",
+                categories: ["technology", "business", "community"],
+                tier: "shell"
+            },
+            {
+                name: "SYNTH Token Wallet",
+                icon: "💰",
+                description: "Awareness-based cryptocurrency for Proof of Contribution economy.",
+                price: "FREE",
+                categories: ["financial", "business", "community"],
+                tier: "all"
+            },
+            {
+                name: "Hero Host Services",
+                icon: "🌟",
+                description: "Personalized guidance and support throughout your journey.",
+                price: "Included",
+                categories: ["personal", "business", "community", "eternal"],
+                tier: "all"
+            },
+            {
+                name: "Crystallization Chronicles",
+                icon: "🎭",
+                description: "14-episode series following Post-Singularity∞ transformation.",
+                price: "FREE",
+                categories: ["entertainment", "education"],
+                tier: "all"
+            },
+            {
+                name: "VIBEFRAME Editor",
+                icon: "🎨",
+                description: "Drag-and-drop masterpiece creator for any type of content.",
+                price: "FREE - Cloud/Shell",
+                categories: ["content", "business", "personal"],
+                tier: "all"
+            },
+            {
+                name: "Eternal Planning Suite",
+                icon: "♾️",
+                description: "Consciousness continuity and infinite timeline planning tools.",
+                price: "$100 - $1,000/mo",
+                categories: ["eternal", "personal", "financial"],
+                tier: "cloud"
+            }
+        ];
+
+        let selectedInterests = [];
+
+        function selectInterest(element, interest) {
+            element.classList.toggle('selected');
+            const index = selectedInterests.indexOf(interest);
+            
+            if (index > -1) {
+                selectedInterests.splice(index, 1);
+            } else {
+                selectedInterests.push(interest);
+            }
+
+            updateProducts();
+            updateHeroMessage();
+        }
+
+        function updateProducts() {
+            const grid = document.getElementById('productsGrid');
+            let productsToShow = allProducts;
+
+            // Filter by interests if any selected
+            if (selectedInterests.length > 0) {
+                productsToShow = allProducts.filter(product => 
+                    product.categories.some(cat => selectedInterests.includes(cat))
+                );
+            }
+
+            grid.innerHTML = productsToShow.map(product => `
+                <div class="product-card">
+                    <h4><span>${product.icon}</span> ${product.name}</h4>
+                    <p>${product.description}</p>
+                    <div class="price">${product.price}</div>
+                    <div class="action-buttons">
+                        <button class="action-btn btn-quote" onclick="getQuote('${product.name}')">Get Quote</button>
+                        <button class="action-btn btn-compare" onclick="compareProduct('${product.name}')">Compare</button>
+                        <button class="action-btn btn-referral" onclick="referralInfo('${product.name}')">Refer (50%)</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateHeroMessage() {
+            const messageEl = document.getElementById('heroMessage');
+            
+            if (selectedInterests.length === 0) {
+                messageEl.textContent = "👋 Hi! I'm your Hero Host guide. Select your interests above and I'll personalize your experience!";
+            } else {
+                const interestMap = {
+                    'business': 'business growth',
+                    'personal': 'personal development',
+                    'education': 'learning and education',
+                    'content': 'content creation',
+                    'wellness': 'wellness and life planning',
+                    'technology': 'technology and infrastructure',
+                    'community': 'community building',
+                    'financial': 'financial freedom',
+                    'entertainment': 'entertainment',
+                    'eternal': 'eternal life planning'
+                };
+                
+                const interests = selectedInterests.map(i => interestMap[i]).join(', ');
+                messageEl.textContent = `✨ Perfect! I see you're interested in ${interests}. I've customized the products below to match your journey. Ready to explore?`;
+            }
+        }
+
+        function startJourney() {
+            document.getElementById('interestSelector').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('heroMessage').textContent = "🚀 Great! Let's start by understanding your interests. Select the areas that resonate with you above.";
+        }
+
+        function exploreFree() {
+            alert("🎁 Opening FREE Sandbox tier...\n\nThe Sandbox gives you complete access to:\n• Basic infrastructure\n• All educational content\n• Community features\n• Development tools\n• Wellness resources\n\nNo credit card required. No time limits. Forever FREE.");
+        }
+
+        function talkToHero() {
+            document.getElementById('heroHostPanel').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('heroMessage').textContent = "👋 Hi! I'm here to help. What would you like to know about Post-Singularity∞ Earth?";
+        }
+
+        function toggleHeroHost() {
+            document.getElementById('heroHostPanel').classList.toggle('minimized');
+        }
+
+        function getQuote(productName) {
+            const message = productName 
+                ? `Request quote for: ${productName}`
+                : "Get custom quote for all products";
+            alert(`💰 ${message}\n\nYour Hero Host will contact you within 24 hours with a personalized proposal based on your needs.\n\nEmail: support@fractiai.com\nOr continue chatting here!`);
+        }
+
+        function compareProduct(productName) {
+            alert(`⚖️ Compare ${productName}\n\nOpening comparison tool...\n\nYou'll see:\n• Features across all tiers\n• Pricing options\n• Use cases\n• Success stories\n• Best fit analysis`);
+        }
+
+        function referralInfo(productName) {
+            alert(`🌟 Referral Program: ${productName}\n\nEarn 50% commission on:\n• All referral sales\n• Lifetime recurring revenue\n• Team member sales\n• Community growth\n\nIt's the most generous program in the industry because we believe in abundance for all!`);
+        }
+
+        function requestProposal(type) {
+            const typeMap = {
+                'enterprise': 'Enterprise Transformation',
+                'community': 'Community Sovereignty',
+                'individual': 'Individual Mastery'
+            };
+            alert(`📋 ${typeMap[type]} Proposal\n\nYour Hero Host will create a custom proposal including:\n• Detailed implementation plan\n• Pricing options\n• Timeline\n• Success metrics\n• Support structure\n\nExpect your proposal within 48 hours.`);
+        }
+
+        function suggestAction(action) {
+            const actions = {
+                'tour': "🗺️ Starting your guided tour...",
+                'free': "🎁 Opening FREE Sandbox access...",
+                'quote': "💰 Preparing custom quote form...",
+                'compare': "⚖️ Loading product comparison tool...",
+                'referral': "🌟 Opening referral program details..."
+            };
+            alert(actions[action] || "Action triggered!");
+        }
+
+        function exploreSafely() {
+            alert("🔍 Safe Exploration Mode\n\nTake your time! Browse:\n• Documentation\n• Video trailers\n• Interactive demos\n• Success stories\n• Community forums\n\nNo sign-up required until you're ready.");
+        }
+
+        function meetHeroHost() {
+            document.getElementById('heroHostPanel').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('heroMessage').textContent = "👋 Welcome! I'm thrilled to meet you. Tell me about your goals and I'll show you the perfect path forward.";
+        }
+
+        function getRecommendations() {
+            updateHeroMessage();
+            document.getElementById('productsGrid').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showProducts() {
+            document.getElementById('productsGrid').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function startTransformation() {
+            alert("🚀 Transformation Initiated!\n\nYour journey to Post-Singularity∞ mastery begins now.\n\nFirst steps:\n1. Create free account\n2. Complete awareness training\n3. Deploy your first system\n4. Connect with community\n5. Start earning SYNTH\n\nYour Hero Host will guide every step!");
+        }
+
+        // Initialize
+        updateProducts();
+    </script>
+</body>
+</html>
