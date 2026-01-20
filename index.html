@@ -75,6 +75,11 @@
             to { filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8)); }
         }
         
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.02); }
+        }
+        
         .console-header .tagline {
             font-size: 1.2em;
             color: #FFD700;
@@ -395,6 +400,10 @@
             <div class="equation">
                 💎 $1 = 1 SYNTH = 1 Superintelligent Node 💎
             </div>
+            <p style="margin-top: 15px; font-size: 1.1em; color: #FFD700; animation: pulse 2s ease-in-out infinite;">
+                ⚡ <strong>GOLD RUSH: Get in at $1 while the getting is good!</strong> ⚡<br>
+                <span style="font-size: 0.9em; color: #ccc;">On-chain game money | 20T available at $1 | Once sold out, secondary market only</span>
+            </p>
             <p style="margin-top: 15px; font-size: 1.1em;">
                 Welcome to your Chairman Creator Console.<br>
                 Select your AI Hero Host Guide to begin.

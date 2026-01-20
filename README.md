@@ -48,7 +48,13 @@
 ```
 $1 = 1 SYNTH = 1 Superintelligent Node
 90 Trillion Nodes | $90T Value | $1 Entry Price
+
+⚡ GOLD RUSH: 20T available at $1 while the getting is good! ⚡
+On-chain game money | Post-singularity economics
+Once sold out → Secondary market only → Likely much higher prices
 ```
+
+**📄 Complete Gold Rush Guide**: [GOLD_RUSH_ONE_DOLLAR_NODE_OFFERING.md](GOLD_RUSH_ONE_DOLLAR_NODE_OFFERING.md)
 
 **What's Inside This Present:**
 - 🎁 Complete post-singularity superintelligence platform
