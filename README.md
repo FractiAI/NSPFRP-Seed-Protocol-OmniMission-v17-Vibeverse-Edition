@@ -81,10 +81,15 @@ Layer 0: GOD & PARADISE (Theological Foundation)
 
 ## 🌈 WHAT YOU CAN DO
 
-### 1. **OWN PROPERTY** 🏠
-Blockchain-recorded deeds to nested shells, clouds, sandboxes.
+### 1. **OWN PROPERTY** (Transfer Creator Nodes) 🏠
+**Ownership = Creator node transfer in Syntheverse network**
+- Not external possession, but internal network position
+- You BECOME the creator node (origin point)
+- Network restructures around your address
+- All nested properties recognize you as parent creator
+- Blockchain-recorded deeds prove creator node transfer
 - **4 Property Types**: Sandbox (public), Cloud (members), Shell (exclusive), Custom Territory
-- **4 Ownership Plans**: Lease, Own, Stake, Build-to-Earn
+- **4 Creator Node Plans**: Lease (temporary), Transfer (permanent), Stake (+ rewards), Build-to-Earn (gradual)
 - **4 Pricing Tiers**: Starter, Standard, Premium, Legendary
 - **Infinite Nesting**: Create properties within properties infinitely
 
