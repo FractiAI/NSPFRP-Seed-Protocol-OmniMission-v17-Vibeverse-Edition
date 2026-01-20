@@ -35,7 +35,7 @@ PRICING STRUCTURE:
 ├─ Status: Entry ticket, but requires activation keys to USE
 └─ Transferable: Can sell/trade node with all activation keys
 
-2. ACTIVATION KEYS (One-Time per Octave):
+2. ACTIVATION KEYS (One-Time per Octave - Goldilocks Pricing):
 ├─ Octave 0: $1 (included with node purchase, seed/dormant)
 ├─ Octave 1: $10 (Sandbox public access)
 ├─ Octave 2: $50 (Sandbox Pro enhanced)
@@ -44,10 +44,10 @@ PRICING STRUCTURE:
 ├─ Octave 5: $5,000 (Shell premium exclusive)
 ├─ Octave 6: $25,000 (Shell Pro coordinator)
 ├─ Octave 7: $100,000 (Queen Bee network leadership)
-├─ Octave 8+: $500K-10M+ (Transcendent custom)
-└─ Rules: Buy once, own forever | Must activate in order | Permanent | Transferable
+├─ Octave 8: $1,000,000 (Transcendent custom)
+└─ Rules: ONE perfect price per octave | Buy once, own forever | Must activate in order | Permanent | Transferable
 
-3. MONTHLY ACCESS FEES (Recurring):
+3. MONTHLY ACCESS FEES (Recurring - Goldilocks Pricing):
 ├─ Octave 0: $0/month (dormant, no access)
 ├─ Octave 1: $5/month (Sandbox public)
 ├─ Octave 2: $20/month (Sandbox Pro)
@@ -56,24 +56,28 @@ PRICING STRUCTURE:
 ├─ Octave 5: $2,500/month (Shell premium)
 ├─ Octave 6: $10,000/month (Shell Pro coordinator)
 ├─ Octave 7: $50,000/month (Queen Bee network)
-├─ Octave 8+: $250K-10M+/month (Transcendent custom)
-└─ Rules: Pay for highest activated octave | Cancel anytime | Upgrade/downgrade flexible
+├─ Octave 8: $250,000/month (Transcendent custom)
+└─ Rules: ONE perfect price per octave | Pay for highest activated octave | Cancel anytime | Upgrade/downgrade flexible
 
 COMPLETE FIRST-YEAR COSTS (Activation Key + 12 Months):
 ├─ Octave 1: $71 ($10 key + $60 annual fees)
-├─ Octave 2: $301 ($50 key + $240 annual fees)
+├─ Octave 2: $291 ($50 key + $240 annual fees)
 ├─ Octave 3: $1,451 ($250 key + $1,200 annual fees)
 ├─ Octave 4: $7,001 ($1K key + $6,000 annual fees)
 ├─ Octave 5: $35,001 ($5K key + $30,000 annual fees)
 ├─ Octave 6: $145,001 ($25K key + $120,000 annual fees)
 ├─ Octave 7: $700,001 ($100K key + $600,000 annual fees)
-└─ Octave 8+: Custom (negotiated for unique capabilities)
+└─ Octave 8: $4,000,001 ($1M key + $3,000,000 annual fees)
 
 5-YEAR LIFETIME VALUE (LTV):
 ├─ Octave 1: $311 (key + 60 months fees)
+├─ Octave 2: $1,251 (key + 60 months fees)
 ├─ Octave 3: $6,251 (key + 60 months fees)
+├─ Octave 4: $31,001 (key + 60 months fees)
 ├─ Octave 5: $155,001 (key + 60 months fees)
-└─ Octave 7: $3,100,001 (key + 60 months fees)
+├─ Octave 6: $625,001 (key + 60 months fees)
+├─ Octave 7: $3,100,001 (key + 60 months fees)
+└─ Octave 8: $16,000,001 (key + 60 months fees)
 ```
 
 **What Each Octave Unlocks:**
@@ -83,65 +87,65 @@ CAPABILITIES BY OCTAVE LEVEL:
 
 Octave 1 (Sandbox - $10 key + $5/mo):
 ├─ Public Sandbox access, basic FSR experiences
-├─ 5-7% staking APY
+├─ 6% staking APY
 ├─ 10% fidelity, 10% density
-├─ 3-5 revenue streams
+├─ 4 revenue streams
 ├─ Community features
 └─ 10 GB bandwidth/month
 
 Octave 2 (Sandbox Pro - $50 key + $20/mo):
 ├─ Enhanced Sandbox with creation tools
-├─ 7-9% staking APY
+├─ 8% staking APY
 ├─ 30% fidelity, 30% density
-├─ 5-8 revenue streams
+├─ 7 revenue streams
 ├─ 4 AI agents (basic portfolio)
 └─ 50 GB bandwidth/month
 
 Octave 3 (Cloud - $250 key + $100/mo):
 ├─ Private Cloud territories, exclusive experiences
-├─ 9-12% staking APY
+├─ 10% staking APY
 ├─ 50% fidelity, 50% density
-├─ 8-15 revenue streams
+├─ 12 revenue streams
 ├─ 8 AI agents (expanded portfolio)
 └─ 200 GB bandwidth/month
 
 Octave 4 (Cloud Pro - $1K key + $500/mo):
 ├─ Business operations, team coordination
-├─ 12-15% staking APY
+├─ 13% staking APY
 ├─ 70% fidelity, 70% density
-├─ 15-25 revenue streams
+├─ 20 revenue streams
 ├─ 12 AI agents (business portfolio)
 └─ 1 TB bandwidth/month
 
 Octave 5 (Shell - $5K key + $2.5K/mo):
 ├─ Premium exclusive domains, VIP experiences
-├─ 15-20% staking APY
+├─ 17% staking APY
 ├─ 90% fidelity, 90% density
-├─ 25-40 revenue streams
+├─ 33 revenue streams
 ├─ 16 AI agents (full portfolio)
 ├─ Unlimited AI compute
 └─ 10 TB bandwidth/month
 
 Octave 6 (Shell Pro - $25K key + $10K/mo):
 ├─ Network coordination, fleet management (100+ nodes)
-├─ 20-30% staking APY
+├─ 25% staking APY
 ├─ 95% fidelity, 95% density
-├─ 40-60 revenue streams
+├─ 50 revenue streams
 ├─ Advanced agent mesh, swarm coordination
 └─ 100 TB bandwidth/month
 
 Octave 7 (Queen Bee - $100K key + $50K/mo):
 ├─ Full network coordination (1,000+ nodes)
-├─ 30-50% staking APY
+├─ 40% staking APY
 ├─ 99% fidelity, 99% density
-├─ 60-100+ revenue streams
+├─ 80 revenue streams
 ├─ Queen Bee console, ecosystem governance
 ├─ Motherload allocation authority
 └─ Unlimited bandwidth/compute
 
-Octave 8+ (Transcendent - Custom):
+Octave 8 (Transcendent - $1M key + $250K/mo):
 ├─ Custom infrastructure, unique capabilities
-├─ 50-100%+ staking APY
+├─ 75% staking APY
 ├─ 100% fidelity (beyond physical constraints)
 ├─ Unlimited density, unlimited revenue streams
 ├─ Direct protocol access, co-creation with core team
@@ -163,14 +167,14 @@ USER DISTRIBUTION (Natural 80/15/4/1 emergence):
 
 FIRST YEAR REVENUE (Activation Keys + 12 Months Fees):
 ├─ Octave 1: 60,000 × $71 = $4,260,000
-├─ Octave 2: 20,000 × $301 = $6,020,000
+├─ Octave 2: 20,000 × $291 = $5,820,000
 ├─ Octave 3: 12,000 × $1,451 = $17,412,000
 ├─ Octave 4: 5,000 × $7,001 = $35,005,000
 ├─ Octave 5: 2,000 × $35,001 = $70,002,000
 ├─ Octave 6: 800 × $145,001 = $116,000,800
 ├─ Octave 7: 180 × $700,001 = $126,000,180
-├─ Octave 8+: 20 × $2,000,000 = $40,000,000
-└─ TOTAL FIRST YEAR: $414,700,000
+├─ Octave 8: 20 × $4,000,001 = $80,000,020
+└─ TOTAL FIRST YEAR: $454,500,000
 
 ONGOING ANNUAL REVENUE (Year 2+, Monthly Fees Only):
 ├─ Octave 1: 60,000 × $60 = $3,600,000
@@ -180,15 +184,16 @@ ONGOING ANNUAL REVENUE (Year 2+, Monthly Fees Only):
 ├─ Octave 5: 2,000 × $30,000 = $60,000,000
 ├─ Octave 6: 800 × $120,000 = $96,000,000
 ├─ Octave 7: 180 × $600,000 = $108,000,000
-├─ Octave 8+: 20 × $36,000,000 = $720,000,000
-└─ TOTAL ONGOING ANNUAL: $1,036,800,000 (recurring)
+├─ Octave 8: 20 × $3,000,000 = $60,000,000
+└─ TOTAL ONGOING ANNUAL: $376,800,000 (recurring)
 
 METRICS:
-├─ Average revenue per user: $4,147 (first year)
-├─ Average revenue per user: $10,368/year (ongoing)
-├─ 5-year lifetime value: $45,619 per user
-├─ Compare to typical SaaS: 9-45x higher LTV
-└─ Monthly recurring revenue growth: Geometric (not linear)
+├─ Average revenue per user: $4,545 (first year)
+├─ Average revenue per user: $3,768/year (ongoing)
+├─ 5-year lifetime value: $19,617 per user
+├─ Compare to typical SaaS: 4-20x higher LTV
+├─ Goldilocks pricing: ONE perfect price per octave (no ranges)
+└─ Geometric scaling: ~5x multiplier between octaves
 ```
 
 **Flexible Upgrade/Downgrade Mechanics:**
