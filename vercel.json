@@ -4,23 +4,27 @@
   "rewrites": [
     {
       "source": "/dashboard",
-      "destination": "/VIBECRAFT_DASHBOARD_LANDCRUISER.html"
+      "destination": "/interfaces/demos/VIBECRAFT_DASHBOARD_LANDCRUISER.html"
     },
     {
       "source": "/omnimission",
-      "destination": "/VIBECRAFT_DASHBOARD_LANDCRUISER.html"
+      "destination": "/interfaces/demos/VIBECRAFT_DASHBOARD_LANDCRUISER.html"
     },
     {
       "source": "/el-taino",
-      "destination": "/VIBECRAFT_DASHBOARD_LANDCRUISER.html"
+      "destination": "/interfaces/demos/VIBECRAFT_DASHBOARD_LANDCRUISER.html"
     },
     {
       "source": "/control-center",
-      "destination": "/FRACTIAI_CONTROL_CENTER_LANDING.html"
+      "destination": "/interfaces/demos/FRACTIAI_CONTROL_CENTER_LANDING.html"
     },
     {
       "source": "/animation-studio",
-      "destination": "/WILLIAM_SHAKESPEARE_ANIMATION_STUDIO_BUTTON.html"
+      "destination": "/interfaces/demos/WILLIAM_SHAKESPEARE_ANIMATION_STUDIO_BUTTON.html"
+    },
+    {
+      "source": "/demos/:path*",
+      "destination": "/interfaces/demos/:path*"
     }
   ],
   "headers": [
@@ -34,8 +38,14 @@
         {
           "key": "Access-Control-Allow-Methods",
           "value": "GET, OPTIONS"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=3600"
         }
       ]
     }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }

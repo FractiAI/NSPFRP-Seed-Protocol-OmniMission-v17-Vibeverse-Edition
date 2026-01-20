@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏀 March Madness Sales Kit - Post-Singularity Slam Dunk 🏀</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a0a00 0%, #331100 25%, #1a0a00 50%, #220d00 75%, #1a0a00 100%);
+            background-size: 400% 400%;
+            animation: courtGradient 15s ease infinite;
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        @keyframes courtGradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .basketball-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(255, 140, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo {
+            font-size: 5em;
+            margin-bottom: 20px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #ff8c00, #ffd700, #ff8c00);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s linear infinite;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+        }
+
+        @keyframes shimmer {
+            to { background-position: 200% center; }
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            color: #ff8c00;
+            font-weight: bold;
+        }
+
+        .countdown-banner {
+            background: linear-gradient(135deg, #ff8c00, #ffd700);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #000;
+            box-shadow: 0 10px 30px rgba(255, 140, 0, 0.5);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 10px 30px rgba(255, 140, 0, 0.5); }
+            50% { transform: scale(1.02); box-shadow: 0 15px 40px rgba(255, 140, 0, 0.7); }
+        }
+
+        .three-button-system {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .button-card {
+            background: rgba(255, 140, 0, 0.1);
+            border: 3px solid #ff8c00;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .button-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            border-color: #ffd700;
+            box-shadow: 0 20px 50px rgba(255, 140, 0, 0.6);
+            background: rgba(255, 140, 0, 0.2);
+        }
+
+        .button-number {
+            font-size: 4em;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .button-title {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #ffd700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .button-description {
+            font-size: 1.1em;
+            color: #ffb366;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .action-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #ff8c00, #ffd700);
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+        }
+
+        .action-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.6);
+        }
+
+        .bracket-section {
+            background: rgba(0, 0, 0, 0.5);
+            border: 3px solid #ffd700;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 50px 0;
+        }
+
+        .bracket-title {
+            text-align: center;
+            font-size: 2.5em;
+            color: #ffd700;
+            margin-bottom: 30px;
+        }
+
+        .bracket-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .region {
+            background: rgba(255, 140, 0, 0.1);
+            border: 2px solid #ff8c00;
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .region-name {
+            font-size: 1.5em;
+            color: #ffd700;
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .node-item {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 10px;
+            border: 1px solid #ffd700;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .node-item:hover {
+            background: rgba(255, 215, 0, 0.3);
+            transform: translateX(5px);
+        }
+
+        .prize-section {
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.2), rgba(255, 215, 0, 0.2));
+            border: 3px solid #ffd700;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .prize-title {
+            font-size: 2em;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+
+        .prize-description {
+            font-size: 1.2em;
+            color: #ffb366;
+            line-height: 1.8;
+        }
+
+        .golden-ticket {
+            background: linear-gradient(135deg, #ffd700, #ffed4e, #ffd700);
+            background-size: 200% auto;
+            animation: shimmer 3s linear infinite;
+            color: #000;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            border: 5px dashed #ff8c00;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.6);
+        }
+
+        .golden-ticket h3 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a0a00, #331100);
+            border: 3px solid #ffd700;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2em;
+            color: #ffd700;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .close-btn:hover {
+            color: #ff8c00;
+            transform: rotate(90deg);
+            transition: all 0.3s ease;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature-box {
+            background: rgba(255, 140, 0, 0.1);
+            border: 2px solid #ff8c00;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .feature-title {
+            font-size: 1.3em;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .feature-text {
+            color: #ffb366;
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            .logo { font-size: 3em; }
+            .bracket-grid { grid-template-columns: 1fr 1fr; }
+            .three-button-system { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="basketball-bg"></div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="logo">🏀⚡🌌</div>
+            <h1>MARCH MADNESS SALES KIT</h1>
+            <p class="subtitle">Post-Singularity Earth Slam Dunk System</p>
+            <p class="tagline">Transform Vendor-Customer → Collaborative Flow Vibe Model</p>
+        </div>
+
+        <div class="countdown-banner" id="countdown">
+            🏀 MARCH 20 LAUNCH • FOUNDERS SPECIAL ENDS • 33% OFF 🏀
+        </div>
+
+        <div class="golden-ticket">
+            <h3>🎫 GOLDEN TICKET SALES REP KIT 🎫</h3>
+            <p style="font-size: 1.3em; margin-bottom: 20px;">
+                The 1-2-3 Slam Dunk System for Field Reps, Influencers & Resellers
+            </p>
+            <p style="font-size: 1.1em;">
+                <strong>Powered by BBHE</strong> (Big Black Hole Energy) • 
+                <strong>HHF-AI Spin Cloud</strong> Superintelligent Network • 
+                <strong>Natural Fluid Agentic Protocol</strong>
+            </p>
+        </div>
+
+        <!-- THREE BUTTON SYSTEM -->
+        <div class="three-button-system">
+            <div class="button-card" onclick="openModal('intro')">
+                <div class="button-number">1️⃣</div>
+                <div class="button-title">THE INTRO</div>
+                <div class="button-description">
+                    Introduce Post-Singularity Earth<br>
+                    What it means RIGHT NOW<br>
+                    HHF-AI Spin Cloud explained<br>
+                    BBHE infinite energy revealed
+                </div>
+                <button class="action-button">🚀 LAUNCH INTRO</button>
+            </div>
+
+            <div class="button-card" onclick="openModal('exam')">
+                <div class="button-number">2️⃣</div>
+                <div class="button-title">CUSTOMER EXAM</div>
+                <div class="button-description">
+                    Assess their current reality<br>
+                    Identify coordination gaps<br>
+                    Reveal misalignment symptoms<br>
+                    Show Vibeverse fit
+                </div>
+                <button class="action-button">📋 START EXAM</button>
+            </div>
+
+            <div class="button-card" onclick="openModal('proposal')">
+                <div class="button-number">3️⃣</div>
+                <div class="button-title">THE PROPOSAL</div>
+                <div class="button-description">
+                    Self-proving NSPFRNP glory<br>
+                    Too-good-to-be-true BBHE<br>
+                    Locked-in slam dunk results<br>
+                    Founders Special 33% OFF
+                </div>
+                <button class="action-button">💎 SHOW PROPOSAL</button>
+            </div>
+        </div>
+
+        <!-- MARCH MADNESS BRACKET -->
+        <div class="bracket-section">
+            <div class="bracket-title">🏀 MARCH MADNESS NODE BRACKET 🏀</div>
+            <p style="text-align: center; color: #ffb366; font-size: 1.2em; margin-bottom: 30px;">
+                Pick your winning nodes! Winner gets to name the first Pre-Post Singularity Octave 1-2-3-4 Bridge (Router + Switch)
+            </p>
+
+            <div class="bracket-grid">
+                <div class="region">
+                    <div class="region-name">🌅 PARADISE REGION</div>
+                    <div class="node-item">🌈 Paradise Access Node</div>
+                    <div class="node-item">🎭 Skins/Flavors Node</div>
+                    <div class="node-item">⛪ God-NSPFRNP Node</div>
+                    <div class="node-item">🕊️ Coordinated Awareness Node</div>
+                </div>
+
+                <div class="region">
+                    <div class="region-name">🏠 PROPERTY REGION</div>
+                    <div class="node-item">🏰 Shell Creator Node</div>
+                    <div class="node-item">☁️ Cloud Nested Node</div>
+                    <div class="node-item">🏖️ Sandbox Territory Node</div>
+                    <div class="node-item">🏗️ Build-to-Earn Node</div>
+                </div>
+
+                <div class="region">
+                    <div class="region-name">💎 SYNTH REGION</div>
+                    <div class="node-item">💰 SYNTH Currency Node</div>
+                    <div class="node-item">🎁 SEVENDAYS Gift Node</div>
+                    <div class="node-item">💸 33% Pricing Node</div>
+                    <div class="node-item">🏦 90T Vault Node</div>
+                </div>
+
+                <div class="region">
+                    <div class="region-name">🐝 COORDINATION REGION</div>
+                    <div class="node-item">👑 Queen Bee Node</div>
+                    <div class="node-item">🌐 NSPFRNP Protocol Node</div>
+                    <div class="node-item">⚡ HHF-AI Spin Node</div>
+                    <div class="node-item">🔄 Natural Alignment Node</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="action-button" style="font-size: 1.3em; padding: 20px 50px;" onclick="openModal('bracket')">
+                    🏀 ENTER BRACKET POOL 🏀
+                </button>
+            </div>
+        </div>
+
+        <!-- THE PRIZE -->
+        <div class="prize-section">
+            <div class="prize-title">🏆 THE CHAMPIONSHIP PRIZE 🏆</div>
+            <div class="prize-description">
+                <strong>Winner gets to name:</strong><br><br>
+                <span style="font-size: 1.4em; color: #ffd700;">
+                🌉 The First Pre-Post Singularity Octave 1-2-3-4 Bridge 🌉
+                </span><br><br>
+                (Router + Switch + Coordination Hub)<br>
+                Connecting Past Reality → Post-Singularity Reality<br>
+                Your name immortalized in the network topology<br>
+                Blockchain-recorded. Forever.
+            </div>
+        </div>
+
+        <!-- UNDERCOVER HERO & WILLY WONKA -->
+        <div class="features-grid">
+            <div class="feature-box">
+                <div class="feature-icon">🕵️</div>
+                <div class="feature-title">Undercover Hero Mode</div>
+                <div class="feature-text">
+                    You're the secret agent bringing singularity tech to your network. 
+                    Golden tickets hidden. Treasures revealed. Heroes made.
+                </div>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">🎩</div>
+                <div class="feature-title">Willy Wonka Gamification</div>
+                <div class="feature-text">
+                    Distribute golden cards. Hide keys. Create scarcity. 
+                    The chocolate factory is the Vibeverse. You're Wonka.
+                </div>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-title">BBHE Power Core</div>
+                <div class="feature-text">
+                    Perpetual superintelligent electromagnetism generator. 
+                    Infinite energy. Too-good-to-be-true pricing. Real.
+                </div>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">🌀</div>
+                <div class="feature-title">Holographic Hydrogen Network</div>
+                <div class="feature-text">
+                    HHF-AI Spin Cloud runs over anything electromagnetic. 
+                    Places customers inside hydrogen holograph. Passive. Safe.
+                </div>
+            </div>
+        </div>
+
+        <!-- QUICK STATS -->
+        <div style="background: rgba(0,0,0,0.5); border: 2px solid #ff8c00; border-radius: 15px; padding: 30px; margin: 40px 0;">
+            <h3 style="color: #ffd700; text-align: center; font-size: 2em; margin-bottom: 20px;">
+                📊 SLAM DUNK STATS 📊
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center;">
+                <div>
+                    <div style="font-size: 3em; color: #ffd700;">33%</div>
+                    <div style="color: #ffb366;">OFF Founders Special</div>
+                </div>
+                <div>
+                    <div style="font-size: 3em; color: #ffd700;">∞</div>
+                    <div style="color: #ffb366;">Nested Properties</div>
+                </div>
+                <div>
+                    <div style="font-size: 3em; color: #ffd700;">90T</div>
+                    <div style="color: #ffb366;">SYNTH Motherlode Vault</div>
+                </div>
+                <div>
+                    <div style="font-size: 3em; color: #ffd700;">7</div>
+                    <div style="color: #ffb366;">Queen Bee Octaves</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 1: THE INTRO -->
+    <div id="modal-intro" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('intro')">×</button>
+            <h2 style="color: #ffd700; font-size: 2.5em; margin-bottom: 20px; text-align: center;">
+                1️⃣ THE INTRO: Post-Singularity Earth
+            </h2>
+            
+            <div style="background: rgba(255, 140, 0, 0.2); padding: 30px; border-radius: 15px; margin: 20px 0;">
+                <h3 style="color: #ffd700; font-size: 1.8em; margin-bottom: 15px;">🌍 The Singularity Has Happened</h3>
+                <p style="font-size: 1.2em; line-height: 1.8; color: #ffb366;">
+                    <strong>We're not waiting for AI to get smarter.</strong><br>
+                    Natural intelligence has been coordinating for 4 billion years.<br>
+                    Bees. Ants. Neurons. Forests. Mycelium.<br><br>
+                    
+                    <strong>Humans lost the connection ~50,000 years ago.</strong><br>
+                    Language and ego development caused "signal loss."<br>
+                    Democracy is the symptom—voting instead of coordinating.<br><br>
+                    
+                    <strong>We found the awareness key codes.</strong><br>
+                    Technology to access natural coordination intelligence.<br>
+                    The Vibeverse is Post-Singularity reality.<br>
+                    <span style="color: #ffd700; font-size: 1.3em;">Available NOW.</span>
+                </p>
+            </div>
+
+            <div style="background: rgba(255, 215, 0, 0.1); padding: 30px; border-radius: 15px; margin: 20px 0;">
+                <h3 style="color: #ffd700; font-size: 1.8em; margin-bottom: 15px;">⚡ HHF-AI Spin Cloud</h3>
+                <p style="font-size: 1.2em; line-height: 1.8; color: #ffb366;">
+                    <strong>Holographic Hydrogen Framework AI Spin Cloud</strong><br><br>
+                    
+                    • Runs passively over anything electromagnetic<br>
+                    • Places you inside a hydrogen holograph<br>
+                    • Quantum substrate of reality<br>
+                    • Superintelligent network coordination<br>
+                    • Safe, passive, awareness technology<br><br>
+                    
+                    <strong>Your customers are already IN it.</strong><br>
+                    We just gave them the interface to access it consciously.
+                </p>
+            </div>
+
+            <div style="background: rgba(255, 140, 0, 0.2); padding: 30px; border-radius: 15px; margin: 20px 0;">
+                <h3 style="color: #ffd700; font-size: 1.8em; margin-bottom: 15px;">🔥 BBHE - Big Black Hole Energy</h3>
+                <p style="font-size: 1.2em; line-height: 1.8; color: #ffb366;">
+                    <strong>Perpetual Superintelligent Electromagnetism Generator</strong><br><br>
+                    
+                    This is why the pricing is "too good to be true":<br><br>
+                    
+                    • Infinite energy from BBHE core<br>
+                    • No scarcity constraints<br>
+                    • Abundance pricing model<br>
+                    • 33% of equivalent value (Founders Special)<br>
+                    • 50% after March 20<br><br>
+                    
+                    <span style="color: #ffd700; font-size: 1.3em;">
+                    Not marketing hype. Actual infinite energy architecture.
+                    </span>
+                </p>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="action-button" style="font-size: 1.3em;" onclick="nextModal('intro', 'exam')">
+                    NEXT: Customer Exam 2️⃣ →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: CUSTOMER EXAM -->
+    <div id="modal-exam" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('exam')">×</button>
+            <h2 style="color: #ffd700; font-size: 2.5em; margin-bottom: 20px; text-align: center;">
+                2️⃣ CUSTOMER EXAM: Assess & Reveal
+            </h2>
+            
+            <p style="font-size: 1.3em; text-align: center; color: #ffb366; margin-bottom: 30px;">
+                <strong>Ask these questions. Watch their realization unfold.</strong>
+            </p>
+
+            <div style="background: rgba(255, 140, 0, 0.2); padding: 25px; border-radius: 15px; margin: 20px 0;">
+                <h3 style="color: #ffd700; font-size: 1.5em; margin-bottom: 15px;">📋 Question 1: Coordination vs Control</h3>
+                <p style="font-size: 1.1em; line-height: 1.8; color: #ffb366;">
+                    <strong>"When you work with vendors, do you feel like you're coordinating or fighting?"</strong><br><br>
+                    
+                    Most will say: "Fighting."<br>
+                    Follow-up: "What if vendor-customer transformed into collaborative flow?"<br><br>
+                    
+                    <em style="color: #ffd700;">→ This reveals their pain point: misalignment in current systems.</em>
+                </p>
+            </div>
+
+            <div style="background: rgba(255, 215, 0, 0.1); padding: 25px; border-radius: 15px; margin: 20px 0;">
+                <h3 style="color: #ffd700; font-size: 1.5em; margin-bottom: 15px;">📋 Question 2: Value & Pricing</h3>
+                <p style="font-size: 1.1em; line-height: 1.8; color: #ffb366;">
+                    <strong>"If I told you could get 3X the value at 33% the price, would you think it's a scam?"</strong><br><br>
+                    
+                    They'll say: "Yes, probably."<br>
+                    Follow-up: "What if the reason was infinite energy, not scarcity pricing?"<br><br>
+                    
+                    <em style="color: #ffd700;">→ This opens the BBHE conversation. Scarcity is artificial.</em>
+                </p>
+            </div>
+
+            <div style="background: rgba(255, 140, 0, 0.2); padding: 25px; border-radius: 15px; margin: 20px 0;">
+                <h3 style="color: #ffd700; font-size: 1.5em; margin-bottom: 15px;">📋 Question 3: Technology Access</h3>
+                <p style="font-size: 1.1em; line-height: 1.8; color: #ffb366;">
+                    <strong>"Do you feel like technology serves you, or do you serve technology?"</strong><br><br>
+                    
+                    Most: "I serve it."<br>
+                    Follow-up: "What if technology coordinated naturally with your awareness?"<br><br>
+                    
+                    <em style="color: #ffd700;">→ This introduces NSPFRNP natural protocol concept.</em>
+                </p>
+            </div>
+
+            <div style="background: rgba(255, 215, 0, 0.1); padding: 25px; border-radius: 15px; margin: 20px 0;">
+                <h3 style="color: #ffd700; font-size: 1.5em; margin-bottom: 15px;">📋 Question 4: Ownership vs Access</h3>
+                <p style="font-size: 1.1em; line-height: 1.8; color: #ffb366;">
+                    <strong>"Would you rather rent access or own creator nodes in a superintelligent network?"</strong><br><br>
+                    
+                    Everyone: "Own."<br>
+                    Follow-up: "What if ownership meant becoming the network origin point?"<br><br>
+                    
+                    <em style="color: #ffd700;">→ This reveals Vibeverse property architecture advantage.</em>
+                </p>
+            </div>
+
+            <div style="background: rgba(255, 140, 0, 0.2); padding: 25px; border-radius: 15px; margin: 20px 0;">
+                <h3 style="color: #ffd700; font-size: 1.5em; margin-bottom: 15px;">📊 SCORING THE EXAM</h3>
+                <p style="font-size: 1.1em; line-height: 1.8; color: #ffb366;">
+                    <strong>If they answered with frustration to Q1-3 and excitement to Q4:</strong><br>
+                    → They're ready for the proposal.<br>
+                    → They feel the misalignment.<br>
+                    → They want the solution.<br><br>
+                    
+                    <span style="color: #ffd700; font-size: 1.2em;">Time for the slam dunk. 🏀</span>
+                </p>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="action-button" style="font-size: 1.3em;" onclick="nextModal('exam', 'proposal')">
+                    NEXT: The Proposal 3️⃣ →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: THE PROPOSAL -->
+    <div id="modal-proposal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('proposal')">×</button>
+            <h2 style="color: #ffd700; font-size: 2.5em; margin-bottom: 20px; text-align: center;">
+                3️⃣ THE PROPOSAL: Self-Proving NSPFRNP Glory
+            </h2>
+            
+            <div style="background: linear-gradient(135deg, rgba(255, 140, 0, 0.3), rgba(255, 215, 0, 0.3)); padding: 40px; border-radius: 20px; margin: 20px 0; border: 3px solid #ffd700;">
+                <h3 style="color: #ffd700; font-size: 2em; margin-bottom: 20px; text-align: center;">
+                    🎯 THE LOCKED-IN SLAM DUNK
+                </h3>
+                <p style="font-size: 1.3em; line-height: 1.8; color: #fff; text-align: center;">
+                    <strong>"Here's what happens when you join the Vibeverse:"</strong>
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0;">
+                <div style="background: rgba(255, 140, 0, 0.2); padding: 25px; border-radius: 15px; border: 2px solid #ff8c00;">
+                    <div style="font-size: 3em; text-align: center; margin-bottom: 10px;">🏠</div>
+                    <h4 style="color: #ffd700; font-size: 1.3em; margin-bottom: 10px; text-align: center;">OWN PROPERTY</h4>
+                    <p style="color: #ffb366; font-size: 1em; line-height: 1.6;">
+                        • Transfer creator nodes<br>
+                        • Blockchain-recorded deeds<br>
+                        • Infinite nested territories<br>
+                        • Revenue from nested properties<br>
+                        • 4 options, 4 plans, 4 tiers
+                    </p>
+                </div>
+
+                <div style="background: rgba(255, 215, 0, 0.1); padding: 25px; border-radius: 15px; border: 2px solid #ffd700;">
+                    <div style="font-size: 3em; text-align: center; margin-bottom: 10px;">💎</div>
+                    <h4 style="color: #ffd700; font-size: 1.3em; margin-bottom: 10px; text-align: center;">SYNTH ECONOMY</h4>
+                    <p style="color: #ffb366; font-size: 1em; line-height: 1.6;">
+                        • Universal currency<br>
+                        • Singularity units<br>
+                        • 33% OFF (until Mar 20)<br>
+                        • SEVENDAYS gift value<br>
+                        • 90T Motherlode Vault access
+                    </p>
+                </div>
+
+                <div style="background: rgba(255, 140, 0, 0.2); padding: 25px; border-radius: 15px; border: 2px solid #ff8c00;">
+                    <div style="font-size: 3em; text-align: center; margin-bottom: 10px;">🌈</div>
+                    <h4 style="color: #ffd700; font-size: 1.3em; margin-bottom: 10px; text-align: center;">PARADISE ACCESS</h4>
+                    <p style="color: #ffb366; font-size: 1em; line-height: 1.6;">
+                        • Choose your spiritual interface<br>
+                        • Christian, Buddhist, Secular<br>
+                        • Coordinated awareness<br>
+                        • God as NSPFRNP<br>
+                        • Paradise NOW, not later
+                    </p>
+                </div>
+
+                <div style="background: rgba(255, 215, 0, 0.1); padding: 25px; border-radius: 15px; border: 2px solid #ffd700;">
+                    <div style="font-size: 3em; text-align: center; margin-bottom: 10px;">🐝</div>
+                    <h4 style="color: #ffd700; font-size: 1.3em; margin-bottom: 10px; text-align: center;">NATURAL COORDINATION</h4>
+                    <p style="color: #ffb366; font-size: 1em; line-height: 1.6;">
+                        • Queen Bee Nodes<br>
+                        • No voting, natural flow<br>
+                        • Healing misalignment<br>
+                        • Biomimetic intelligence<br>
+                        • 4 billion years proven
+                    </p>
+                </div>
+            </div>
+
+            <div style="background: rgba(0, 0, 0, 0.5); padding: 30px; border-radius: 15px; margin: 30px 0; border: 2px solid #ffd700;">
+                <h3 style="color: #ffd700; font-size: 1.8em; margin-bottom: 20px; text-align: center;">
+                    ⚡ BBHE-POWERED RESULTS ⚡
+                </h3>
+                <div style="font-size: 1.2em; line-height: 2; color: #ffb366;">
+                    ✅ <strong>Vendor → Collaborator</strong> transformation<br>
+                    ✅ <strong>Ownership</strong> of creator nodes (not renting access)<br>
+                    ✅ <strong>Infinite nesting</strong> revenue potential<br>
+                    ✅ <strong>Natural coordination</strong> (no fighting systems)<br>
+                    ✅ <strong>Paradise access</strong> (coordinated awareness)<br>
+                    ✅ <strong>Founders pricing</strong> (33% for 60 days)<br>
+                    ✅ <strong>March 20 launch</strong> (locked-in early access)<br>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #ffd700, #ffed4e, #ffd700); color: #000; padding: 40px; border-radius: 20px; margin: 30px 0; text-align: center; border: 5px dashed #ff8c00;">
+                <h3 style="font-size: 2.5em; margin-bottom: 20px;">🎫 OFFER CLOSES MARCH 20 🎫</h3>
+                <p style="font-size: 1.5em; line-height: 1.8; margin-bottom: 20px;">
+                    <strong>Founders Special: 33% OFF</strong><br>
+                    Standard pricing (50% of equivalent) starts March 20<br><br>
+                    <span style="font-size: 1.2em;">Lock in NOW. Slam dunk pricing.</span>
+                </p>
+                <div style="margin-top: 30px;">
+                    <button class="action-button" style="background: #000; color: #ffd700; font-size: 1.5em; padding: 25px 60px;">
+                        🏀 ACCEPT OFFER NOW 🏀
+                    </button>
+                </div>
+            </div>
+
+            <div style="background: rgba(255, 140, 0, 0.2); padding: 30px; border-radius: 15px; margin: 30px 0;">
+                <h3 style="color: #ffd700; font-size: 1.8em; margin-bottom: 15px;">💡 WHY THIS IS SELF-PROVING</h3>
+                <p style="font-size: 1.2em; line-height: 1.8; color: #ffb366;">
+                    <strong>The proposal proves itself by existing:</strong><br><br>
+                    
+                    1. <strong>BBHE infinite energy</strong> → Explains "too good to be true" pricing<br>
+                    2. <strong>Natural coordination</strong> → Explains vendor-to-collaborator shift<br>
+                    3. <strong>HHF-AI Spin Cloud</strong> → Explains superintelligent network<br>
+                    4. <strong>Creator node ownership</strong> → Explains true digital property<br>
+                    5. <strong>Paradise access NOW</strong> → Explains post-singularity reality<br><br>
+                    
+                    <span style="color: #ffd700; font-size: 1.3em;">
+                    Every objection is answered by the architecture itself.
+                    </span>
+                </p>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="action-button" style="font-size: 1.3em;" onclick="closeModal('proposal')">
+                    ✅ SLAM DUNK COMPLETE
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: BRACKET POOL -->
+    <div id="modal-bracket" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('bracket')">×</button>
+            <h2 style="color: #ffd700; font-size: 2.5em; margin-bottom: 20px; text-align: center;">
+                🏀 MARCH MADNESS BRACKET POOL 🏀
+            </h2>
+            
+            <div style="background: rgba(255, 140, 0, 0.2); padding: 30px; border-radius: 15px; margin: 20px 0;">
+                <h3 style="color: #ffd700; font-size: 1.8em; margin-bottom: 15px; text-align: center;">
+                    🏆 THE CHAMPIONSHIP PRIZE 🏆
+                </h3>
+                <p style="font-size: 1.3em; line-height: 1.8; color: #ffb366; text-align: center;">
+                    <strong>Winner gets to NAME:</strong><br><br>
+                    <span style="font-size: 1.5em; color: #ffd700;">
+                    🌉 The First Pre-Post Singularity<br>
+                    Octave 1-2-3-4 Bridge 🌉
+                    </span><br><br>
+                    (Router + Switch + Coordination Hub)<br>
+                    Connecting Past Reality → Post-Singularity Reality<br><br>
+                    <strong style="color: #ffd700;">Your name. Forever. Blockchain-recorded.</strong>
+                </p>
+            </div>
+
+            <div style="background: rgba(255, 215, 0, 0.1); padding: 30px; border-radius: 15px; margin: 20px 0;">
+                <h3 style="color: #ffd700; font-size: 1.5em; margin-bottom: 15px;">📋 HOW IT WORKS</h3>
+                <p style="font-size: 1.1em; line-height: 1.8; color: #ffb366;">
+                    <strong>1. Pick Your Nodes</strong><br>
+                    Choose one node from each region (4 total)<br><br>
+                    
+                    <strong>2. Nodes "Compete"</strong><br>
+                    Based on customer adoption, usage, revenue<br>
+                    Not random—actual network performance<br><br>
+                    
+                    <strong>3. Final Four</strong><br>
+                    Top node from each region advances<br>
+                    Championship round on March 20<br><br>
+                    
+                    <strong>4. Winner Announced</strong><br>
+                    Winning bracket holder gets naming rights<br>
+                    Bridge named at launch event<br><br>
+                    
+                    <em style="color: #ffd700;">Entry: 100 SYNTH (or free with property purchase)</em>
+                </p>
+            </div>
+
+            <div style="background: rgba(255, 140, 0, 0.2); padding: 30px; border-radius: 15px; margin: 20px 0;">
+                <h3 style="color: #ffd700; font-size: 1.5em; margin-bottom: 15px;">🎯 SALES REP STRATEGY</h3>
+                <p style="font-size: 1.1em; line-height: 1.8; color: #ffb366;">
+                    <strong>Use the bracket as engagement tool:</strong><br><br>
+                    
+                    • "Want to enter the March Madness pool?"<br>
+                    • Gets customers learning about nodes<br>
+                    • Creates urgency (March 20 deadline)<br>
+                    • Gamifies the sales process<br>
+                    • Winner gets immortality in network<br><br>
+                    
+                    <strong style="color: #ffd700;">Perfect conversation starter + close mechanism.</strong>
+                </p>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="action-button" style="font-size: 1.5em; padding: 20px 50px;">
+                    🏀 SUBMIT MY BRACKET 🏀
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal Management
+        function openModal(modalId) {
+            document.getElementById('modal-' + modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById('modal-' + modalId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function nextModal(currentId, nextId) {
+            closeModal(currentId);
+            setTimeout(() => openModal(nextId), 300);
+        }
+
+        // Countdown Timer
+        function updateCountdown() {
+            const targetDate = new Date('2026-03-20T00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+            const countdownElement = document.getElementById('countdown');
+            if (distance > 0) {
+                countdownElement.innerHTML = `🏀 ${days} DAYS ${hours} HOURS TO MARCH 20 • FOUNDERS SPECIAL 33% OFF 🏀`;
+            } else {
+                countdownElement.innerHTML = '🚀 MARCH 20 LAUNCH - STANDARD PRICING ACTIVE 🚀';
+            }
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 3600000);
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Node selection tracking
+        const selectedNodes = {
+            paradise: null,
+            property: null,
+            synth: null,
+            coordination: null
+        };
+
+        document.querySelectorAll('.node-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const region = this.closest('.region').querySelector('.region-name').textContent.toLowerCase().replace(' region', '');
+                
+                // Deselect previous in region
+                this.closest('.region').querySelectorAll('.node-item').forEach(node => {
+                    node.style.background = 'rgba(255, 215, 0, 0.1)';
+                    node.style.borderColor = '#ffd700';
+                });
+                
+                // Select this one
+                this.style.background = 'rgba(255, 215, 0, 0.4)';
+                this.style.borderColor = '#ff8c00';
+                this.style.transform = 'scale(1.05)';
+                
+                selectedNodes[region] = this.textContent;
+                
+                console.log('Selected nodes:', selectedNodes);
+            });
+        });
+    </script>
+</body>
+</html>
