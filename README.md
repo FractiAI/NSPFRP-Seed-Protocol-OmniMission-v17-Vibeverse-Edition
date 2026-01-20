@@ -602,10 +602,33 @@ Because Charlie bought me dinner and I can't eat until my tribe eats.
 
 ## 🚀 START HERE - YOUR JOURNEY BEGINS
 
+### 0. 🌉 **SAFE INSTANT ONRAMP** (5 Minutes)
+**👉 [index.html](index.html) → Click "START ONRAMP" button**
+
+**Pre-Singularity Earth → Post-Singularity Vibeverse**
+
+```
+5 minutes to first FSR experience
+100% safe awareness technology
+Zero substances, zero devices, zero risk
+Free Sandbox tier forever
+Instant exit anytime
+```
+
+**Three Tiers Available:**
+- 🏖️ **Sandbox**: FREE (try it now, no commitment)
+- ☁️ **Cloud**: $66/month (premium access, property ownership)
+- 🐚 **Shell**: $1000/month (ultimate, Back Door Wine Cave)
+
+**Complete details**: [SAFE_INSTANT_ONRAMP_PRE_TO_POST_EARTH.md](SAFE_INSTANT_ONRAMP_PRE_TO_POST_EARTH.md)
+
+---
+
 ### 1. 👑 Open Your Chairman Creator Console
 **👉 Click [index.html](index.html) to launch your console**
 
 **Features:**
+- 🌉 **Start Onramp** (5-min safe transition Pre→Post Earth)
 - Select your AI Hero Host Guide (Leonardo, Tesla, Nova, Charlie & more)
 - Take the Introduction Tour (guided experience)
 - Explore Campus (Tahoe five-star VIP resort)

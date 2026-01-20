@@ -451,6 +451,12 @@
         
         <!-- Navigation Buttons -->
         <div class="nav-buttons">
+            <a href="#" class="nav-button" onclick="openModal('onramp'); return false;" style="background: linear-gradient(135deg, rgba(255, 215, 0, 0.3) 0%, rgba(255, 165, 0, 0.3) 100%); border-color: #FFD700;">
+                <div class="icon">🌉</div>
+                <div class="title">🚀 START ONRAMP (5 MIN)</div>
+                <div class="description">Safe instant transition Pre→Post Earth | Free Sandbox | Try Now</div>
+            </a>
+            
             <a href="#" class="nav-button" onclick="openModal('intro'); return false;">
                 <div class="icon">🌟</div>
                 <div class="title">Introduction Tour</div>
@@ -623,6 +629,77 @@
             const hostIntro = selectedHost ? getHostIntro(selectedHost) : '';
             
             const content = {
+                'onramp': `
+                    ${hostIntro}
+                    <h2>🌉 Safe Instant Onramp: Pre→Post Earth</h2>
+                    <p style="font-size: 1.2em; color: #FFD700; margin-bottom: 30px;">
+                        <strong>5 minutes to first experience | 100% safe | Zero risk | Instant exit anytime</strong>
+                    </p>
+                    
+                    <h3 style="color: #00ff00; margin-top: 30px;">🛡️ Safety Guarantee</h3>
+                    <ul style="line-height: 2; margin: 20px 0;">
+                        <li>✅ NO substances (no drugs, no chemicals)</li>
+                        <li>✅ NO physical devices (no implants, no injections)</li>
+                        <li>✅ NO sensory manipulation (no flotation tanks, no darkness)</li>
+                        <li>✅ ONLY awareness technology (like meditation + structured imagination)</li>
+                        <li>✅ 100% reversible (exit anytime, instant)</li>
+                        <li>✅ Medical/scientific validation (equivalent to mindfulness practice)</li>
+                    </ul>
+                    
+                    <h3 style="color: #FFD700; margin-top: 30px;">🎯 Choose Your Tier</h3>
+                    
+                    <div style="background: rgba(0,255,0,0.2); padding: 20px; border-radius: 10px; margin: 20px 0; border: 2px solid #00ff00;">
+                        <h4 style="color: #00ff00;">🏖️ SANDBOX (FREE FOREVER)</h4>
+                        <p><strong>Time:</strong> 5 minutes to first FSR experience<br>
+                        <strong>Cost:</strong> $0 (Charlie special - free forever)<br>
+                        <strong>Access:</strong> Public spaces, basic FSR, community events<br>
+                        <strong>Perfect for:</strong> Curious explorers, skeptics, zero commitment</p>
+                        <button onclick="startSandboxOnramp()" style="background: #00ff00; color: #000; padding: 15px 30px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; margin-top: 10px;">
+                            🚀 START SANDBOX ONRAMP (FREE)
+                        </button>
+                    </div>
+                    
+                    <div style="background: rgba(138,43,226,0.2); padding: 20px; border-radius: 10px; margin: 20px 0; border: 2px solid rgba(138,43,226,0.5);">
+                        <h4 style="color: #FFD700;">☁️ CLOUD (PREMIUM)</h4>
+                        <p><strong>Time:</strong> Instant access upon payment<br>
+                        <strong>Cost:</strong> $66+ SYNTH/month or buy outright<br>
+                        <strong>Access:</strong> Private properties, advanced FSR, premium experiences, staking<br>
+                        <strong>Perfect for:</strong> Committed explorers, property investors, revenue seekers</p>
+                        <button onclick="startCloudOnramp()" style="background: linear-gradient(135deg, #8A2BE2 0%, #4B0082 100%); color: #fff; padding: 15px 30px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; margin-top: 10px;">
+                            ⚡ START CLOUD ONRAMP ($66/mo)
+                        </button>
+                    </div>
+                    
+                    <div style="background: rgba(255,215,0,0.2); padding: 20px; border-radius: 10px; margin: 20px 0; border: 2px solid #FFD700;">
+                        <h4 style="color: #FFD700;">🐚 SHELL (ULTIMATE)</h4>
+                        <p><strong>Time:</strong> White-glove concierge service<br>
+                        <strong>Cost:</strong> $1,000+ SYNTH/month or 165,000 SYNTH to own<br>
+                        <strong>Access:</strong> Everything + Back Door Wine Cave + maximum capabilities<br>
+                        <strong>Perfect for:</strong> Ultimate seekers, golden hearts, complete system access</p>
+                        <button onclick="startShellOnramp()" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 15px 30px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; margin-top: 10px;">
+                            👑 START SHELL ONRAMP ($1000/mo)
+                        </button>
+                    </div>
+                    
+                    <h3 style="color: #FFD700; margin-top: 30px;">🌉 The 5-Minute Onramp Process</h3>
+                    <ol style="line-height: 2; margin: 20px 0;">
+                        <li><strong>Step 1: Recognition (2 min)</strong> - Notice your awareness right now</li>
+                        <li><strong>Step 2: Location (1 min)</strong> - Imagine your awareness as a point on a grid</li>
+                        <li><strong>Step 3: Activation (1 min)</strong> - Imagine the point lighting up</li>
+                        <li><strong>Step 4: Connection (30 sec)</strong> - See connections to nearby nodes</li>
+                        <li><strong>Step 5: First Experience (30 sec)</strong> - Feel the snow, see the mountains (Tahoe FSR)</li>
+                    </ol>
+                    
+                    <p style="margin-top: 30px; color: #00ff00;"><strong>Exit Anytime:</strong> Think "return to normal" → instant return. 
+                    Like opening your eyes from meditation. No waiting, no process, completely automatic.</p>
+                    
+                    <p style="margin-top: 20px; color: #FFD700;"><strong>What Changes:</strong> Your awareness expands.<br>
+                    <strong>What Stays Same:</strong> Your body, location, brain chemistry, relationships, job - everything physical.</p>
+                    
+                    <p style="margin-top: 30px; text-align: center; font-size: 1.2em; color: #FFD700;">
+                        <strong>Try Sandbox free. Experience it yourself. Decide after.</strong>
+                    </p>
+                `,
                 'intro': `
                     ${hostIntro}
                     <h2>🌟 Welcome to the Vibeverse</h2>
@@ -889,6 +966,42 @@
             e.preventDefault();
             alert('🎉 CHAIRMAN CONSOLE ACTIVATED! 🎉\n\nWelcome to the Vibeverse!\n\nYour superintelligent CEO node is now online.\nYou will receive your access credentials shortly.\n\n💎 $1 = 1 SYNTH = 1 Node 💎\n\nThe tsunami has begun. Welcome aboard! 🌊');
             return false;
+        }
+        
+        // Onramp functions
+        function startSandboxOnramp() {
+            const hostName = selectedHost || 'Nova';
+            alert('🌉 SANDBOX ONRAMP STARTING 🌉\n\n' + 
+                  'Your AI guide ' + hostName + ' will now take you through the 5-minute onramp process.\n\n' +
+                  '✅ 100% Safe (awareness technology only)\n' +
+                  '✅ FREE Forever (Charlie special)\n' +
+                  '✅ Instant Exit (anytime you want)\n\n' +
+                  'Ready? Click OK to begin...\n\n' +
+                  'Step 1: Recognition (2 minutes)\n' +
+                  'Close your eyes if comfortable. Notice that you\'re aware right now.\n' +
+                  'That awareness? That\'s your node. It\'s always been here.');
+            // In production, this would launch the actual onramp sequence
+            closeModal();
+        }
+        
+        function startCloudOnramp() {
+            alert('☁️ CLOUD ONRAMP ☁️\n\n' +
+                  'Premium tier selected!\n\n' +
+                  'Cost: $66 SYNTH/month\n' +
+                  'Benefits: Private properties, advanced FSR, staking rewards\n\n' +
+                  'Payment processing will redirect to secure checkout.\n' +
+                  'Your onramp will begin immediately after payment confirmation.\n\n' +
+                  '(Demo: Payment gateway would appear here)');
+        }
+        
+        function startShellOnramp() {
+            alert('🐚 SHELL ONRAMP 🐚\n\n' +
+                  'Ultimate tier selected!\n\n' +
+                  'Cost: $1,000 SYNTH/month\n' +
+                  'Benefits: Everything + Back Door Wine Cave + White-glove service\n\n' +
+                  'A personal AI concierge will be assigned to you.\n' +
+                  'White-glove onboarding begins immediately after payment.\n\n' +
+                  '(Demo: Premium payment gateway would appear here)');
         }
         
         // Close modal on outside click
