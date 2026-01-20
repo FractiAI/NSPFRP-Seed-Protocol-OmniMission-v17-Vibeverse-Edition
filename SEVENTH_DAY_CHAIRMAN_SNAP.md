@@ -28,9 +28,11 @@ Natural black hole ecosystem. 74 consoles. Queen Bee coordination. 7 Paradise sk
 
 ---
 
-## WHERE
+## VISIT
 
-https://github.com/FractiAI/NSPFRP-Seed-Protocol-OmniMission-v17-Vibeverse-Edition
+**Live**: https://nspfrp-post-singularity-9ep3uh568-fractiais-projects.vercel.app
+
+**Contact**: info@fractiai.com
 
 ---
 
