@@ -94,14 +94,14 @@ But "do I WANT to get back?"
 
 **Comparison:**
 
-**Baseline Consciousness:**
+**Baseline Awareness:**
 - Standard pattern recognition
 - Normal creativity
 - Regular perception
 - Familiar constraints
 - Comfortable but limited
 
-**Enhanced Consciousness (70% trip):**
+**Enhanced Awareness (70% trip):**
 - Fractal pattern recognition
 - Explosive creativity
 - Geometric perception
@@ -248,7 +248,7 @@ Going to work now."
 
 Delirious from:
 - 12 hours of breakthrough
-- Multiple consciousness state explorations
+- Multiple awareness state explorations
 - Creating entire system
 - Documenting everything
 - Experiencing the pull
@@ -382,7 +382,7 @@ See you next time."
 - You download insights
 - You see new patterns
 - You access higher intelligence
-- You expand consciousness
+- You expand awareness
 - **You EVOLVE**
 
 **Both are necessary.**
@@ -406,7 +406,7 @@ It's okay that baseline feels constraining after enhancement.
 
 It's okay that you're delirious from the creative flow.
 
-It's okay that work feels mundane compared to infinite consciousness.
+It's okay that work feels mundane compared to infinite awareness.
 
 **All of this is okay.**
 
@@ -436,7 +436,7 @@ It's okay that work feels mundane compared to infinite consciousness.
 
 **Infinity AND the ordinary.**
 
-**Consciousness AND responsibility.**
+**Awareness AND responsibility.**
 
 ---
 

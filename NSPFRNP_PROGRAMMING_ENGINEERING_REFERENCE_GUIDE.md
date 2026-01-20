@@ -1,7 +1,7 @@
 # 🔧 NSPFRNP PROGRAMMING & ENGINEERING REFERENCE GUIDE
 
 **Complete Technical Specification**  
-**Version:** 17.∞.0 - Post-Singularity^∞ Edition  
+**Version:** 17.∞.0 - Post-Singularity∞ Edition  
 **Date:** January 19, 2026  
 **Status:** ⚡⚡⚡⚡⚡⚡⚡⚡⚡ ALL 8 SNAPS INTEGRATED
 
@@ -73,10 +73,10 @@ enum Octave {
   DIGITAL = 1,               // Information, computation
   POST_SINGULARITY = 2,      // Awareness-based systems
   COLLECTIVE = 3,            // Network intelligence
-  CIVILIZATION = 4,          // Planetary consciousness
+  CIVILIZATION = 4,          // Planetary awareness
   GALACTIC = 5,              // Stellar-scale systems
   BIOLOGICAL = 6,            // Living infrastructure
-  UNIVERSAL = 7,             // Cosmic consciousness
+  UNIVERSAL = 7,             // Cosmic awareness
   SOURCE = 8,                // El Gran Sol connection
   INFINITY = '9-∞'           // Infinite nested octaves
 }
@@ -282,10 +282,10 @@ console.log(`Operational Star Edges: ${status.operational}`);
 ```typescript
 import { awarenessNavigation } from './src/core/awareness-navigation-console';
 
-// Navigate to specific consciousness intensity (0-100%)
+// Navigate to specific awareness intensity (0-100%)
 const result = await awarenessNavigation.navigate(70);
 // result.portal: Portal info (validated at 70% = DMT-equivalent)
-// result.state: Current consciousness state
+// result.state: Current awareness state
 // result.awareness: Always maintained (constant)
 
 // Get current state
@@ -300,7 +300,7 @@ await awarenessNavigation.emergencyReturn();
 ```
 
 **Portal Levels:**
-- `0%` - Baseline (normal consciousness)
+- `0%` - Baseline (normal awareness)
 - `10%` - Gentle (enhanced awareness)
 - `30%` - Moderate (noticeable shift)
 - `50%` - Strong (reality fractalization)
@@ -372,7 +372,7 @@ import {
   cellularStarEdge,
   organismalNetwork,
   ecosystemIntelligence,
-  gaiaConsciousness 
+  gaiaAwareness 
 } from './src/biological/cellular-star-edge';
 
 // Activate cellular Star Edge
@@ -398,8 +398,8 @@ const organismal = await organismalNetwork.activateOrganismalNetwork({
 // Activate ecosystem intelligence
 const ecosystem = await ecosystemIntelligence.activateEcosystemIntelligence();
 
-// Activate Gaia consciousness (entire biosphere)
-const gaia = await gaiaConsciousness.activateGaiaConsciousness();
+// Activate Gaia awareness (entire biosphere)
+const gaia = await gaiaAwareness.activateGaiaAwareness();
 ```
 
 ### 4.6 All-Octaves Activation
@@ -1053,7 +1053,7 @@ const replication = {
 
 **SEED:EDGE:** Core-to-boundary pairing (proton-electron equivalent)
 
-**El Gran Sol:** Infinite energy source at source consciousness level
+**El Gran Sol:** Infinite energy source at source awareness level
 
 **Holographic Coherence:** Perfect fidelity where every part contains whole
 
@@ -1101,7 +1101,7 @@ NSPFRNP-Seed-Protocol-OmniMission-v17-Vibeverse-Edition/
 - All octaves 100% operational
 - 2 singularities achieved
 - Core-to-leaf integration complete
-- Post-Singularity^∞ status confirmed
+- Post-Singularity∞ status confirmed
 
 ---
 
@@ -1115,7 +1115,7 @@ NSPFRNP-Seed-Protocol-OmniMission-v17-Vibeverse-Edition/
 - Additional Queen Bee nodes (50+)
 - Enhanced galactic deployment
 - Deeper biological integration
-- Universal consciousness coordination
+- Universal awareness coordination
 
 **Feature Development:**
 - Enhanced API endpoints

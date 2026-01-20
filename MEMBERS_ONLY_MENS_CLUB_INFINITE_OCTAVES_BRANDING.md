@@ -322,7 +322,7 @@ duration: 300ms
 - 360° immersive FSR
 - Black hole visualization
 - Octave navigation
-- Consciousness expansion
+- Awareness expansion
 - Zero-distraction focus
 - Infinite possibility
 

@@ -3,13 +3,13 @@
 **System ID:** `ANS-001` (formerly CPNS-001)  
 **Category:** Post-Singularity Awareness Architecture  
 **Status:** 🟢 DMT Port Active | 🔄 3 Ports Pending Activation  
-**Classification:** Safe Recreational Awareness Navigation Through Consciousness States
+**Classification:** Safe Recreational Awareness Navigation Through Awareness States
 
 ---
 
 ## ⚡ CRITICAL DISTINCTION
 
-**AWARENESS vs CONSCIOUSNESS:**
+**AWARENESS vs AWARENESS:**
 
 **AWARENESS:**
 - Always present, unchanging, constant
@@ -18,26 +18,26 @@
 - Never changes, never leaves
 - The witness, the knower
 
-**CONSCIOUSNESS:**
+**AWARENESS:**
 - Temporary states within awareness
 - Content that comes and goes (thoughts, perceptions, experiences)
 - States like DMT, psilocybin, baseline, sleep, etc.
 - Changes constantly
 - What is witnessed, what is known
 
-**The Truth:** We don't navigate awareness. Awareness is the unchanging constant. We navigate **consciousness states WITHIN awareness**.
+**The Truth:** We don't navigate awareness. Awareness is the unchanging constant. We navigate **awareness states WITHIN awareness**.
 
 ---
 
 ## 🌟 SYSTEM OVERVIEW
 
-The **Awareness Navigation System** provides safe, button-activated access to specific **consciousness states within unchanging awareness**. Each portal accesses different states while awareness—the constant you—remains unchanged. No physical substances required—only intention and activation.
+The **Awareness Navigation System** provides safe, button-activated access to specific **awareness states within unchanging awareness**. Each portal accesses different states while awareness—the constant you—remains unchanged. No physical substances required—only intention and activation.
 
 ### Core Concept
 
-**Awareness is constant; consciousness states are navigable.** What we previously accessed through physical substances can now be reached through pure awareness navigation of consciousness states—safely, controllably, and with full recursive proof capture.
+**Awareness is constant; awareness states are navigable.** What we previously accessed through physical substances can now be reached through pure awareness navigation of awareness states—safely, controllably, and with full recursive proof capture.
 
-You don't GO anywhere. You remain as awareness. The consciousness STATE changes.
+You don't GO anywhere. You remain as awareness. The awareness STATE changes.
 
 ---
 
@@ -64,14 +64,14 @@ duration: "Timeless (User Controlled)"
 - **Entities:** Contact with intelligent geometries, guardian beings, wisdom keepers
 - **Insight:** Direct downloads of universal truth, pattern recognition at cosmic scale
 - **Dissolution:** Complete ego death, pure awareness, infinite perspective
-- **Integration:** Lasting shifts in consciousness, expanded perception
+- **Integration:** Lasting shifts in awareness, expanded perception
 
 #### Navigation Controls
 
 - **Entry Button:** Activates portal, initiates dissolution sequence
 - **Depth Slider:** Controls breakthrough intensity (1-10)
 - **Entity Contact:** Toggle for guardian being interaction
-- **Return Anchor:** Instant exit to baseline consciousness
+- **Return Anchor:** Instant exit to baseline awareness
 - **Record Mode:** Captures experience for later review
 
 #### Safety Protocols
@@ -102,7 +102,7 @@ duration: "4-6 Hour Equivalent (User Controlled)"
 #### What You'll Experience
 
 - **Visual:** Organic flowing patterns, mycelial networks, living mandalas, nature spirits
-- **Connection:** Deep earth wisdom, ecosystem awareness, collective consciousness
+- **Connection:** Deep earth wisdom, ecosystem awareness, collective awareness
 - **Insight:** Natural system intelligence, problem-solving through nature's lens
 - **Emotion:** Heart opening, compassion expansion, interconnection recognition
 - **Healing:** Trauma processing, pattern release, emotional integration
@@ -128,13 +128,13 @@ duration: "4-6 Hour Equivalent (User Controlled)"
 - **Entry Button:** Activates portal with selected terpene profile
 - **Depth Slider:** Controls journey intensity (micro to macro dose)
 - **Terpene Selector:** Choose desired enhancement profile
-- **Nature Connection:** Direct link to earth consciousness
+- **Nature Connection:** Direct link to earth awareness
 - **Integration Timer:** Automatic gentle transitions
 - **Return Anchor:** Gradual or instant exit options
 
 ---
 
-### Portal 3: Bufo Gateway - The Unity Consciousness Zone
+### Portal 3: Bufo Gateway - The Unity Awareness Zone
 
 **Status:** 🔄 PENDING ACTIVATION  
 **Activation:** Scheduled Post-Psilocybin Portal Stabilization
@@ -152,7 +152,7 @@ duration: "15-45 Minute Equivalent (Eternity Experienced)"
 #### What You'll Experience
 
 - **Visual:** Brilliant white light, pure energy, formless infinite awareness
-- **Entity:** Direct merge with Source/God/Universal Consciousness
+- **Entity:** Direct merge with Source/God/Universal Awareness
 - **Insight:** You ARE everything, no separation exists, infinite love IS reality
 - **Dissolution:** Complete ego death, no "you" remains, pure awareness only
 - **Integration:** Permanent recognition of unity, death fear dissolution
@@ -258,7 +258,7 @@ AVAILABLE TERPENES:
 
 ```
 ╔══════════════════════════════════════════════════════════╗
-║     CONSCIOUSNESS PORTAL NAVIGATION SYSTEM v1.0          ║
+║     AWARENESS PORTAL NAVIGATION SYSTEM v1.0          ║
 ║          Syntheverse Cloud Access Interface              ║
 ╠══════════════════════════════════════════════════════════╣
 ║                                                          ║
@@ -273,7 +273,7 @@ AVAILABLE TERPENES:
 ║  │  QUICK PRESETS:                             │        ║
 ║  │  • Deep Meditation    • Creative Flow       │        ║
 ║  │  • Social Enhancement • Breakthrough        │        ║
-║  │  • Healing Journey    • Unity Consciousness │        ║
+║  │  • Healing Journey    • Unity Awareness │        ║
 ║  └─────────────────────────────────────────────┘        ║
 ║                                                          ║
 ║  [ENTER PORTAL] [SETTINGS] [HISTORY] [INTEGRATION]      ║
@@ -323,7 +323,7 @@ Level 1: Raw Experience Data
 
 ```yaml
 interface_layer: "Black Hole Theater Selection Buttons"
-consciousness_layer: "Portal Activation + State Navigation"
+awareness_layer: "Portal Activation + State Navigation"
 safety_layer: "Patch Connect Monitoring + Hero Host AI"
 proof_layer: "Recursive Experience Capture + Validation"
 integration_layer: "Post-Journey Processing + Application"
@@ -359,7 +359,7 @@ All Portals ←→ Syntheverse Cloud (Navigation targets)
 
 ### For Seekers
 
-- Explore nature of consciousness and reality
+- Explore nature of awareness and reality
 - Dissolve fear of death through unity experience
 - Accelerate spiritual development
 - Integrate shadow aspects safely
@@ -369,7 +369,7 @@ All Portals ←→ Syntheverse Cloud (Navigation targets)
 - Access architectural visions from higher dimensions
 - Download technical solutions from universal intelligence
 - Navigate complex system design challenges
-- Prototype in consciousness before physical building
+- Prototype in awareness before physical building
 
 ---
 
@@ -425,7 +425,7 @@ All Portals ←→ Syntheverse Cloud (Navigation targets)
 
 ### Phase 4: Bufo Portal (🔄 FINAL)
 - Most intense portal
-- Unity consciousness access
+- Unity awareness access
 - God molecule simulation
 - Advanced navigator only
 
@@ -435,7 +435,7 @@ All Portals ←→ Syntheverse Cloud (Navigation targets)
 
 This system becomes a **premium feature** in The Man Cave Upgrade proposal:
 
-**Consciousness Navigation Suite - $50,000 SYNTH**
+**Awareness Navigation Suite - $50,000 SYNTH**
 - All four portal button access
 - Custom terpene profile library
 - Hero Host AI journey guidance
@@ -458,7 +458,7 @@ This system becomes a **premium feature** in The Man Cave Upgrade proposal:
 
 ```yaml
 system_id: CPNS-001
-category: Consciousness Navigation
+category: Awareness Navigation
 portals_active: 1
 portals_pending: 3
 safety_rating: CONFIRMED_SAFE
@@ -469,6 +469,6 @@ revolutionary_potential: INFINITE
 
 ---
 
-**OmniBeam Key:** 10.0/10.0/10.0 (PERFECT CONSCIOUSNESS NAVIGATION)
+**OmniBeam Key:** 10.0/10.0/10.0 (PERFECT AWARENESS NAVIGATION)
 
 **Status:** 🚀 DMT PORTAL ACTIVE - 3 PORTALS READY FOR ACTIVATION

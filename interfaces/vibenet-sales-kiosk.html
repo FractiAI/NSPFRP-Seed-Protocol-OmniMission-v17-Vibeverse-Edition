@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibenet∞ Sales Kiosk - Resort Reception</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #000 0%, #1a0033 50%, #000 100%);
+            color: #fff;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        /* Particles background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .kiosk-container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .kiosk-header {
+            background: rgba(123, 44, 191, 0.2);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #9d4edd;
+        }
+
+        .resort-badge {
+            display: inline-block;
+            background: #9d4edd;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        /* Screens */
+        .screen {
+            display: none;
+            flex: 1;
+            padding: 40px;
+            overflow-y: auto;
+        }
+
+        .screen.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Welcome Screen */
+        .welcome-content {
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .logo {
+            font-size: 4em;
+            font-weight: 200;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+        }
+
+        .infinity {
+            font-size: 0.8em;
+            vertical-align: super;
+            color: #9d4edd;
+        }
+
+        .tagline {
+            font-size: 2.5em;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #9d4edd;
+        }
+
+        .hero-text {
+            font-size: 1.5em;
+            line-height: 1.8;
+            margin-bottom: 50px;
+            opacity: 0.9;
+        }
+
+        /* Buttons */
+        .btn {
+            background: linear-gradient(135deg, #9d4edd 0%, #7b2cbf 100%);
+            color: white;
+            padding: 20px 50px;
+            font-size: 1.3em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(157, 78, 221, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #9d4edd;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(157, 78, 221, 0.1);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(157, 78, 221, 0.1) 0%, rgba(123, 44, 191, 0.05) 100%);
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid rgba(157, 78, 221, 0.3);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #9d4edd;
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #9d4edd;
+        }
+
+        .feature-desc {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* Pricing Grid */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, rgba(157, 78, 221, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
+            padding: 40px 30px;
+            border-radius: 30px;
+            border: 2px solid rgba(157, 78, 221, 0.3);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: scale(1.05);
+            border-color: #9d4edd;
+            box-shadow: 0 30px 60px rgba(157, 78, 221, 0.3);
+        }
+
+        .pricing-card.popular {
+            border-color: #9d4edd;
+            background: linear-gradient(135deg, rgba(157, 78, 221, 0.15) 0%, rgba(123, 44, 191, 0.1) 100%);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: -10px;
+            background: #9d4edd;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .tier-name {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .tier-tagline {
+            font-size: 0.9em;
+            opacity: 0.7;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .tier-price {
+            font-size: 3em;
+            color: #9d4edd;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .tier-period {
+            opacity: 0.6;
+            margin-bottom: 30px;
+        }
+
+        .tier-features {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .tier-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(157, 78, 221, 0.1);
+            list-style: none;
+        }
+
+        .tier-features li::before {
+            content: "⚡";
+            margin-right: 10px;
+            color: #9d4edd;
+        }
+
+        /* Form */
+        .form-container {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #9d4edd;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(157, 78, 221, 0.1);
+            border: 2px solid rgba(157, 78, 221, 0.3);
+            border-radius: 10px;
+            color: white;
+            font-size: 1.1em;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #9d4edd;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .checkbox-group input {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        /* Confirmation */
+        .confirmation-content {
+            text-align: center;
+            max-width: 700px;
+        }
+
+        .checkmark {
+            font-size: 5em;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .benefits-list {
+            background: rgba(157, 78, 221, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .benefits-list li {
+            padding: 10px 0;
+            font-size: 1.2em;
+        }
+
+        /* Progress Indicator */
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .progress-step {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(157, 78, 221, 0.2);
+            border: 2px solid rgba(157, 78, 221, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        .progress-step.active {
+            background: #9d4edd;
+            border-color: #9d4edd;
+        }
+
+        /* Promo Banner */
+        .promo-banner {
+            background: linear-gradient(90deg, #9d4edd, #ff006e);
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .features-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .logo {
+                font-size: 2.5em;
+            }
+
+            .tagline {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas class="particles"></canvas>
+
+    <div class="kiosk-container">
+        <!-- Header -->
+        <div class="kiosk-header">
+            <div class="resort-badge">Resort Reception</div>
+            <h2>⚡ ALWAYS ON! ⚡ Infinite Everything. Zero Bills. 💫</h2>
+        </div>
+
+        <!-- Promo Banner -->
+        <div class="promo-banner">
+            🎉 RESORT GUEST SPECIAL: First Month FREE! 🎉
+        </div>
+
+        <!-- Screen 1: Welcome -->
+        <div id="screen-welcome" class="screen active">
+            <div class="welcome-content">
+                <div class="logo">
+                    Vibenet∞
+                </div>
+                <div class="tagline">⚡ ALWAYS ON! ⚡</div>
+                <div style="font-size: 1.2em; margin-bottom: 20px; opacity: 0.9;">VIBE ANYONE? 💫</div>
+                <div class="hero-text">
+                    Network: <strong>ALWAYS ON!</strong><br>
+                    Energy: <strong>ALWAYS ON!</strong><br>
+                    Memory: <strong>ALWAYS ON!</strong><br>
+                    Battery: <strong>ALWAYS ON!</strong><br><br>
+                    We don't do downtime. 😏
+                </div>
+                <div>
+                    <button class="btn" onclick="nextScreen('features')">Get Started</button>
+                    <button class="btn btn-secondary" onclick="nextScreen('features')">Learn More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 2: Features -->
+        <div id="screen-features" class="screen">
+            <h1 style="margin-bottom: 20px;">💎 The Complete Package</h1>
+            <h2 style="margin-bottom: 40px; color: #FFD700;">⚡ ALWAYS ON! ⚡</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📡</div>
+                    <div class="feature-title">Carrier - ALWAYS ON!</div>
+                    <div class="feature-desc">
+                        Never drops. Never throttles. Never stops. 24/7/365/∞ 🔥
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">☁️</div>
+                    <div class="feature-title">Cloud - ALWAYS ON!</div>
+                    <div class="feature-desc">
+                        Unlimited compute. Hero Host AI. Zero downtime. Ever. 💪
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧬</div>
+                    <div class="feature-title">Memory - ALWAYS ON!</div>
+                    <div class="feature-desc">
+                        Zero decay. Perpetual storage. Never expires. Never lost. ♾️
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚫</div>
+                    <div class="feature-title">Energy - ALWAYS ON!</div>
+                    <div class="feature-desc">
+                        Perpetual power. Grid-independent. Zero bills. Never stops. 💰
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 40px;">
+                <button class="btn" onclick="nextScreen('pricing')">See Pricing</button>
+                <button class="btn btn-secondary" onclick="prevScreen('welcome')">Back</button>
+            </div>
+        </div>
+
+        <!-- Screen 3: Pricing -->
+        <div id="screen-pricing" class="screen">
+            <div class="progress-indicator">
+                <div class="progress-step active">1</div>
+                <div class="progress-step">2</div>
+                <div class="progress-step">3</div>
+            </div>
+            <h1 style="margin-bottom: 20px;">💎 Pick Your Pleasure</h1>
+            <p style="margin-bottom: 40px; opacity: 0.8;">All tiers include carrier + cloud + memory + energy</p>
+            <div class="pricing-grid">
+                <!-- Sandbox -->
+                <div class="pricing-card">
+                    <div style="background: #FFD700; color: #000; padding: 5px; border-radius: 5px; margin-bottom: 10px; font-weight: bold;">⚡ ALWAYS ON! ⚡</div>
+                    <div class="tier-name">Just The Tip</div>
+                    <div class="tier-tagline">Get your mind out of the gutter 😏</div>
+                    <div class="tier-price">$0</div>
+                    <div class="tier-period">Forever Free</div>
+                    <ul class="tier-features">
+                        <li>10 Mbps (ALWAYS ON!)</li>
+                        <li>10GB memory (zero decay)</li>
+                        <li>5 kW power (perpetual)</li>
+                        <li>Zero electric bills!</li>
+                        <li>Battery never dies</li>
+                    </ul>
+                    <button class="btn" onclick="selectTier('Sandbox', '$0')">Select Free</button>
+                </div>
+
+                <!-- Cloud -->
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Most Popular 🔥</div>
+                    <div style="background: #FFD700; color: #000; padding: 5px; border-radius: 5px; margin-bottom: 10px; font-weight: bold;">⚡ ALWAYS ON! ⚡</div>
+                    <div class="tier-name">Going All The Way</div>
+                    <div class="tier-tagline">To the cloud, that is 💫</div>
+                    <div class="tier-price">$100</div>
+                    <div class="tier-period">per month</div>
+                    <ul class="tier-features">
+                        <li>1 Gbps (ALWAYS ON!)</li>
+                        <li>1TB memory (zero decay)</li>
+                        <li>50 kW power (perpetual)</li>
+                        <li>Sell surplus to grid 💰</li>
+                        <li>Zero downtime. Ever.</li>
+                    </ul>
+                    <button class="btn" onclick="selectTier('Cloud', '$100/month')">Select Cloud</button>
+                </div>
+
+                <!-- Shell -->
+                <div class="pricing-card">
+                    <div style="background: #FFD700; color: #000; padding: 5px; border-radius: 5px; margin-bottom: 10px; font-weight: bold;">⚡ ALWAYS ON! ⚡</div>
+                    <div class="tier-name">Size Matters</div>
+                    <div class="tier-tagline">And ours is infinite 🌟</div>
+                    <div class="tier-price">$1K</div>
+                    <div class="tier-period">per month</div>
+                    <ul class="tier-features">
+                        <li>10+ Gbps (ALWAYS ON!)</li>
+                        <li>Unlimited (infinite)</li>
+                        <li>500 kW - 5 MW+ (perpetual)</li>
+                        <li>Grid independent</li>
+                        <li>99.9999% uptime guaranteed</li>
+                    </ul>
+                    <button class="btn" onclick="selectTier('Shell', '$1,000/month')">Select Shell</button>
+                </div>
+
+                <!-- Grant -->
+                <div class="pricing-card">
+                    <div style="background: #FFD700; color: #000; padding: 5px; border-radius: 5px; margin-bottom: 10px; font-weight: bold;">⚡ ALWAYS ON! ⚡</div>
+                    <div class="tier-name">We Got You</div>
+                    <div class="tier-tagline">No one left behind 💚</div>
+                    <div class="tier-price">$Aid</div>
+                    <div class="tier-period">Financial Assistance</div>
+                    <ul class="tier-features">
+                        <li>Any tier (ALWAYS ON!)</li>
+                        <li>Students: automatic</li>
+                        <li>Nonprofits: welcome</li>
+                        <li>Need help? Just ask</li>
+                        <li>Everyone deserves infinite</li>
+                    </ul>
+                    <button class="btn" onclick="selectTier('Grant', 'Financial Aid')">Apply for Grant</button>
+                </div>
+            </div>
+            <div style="margin-top: 40px;">
+                <button class="btn btn-secondary" onclick="prevScreen('features')">Back</button>
+            </div>
+        </div>
+
+        <!-- Screen 4: Sign-Up -->
+        <div id="screen-signup" class="screen">
+            <div class="progress-indicator">
+                <div class="progress-step active">1</div>
+                <div class="progress-step active">2</div>
+                <div class="progress-step">3</div>
+            </div>
+            <h1 style="margin-bottom: 40px;">🎉 Let's Get You Set Up!</h1>
+            <div class="form-container">
+                <div style="background: rgba(157, 78, 221, 0.2); padding: 20px; border-radius: 10px; margin-bottom: 30px;">
+                    <strong>Selected Tier:</strong> <span id="selected-tier">Cloud</span><br>
+                    <strong>Price:</strong> <span id="selected-price">$100/month</span><br>
+                    <strong>First Month:</strong> <span style="color: #4CAF50;">FREE (Resort Guest Promo!)</span>
+                </div>
+
+                <form id="signup-form">
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" required placeholder="Your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" required placeholder="your@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone *</label>
+                        <input type="tel" required placeholder="(555) 123-4567">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Installation Address *</label>
+                        <input type="text" required placeholder="Street Address">
+                        <input type="text" required placeholder="City, State, ZIP" style="margin-top: 10px;">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Preferred Installation</label>
+                        <select style="width: 100%; padding: 15px; background: rgba(157, 78, 221, 0.1); border: 2px solid rgba(157, 78, 221, 0.3); border-radius: 10px; color: white; font-size: 1.1em;">
+                            <option>During Resort Stay (24-48 hours)</option>
+                            <option>After Check-Out (within 1 week)</option>
+                            <option>Schedule Later (we'll call)</option>
+                        </select>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">I agree to Terms & Conditions</label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="bbhe" checked>
+                        <label for="bbhe">Yes! I want BBHE energy delivery (save $$$)</label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="mobile" checked>
+                        <label for="mobile">Send me perpetual mobile charging case (free!)</label>
+                    </div>
+
+                    <div style="margin-top: 40px; text-align: center;">
+                        <button type="submit" class="btn">Sign Me Up! 🚀</button>
+                        <button type="button" class="btn btn-secondary" onclick="prevScreen('pricing')">Back</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Screen 5: Confirmation -->
+        <div id="screen-confirmation" class="screen">
+            <div class="confirmation-content">
+                <div class="checkmark">✅</div>
+                <h1 style="margin-bottom: 20px;">You're All Set!</h1>
+                <h2 style="color: #9d4edd; margin-bottom: 40px;">Welcome to Vibenet∞!</h2>
+
+                <div style="background: rgba(157, 78, 221, 0.2); padding: 20px; border-radius: 10px; margin-bottom: 30px;">
+                    <strong>Selected Tier:</strong> <span id="confirm-tier">Cloud</span><br>
+                    <strong>Price:</strong> <span id="confirm-price">$100/month</span><br>
+                    <strong>First Month:</strong> <span style="color: #4CAF50;">FREE!</span>
+                </div>
+
+                <h3 style="margin-bottom: 20px;">What's Next:</h3>
+                <div class="benefits-list">
+                    <ul style="list-style: none;">
+                        <li>1. ✅ Account created</li>
+                        <li>2. 📧 Confirmation email sent</li>
+                        <li>3. 📞 Installation team will call in 24 hours</li>
+                        <li>4. 🏠 Installation: 2-4 hours</li>
+                        <li>5. ⚡ Enjoy infinite everything!</li>
+                    </ul>
+                </div>
+
+                <h3 style="margin-bottom: 20px;">Your Benefits:</h3>
+                <div class="benefits-list">
+                    <ul style="list-style: none;">
+                        <li>• 1 Gbps speeds (100x faster)</li>
+                        <li>• 1TB infinite memory (zero decay)</li>
+                        <li>• 50 kW home power delivery</li>
+                        <li>• Zero electric bills (save ~$600/month)</li>
+                        <li>• Perpetual mobile charging</li>
+                        <li>• Hero Host AI access</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <button class="btn" onclick="window.print()">Print Receipt</button>
+                    <button class="btn btn-secondary" onclick="resetKiosk()">Done</button>
+                </div>
+
+                <p style="margin-top: 40px; opacity: 0.7; font-size: 0.9em;">
+                    Questions? Email support@vibenet.io or visit your room for welcome packet.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selectedTier = 'Cloud';
+        let selectedPrice = '$100/month';
+
+        // Screen navigation
+        function nextScreen(screenId) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById('screen-' + screenId).classList.add('active');
+        }
+
+        function prevScreen(screenId) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById('screen-' + screenId).classList.add('active');
+        }
+
+        // Tier selection
+        function selectTier(tier, price) {
+            selectedTier = tier;
+            selectedPrice = price;
+            document.getElementById('selected-tier').textContent = tier;
+            document.getElementById('selected-price').textContent = price;
+            nextScreen('signup');
+        }
+
+        // Form submission
+        document.getElementById('signup-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('confirm-tier').textContent = selectedTier;
+            document.getElementById('confirm-price').textContent = selectedPrice;
+            nextScreen('confirmation');
+        });
+
+        // Reset kiosk
+        function resetKiosk() {
+            document.getElementById('signup-form').reset();
+            setTimeout(() => {
+                nextScreen('welcome');
+            }, 500);
+        }
+
+        // Particle animation
+        const canvas = document.querySelector('.particles');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = [];
+        for (let i = 0; i < 50; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5,
+                size: Math.random() * 2
+            });
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(157, 78, 221, 0.5)';
+
+            particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+
+                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Auto-reset after 5 minutes of inactivity
+        let inactivityTimer;
+        function resetInactivityTimer() {
+            clearTimeout(inactivityTimer);
+            inactivityTimer = setTimeout(resetKiosk, 300000); // 5 minutes
+        }
+
+        document.addEventListener('click', resetInactivityTimer);
+        document.addEventListener('touchstart', resetInactivityTimer);
+        resetInactivityTimer();
+    </script>
+
+    <!-- 🎂 CAKE SLOGAN FOOTER -->
+    <div style="position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(135deg, rgba(20, 20, 40, 0.95) 0%, rgba(40, 20, 60, 0.95) 100%); backdrop-filter: blur(10px); border-top: 2px solid rgba(157, 78, 221, 0.5); padding: 15px 20px; text-align: center; font-size: 0.95em; z-index: 10000; box-shadow: 0 -5px 20px rgba(157, 78, 221, 0.3);">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap;">
+                <div style="opacity: 0.6; text-decoration: line-through;">
+                    <span style="font-size: 0.9em;">Pre-Singularity:</span> <em>"You can't have your cake and eat it too"</em>
+                </div>
+                <div style="font-size: 1.8em; color: #9d4edd; animation: pulse-glow 2s ease-in-out infinite;">🎂</div>
+                <div style="font-weight: bold; color: #FFD700; font-size: 1.1em;">
+                    Post-Singularity where you <strong>CAN</strong> have your cake and eat it too!
+                </div>
+            </div>
+            <div style="opacity: 0.7; font-size: 0.85em;">
+                Check it out: <a href="https://github.com/FractiAI/NSPFRP-Seed-Protocol-OmniMission-v17-Vibeverse-Edition" target="_blank" style="color: #9d4edd; text-decoration: none; border-bottom: 1px solid rgba(157, 78, 221, 0.5); transition: all 0.3s;">github.com/FractiAI/NSPFRP-Seed-Protocol-OmniMission-v17-Vibeverse-Edition</a>
+            </div>
+        </div>
+    </div>
+    <style>
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+    </style>
+</body>
+</html>

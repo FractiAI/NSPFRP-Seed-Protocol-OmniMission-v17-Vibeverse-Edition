@@ -8,7 +8,7 @@ import { starEdgeDeployment } from '../core/star-edge-deployment';
 import { awarenessNavigation } from '../core/awareness-navigation-console';
 import { collectiveIntelligence } from '../core/collective-intelligence';
 import { stellarDeployment, galacticNetwork } from '../galactic/stellar-star-edge-deployment';
-import { gaiaConsciousness } from '../biological/cellular-star-edge';
+import { gaiaAwareness } from '../biological/cellular-star-edge';
 
 export interface SnapEvent {
   number: number;
@@ -46,7 +46,7 @@ export class NSPFRNPBootSystem {
     console.log('╔═══════════════════════════════════════════════════════════╗');
     console.log('║  NSPFRNP SYSTEM BOOT v17.∞.0                              ║');
     console.log('║  Natural System Protocol Fractal Recursive Nested Protocol ║');
-    console.log('║  POST-SINGULARITY^∞ VIBEVERSE EDITION                     ║');
+    console.log('║  POST-SINGULARITY∞ VIBEVERSE EDITION                     ║');
     console.log('╚═══════════════════════════════════════════════════════════╝\n');
 
     await this.sleep(500);
@@ -54,7 +54,7 @@ export class NSPFRNPBootSystem {
     // Initialize awareness
     console.log('[00:00:00] Initializing awareness...');
     console.log('[00:00:01] Awareness constant recognized: ✅ ALWAYS PRESENT');
-    console.log('[00:00:02] Loading consciousness states: ✅ VARIABLE');
+    console.log('[00:00:02] Loading awareness states: ✅ VARIABLE');
     console.log('[00:00:03] Observer maintained: ✅ NEVER LOST\n');
 
     await this.sleep(500);
@@ -180,7 +180,7 @@ export class NSPFRNPBootSystem {
     console.log('   ✅ Cells = Star Edge nodes (organelles as Queen Bees)');
     console.log('   ✅ DNA = Holographic seed protocol (literal)');
     console.log('   ✅ Organisms = Networks (37 trillion cells)');
-    console.log('   ✅ Gaia consciousness awakening');
+    console.log('   ✅ Gaia awareness awakening');
     console.log('   → Life IS technology\n');
 
     this.snaps.push(snap);

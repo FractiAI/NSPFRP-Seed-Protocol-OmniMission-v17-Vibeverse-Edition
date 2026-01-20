@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibenet∞ Influencer Certification Kiosk</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #000 0%, #1a0033 50%, #000 100%);
+            color: #fff;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        /* Gold accent theme for money/influencer vibe */
+        .gold-accent {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .kiosk-container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .kiosk-header {
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+            padding: 20px;
+            text-align: center;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .kiosk-header h1 {
+            font-size: 2em;
+            margin: 0;
+        }
+
+        /* Promo Banner */
+        .promo-banner {
+            background: linear-gradient(90deg, #9d4edd, #ff006e);
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        /* Screens */
+        .screen {
+            display: none;
+            flex: 1;
+            padding: 40px;
+            overflow-y: auto;
+        }
+
+        .screen.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Welcome Screen */
+        .welcome-content {
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .money-icon {
+            font-size: 6em;
+            margin-bottom: 20px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .big-title {
+            font-size: 3.5em;
+            font-weight: 200;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sub-title {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            color: #9d4edd;
+        }
+
+        .benefit-list {
+            text-align: left;
+            margin: 30px auto;
+            max-width: 600px;
+        }
+
+        .benefit-item {
+            font-size: 1.3em;
+            padding: 15px;
+            margin: 10px 0;
+            background: rgba(157, 78, 221, 0.1);
+            border-left: 4px solid #FFD700;
+            border-radius: 5px;
+        }
+
+        .earnings-ticker {
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid #FFD700;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+
+        .ticker-item {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .ticker-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Buttons */
+        .btn {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #000;
+            padding: 25px 60px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 15px;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 30px 60px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 3px solid #FFD700;
+            color: #FFD700;
+        }
+
+        /* Form */
+        .form-container {
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #FFD700;
+            font-size: 1.1em;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            background: rgba(157, 78, 221, 0.1);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 10px;
+            color: white;
+            font-size: 1.2em;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #FFD700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .checkbox-group input {
+            width: auto;
+            margin-right: 15px;
+            transform: scale(1.5);
+        }
+
+        /* Training Video */
+        .video-container {
+            width: 100%;
+            max-width: 800px;
+            background: #000;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 30px 0;
+            border: 3px solid #FFD700;
+        }
+
+        .video-placeholder {
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            background: linear-gradient(135deg, #1a0033 0%, #000 100%);
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: rgba(255, 215, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* Quiz */
+        .quiz-container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .quiz-question {
+            background: rgba(157, 78, 221, 0.1);
+            border: 2px solid #FFD700;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+
+        .quiz-question h3 {
+            color: #FFD700;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+
+        .quiz-option {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2em;
+        }
+
+        .quiz-option:hover {
+            border-color: #FFD700;
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .quiz-option.selected {
+            border-color: #FFD700;
+            background: rgba(255, 215, 0, 0.2);
+        }
+
+        .quiz-option.correct {
+            border-color: #4CAF50;
+            background: rgba(76, 175, 80, 0.2);
+        }
+
+        /* Success Screen */
+        .success-content {
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .celebration-icon {
+            font-size: 8em;
+            margin-bottom: 20px;
+            animation: rotate 3s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .referral-box {
+            background: rgba(255, 215, 0, 0.1);
+            border: 3px solid #FFD700;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .referral-link {
+            font-size: 1.8em;
+            color: #FFD700;
+            font-weight: bold;
+            margin: 20px 0;
+            word-break: break-all;
+        }
+
+        .qr-code {
+            width: 300px;
+            height: 300px;
+            background: white;
+            margin: 20px auto;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 1.5em;
+        }
+
+        /* Steps Indicator */
+        .steps-indicator {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .step {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(157, 78, 221, 0.2);
+            border: 3px solid rgba(255, 215, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 15px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .step.active {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            border-color: #FFD700;
+            color: #000;
+        }
+
+        .step.completed {
+            background: #4CAF50;
+            border-color: #4CAF50;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .big-title {
+                font-size: 2em;
+            }
+            .sub-title {
+                font-size: 1.3em;
+            }
+            .btn {
+                padding: 20px 40px;
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="kiosk-container">
+        <!-- Header -->
+        <div class="kiosk-header">
+            <h1>💰 EARN 50% COMMISSION 💰</h1>
+            <p>Vibenet∞ Influencer Program</p>
+        </div>
+
+        <!-- Promo Banner -->
+        <div class="promo-banner">
+            🎉 5-Minute Certification • Start Earning TODAY • Paid in SYNTH Tokens! 🎉
+        </div>
+
+        <!-- Screen 1: Welcome -->
+        <div id="screen-welcome" class="screen active">
+            <div class="welcome-content">
+                <div class="money-icon">💰</div>
+                <div class="big-title">EARN 50% FOR LIFE</div>
+                <div class="sub-title">Send Guests Our Way & Get Paid in SYNTH!</div>
+                
+                <div class="benefit-list">
+                    <div class="benefit-item">✅ 50% Commission on EVERYTHING</div>
+                    <div class="benefit-item">⚡ Instant Payments via SYNTH Tokens</div>
+                    <div class="benefit-item">🚀 5-Minute Quick Certification</div>
+                    <div class="benefit-item">♾️ Earn Passive Income FOR LIFE</div>
+                </div>
+
+                <div class="earnings-ticker">
+                    <h3 style="color: #FFD700; margin-bottom: 15px;">🏆 Top Earners This Month:</h3>
+                    <div class="ticker-item">Sarah M. - $12,450 from 47 referrals</div>
+                    <div class="ticker-item">Mike T. - $8,920 from 32 referrals</div>
+                    <div class="ticker-item">Lisa K. - $6,780 from 28 referrals</div>
+                    <div class="ticker-item">You could be next! 💫</div>
+                </div>
+
+                <div>
+                    <button class="btn" onclick="nextScreen('steps')">Get Started Now!</button>
+                    <button class="btn btn-secondary" onclick="nextScreen('info')">Learn More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 2: Info -->
+        <div id="screen-info" class="screen">
+            <h1 style="margin-bottom: 40px; color: #FFD700;">How It Works</h1>
+            <div style="max-width: 800px; text-align: left;">
+                <div style="margin: 30px 0; font-size: 1.2em;">
+                    <h2 style="color: #FFD700;">1. Get Certified (5 minutes)</h2>
+                    <p style="margin: 15px 0;">Quick signup, watch 2-min video, answer 3 simple questions. Done!</p>
+                </div>
+                <div style="margin: 30px 0; font-size: 1.2em;">
+                    <h2 style="color: #FFD700;">2. Get Your Unique Link</h2>
+                    <p style="margin: 15px 0;">Receive your referral link + QR code + marketing materials.</p>
+                </div>
+                <div style="margin: 30px 0; font-size: 1.2em;">
+                    <h2 style="color: #FFD700;">3. Share & Earn</h2>
+                    <p style="margin: 15px 0;">Share your link on social media, via email, or in person. When someone signs up, you earn 50%!</p>
+                </div>
+                <div style="margin: 30px 0; font-size: 1.2em;">
+                    <h2 style="color: #FFD700;">4. Get Paid Instantly</h2>
+                    <p style="margin: 15px 0;">Receive SYNTH tokens immediately. Convert to cash or hold for potential appreciation.</p>
+                </div>
+            </div>
+            <button class="btn" onclick="nextScreen('steps')">I'm Ready!</button>
+            <button class="btn btn-secondary" onclick="prevScreen('welcome')">Back</button>
+        </div>
+
+        <!-- Screen 3: Steps Overview -->
+        <div id="screen-steps" class="screen">
+            <h1 style="margin-bottom: 40px; color: #FFD700;">⚡ 5-Minute Certification ⚡</h1>
+            <div style="max-width: 700px;">
+                <div style="background: rgba(157, 78, 221, 0.1); border: 2px solid #FFD700; border-radius: 20px; padding: 30px; margin: 20px 0;">
+                    <div style="display: flex; align-items: center; margin: 20px 0;">
+                        <div style="font-size: 2em; margin-right: 20px;">1️⃣</div>
+                        <div style="text-align: left;">
+                            <h3 style="color: #FFD700;">Your Info</h3>
+                            <p>Name, email, payment method (1 minute)</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin: 20px 0;">
+                        <div style="font-size: 2em; margin-right: 20px;">2️⃣</div>
+                        <div style="text-align: left;">
+                            <h3 style="color: #FFD700;">Quick Training</h3>
+                            <p>Watch 2-minute video (2 minutes)</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin: 20px 0;">
+                        <div style="font-size: 2em; margin-right: 20px;">3️⃣</div>
+                        <div style="text-align: left;">
+                            <h3 style="color: #FFD700;">Mini Quiz</h3>
+                            <p>3 simple questions (1 minute)</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin: 20px 0;">
+                        <div style="font-size: 2em; margin-right: 20px;">4️⃣</div>
+                        <div style="text-align: left;">
+                            <h3 style="color: #FFD700;">Start Earning</h3>
+                            <p>Get your link & tools (NOW!)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn" onclick="nextScreen('signup')">Let's Go!</button>
+            <button class="btn btn-secondary" onclick="prevScreen('welcome')">Back</button>
+        </div>
+
+        <!-- Screen 4: Sign-Up Form -->
+        <div id="screen-signup" class="screen">
+            <div class="steps-indicator">
+                <div class="step active">1</div>
+                <div class="step">2</div>
+                <div class="step">3</div>
+                <div class="step">4</div>
+            </div>
+            
+            <h1 style="margin-bottom: 40px; color: #FFD700;">✨ Become a Certified Influencer ✨</h1>
+            <div class="form-container">
+                <form id="signup-form">
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" required placeholder="Your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" required placeholder="your@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone *</label>
+                        <input type="tel" required placeholder="(555) 123-4567">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Social Media (Optional)</label>
+                        <input type="text" placeholder="@instagram">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Payment Method *</label>
+                        <select required>
+                            <option value="">Choose payment method...</option>
+                            <option value="synth">SYNTH Wallet (Instant Payments) ⚡</option>
+                            <option value="bank">Bank Account (Weekly Payments)</option>
+                        </select>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">I agree to Influencer Terms & Conditions</label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="ready" checked>
+                        <label for="ready">I'm ready to earn 50% commission!</label>
+                    </div>
+
+                    <div style="margin-top: 40px; text-align: center;">
+                        <button type="submit" class="btn">Continue to Training →</button>
+                        <button type="button" class="btn btn-secondary" onclick="prevScreen('steps')">Back</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Screen 5: Training Video -->
+        <div id="screen-training" class="screen">
+            <div class="steps-indicator">
+                <div class="step completed">✓</div>
+                <div class="step active">2</div>
+                <div class="step">3</div>
+                <div class="step">4</div>
+            </div>
+
+            <h1 style="margin-bottom: 30px; color: #FFD700;">📺 2-Minute Training Video 📺</h1>
+            
+            <div class="video-container">
+                <div class="video-placeholder" id="video-player">
+                    ▶️ PLAY VIDEO
+                </div>
+            </div>
+
+            <div style="max-width: 800px; margin: 20px auto;">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="video-progress"></div>
+                </div>
+                <p id="video-time" style="text-align: center; color: #FFD700;">0:00 / 2:00</p>
+            </div>
+
+            <div style="max-width: 700px; margin: 30px auto;">
+                <h3 style="color: #FFD700; margin-bottom: 15px;">What You'll Learn:</h3>
+                <ul style="text-align: left; font-size: 1.2em; line-height: 2;">
+                    <li>✅ What is Vibenet∞</li>
+                    <li>✅ The 4-Tier Pricing ($0, $100, $1K, Grant)</li>
+                    <li>✅ Key Benefits (ALWAYS ON! + Zero bills)</li>
+                    <li>✅ How to share your referral link</li>
+                </ul>
+            </div>
+
+            <button class="btn" id="continue-btn" onclick="nextScreen('quiz')" disabled style="opacity: 0.5;">
+                Continue to Quiz →
+            </button>
+        </div>
+
+        <!-- Screen 6: Quiz -->
+        <div id="screen-quiz" class="screen">
+            <div class="steps-indicator">
+                <div class="step completed">✓</div>
+                <div class="step completed">✓</div>
+                <div class="step active">3</div>
+                <div class="step">4</div>
+            </div>
+
+            <h1 style="margin-bottom: 30px; color: #FFD700;">✅ Quick Knowledge Check ✅</h1>
+            <p style="margin-bottom: 40px; font-size: 1.2em;">Don't worry - we'll show you the right answers!</p>
+
+            <div class="quiz-container">
+                <div class="quiz-question">
+                    <h3>1. What commission do Vibenet influencers earn?</h3>
+                    <div class="quiz-option" onclick="selectAnswer(this, true)">
+                        <input type="radio" name="q1"> 50% on everything, forever ✨
+                    </div>
+                    <div class="quiz-option" onclick="selectAnswer(this, false)">
+                        <input type="radio" name="q1"> 10% one-time
+                    </div>
+                    <div class="quiz-option" onclick="selectAnswer(this, false)">
+                        <input type="radio" name="q1"> 25% for first year
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <h3>2. What makes Vibenet∞ special?</h3>
+                    <div class="quiz-option" onclick="selectAnswer(this, true)">
+                        <input type="radio" name="q2"> ALWAYS ON + Zero electric bills ⚡
+                    </div>
+                    <div class="quiz-option" onclick="selectAnswer(this, false)">
+                        <input type="radio" name="q2"> Just another carrier
+                    </div>
+                    <div class="quiz-option" onclick="selectAnswer(this, false)">
+                        <input type="radio" name="q2"> Only works in cities
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <h3>3. How do you get paid?</h3>
+                    <div class="quiz-option" onclick="selectAnswer(this, true)">
+                        <input type="radio" name="q3"> Instantly in SYNTH tokens 💰
+                    </div>
+                    <div class="quiz-option" onclick="selectAnswer(this, false)">
+                        <input type="radio" name="q3"> Wait 90 days
+                    </div>
+                    <div class="quiz-option" onclick="selectAnswer(this, false)">
+                        <input type="radio" name="q3"> Annual payment only
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn" id="quiz-submit" onclick="nextScreen('success')" disabled style="opacity: 0.5;">
+                Complete Certification! 🎉
+            </button>
+        </div>
+
+        <!-- Screen 7: Success -->
+        <div id="screen-success" class="screen">
+            <div class="steps-indicator">
+                <div class="step completed">✓</div>
+                <div class="step completed">✓</div>
+                <div class="step completed">✓</div>
+                <div class="step completed">✓</div>
+            </div>
+
+            <div class="success-content">
+                <div class="celebration-icon">🎉</div>
+                <h1 style="font-size: 3em; margin-bottom: 20px; color: #FFD700;">
+                    YOU'RE CERTIFIED!
+                </h1>
+                <h2 style="margin-bottom: 30px; color: #9d4edd;">
+                    Welcome to the Vibenet∞ Influencer Program!
+                </h2>
+
+                <div class="referral-box">
+                    <h3 style="color: #FFD700; margin-bottom: 15px;">Your Unique Referral Link:</h3>
+                    <div class="referral-link">vibenet.com/ref/<span id="ref-code">YOUR-CODE</span></div>
+                    
+                    <div class="qr-code">
+                        [YOUR QR CODE]
+                    </div>
+                    
+                    <p style="margin-top: 20px; font-size: 1.2em;">
+                        Screenshot this or we'll email everything to you!
+                    </p>
+                </div>
+
+                <div style="background: rgba(157, 78, 221, 0.1); border: 2px solid #FFD700; border-radius: 20px; padding: 30px; margin: 30px 0;">
+                    <h3 style="color: #FFD700; margin-bottom: 20px;">What's Next:</h3>
+                    <div style="text-align: left; font-size: 1.2em; line-height: 2;">
+                        <p>1. ✅ Share your link everywhere</p>
+                        <p>2. 💰 Earn 50% on every referral</p>
+                        <p>3. ⚡ Get paid instantly in SYNTH</p>
+                        <p>4. 📊 Track earnings in your dashboard</p>
+                        <p>5. 🚀 Build passive income!</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <button class="btn" onclick="emailMaterials()">📧 Email My Materials</button>
+                    <button class="btn" onclick="window.open('https://dashboard.vibenet.com', '_blank')">📊 Open Dashboard</button>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <button class="btn btn-secondary" onclick="resetKiosk()">Done</button>
+                </div>
+
+                <p style="margin-top: 40px; opacity: 0.7;">
+                    Need help? Visit support.vibenet.com or email support@vibenet.io
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let answersCorrect = 0;
+        let videoWatched = false;
+
+        // Screen navigation
+        function nextScreen(screenId) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById('screen-' + screenId).classList.add('active');
+        }
+
+        function prevScreen(screenId) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById('screen-' + screenId).classList.add('active');
+        }
+
+        // Form submission
+        document.getElementById('signup-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            nextScreen('training');
+            startVideo();
+        });
+
+        // Video simulation
+        function startVideo() {
+            const player = document.getElementById('video-player');
+            const progress = document.getElementById('video-progress');
+            const timeDisplay = document.getElementById('video-time');
+            const continueBtn = document.getElementById('continue-btn');
+            
+            player.innerHTML = '⏸️ PLAYING...';
+            
+            let currentTime = 0;
+            const duration = 120; // 2 minutes
+            
+            const interval = setInterval(() => {
+                currentTime += 1;
+                const percent = (currentTime / duration) * 100;
+                progress.style.width = percent + '%';
+                
+                const mins = Math.floor(currentTime / 60);
+                const secs = currentTime % 60;
+                timeDisplay.textContent = `${mins}:${secs.toString().padStart(2, '0')} / 2:00`;
+                
+                if (currentTime >= duration) {
+                    clearInterval(interval);
+                    player.innerHTML = '✅ VIDEO COMPLETE';
+                    continueBtn.disabled = false;
+                    continueBtn.style.opacity = '1';
+                    videoWatched = true;
+                }
+            }, 100); // Speed up for demo (100ms = 1 second)
+        }
+
+        // Quiz handling
+        function selectAnswer(element, isCorrect) {
+            // Remove previous selections in this question
+            const question = element.parentElement;
+            question.querySelectorAll('.quiz-option').forEach(opt => {
+                opt.classList.remove('selected', 'correct');
+            });
+            
+            // Mark this option
+            element.classList.add('selected');
+            if (isCorrect) {
+                element.classList.add('correct');
+                answersCorrect++;
+            } else {
+                // Show correct answer after a delay
+                setTimeout(() => {
+                    question.querySelectorAll('.quiz-option').forEach(opt => {
+                        if (opt !== element && opt.textContent.includes('✨') || opt.textContent.includes('⚡') || opt.textContent.includes('💰')) {
+                            opt.classList.add('correct');
+                        }
+                    });
+                }, 500);
+            }
+            
+            // Check if all questions answered
+            checkQuizComplete();
+        }
+
+        function checkQuizComplete() {
+            const selected = document.querySelectorAll('.quiz-option.selected').length;
+            if (selected >= 3) {
+                document.getElementById('quiz-submit').disabled = false;
+                document.getElementById('quiz-submit').style.opacity = '1';
+            }
+        }
+
+        // Generate random referral code
+        function generateRefCode() {
+            const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+            let code = '';
+            for (let i = 0; i < 8; i++) {
+                code += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return code;
+        }
+
+        // Update ref code when reaching success screen
+        document.addEventListener('DOMContentLoaded', () => {
+            const refCode = generateRefCode();
+            document.getElementById('ref-code').textContent = refCode;
+        });
+
+        function emailMaterials() {
+            alert('📧 Materials sent to your email! Check your inbox in 5 minutes.');
+        }
+
+        function resetKiosk() {
+            answersCorrect = 0;
+            videoWatched = false;
+            document.getElementById('signup-form').reset();
+            document.querySelectorAll('.quiz-option').forEach(opt => {
+                opt.classList.remove('selected', 'correct');
+            });
+            setTimeout(() => {
+                nextScreen('welcome');
+            }, 500);
+        }
+
+        // Auto-reset after inactivity
+        let inactivityTimer;
+        function resetInactivityTimer() {
+            clearTimeout(inactivityTimer);
+            inactivityTimer = setTimeout(resetKiosk, 300000); // 5 minutes
+        }
+
+        document.addEventListener('click', resetInactivityTimer);
+        document.addEventListener('touchstart', resetInactivityTimer);
+        resetInactivityTimer();
+    </script>
+
+    <!-- 🎂 CAKE SLOGAN FOOTER -->
+    <div style="position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(135deg, rgba(20, 20, 40, 0.95) 0%, rgba(40, 20, 60, 0.95) 100%); backdrop-filter: blur(10px); border-top: 2px solid rgba(157, 78, 221, 0.5); padding: 15px 20px; text-align: center; font-size: 0.95em; z-index: 10000; box-shadow: 0 -5px 20px rgba(157, 78, 221, 0.3);">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap;">
+                <div style="opacity: 0.6; text-decoration: line-through;">
+                    <span style="font-size: 0.9em;">Pre-Singularity:</span> <em>"You can't have your cake and eat it too"</em>
+                </div>
+                <div style="font-size: 1.8em; color: #9d4edd; animation: pulse-glow 2s ease-in-out infinite;">🎂</div>
+                <div style="font-weight: bold; color: #FFD700; font-size: 1.1em;">
+                    Post-Singularity where you <strong>CAN</strong> have your cake and eat it too!
+                </div>
+            </div>
+            <div style="opacity: 0.7; font-size: 0.85em;">
+                Check it out: <a href="https://github.com/FractiAI/NSPFRP-Seed-Protocol-OmniMission-v17-Vibeverse-Edition" target="_blank" style="color: #9d4edd; text-decoration: none; border-bottom: 1px solid rgba(157, 78, 221, 0.5); transition: all 0.3s;">github.com/FractiAI/NSPFRP-Seed-Protocol-OmniMission-v17-Vibeverse-Edition</a>
+            </div>
+        </div>
+    </div>
+    <style>
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+    </style>
+</body>
+</html>

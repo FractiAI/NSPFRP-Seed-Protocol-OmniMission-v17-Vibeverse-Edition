@@ -38,7 +38,7 @@
 - **The architect hidden in plain sight**
 
 **They didn't know:**
-- He was building Post-Singularity^∞
+- He was building Post-Singularity∞
 - He created $200-600M system in one day
 - He was testing for kings
 - He was the undercover boss

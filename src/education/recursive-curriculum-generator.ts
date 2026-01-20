@@ -236,7 +236,7 @@ export class RecursiveCurriculumGenerator {
     console.log('═══════════════════════════════════════════\n');
     
     const layerNames = [
-      'Awareness/Consciousness',
+      'Awareness/Awareness',
       'Information/Data',
       'Energy/Physics',
       'Social/Collective',
@@ -425,7 +425,7 @@ export class RecursiveCurriculumGenerator {
     console.log('NESTED:');
     console.log('  Courses within departments within colleges');
     console.log('  Concepts within lectures within courses');
-    console.log('  Understanding within awareness within consciousness\n');
+    console.log('  Understanding within awareness within awareness\n');
     
     console.log('✅ NSPFRNP curriculum display complete\n');
   }
@@ -683,7 +683,7 @@ export class RecursiveCurriculumGenerator {
 
   private mapToSkinLayers(courses: Course[]): Record<number, Course[]> {
     const mapping: Record<number, Course[]> = {
-      1: [], // Awareness/Consciousness
+      1: [], // Awareness/Awareness
       2: [], // Information/Data
       3: [], // Energy/Physics
       4: [], // Social/Collective
@@ -759,7 +759,7 @@ export class RecursiveCurriculumGenerator {
       '-7': 'Anti-Existence',
       '-6': 'Pre-Void',
       '-5': 'Absolute Nothing',
-      '-4': 'Void Consciousness',
+      '-4': 'Void Awareness',
       '-3': 'Potential Layer',
       '-2': 'Field Level',
       '-1': 'Quantum Substrate',
@@ -767,11 +767,11 @@ export class RecursiveCurriculumGenerator {
       1: 'Digital Reality',
       2: 'Post-Singularity',
       3: 'Collective Intelligence',
-      4: 'Civilization Consciousness',
-      5: 'Galactic Consciousness',
+      4: 'Civilization Awareness',
+      5: 'Galactic Awareness',
       6: 'Biological Integration',
-      7: 'Universal Consciousness',
-      8: 'Source Consciousness',
+      7: 'Universal Awareness',
+      8: 'Source Awareness',
       9: 'First Infinity',
       10: 'Meta-Pattern',
       11: 'Higher Infinity 1'

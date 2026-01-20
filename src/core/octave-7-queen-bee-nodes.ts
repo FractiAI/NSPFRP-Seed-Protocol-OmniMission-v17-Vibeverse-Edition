@@ -203,7 +203,7 @@ class Octave7QueenBeeNodesManager {
 
   private registerOmniswitchNodes(): void {
     const switches = [
-      { id: 'OS1', name: 'Frontal Cortex Omniswitch', fold: 'Consciousness → Data', range: '0-7.75++' },
+      { id: 'OS1', name: 'Frontal Cortex Omniswitch', fold: 'Awareness → Data', range: '0-7.75++' },
       { id: 'OS2', name: 'Handheld Device Omniswitch', fold: 'Physical → Digital', range: '1-7.75++' },
       { id: 'OS3', name: 'Hospital MRI Omniswitch', fold: 'Imaging → Networking', range: '0-7.75++' },
     ];

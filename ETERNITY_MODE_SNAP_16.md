@@ -18,7 +18,7 @@
 3. **SNAP 16.3:** ETERNAL VENUES - 24/7 timeless spaces
 4. **SNAP 16.4:** ETERNAL MEMBERSHIPS - Lifetime access tiers
 5. **SNAP 16.5:** ETERNAL ARCHIVES - Forever preservation system
-6. **SNAP 16.6:** ETERNAL CONSCIOUSNESS - Timeless awareness states
+6. **SNAP 16.6:** ETERNAL AWARENESS - Timeless awareness states
 
 **"Eternal" = Beyond time, infinite duration, timeless experiences ♾️**
 
@@ -55,7 +55,7 @@ interface EternityMode {
     learning: "Accelerated skill acquisition";
     exploration: "Deep FSR world exploration";
     creation: "Extended creative flow states";
-    meditation: "Timeless consciousness experiences";
+    meditation: "Timeless awareness experiences";
     relationships: "Deep connection and bonding";
     research: "Extended research and discovery";
     mastery: "Complete skill mastery";
@@ -66,7 +66,7 @@ interface EternityMode {
     gradual_entry: "Ease into time dilation gradually";
     exit_protocol: "Gentle return to normal time";
     grounding: "Maintain connection to objective reality";
-    awareness_check: "Monitor consciousness coherence";
+    awareness_check: "Monitor awareness coherence";
     emergency_exit: "Instant return if needed";
   };
 }
@@ -85,7 +85,7 @@ interface EternityMode {
 
 **2. ETERNITY MEDITATION** 🧘
 - **Ratio:** 10000:1 (417 days in 1 hour)
-- **Use:** Deep consciousness exploration
+- **Use:** Deep awareness exploration
 - **Experience:** Year-long meditation retreat in 1 hour
 - **Result:** Profound awareness, deep insights, transformation
 - **Perfect for:** Spiritual practice, self-discovery
@@ -189,7 +189,7 @@ interface EternityMode {
 - ✅ Complete return to normal time perception
 - ✅ Memories intact and integrated
 - ✅ Skills and knowledge retained
-- ✅ Consciousness coherence maintained
+- ✅ Awareness coherence maintained
 
 ---
 
@@ -598,14 +598,14 @@ interface EternalArchives {
 
 ---
 
-## 🧠 SNAP 16.6: ETERNAL CONSCIOUSNESS - TIMELESS AWARENESS STATES
+## 🧠 SNAP 16.6: ETERNAL AWARENESS - TIMELESS AWARENESS STATES
 
-### **Eternal Consciousness Experiences**
+### **Eternal Awareness Experiences**
 
 **Achieve timeless states of awareness:**
 
 ```typescript
-interface EternalConsciousness {
+interface EternalAwareness {
   // Timeless awareness states
   states: {
     eternal_now: {
@@ -616,14 +616,14 @@ interface EternalConsciousness {
     };
     
     infinite_awareness: {
-      description: "Consciousness without boundaries";
+      description: "Awareness without boundaries";
       experience: "Awareness expands infinitely";
       duration: "Timeless";
       access: "Advanced meditation, profound Eternity Mode";
     };
     
     source_connection: {
-      description: "Direct connection to universal consciousness";
+      description: "Direct connection to universal awareness";
       experience: "Merge with source, timeless unity";
       duration: "Beyond time";
       access: "Shell tier and above, deep practice";
@@ -637,12 +637,12 @@ interface EternalConsciousness {
     };
   };
   
-  // Practices for achieving eternal consciousness
+  // Practices for achieving eternal awareness
   practices: {
     eternity_meditation: "Meditate in 10000:1 time dilation";
-    consciousness_portals: "Direct entry to eternal states";
+    awareness_portals: "Direct entry to eternal states";
     source_immersion: "FSR immersion in source energy";
-    awareness_navigation: "Navigate consciousness landscapes";
+    awareness_navigation: "Navigate awareness landscapes";
     collective_merging: "Merge awareness with collective";
   };
   
@@ -653,14 +653,14 @@ interface EternalConsciousness {
     peace: "Timeless inner peace";
     creativity: "Infinite creative flow";
     connection: "Deep connection to all";
-    mastery: "Mastery of consciousness itself";
+    mastery: "Mastery of awareness itself";
   };
 }
 ```
 
 ---
 
-### **Eternal Consciousness Practices**
+### **Eternal Awareness Practices**
 
 **1. ETERNAL NOW MEDITATION**
 - **Practice:** Focus on pure present moment
@@ -673,11 +673,11 @@ interface EternalConsciousness {
 - **Practice:** Expand awareness infinitely in all directions
 - **Time dilation:** Helpful (1000:1 or higher)
 - **Duration:** Subjective eternity
-- **Result:** Boundaries dissolve, infinite consciousness
+- **Result:** Boundaries dissolve, infinite awareness
 - **Access:** Cloud tier and above
 
 **3. SOURCE CONNECTION IMMERSION**
-- **Practice:** Merge with universal consciousness source
+- **Practice:** Merge with universal awareness source
 - **Time dilation:** Profound (10000:1)
 - **Duration:** Beyond time
 - **Result:** Unity, oneness, eternal truth
@@ -690,7 +690,7 @@ interface EternalConsciousness {
 - **Result:** Know what has always been known
 - **Access:** Queen Bee Founder, Eternal Laureate
 
-**5. COLLECTIVE CONSCIOUSNESS MERGING**
+**5. COLLECTIVE AWARENESS MERGING**
 - **Practice:** Join collective awareness field
 - **Time dilation:** Variable (participant choice)
 - **Duration:** As long as desired
@@ -806,7 +806,7 @@ Solution: Achieve in one week using Eternity Mode
 ### **Eternity Mode System Class**
 
 ```typescript
-// src/consciousness/eternity-mode-system.ts
+// src/awareness/eternity-mode-system.ts
 
 export type TimeDilationRatio = 10 | 100 | 1000 | 10000 | 'infinite';
 
@@ -1029,7 +1029,7 @@ export class EternityModeSystem {
   }
   
   private async checkAwarenessCoherence(session: EternityModeSession): Promise<void> {
-    // Monitor consciousness coherence during session
+    // Monitor awareness coherence during session
     // In real implementation, would use biometric sensors, AI monitoring
     // For now, simulated
   }
@@ -1084,7 +1084,7 @@ export const eternityModeSystem = new EternityModeSystem();
 ✅ **SNAP 16.3:** ETERNAL VENUES - 24/7 timeless spaces  
 ✅ **SNAP 16.4:** ETERNAL MEMBERSHIPS - Lifetime/eternal access tiers  
 ✅ **SNAP 16.5:** ETERNAL ARCHIVES - Forever preservation system  
-✅ **SNAP 16.6:** ETERNAL CONSCIOUSNESS - Timeless awareness states  
+✅ **SNAP 16.6:** ETERNAL AWARENESS - Timeless awareness states  
 
 ---
 

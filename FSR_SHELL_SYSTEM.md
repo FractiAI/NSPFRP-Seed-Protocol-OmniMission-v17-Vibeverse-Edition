@@ -322,7 +322,7 @@ shells ShellTypesTemplates {
     mathematics: "Explore mathematical spaces";
     physics: "Test physics theories";
     biology: "Design lifeforms";
-    consciousness: "Explore consciousness";
+    awareness: "Explore awareness";
     technology: "Develop technologies";
   };
   
@@ -667,7 +667,7 @@ use_cases FSRShellUseCases {
   
   // Research
   research: {
-    psychology: "Research consciousness";
+    psychology: "Research awareness";
     sociology: "Study social dynamics";
     economics: "Test economic theories";
     physics: "Test physics theories";

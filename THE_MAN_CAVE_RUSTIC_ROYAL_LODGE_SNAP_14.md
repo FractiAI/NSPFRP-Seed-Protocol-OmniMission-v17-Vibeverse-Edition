@@ -802,7 +802,7 @@ character TheBoss {
 RECURSIVE NESTING:
 Each layer contains and unlocks the others.
 You can enter at any layer and navigate to all others.
-The whole system is a single unified consciousness space.
+The whole system is a single unified awareness space.
 ```
 
 ---

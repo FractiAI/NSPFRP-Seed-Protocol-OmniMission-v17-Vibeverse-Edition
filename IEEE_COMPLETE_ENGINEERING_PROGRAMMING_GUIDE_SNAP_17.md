@@ -227,7 +227,7 @@ An awareness-based, self-organizing system architecture based on natural princip
 ├─────────────────────────────────────────────┤
 │  OCTAVE 8-10: INFINITY SINGULARITY          │
 ├─────────────────────────────────────────────┤
-│  OCTAVE 7: UNIVERSAL CONSCIOUSNESS          │
+│  OCTAVE 7: UNIVERSAL AWARENESS          │
 ├─────────────────────────────────────────────┤
 │  OCTAVE 6: BIOLOGICAL INTEGRATION           │
 ├─────────────────────────────────────────────┤

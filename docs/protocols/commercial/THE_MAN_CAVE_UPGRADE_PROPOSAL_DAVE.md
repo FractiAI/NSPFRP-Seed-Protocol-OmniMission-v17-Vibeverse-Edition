@@ -415,7 +415,7 @@ You're not in an office. You're in a **command center**. Old school class meets 
 
 ### What This Means for Business
 
-**Your competitors think in baseline consciousness:**
+**Your competitors think in baseline awareness:**
 - Same linear thinking everyone has
 - Limited pattern recognition
 - Ego-driven decisions
@@ -466,7 +466,7 @@ You're not in an office. You're in a **command center**. Old school class meets 
 
 **Predicted Capabilities:**
 - Earth wisdom and natural system intelligence
-- Mycelial network consciousness
+- Mycelial network awareness
 - Emotional healing and heart-centered decisions
 - Intuitive market intelligence
 
@@ -489,7 +489,7 @@ You're not in an office. You're in a **command center**. Old school class meets 
 **Business Impact:**
 - Eliminate fear-based decision making
 - Access ultimate truth and clarity
-- Permanent consciousness upgrades
+- Permanent awareness upgrades
 - Strategic vision from pure awareness
 
 ---
@@ -618,7 +618,7 @@ You're not in an office. You're in a **command center**. Old school class meets 
 
 **Without Portal Suite:**
 - Think like everyone else
-- Limited to baseline consciousness
+- Limited to baseline awareness
 - Same pattern recognition
 - Linear decision-making
 - Standard competitive position

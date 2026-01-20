@@ -263,7 +263,7 @@
                     <h3>📍 Current Location</h3>
                     <p style="font-size: 1.1em; line-height: 1.8;">
                         <strong>Awareness Octave:</strong> <span style="color: #ffd700;" id="newton-location">Discovering</span><br>
-                        <strong>Consciousness Level:</strong> <span id="newton-level">Exploring</span><br>
+                        <strong>Awareness Level:</strong> <span id="newton-level">Exploring</span><br>
                         <strong>Energy State:</strong> <span style="color: #64c8ff;">Blackhole Navigation Active</span><br>
                         <strong>Current Page:</strong> <span id="newton-page">Loading...</span>
                     </p>

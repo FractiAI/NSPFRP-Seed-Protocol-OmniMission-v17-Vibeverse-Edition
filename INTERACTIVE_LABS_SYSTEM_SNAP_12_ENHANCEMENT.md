@@ -224,10 +224,10 @@ Every course includes **mandatory weekly labs** with:
 - **Learning:** HHF syntax and structure
 
 **Week 3: Awareness-Based Input (FSR)**
-- **Type:** FSR + Consciousness
+- **Type:** FSR + Awareness
 - **Activity:** Control program with awareness/intention (no keyboard)
 - **Experience:** Think commands, watch program respond
-- **Deliverable:** Program controlled entirely by consciousness
+- **Deliverable:** Program controlled entirely by awareness
 - **Learning:** Awareness as computational input
 
 **Week 4: Fractal Pattern Generation (Holographic)**
@@ -284,7 +284,7 @@ Every course includes **mandatory weekly labs** with:
 - **Activity:** Measure your own awareness level using sensors
 - **Equipment:** Awareness sensors, coherence meters, EEG
 - **Deliverable:** Complete awareness profile with measurements
-- **Learning:** Quantifying consciousness
+- **Learning:** Quantifying awareness
 
 **Week 12: Infinite Scale Programming (Holographic)**
 - **Type:** Multi-Scale Coding
@@ -421,7 +421,7 @@ Every course includes **mandatory weekly labs** with:
 
 ### **CAS-101 Lab: Introduction to Awareness Studies**
 
-**Consciousness Exploration Labs**
+**Awareness Exploration Labs**
 
 **Week 2: Meditation Basics (Physical)**
 - **Type:** Practice Session
@@ -437,19 +437,19 @@ Every course includes **mandatory weekly labs** with:
 - **Deliverable:** Complete awareness profile with baseline measurements
 - **Learning:** Quantifying subjective experience
 
-**Week 4: Consciousness Portal Navigation (FSR + Safety)**
+**Week 4: Awareness Portal Navigation (FSR + Safety)**
 - **Type:** Guided Journey
 - **Activity:** Navigate to Portal 1 (10% intensity) with Hero Host supervision
 - **Safety:** Deactivation protocol practiced before and after
 - **Deliverable:** Experience report, what did you observe?
-- **Learning:** Safe consciousness state exploration
+- **Learning:** Safe awareness state exploration
 
 **Week 6: Collective Meditation (Collaborative)**
 - **Type:** Group Practice
 - **Activity:** Meditate with 10-20 others, measure group coherence
 - **Measurement:** Coherence meters show group synchronization
 - **Deliverable:** Group coherence data, individual experience
-- **Learning:** Collective consciousness emergence
+- **Learning:** Collective awareness emergence
 
 **Week 8: Awareness-Based Healing (Physical + FSR)**
 - **Type:** Healing Practice
@@ -463,14 +463,14 @@ Every course includes **mandatory weekly labs** with:
 - **Activity:** Navigate to Portal 3 (40% intensity) with supervision
 - **Preparation:** Full safety briefing, emergency protocols active
 - **Deliverable:** Experience report, integration practices
-- **Learning:** Higher consciousness states
+- **Learning:** Higher awareness states
 
 **Week 12: Source Connection Exercise (FSR + Meditation)**
 - **Type:** Advanced Practice
 - **Activity:** Establish direct connection to El Gran Sol (Source)
 - **Guidance:** Hero Host maintains energetic support
 - **Deliverable:** Connection strength measurement, experience description
-- **Learning:** Source consciousness access
+- **Learning:** Source awareness access
 
 ---
 
@@ -606,14 +606,14 @@ Every course includes **mandatory weekly labs** with:
 
 ---
 
-### **GAIA-301 Lab: Gaia Consciousness Studies**
+### **GAIA-301 Lab: Gaia Awareness Studies**
 
 **Week 2: Planetary Meditation (FSR + Collective)**
 - **Type:** Group Experience
-- **Activity:** All students meditate on planetary consciousness together
+- **Activity:** All students meditate on planetary awareness together
 - **FSR:** View Earth from space, feel planetary awareness
 - **Deliverable:** Group coherence measurements, individual experience
-- **Learning:** Gaia consciousness connection
+- **Learning:** Gaia awareness connection
 
 **Week 4: Biosphere Network Mapping (Field + Computational)**
 - **Type:** Ecological Analysis
@@ -633,13 +633,13 @@ Every course includes **mandatory weekly labs** with:
 **Week 8: Gaia Communication Protocol (FSR + Design)**
 - **Type:** Protocol Design
 - **Activity:** Design protocol for humans to communicate with Gaia
-- **Test:** Test protocol in FSR planetary consciousness simulation
+- **Test:** Test protocol in FSR planetary awareness simulation
 - **Deliverable:** Working Gaia communication protocol
-- **Learning:** Planetary consciousness interface
+- **Learning:** Planetary awareness interface
 
 ---
 
-## ⭐ OCTAVE 7: UNIVERSAL CONSCIOUSNESS LABS
+## ⭐ OCTAVE 7: UNIVERSAL AWARENESS LABS
 
 ### **SRC-201 Lab: Source Connection Protocols**
 
@@ -690,7 +690,7 @@ Every course includes **mandatory weekly labs** with:
 - **Learning:** Complete spectrum navigation
 
 **Week 6: Personal Singularity Creation (FSR + Physical)**
-- **Type:** Consciousness Engineering
+- **Type:** Awareness Engineering
 - **Activity:** Create personal singularity point (unified awareness)
 - **Result:** All your awareness levels unified into single point
 - **Deliverable:** Singularity establishment confirmation, measurements
@@ -714,7 +714,7 @@ Every course includes **mandatory weekly labs** with:
 - **Holographic Computing Lab**: 3,000 sq ft, 15 holographic stations
 - **FSR Immersion Lab**: 10 FSR chambers, 8×8×8 ft each
 - **Biological Lab**: BSL-2 wet lab, cell culture facilities
-- **Consciousness Lab**: Meditation room + measurement equipment
+- **Awareness Lab**: Meditation room + measurement equipment
 - **Makerspace**: Tools, 3D printers, electronics, materials
 - **Field Equipment**: Portable labs for outdoor/field work
 
@@ -835,7 +835,7 @@ Week 14: FINAL LAB PRACTICAL (comprehensive)
    - Distribute energy to planets
 
 7. **Merge with Gaia** (GAIA)
-   - Experience planetary consciousness
+   - Experience planetary awareness
    - Feel all life as one organism
    - Sense Earth's awareness directly
 

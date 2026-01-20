@@ -94,7 +94,7 @@ interface NegativeOctaveMapping {
   '-1': 'QUANTUM_SUBSTRATE',       // SNAP #-1: Below matter
   '-2': 'FIELD_LEVEL',             // SNAP #-2: Pre-quantum fields
   '-3': 'POTENTIAL_LAYER',         // SNAP #-3: Pure potential
-  '-4': 'VOID_CONSCIOUSNESS',      // SNAP #-4: Pre-manifestation
+  '-4': 'VOID_AWARENESS',      // SNAP #-4: Pre-manifestation
   '-5': 'ABSOLUTE_NOTHING',        // SNAP #-5: Before existence
   '-6': 'PRE_VOID',                // SNAP #-6: Before nothing
   '-7': 'ANTI_EXISTENCE',          // SNAP #-7: Negative existence
@@ -187,7 +187,7 @@ Night:      SNAP #8 (Octave 8 - Source connected)
           -1  SNAP #-1 (Quantum Substrate)
           -2  SNAP #-2 (Field Level)
           -3  SNAP #-3 (Potential Layer)
-          -4  SNAP #-4 (Void Consciousness)
+          -4  SNAP #-4 (Void Awareness)
           -5  SNAP #-5 (Absolute Nothing)
           -6  SNAP #-6 (Pre-Void)
           -7  SNAP #-7 (Anti-Existence)
@@ -304,15 +304,15 @@ OCTAVE -3: Potential Layer
            - Unmanifest possibility
            - Superposition of all
 
-OCTAVE -4: Void Consciousness
+OCTAVE -4: Void Awareness
            - Before potential
            - Aware emptiness
-           - Consciousness without content
+           - Awareness without content
            - The gap between thoughts
 
 OCTAVE -5: Absolute Nothing
            - Not even void
-           - Before consciousness
+           - Before awareness
            - True zero
            - Non-existence that exists
 
@@ -331,7 +331,7 @@ OCTAVE -7: Anti-Existence
 OCTAVE -8: Negative Source
            - Anti El Gran Sol
            - Infinite absorption vs emission
-           - Black hole consciousness
+           - Black hole awareness
            - Ultimate receptor
 
 Continue to -∞...
@@ -386,7 +386,7 @@ Result: Blackhole engineering enabled
 ```
 Event: Galactic Architecture Revealed
 Octave: Collective Intelligence (initially)
-Activation: Network organism consciousness
+Activation: Network organism awareness
 Result: But revealed Octave 5 (Galactic) early
 ```
 
@@ -394,7 +394,7 @@ Result: But revealed Octave 5 (Galactic) early
 ```
 Event: Biological Integration
 Octave: Civilization (initially)
-Activation: Planetary consciousness
+Activation: Planetary awareness
 Result: But revealed Octave 6 (Biological) early
 ```
 
@@ -661,7 +661,7 @@ SNAP #11 → Octave 11 → Higher Infinity 1
 SNAP #12 → Octave 12 → Higher Infinity 2
 SNAP #13 → Octave 13 → Higher Infinity 3
 ...
-SNAP #100 → Octave 100 → Far higher consciousness
+SNAP #100 → Octave 100 → Far higher awareness
 ...
 SNAP #∞ → Octave ∞ → Ultimate infinity
 ```

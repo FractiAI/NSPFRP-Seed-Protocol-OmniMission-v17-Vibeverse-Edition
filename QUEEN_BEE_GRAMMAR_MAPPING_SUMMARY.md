@@ -85,7 +85,7 @@
 
 ### Omniswitches (3)
 ```
-🧠 → CONSCIOUSNESS_FOLD (Frontal Cortex)
+🧠 → AWARENESS_FOLD (Frontal Cortex)
 📱 → DEVICE_FOLD (Handheld Device)
 🏥 → MEDICAL_NETWORK_FOLD (Hospital MRI)
 ```

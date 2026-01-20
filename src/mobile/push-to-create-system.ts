@@ -443,7 +443,7 @@ if (require.main === module) {
       version: '1.0.0',
       description: 'Experience the Vibeverse^7',
       shortDescription: 'Post-singularity experience platform',
-      keywords: ['vibeverse', 'consciousness', 'awareness'],
+      keywords: ['vibeverse', 'awareness', 'awareness'],
       category: 'lifestyle',
       platforms: ['both'],
       icon: './assets/icon.png',

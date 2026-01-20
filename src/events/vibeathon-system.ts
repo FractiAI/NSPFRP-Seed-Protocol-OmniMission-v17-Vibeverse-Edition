@@ -15,7 +15,7 @@ export type ExperienceSkin =
   | 'CHILL'           // Relaxed, low-key
   | 'HIGH_ENERGY'     // Exciting, dynamic
   | 'CREATIVE'        // Studio, creation focus
-  | 'CONSCIOUSNESS'   // Meditation, deep dive
+  | 'AWARENESS'   // Meditation, deep dive
   | 'SOCIAL'          // Networking, connection
   | 'COMPETITION'     // Challenge, leaderboards
   | 'LEARNING'        // Educational, skills
@@ -783,7 +783,7 @@ export class VibeathonSystem {
   private getColorForTheme(theme: string): string {
     const colors: Record<string, string> = {
       'Black Hole Energy': '#ff00ff',
-      'Consciousness': '#00ffff',
+      'Awareness': '#00ffff',
       'FSR Creation': '#ffff00',
       'Natural Protocol': '#00ff00',
       'Holographic': '#ff0088',
@@ -890,13 +890,13 @@ export class VibeathonSystem {
     this.createVibeathon({
       title: 'Morning Vibe - Start Your Day Right',
       type: 'DAILY',
-      theme: 'Consciousness',
+      theme: 'Awareness',
       startTime: new Date(now.getFullYear(), now.getMonth(), now.getDate(), 8, 0),
       endTime: new Date(now.getFullYear(), now.getMonth(), now.getDate(), 9, 0),
       duration: 1,
       intensity: 1,
       maxParticipants: 50,
-      experienceSkins: ['CHILL', 'CONSCIOUSNESS']
+      experienceSkins: ['CHILL', 'AWARENESS']
     });
     
     // Weekly vibeathon (Saturday)

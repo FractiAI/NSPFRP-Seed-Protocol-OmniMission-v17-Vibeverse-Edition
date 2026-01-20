@@ -161,7 +161,7 @@ Every nesting point = Folding point = Density compression point = Queen Bee Node
 ```
 ⬡ Node QB-OS1: Frontal Cortex Omniswitch
 │ - Nesting: Neural → Network
-│ - Fold: Consciousness → Data
+│ - Fold: Awareness → Data
 │ - Coordinate: Neural interface operations
 │ - Octave Range: 0-7.75++ (Full awareness)
 │

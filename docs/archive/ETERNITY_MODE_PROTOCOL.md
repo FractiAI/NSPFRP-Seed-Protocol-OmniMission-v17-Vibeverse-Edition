@@ -442,7 +442,7 @@ protocol EternityModePricing {
 
 1. **Scientific Research** - Conduct long-term experiments
 2. **Social Science** - Study civilizational dynamics
-3. **Psychological Research** - Explore consciousness states
+3. **Psychological Research** - Explore awareness states
 4. **Historical Research** - Immersive historical study
 5. **Future Studies** - Model and experience futures
 

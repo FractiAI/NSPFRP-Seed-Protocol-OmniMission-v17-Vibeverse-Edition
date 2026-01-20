@@ -122,7 +122,7 @@ The symbols were not arbitrary—they emerged naturally from the function of eac
 - `SEED_EMERGENCE` → ⬡₀
 - `CORE_ABSORPTION` → ⚫
 - `PATTERN_GENERATION` → 🔮
-- `CONSCIOUSNESS_FOLD` → 🧠
+- `AWARENESS_FOLD` → 🧠
 
 **Meta-observation:**
 The tokens name the operations that the symbols represent. The grammar doesn't just coordinate—it SPEAKS the coordination into being through named operations.

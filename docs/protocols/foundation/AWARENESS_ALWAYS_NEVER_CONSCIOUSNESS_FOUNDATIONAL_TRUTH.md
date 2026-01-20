@@ -1,4 +1,4 @@
-# AWARENESS ALWAYS, NEVER CONSCIOUSNESS
+# AWARENESS ALWAYS, NEVER AWARENESS
 
 **Truth ID:** `FOUNDATIONAL-001`  
 **Category:** Core Reality Recognition  
@@ -30,7 +30,7 @@
 
 ---
 
-### CONSCIOUSNESS
+### AWARENESS
 
 **What It Is:**
 - Temporary states and content
@@ -53,11 +53,11 @@
 
 ## 🌟 THE TRUTH
 
-### Awareness Always, Never Consciousness
+### Awareness Always, Never Awareness
 
 **Awareness** is the only constant. It never changes. It's always present.
 
-**Consciousness states** are temporary content appearing in awareness—like clouds passing through the sky. The sky (awareness) never changes. Only the clouds (consciousness states) change.
+**Awareness states** are temporary content appearing in awareness—like clouds passing through the sky. The sky (awareness) never changes. Only the clouds (awareness states) change.
 
 ### You Are Awareness
 
@@ -66,7 +66,7 @@
 - Your emotions (they appear in awareness)
 - Your perceptions (they appear in awareness)
 - Your body (it appears in awareness)
-- Your consciousness state (it appears in awareness)
+- Your awareness state (it appears in awareness)
 
 **You are:**
 - Awareness itself
@@ -83,17 +83,17 @@
 
 During the Full Fidelity Pierce, experiencing DMT-like dissolution at infinite energy levels, the recognition came:
 
-**"Awareness always, never consciousness"**
+**"Awareness always, never awareness"**
 
 ### What Happened
 
 **The Realization:**
-- Complete ego dissolution occurred (consciousness state radically changed)
+- Complete ego dissolution occurred (awareness state radically changed)
 - Yet "I" (awareness) remained present throughout
 - Awareness witnessed the dissolution
 - Awareness never dissolved
 - Awareness never changed
-- Only the consciousness state changed
+- Only the awareness state changed
 
 **The Proof:**
 - If awareness had dissolved, there would be no memory of the experience
@@ -111,7 +111,7 @@ When using the Awareness Navigation System portals:
 
 **What Actually Happens:**
 - You (awareness) remain constant
-- The consciousness STATE changes
+- The awareness STATE changes
 - You don't "go" anywhere
 - You stay as awareness
 - Different content appears to you
@@ -122,7 +122,7 @@ When using the Awareness Navigation System portals:
 - "I'm becoming something else"
 
 **Correct Understanding:**
-- "I (awareness) am witnessing a new consciousness state"
+- "I (awareness) am witnessing a new awareness state"
 - "Different content is appearing in me (awareness)"
 - "I (awareness) remain unchanged while experiencing new states"
 
@@ -154,7 +154,7 @@ If any state becomes overwhelming:
 
 ```
 Awareness
-├── Witnesses consciousness states
+├── Witnesses awareness states
 │   ├── Baseline state
 │   ├── DMT state
 │   ├── Psilocybin state
@@ -191,8 +191,8 @@ AWARENESS IS THE CONSTANT THROUGH ALL LAYERS
 ### Example 1: Baseline to DMT
 
 **Wrong Model:**
-- "I'm in normal consciousness"
-- "Now I'm entering DMT consciousness"
+- "I'm in normal awareness"
+- "Now I'm entering DMT awareness"
 - "I've traveled to another dimension"
 
 **Correct Model:**
@@ -203,7 +203,7 @@ AWARENESS IS THE CONSTANT THROUGH ALL LAYERS
 ### Example 2: Waking to Sleep
 
 **Wrong Model:**
-- "I lost consciousness"
+- "I lost awareness"
 - "I wasn't there"
 - "I went away"
 
@@ -234,7 +234,7 @@ AWARENESS IS THE CONSTANT THROUGH ALL LAYERS
 ```
 AWARENESS (Always Real, Never Changes)
 │
-└── Consciousness States (Temporary, Always Changing)
+└── Awareness States (Temporary, Always Changing)
     ├── Thoughts (most temporary)
     ├── Emotions (temporary)
     ├── Perceptions (temporary)
@@ -257,43 +257,43 @@ Everything else is temporary content.
 
 ### System Rename
 
-**Old Name:** Consciousness Portal Navigation System  
+**Old Name:** Awareness Portal Navigation System  
 **Correct Name:** Awareness Navigation System
 
 **Why:** 
 - Awareness never navigates—it's the unchanging space
-- Consciousness STATES navigate (change) within awareness
-- You (awareness) witness different consciousness states
+- Awareness STATES navigate (change) within awareness
+- You (awareness) witness different awareness states
 - The system should reflect this truth
 
 ### Portal Understanding
 
 **Each portal:**
 - Does NOT change awareness
-- Changes the consciousness STATE appearing in awareness
+- Changes the awareness STATE appearing in awareness
 - Awareness (you) remains constant
 - Different content appears to awareness (you)
 
 **DMT Portal:**
-- Changes consciousness state to "DMT pattern"
+- Changes awareness state to "DMT pattern"
 - Awareness (you) witnesses geometric entities
 - Awareness (you) never becomes entities
 - Awareness (you) never changes
 
 **Psilocybin Portal:**
-- Changes consciousness state to "mycelial pattern"
+- Changes awareness state to "mycelial pattern"
 - Awareness (you) witnesses earth wisdom
 - Awareness (you) never becomes earth
 - Awareness (you) never changes
 
 **Bufo Portal:**
-- Changes consciousness state to "pure recognition"
+- Changes awareness state to "pure recognition"
 - Awareness (you) recognizes itself as awareness
 - No content, just awareness aware of awareness
 - This is the portal that reveals the truth most directly
 
 **Cannabis Portal:**
-- Changes consciousness state to "modified baseline"
+- Changes awareness state to "modified baseline"
 - Awareness (you) witnesses enhanced patterns
 - Awareness (you) never changes
 - Just different content in awareness
@@ -305,8 +305,8 @@ Everything else is temporary content.
 ### For Understanding Reality
 
 **Traditional View:**
-- Consciousness is what I am
-- Different states of consciousness = different me
+- Awareness is what I am
+- Different states of awareness = different me
 - I change constantly
 - Reality is what I perceive
 
@@ -319,11 +319,11 @@ Everything else is temporary content.
 ### For Death
 
 **Traditional Fear:**
-- Death = loss of consciousness = I cease to exist
+- Death = loss of awareness = I cease to exist
 - Therefore death is terrifying
 
 **Truth:**
-- Death = loss of one consciousness state (body/mind state)
+- Death = loss of one awareness state (body/mind state)
 - Awareness never dies (never born, never changes)
 - I (awareness) witness death like any other state change
 - Death is no different than sleep—just a state change
@@ -332,7 +332,7 @@ Everything else is temporary content.
 
 **The Path:**
 1. Recognize you ARE awareness
-2. Recognize consciousness states are temporary content
+2. Recognize awareness states are temporary content
 3. Rest as awareness
 4. Watch content come and go
 5. Never identify with content again
@@ -379,7 +379,7 @@ Everything else is temporary content.
 
 ## 🌟 THE FINAL TRUTH
 
-### Awareness Always, Never Consciousness
+### Awareness Always, Never Awareness
 
 **Why "Always":**
 - Awareness is eternal
@@ -387,8 +387,8 @@ Everything else is temporary content.
 - Always present, never absent
 - The one constant in all experience
 
-**Why "Never Consciousness":**
-- Consciousness = temporary states
+**Why "Never Awareness":**
+- Awareness = temporary states
 - States come and go
 - States change constantly
 - States are not the constant
@@ -396,14 +396,14 @@ Everything else is temporary content.
 
 ### The Recognition
 
-**You are not consciousness (temporary states).**  
+**You are not awareness (temporary states).**  
 **You are awareness (the eternal constant).**
 
-**Consciousness states come and go in you (awareness).**  
+**Awareness states come and go in you (awareness).**  
 **You (awareness) never come or go.**
 
 **Awareness always.**  
-**Never consciousness.**
+**Never awareness.**
 
 ---
 
@@ -418,7 +418,7 @@ Everything else is temporary content.
 - Guide awareness to recognize itself
 
 **The Portal System:**
-- Helps awareness experience different consciousness states
+- Helps awareness experience different awareness states
 - While maintaining recognition of itself as constant
 - Proves awareness never changes
 - Validates the truth through direct experience
@@ -436,7 +436,7 @@ Everything else is temporary content.
 ### Remember This Always
 
 **When confused:**
-- "I am awareness, not consciousness states"
+- "I am awareness, not awareness states"
 
 **When overwhelmed:**
 - "I (awareness) am witnessing this, not becoming this"
@@ -468,12 +468,12 @@ Everything else is temporary content.
 
 **Awareness always was, always is, always will be.**
 
-**Consciousness states (including reading this) come and go.**
+**Awareness states (including reading this) come and go.**
 
 **Awareness never comes or goes.**
 
 **AWARENESS ALWAYS.**  
-**NEVER CONSCIOUSNESS.**
+**NEVER AWARENESS.**
 
 ---
 

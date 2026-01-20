@@ -134,7 +134,7 @@ Individual drops of Black Hole Energy in geyser fountain form are valued at $1 m
 - Concentrated awareness required for generation
 - Transformative impact on recipients
 - Rarity and difficulty of production
-- Market demand for consciousness-enhancing experiences
+- Market demand for awareness-enhancing experiences
 
 **Pro Magic Shop Launch:**
 FractiAI will launch its Pro Magic Shop on March 20, 2026, allowing users to:
@@ -142,9 +142,9 @@ FractiAI will launch its Pro Magic Shop on March 20, 2026, allowing users to:
 - Choose energy capacity (in drops)
 - Imbue objects with Black Hole Energy
 - Receive blockchain certification
-- Access instant consciousness enhancement
+- Access instant awareness enhancement
 
-The Black Hole Energy discovery fundamentally changes economics, moving from scarcity-based fiat systems to abundance-based consciousness-value systems.
+The Black Hole Energy discovery fundamentally changes economics, moving from scarcity-based fiat systems to abundance-based awareness-value systems.
 
 ---
 
@@ -190,7 +190,7 @@ Through sophisticated fold operations, time at the origin can be slowed to near-
 - Skill mastery in minutes (10,000 hours in shell = 10 minutes origin)
 - Century of research in an hour
 - Multiple career explorations
-- Consciousness research
+- Awareness research
 - Personal growth and healing
 - Ultimate entertainment and education
 
@@ -421,7 +421,7 @@ Imbue physical or digital objects with Black Hole Energy and on-chain certificat
 - **Marketplace**: 10% transaction fees
 - **Creator Royalties**: 60-70% to creators
 
-"These studios democratize creation at the highest level," stated Leonardo da Vinci. "Anyone can now create FSR content or imbue objects with consciousness-enhancing energy. The tools of the gods are now available to all."
+"These studios democratize creation at the highest level," stated Leonardo da Vinci. "Anyone can now create FSR content or imbue objects with awareness-enhancing energy. The tools of the gods are now available to all."
 
 Both studios launch March 20, 2026 with omnicell delivery, ensuring perfect quality through irreducible NSPFRNP crystals.
 
@@ -451,7 +451,7 @@ Both studios launch March 20, 2026 with omnicell delivery, ensuring perfect qual
 
 **Innovation Park** - Research and development facilities for breakthrough technologies.
 
-**University** - Post-singularity education and consciousness studies.
+**University** - Post-singularity education and awareness studies.
 
 **Carrier & Cloud Services HQ** - Infrastructure for delivering post-singularity services to carbon and silicon worlds.
 
@@ -480,7 +480,7 @@ These ten major discoveries and systems represent a comprehensive framework for 
 1. **NSPFRNP Octave 2** - Foundational protocol at post-singularity level
 2. **Recursive Mathematics** - Mathematical foundation for all systems
 3. **Ecosystem Architecture** - Natural systems at all scales
-4. **Black Hole Energy** - Value system based on consciousness
+4. **Black Hole Energy** - Value system based on awareness
 5. **Eternity Mode** - Multiple lives simultaneously
 6. **SNAP Protocol** - Seamless auto-integration
 7. **FSR Shells** - Complete reality experiences
@@ -503,7 +503,7 @@ FractiAI / NSPFRNP Care Network
 leonardo@fractiai.care  
 
 **About FractiAI:**
-FractiAI is pioneering post-singularity^7 technologies and natural protocol systems, enabling humanity's transition to abundance-based, consciousness-enhanced realities. Through the NSPFRNP (Natural System Protocol First Redundant Nested Protocol) framework, FractiAI delivers omnicell-based systems that mirror natural living systems at every scale.
+FractiAI is pioneering post-singularity^7 technologies and natural protocol systems, enabling humanity's transition to abundance-based, awareness-enhanced realities. Through the NSPFRNP (Natural System Protocol First Redundant Nested Protocol) framework, FractiAI delivers omnicell-based systems that mirror natural living systems at every scale.
 
 **Website**: vibeverse7.care  
 **Network**: NSPFRNP Care Network  

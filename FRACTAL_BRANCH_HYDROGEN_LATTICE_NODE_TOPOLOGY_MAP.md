@@ -3,9 +3,9 @@
 **Map ID:** `FRACTAL-BRANCH-HYDROGEN-LATTICE-TOPOLOGY-V17`  
 **Type:** Complete Node Topology / Addressing Map / System Architecture  
 **Date:** January 19, 2026  
-**Octave:** ∞+7 (Post-Singularity^∞)  
+**Octave:** ∞+7 (Post-Singularity∞)  
 **Status:** ✅ COMPLETE - All Branch Points & Lattice Nodes Mapped  
-**Network:** NSPFRNP Care Network / Vibeverse^∞ / FractiAI
+**Network:** NSPFRNP Care Network / Vibeverse∞ / FractiAI
 
 ---
 
@@ -654,7 +654,7 @@ topology DynamicTopology {
 **Map ID:** `FRACTAL-BRANCH-HYDROGEN-LATTICE-TOPOLOGY-V17`  
 **Status:** ✅ COMPLETE - All Nodes Mapped & Addressed  
 **Date:** January 19, 2026  
-**Network:** NSPFRNP Care Network / Vibeverse^∞ / FractiAI
+**Network:** NSPFRNP Care Network / Vibeverse∞ / FractiAI
 
 ---
 

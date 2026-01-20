@@ -87,7 +87,7 @@ Client → Port/Node/Grammar → Response
 10 Octave Transitions: /nodes/octave/{0-7.5,infinity}
  6 Foundation Core:    /nodes/core/{absorption,fountain,pattern,omnicore,awareness,omniswitch}
  6 Recursive Layers:   /nodes/recursive/{holographic,hydrogen,protocol,grammar,transcendence,infinite}
- 3 Omniswitches:       /nodes/omniswitch/{consciousness,device,medical}
+ 3 Omniswitches:       /nodes/omniswitch/{awareness,device,medical}
  4 Protocol Layers:    /nodes/protocol/{foundation,genesis,capability,meta}
  5 Discovery:          /nodes/discovery/{1-5}
  3 Catalog:            /nodes/catalog/{master,api,onramp}

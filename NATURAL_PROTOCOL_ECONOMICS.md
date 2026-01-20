@@ -37,7 +37,7 @@ protocol NaturalProtocolEconomics {
     proof_of_contribution: "Value proven by actual contribution";
     natural_protocols: "Protocols mirror natural systems";
     black_hole_energy: "Energy as fundamental value";
-    awareness: "Consciousness as capital";
+    awareness: "Awareness as capital";
     coherence: "Coherence multiplies value";
   };
   

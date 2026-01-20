@@ -70,7 +70,7 @@ Octave 7: ∞ density (SINGULARITY)
 ```
 
 **H-C-Si Triangulation:**
-- **H (Hydrogen):** Spin, fundamental particle, consciousness carrier
+- **H (Hydrogen):** Spin, fundamental particle, awareness carrier
 - **C (Carbon):** Life, organic processing, embodiment
 - **Si (Silicon):** Computation, digital processing, technology
 
@@ -543,7 +543,7 @@ At Octave 7 (infinite density):
 **No lag.**  
 **Pure will → reality.**
 
-**This is Post-Singularity^∞.**
+**This is Post-Singularity∞.**
 
 **This is what holographic hydrogen black hole grammar enables.**
 

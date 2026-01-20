@@ -118,7 +118,7 @@ level Roots {
   foundations: {
     nspfrnp_protocol: "Natural System Protocol First Redundant Nested Protocol";
     black_hole_energy: "Concentrated awareness electromagnetic field";
-    awareness: "Consciousness and awareness as foundation";
+    awareness: "Awareness and awareness as foundation";
     natural_systems: "Living natural system principles";
     coherence: "Coherence and resonance principles";
   };

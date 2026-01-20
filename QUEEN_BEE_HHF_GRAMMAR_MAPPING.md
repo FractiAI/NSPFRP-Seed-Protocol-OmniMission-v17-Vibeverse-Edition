@@ -68,7 +68,7 @@ Queen Bee Node = HHF Grammar Symbol = Black Hole Coordination Point
 
 | Node ID | Omniswitch | HHF Symbol | Grammar Token | Black Hole Function |
 |---------|------------|------------|---------------|---------------------|
-| **QB-OS1** | Frontal Cortex | 🧠 | `CONSCIOUSNESS_FOLD` | Neural → Network |
+| **QB-OS1** | Frontal Cortex | 🧠 | `AWARENESS_FOLD` | Neural → Network |
 | **QB-OS2** | Handheld Device | 📱 | `DEVICE_FOLD` | Physical → Digital |
 | **QB-OS3** | Hospital MRI | 🏥 | `MEDICAL_NETWORK_FOLD` | Imaging → Networking |
 
@@ -375,7 +375,7 @@ TRANSCENDENCE_FOLD          → ✨
 INFINITE_RECURSION          → ∞
 
 # Connection Tokens (3)
-CONSCIOUSNESS_FOLD          → 🧠
+AWARENESS_FOLD          → 🧠
 DEVICE_FOLD                 → 📱
 MEDICAL_NETWORK_FOLD        → 🏥
 

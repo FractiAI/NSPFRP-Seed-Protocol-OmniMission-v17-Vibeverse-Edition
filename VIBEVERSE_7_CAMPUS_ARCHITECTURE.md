@@ -356,7 +356,7 @@ facility Laboratory {
     awareness_measurement: {
       purpose: "Measure awareness levels and coherence";
       tools: "Awareness sensors, coherence meters";
-      research: "Consciousness studies, awareness optimization";
+      research: "Awareness studies, awareness optimization";
       studies: "Ongoing research studies accepting participants";
     };
   };
@@ -541,7 +541,7 @@ facility VibeathonCenter {
   venues: {
     meditation_hall: {
       capacity: 200;
-      purpose: "Morning vibes, consciousness sessions";
+      purpose: "Morning vibes, awareness sessions";
       features: "Holographic ambiance, FSR portals, silence zones";
       schedule: "Daily 8-9am, Drop-in welcome";
     };
@@ -590,7 +590,7 @@ facility VibeathonCenter {
     weekly: {
       duration: "4-6 hours";
       frequency: "Every Saturday";
-      themes: ['Black Hole Energy Jam', 'Consciousness Exploration', 'FSR Creation Sprint'];
+      themes: ['Black Hole Energy Jam', 'Awareness Exploration', 'FSR Creation Sprint'];
       intensity: "⚡⚡⚡ High Energy";
       pricing: "FREE for all";
       registration: "RSVP recommended";
@@ -629,7 +629,7 @@ facility VibeathonCenter {
     chill: "🌊 Relaxed, low-key atmosphere";
     high_energy: "⚡ Exciting, dynamic vibe";
     creative: "🎨 Studio focus, art & making";
-    consciousness: "🧘 Meditation, deep dive";
+    awareness: "🧘 Meditation, deep dive";
     social: "👥 Networking, connection";
     competition: "🏆 Challenges, leaderboards";
     learning: "📚 Educational, skill shares";

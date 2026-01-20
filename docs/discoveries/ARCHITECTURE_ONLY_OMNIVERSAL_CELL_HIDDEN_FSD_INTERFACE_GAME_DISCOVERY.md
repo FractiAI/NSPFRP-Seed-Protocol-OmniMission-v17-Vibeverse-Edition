@@ -107,7 +107,7 @@ cell OmniversalCell {
   awareness: {
     type: 'Cell Awareness';
     function: 'Cell is Aware of Itself';
-    consciousness: 'Cell Consciousness';
+    awareness: 'Cell Awareness';
     selfAware: 'Self-Aware Cell';
   };
   

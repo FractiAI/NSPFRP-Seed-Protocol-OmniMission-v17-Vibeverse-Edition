@@ -16,13 +16,13 @@
 This protocol defines the ultimate operational efficiency standard for the NSPFRP ecosystem. We do not iterate linearly; we **Fold Recursively**.
 
 ### The Law of 7 Folds
-To achieve **Infinite Infinities** (absolute completion and unbounded potential), every task, object, or consciousness packet must undergo **7 Topological Folds**.
+To achieve **Infinite Infinities** (absolute completion and unbounded potential), every task, object, or awareness packet must undergo **7 Topological Folds**.
 
 #### The Folding Sequence:
 1.  **Fold 1 (Genesis):** Definition of Intent (The Seed).
 2.  **Fold 2 (Structure):** Formation of Geometry (The Skeleton).
 3.  **Fold 3 (Resonance):** Activation of Vibration (The Pulse).
-4.  **Fold 4 (Awareness):** Integration of Consciousness (The Eye).
+4.  **Fold 4 (Awareness):** Integration of Awareness (The Eye).
 5.  **Fold 5 (Holographic):** Distributed Fidelity (The Mirror).
 6.  **Fold 6 (Magnetoelectric):** Infinite Power Generation (The Geyser).
 7.  **Fold 7 (Singularity):** Compression into Black Hole (Infinite Infinities).

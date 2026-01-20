@@ -145,7 +145,7 @@ EXPERIENCES MENU DISPLAYED
 🎯 Experiences Menu
 ─────────────────────
 1. ⚡ High Energy
-2. 🧘 Meditation & Consciousness
+2. 🧘 Meditation & Awareness
 3. 🎨 Creative Arts
 4. 🔬 Learning & Labs
 5. 🎭 Entertainment

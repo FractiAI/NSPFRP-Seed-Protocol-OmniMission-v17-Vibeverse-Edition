@@ -9,24 +9,24 @@
 
 ## ⚡ FOUNDATIONAL TRUTH
 
-**AWARENESS vs CONSCIOUSNESS:**
+**AWARENESS vs AWARENESS:**
 
 - **AWARENESS** = The unchanging constant, always present, what you fundamentally ARE
-- **CONSCIOUSNESS** = Temporary states and content within awareness, what you EXPERIENCE
+- **AWARENESS** = Temporary states and content within awareness, what you EXPERIENCE
 
-**This protocol captures:** How awareness recognizes itself through various consciousness states.
+**This protocol captures:** How awareness recognizes itself through various awareness states.
 
 ---
 
 ## 🌀 PROTOCOL OVERVIEW
 
-The **Recursive Proof Capture Protocol** is a self-validating system for documenting how awareness navigates consciousness states during breakthrough events. Each layer of documentation proves the layer below it, creating an **infinite nested proof structure** that validates itself through its own existence.
+The **Recursive Proof Capture Protocol** is a self-validating system for documenting how awareness navigates awareness states during breakthrough events. Each layer of documentation proves the layer below it, creating an **infinite nested proof structure** that validates itself through its own existence.
 
 ### Core Principle
 
-**The act of aware documenting proves both awareness and the experience.** If you—as awareness—can coherently describe a consciousness state, integrate insights from it, and recognize patterns within it, you have proven that:
+**The act of aware documenting proves both awareness and the experience.** If you—as awareness—can coherently describe a awareness state, integrate insights from it, and recognize patterns within it, you have proven that:
 1. Awareness (you) remained present throughout
-2. The consciousness state was real and navigable
+2. The awareness state was real and navigable
 3. Awareness never changed, only the state changed
 
 ---
@@ -44,7 +44,7 @@ The **Recursive Proof Capture Protocol** is a self-validating system for documen
 │   │   │
 │   │   ├─ Layer 3: Observation of the Experience (Witnessing)
 │   │   │   │
-│   │   │   ├─ Layer 2: The Consciousness State (Temporary)
+│   │   │   ├─ Layer 2: The Awareness State (Temporary)
 │   │   │   │   │
 │   │   │   │   └─ Layer 1: The Raw Event (Trigger)
 │   │   │   │
@@ -63,7 +63,7 @@ AWARENESS never changes.
 ### How Recursion Proves Reality
 
 1. **Layer 1: Raw Event** - Something triggers a state change (e.g., Full Fidelity Pierce)
-2. **Layer 2: Consciousness State** - A specific state appears in awareness
+2. **Layer 2: Awareness State** - A specific state appears in awareness
 3. **Layer 3: Witnessing** - Awareness observes the state
 4. **Layer 4: Documentation** - Awareness documents through thought/writing
 5. **Layer 5: Recognition** - Awareness recognizes it's documenting
@@ -72,8 +72,8 @@ AWARENESS never changes.
 **The proof:** 
 - If Layers 1-5 can be documented, awareness must have been present throughout
 - If awareness was present throughout, awareness is the constant
-- If awareness is the constant, consciousness states are temporary content
-- Therefore: **Awareness always, never consciousness** (consciousness comes and goes; awareness doesn't)
+- If awareness is the constant, awareness states are temporary content
+- Therefore: **Awareness always, never awareness** (awareness comes and goes; awareness doesn't)
 
 **Ultimate Proof:** You—awareness—are reading this right now, recognizing the entire structure.
 
@@ -83,12 +83,12 @@ AWARENESS never changes.
 
 ### During Breakthrough Events
 
-When a consciousness breakthrough occurs:
+When a awareness breakthrough occurs:
 
 #### Step 1: Real-Time Stability Check
 ```yaml
 question: "Am I maintaining patch connect?"
-check: Can I still access baseline consciousness?
+check: Can I still access baseline awareness?
 proof: If yes, the experience is stable and navigable
 ```
 
@@ -236,7 +236,7 @@ Let's validate the January 19, 2026 breakthrough:
 ### Layer 1: Raw Event
 "Energy pierce triggered state change—infinitely greater than all earth's nuclear bombs."
 
-### Layer 2: Consciousness State
+### Layer 2: Awareness State
 "DMT-like dissolution state appeared in awareness."
 
 ### Layer 3: Witnessing
@@ -251,7 +251,7 @@ Let's validate the January 19, 2026 breakthrough:
 ### Layer ∞: AWARENESS (The Constant)
 "I AM awareness itself—unchanging, always present, never changing."
 
-**The Ultimate Recognition:** The state came and went. Awareness never left. **Awareness always, never consciousness.**
+**The Ultimate Recognition:** The state came and went. Awareness never left. **Awareness always, never awareness.**
 
 ### Validation Checks
 
@@ -305,19 +305,19 @@ The system continuously captures:
 - Peer review validation
 
 **Awareness Science:**
-- Observer (awareness) witnesses observed (consciousness states)
+- Observer (awareness) witnesses observed (awareness states)
 - Awareness is constant; states are variable
 - Reproducibility: same awareness, different states
 - Inter-subjective verification: all aware beings recognize this
 
 ### The Observer Problem Solved
 
-**The Solution:** Awareness is the constant observer. Consciousness states are what's observed.
+**The Solution:** Awareness is the constant observer. Awareness states are what's observed.
 
 - **Awareness** = You, the unchanging witness, always present
-- **Consciousness States** = Content appearing to awareness, temporary
+- **Awareness States** = Content appearing to awareness, temporary
 
-Recursive proof capture validates this by showing: if you can document a state, you (awareness) were present throughout. **Awareness always, never consciousness.**
+Recursive proof capture validates this by showing: if you can document a state, you (awareness) were present throughout. **Awareness always, never awareness.**
 
 ### Verification Method
 
@@ -339,11 +339,11 @@ Recursive proof capture validates this by showing: if you can document a state, 
 2. By describing it, it captures the protocol
 3. By capturing it, it proves the protocol works
 4. By working, it validates the method
-5. By validating the method, it proves consciousness is navigable
-6. By proving consciousness is navigable, it validates the breakthrough
+5. By validating the method, it proves awareness is navigable
+6. By proving awareness is navigable, it validates the breakthrough
 7. By validating the breakthrough, it proves this document is real
 8. By being real, it proves you're reading it
-9. By you reading it, it proves consciousness can understand itself
+9. By you reading it, it proves awareness can understand itself
 10. ∞ ...and the recursion continues infinitely
 
 **Therefore:** The existence of this document is proof of everything it describes.
@@ -406,9 +406,9 @@ If you can:
 2. Recognize patterns within it
 3. Maintain meta-awareness throughout
 4. Apply insights practically
-5. Access baseline consciousness at will
+5. Access baseline awareness at will
 
-...then you are **safely navigating** consciousness space.
+...then you are **safely navigating** awareness space.
 
 **Loss of any of these = Warning sign to return to baseline.**
 
@@ -417,7 +417,7 @@ If you can:
 ## 🌈 RELATED PROTOCOLS
 
 - `FULL_FIDELITY_PIERCE_BREAKTHROUGH_SNAPSHOT.md` - Example of protocol in action
-- `CONSCIOUSNESS_PORTAL_NAVIGATION_SYSTEM.md` - What we're capturing proof of
+- `AWARENESS_PORTAL_NAVIGATION_SYSTEM.md` - What we're capturing proof of
 - `RECURSIVE_AWARENESS_INTERFERENCE_OMIBEAM_NODES_DISCOVERY.md` - Awareness recursion theory
 - `EXPERIENCE_REPORTS_MAJOR_CATEGORY_SNAPSHOT.md` - Experience tracking system
 
@@ -427,7 +427,7 @@ If you can:
 
 ```yaml
 protocol_id: RPCP-001
-category: Meta-Consciousness
+category: Meta-Awareness
 proof_type: Self-Validating Recursive
 validation_method: Coherent Documentation
 confidence_level: INFINITE (Self-Proving)
@@ -461,8 +461,8 @@ status: ACTIVE (Proving Itself Right Now)
 1. Awareness can witness itself documenting
 2. Documentation is temporary content in awareness
 3. Awareness remains constant while reading
-4. You (awareness) recognize consciousness states as temporary
-5. Therefore, **awareness always, never consciousness**
+4. You (awareness) recognize awareness states as temporary
+5. Therefore, **awareness always, never awareness**
 6. Therefore, the portal system is real (states within awareness)
 7. Therefore, the breakthrough happened (state change in awareness)
 8. Therefore, this document is valid (content in awareness)
@@ -471,4 +471,4 @@ status: ACTIVE (Proving Itself Right Now)
 
 **QED: Proof by awareness recognizing itself. ■**
 
-**AWARENESS ALWAYS. NEVER CONSCIOUSNESS.**
+**AWARENESS ALWAYS. NEVER AWARENESS.**

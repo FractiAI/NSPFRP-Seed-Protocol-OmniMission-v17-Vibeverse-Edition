@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSPFRNP Simplified Pricing - 4 Tiers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+        }
+
+        .pricing-card.featured {
+            border: 3px solid #667eea;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured::before {
+            content: "MOST POPULAR";
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: #667eea;
+            color: white;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .tier-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .tier-price {
+            font-size: 3em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .tier-price-detail {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .tier-description {
+            color: #666;
+            font-size: 0.95em;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .features li {
+            padding: 8px 0;
+            color: #333;
+            font-size: 0.95em;
+            display: flex;
+            align-items: center;
+        }
+
+        .features li::before {
+            content: "✓";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .cta-button {
+            width: 100%;
+            padding: 15px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #5568d3;
+        }
+
+        .cta-button.secondary {
+            background: #764ba2;
+        }
+
+        .cta-button.secondary:hover {
+            background: #63408a;
+        }
+
+        .comparison-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 60px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .comparison-section h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: #f8f9fa;
+            font-weight: bold;
+            color: #333;
+        }
+
+        td {
+            color: #666;
+        }
+
+        .check {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+
+        .footer p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .comparison-section {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💎 Simple Pricing</h1>
+            <p>4 Tiers • No Hidden Fees • Start Free</p>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- FREE Tier -->
+            <div class="pricing-card">
+                <div class="tier-name">🆓 FREE</div>
+                <div class="tier-price">$0</div>
+                <div class="tier-price-detail">Forever free</div>
+                <div class="tier-description">Perfect for personal use, learning, and building</div>
+                <ul class="features">
+                    <li>Complete NSPFRNP system</li>
+                    <li>All 43 Queen Bee Nodes</li>
+                    <li>SNAP Creator Language</li>
+                    <li>Animation Studio</li>
+                    <li>VIBEFRAME Editor</li>
+                    <li>Local deployment</li>
+                    <li>Community support</li>
+                </ul>
+                <button class="cta-button" onclick="alert('Download and run: npm install')">Start Free</button>
+            </div>
+
+            <!-- CLOUD Tier -->
+            <div class="pricing-card featured">
+                <div class="tier-name">💻 CLOUD</div>
+                <div class="tier-price">$00</div>
+                <div class="tier-price-detail">$100/month</div>
+                <div class="tier-description">Perfect for teams, businesses, and creators</div>
+                <ul class="features">
+                    <li>Everything in FREE</li>
+                    <li>Cloud deployment</li>
+                    <li>Multi-device sync</li>
+                    <li>Priority support</li>
+                    <li>Team collaboration (10 users)</li>
+                    <li>99.9% uptime SLA</li>
+                    <li>Automatic backups</li>
+                </ul>
+                <button class="cta-button" onclick="alert('Contact: cloud@nspfrnp.org')">Start Cloud</button>
+            </div>
+
+            <!-- SHELL Tier -->
+            <div class="pricing-card">
+                <div class="tier-name">🏢 SHELL</div>
+                <div class="tier-price">$000</div>
+                <div class="tier-price-detail">$1,000/month</div>
+                <div class="tier-description">Perfect for enterprises and institutions</div>
+                <ul class="features">
+                    <li>Everything in CLOUD</li>
+                    <li>Unlimited users</li>
+                    <li>White-label options</li>
+                    <li>Custom integrations</li>
+                    <li>Dedicated support</li>
+                    <li>Advanced analytics</li>
+                    <li>On-premise option</li>
+                </ul>
+                <button class="cta-button secondary" onclick="alert('Contact: enterprise@nspfrnp.org')">Contact Sales</button>
+            </div>
+
+            <!-- GRANT Tier -->
+            <div class="pricing-card">
+                <div class="tier-name">🎓 GRANT</div>
+                <div class="tier-price">$Aid</div>
+                <div class="tier-price-detail">Financial assistance</div>
+                <div class="tier-description">For students, researchers, and nonprofits</div>
+                <ul class="features">
+                    <li>Any tier based on need</li>
+                    <li>Merit + need based</li>
+                    <li>Flexible payment</li>
+                    <li>No one turned away</li>
+                    <li>Students welcome</li>
+                    <li>Nonprofit support</li>
+                    <li>48-hour review</li>
+                </ul>
+                <button class="cta-button" onclick="alert('Apply at: grants@nspfrnp.org')">Apply Now</button>
+            </div>
+        </div>
+
+        <div class="comparison-section">
+            <h2>📊 Quick Comparison</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>FREE</th>
+                        <th>CLOUD ($00)</th>
+                        <th>SHELL ($000)</th>
+                        <th>GRANT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Monthly Cost</strong></td>
+                        <td>$0</td>
+                        <td>$100</td>
+                        <td>$1,000</td>
+                        <td>Variable</td>
+                    </tr>
+                    <tr>
+                        <td>Complete System</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>SNAP Language</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Animation Studio</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Users</td>
+                        <td>1</td>
+                        <td>10</td>
+                        <td>Unlimited</td>
+                        <td>Based on tier</td>
+                    </tr>
+                    <tr>
+                        <td>Cloud Deploy</td>
+                        <td>—</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Support</td>
+                        <td>Community</td>
+                        <td>Priority</td>
+                        <td>Dedicated</td>
+                        <td>Based on tier</td>
+                    </tr>
+                    <tr>
+                        <td>White Label</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td class="check">✓</td>
+                        <td>Based on tier</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+            <p><strong>Start Free. Scale When Ready.</strong></p>
+            <p>Questions? Email: pricing@nspfrnp.org</p>
+            <p style="margin-top: 20px; opacity: 0.8;">∞ → ⬡ → ∞</p>
+        </div>
+    </div>
+
+    <script>
+        // Add subtle animation on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.pricing-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 50);
+                }, index * 100);
+            });
+        });
+    </script>
+
+    <!-- 🎂 CAKE SLOGAN FOOTER -->
+    <div style="position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(135deg, rgba(20, 20, 40, 0.95) 0%, rgba(40, 20, 60, 0.95) 100%); backdrop-filter: blur(10px); border-top: 2px solid rgba(157, 78, 221, 0.5); padding: 15px 20px; text-align: center; font-size: 0.95em; z-index: 10000; box-shadow: 0 -5px 20px rgba(157, 78, 221, 0.3);">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap;">
+                <div style="opacity: 0.6; text-decoration: line-through;">
+                    <span style="font-size: 0.9em;">Pre-Singularity:</span> <em>"You can't have your cake and eat it too"</em>
+                </div>
+                <div style="font-size: 1.8em; color: #9d4edd; animation: pulse-glow 2s ease-in-out infinite;">🎂</div>
+                <div style="font-weight: bold; color: #FFD700; font-size: 1.1em;">
+                    Post-Singularity where you <strong>CAN</strong> have your cake and eat it too!
+                </div>
+            </div>
+            <div style="opacity: 0.7; font-size: 0.85em;">
+                Check it out: <a href="https://github.com/FractiAI/NSPFRP-Seed-Protocol-OmniMission-v17-Vibeverse-Edition" target="_blank" style="color: #9d4edd; text-decoration: none; border-bottom: 1px solid rgba(157, 78, 221, 0.5); transition: all 0.3s;">github.com/FractiAI/NSPFRP-Seed-Protocol-OmniMission-v17-Vibeverse-Edition</a>
+            </div>
+        </div>
+    </div>
+    <style>
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+    </style>
+</body>
+</html>

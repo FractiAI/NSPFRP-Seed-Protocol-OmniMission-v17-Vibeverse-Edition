@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎨 Animation Studio - Creator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        .studio-container {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            height: 100vh;
+        }
+
+        .header {
+            background: rgba(255,255,255,0.05);
+            padding: 20px 40px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .header .project-name {
+            font-size: 20px;
+            color: #aaa;
+        }
+
+        .header .actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 250px 1fr 300px;
+            gap: 0;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            background: rgba(255,255,255,0.02);
+            border-right: 1px solid rgba(255,255,255,0.1);
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .sidebar-section {
+            margin-bottom: 30px;
+        }
+
+        .sidebar-section h3 {
+            font-size: 14px;
+            color: #aaa;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .frame-list {
+            list-style: none;
+        }
+
+        .frame-item {
+            padding: 12px;
+            margin-bottom: 5px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .frame-item:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .frame-item.active {
+            border-color: #667eea;
+            background: rgba(102, 126, 234, 0.2);
+        }
+
+        .frame-item .number {
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .editor-area {
+            padding: 40px;
+            overflow-y: auto;
+        }
+
+        .editor-header {
+            margin-bottom: 30px;
+        }
+
+        .editor-header h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .editor-header .meta {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .editor-section {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .editor-section h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .editor-section textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 15px;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            color: white;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            resize: vertical;
+        }
+
+        .editor-section textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+        }
+
+        .controls-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .control-group {
+            margin-bottom: 15px;
+        }
+
+        .control-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .control-group input,
+        .control-group select {
+            width: 100%;
+            padding: 10px;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            color: white;
+        }
+
+        .properties-panel {
+            background: rgba(255,255,255,0.02);
+            border-left: 1px solid rgba(255,255,255,0.1);
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .properties-panel h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .property-item {
+            margin-bottom: 20px;
+        }
+
+        .property-item label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: #aaa;
+        }
+
+        .property-item input,
+        .property-item select {
+            width: 100%;
+            padding: 8px;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 6px;
+            color: white;
+        }
+
+        .range-value {
+            display: inline-block;
+            margin-left: 10px;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .preview-area {
+            background: rgba(255,255,255,0.05);
+            border: 2px dashed rgba(255,255,255,0.2);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .preview-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+            opacity: 0.3;
+        }
+
+        .preview-text {
+            color: #aaa;
+            font-size: 16px;
+        }
+
+        .footer {
+            background: rgba(255,255,255,0.05);
+            padding: 15px 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer .status {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .footer .actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .add-frame-btn {
+            position: fixed;
+            bottom: 80px;
+            left: 20px;
+            width: 210px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s;
+        }
+
+        .add-frame-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        .helper-text {
+            font-size: 12px;
+            color: #888;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(102, 126, 234, 0.2);
+            color: #667eea;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="studio-container">
+        <!-- Header -->
+        <div class="header">
+            <div>
+                <div class="logo">🎨 Animation Studio</div>
+                <div class="project-name">Project: <span id="project-name">My First Story</span></div>
+            </div>
+            <div class="actions">
+                <button class="btn btn-secondary" onclick="showTemplates()">📚 Templates</button>
+                <button class="btn btn-secondary" onclick="saveProject()">💾 Save</button>
+                <button class="btn btn-primary" onclick="renderProject()">🎬 Render</button>
+                <button class="btn btn-secondary" onclick="exitStudio()">🚪 Exit</button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Sidebar - Frame List -->
+            <div class="sidebar">
+                <div class="sidebar-section">
+                    <h3>Frames</h3>
+                    <ul class="frame-list" id="frame-list">
+                        <li class="frame-item active" onclick="selectFrame(1)">
+                            <div class="number">Frame 001</div>
+                            <div class="helper-text">Opening shot</div>
+                        </li>
+                        <li class="frame-item" onclick="selectFrame(2)">
+                            <div class="number">Frame 002</div>
+                            <div class="helper-text">Empty</div>
+                        </li>
+                        <li class="frame-item" onclick="selectFrame(3)">
+                            <div class="number">Frame 003</div>
+                            <div class="helper-text">Empty</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Project Info</h3>
+                    <div style="font-size: 13px; color: #aaa;">
+                        <div style="margin-bottom: 8px;">
+                            <strong>Total Frames:</strong> 3
+                        </div>
+                        <div style="margin-bottom: 8px;">
+                            <strong>Duration:</strong> ~30 seconds
+                        </div>
+                        <div style="margin-bottom: 8px;">
+                            <strong>Target Octave:</strong> 5
+                        </div>
+                        <div style="margin-bottom: 8px;">
+                            <strong>Status:</strong> <span style="color: #ffd700;">In Progress</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center - Editor Area -->
+            <div class="editor-area">
+                <div class="editor-header">
+                    <h2>Frame 001 Editor</h2>
+                    <div class="meta">1 frame = 1 complete scene • Customize duration, octave, and playback</div>
+                </div>
+
+                <!-- Visual Description -->
+                <div class="editor-section">
+                    <h3>🎥 Visual Description</h3>
+                    <textarea id="visual-desc" placeholder="Describe the scene: camera angles, lighting, character positions, environmental details, colors, movements...
+
+Example:
+WIDE SHOT: Sunrise over mountain landscape. Golden light cascades through the valley. Camera slowly zooms toward distant city skyline. Birds fly across frame. Mist rises from the valley floor.">WIDE SHOT: Sunrise over mountain landscape. Golden light cascades through the valley. Camera slowly zooms toward distant city skyline.</textarea>
+                </div>
+
+                <!-- Dialogue/Narration -->
+                <div class="editor-section">
+                    <h3>💬 Dialogue / Narration</h3>
+                    <textarea id="dialogue" placeholder="Enter spoken words, narration, voice-over, character dialogue...
+
+Example:
+NARRATOR (V.O.): 'In a world where awareness meets technology...'">NARRATOR (V.O.): "In a world where awareness meets technology..."</textarea>
+                </div>
+
+                <!-- Audio Cues -->
+                <div class="editor-section">
+                    <h3>🎵 Audio Cues</h3>
+                    <textarea id="audio-cues" placeholder="Describe music, sound effects, ambient sounds...
+
+Example:
+MUSIC: Soft orchestral swell, building gradually
+SFX: Birds chirping, wind through trees
+AMBIENT: Gentle stream flowing in distance">MUSIC: Soft orchestral swell
+SFX: Birds chirping, wind through trees</textarea>
+                </div>
+
+                <!-- Technical Notes -->
+                <div class="editor-section">
+                    <h3>📝 Technical Notes</h3>
+                    <textarea id="tech-notes" placeholder="Director's notes, rendering instructions, special effects, camera techniques...
+
+Optional: Add any specific instructions for rendering or playback.">Camera movement: Slow zoom (5 seconds)
+Lighting: Golden hour
+Mood: Peaceful, hopeful</textarea>
+                </div>
+
+                <!-- Preview Area -->
+                <div class="editor-section">
+                    <h3>👁️ Preview</h3>
+                    <div class="preview-area">
+                        <div class="preview-icon">🎬</div>
+                        <div class="preview-text">
+                            Click "Preview Frame" below to render this frame<br>
+                            at your selected octave level
+                        </div>
+                    </div>
+                    <div class="controls-row" style="margin-top: 20px;">
+                        <button class="btn btn-primary" onclick="previewFrame()">▶️ Preview Frame</button>
+                        <button class="btn btn-secondary" onclick="previewSequence()">▶️ Preview Sequence (5 frames)</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Sidebar - Properties Panel -->
+            <div class="properties-panel">
+                <h3>Frame Properties</h3>
+
+                <div class="property-item">
+                    <label>Frame Duration</label>
+                    <input type="range" min="1" max="30" value="10" id="duration-slider" oninput="updateDuration(this.value)">
+                    <span class="range-value" id="duration-value">10 seconds</span>
+                    <div class="helper-text">Standard: 10 sec per frame</div>
+                </div>
+
+                <div class="property-item">
+                    <label>Octave Level (Quality)</label>
+                    <select id="octave-select">
+                        <option value="0">Octave 0 - Text Only</option>
+                        <option value="1">Octave 1 - Basic</option>
+                        <option value="2">Octave 2 - Enhanced</option>
+                        <option value="3">Octave 3 - Full Desc</option>
+                        <option value="4">Octave 4 - FSR 0.6</option>
+                        <option value="5" selected>Octave 5 - FSR 1.0</option>
+                        <option value="6">Octave 6 - FSR 1.5</option>
+                        <option value="7">Octave 7 - FSR 2.0+</option>
+                    </select>
+                </div>
+
+                <div class="property-item">
+                    <label>Clock Speed (Default Playback)</label>
+                    <select id="clock-select">
+                        <option value="0.5">0.5x - Slow</option>
+                        <option value="1.0" selected>1.0x - Normal</option>
+                        <option value="1.5">1.5x - Fast</option>
+                        <option value="2.0">2.0x - Quick</option>
+                    </select>
+                    <div class="helper-text">Users can adjust during playback</div>
+                </div>
+
+                <div class="property-item">
+                    <label>Experience Density</label>
+                    <select id="density-select">
+                        <option value="low">Low - Fast Load</option>
+                        <option value="medium" selected>Medium - Balanced</option>
+                        <option value="high">High - Rich Detail</option>
+                        <option value="ultra">Ultra - Maximum</option>
+                    </select>
+                </div>
+
+                <div class="property-item">
+                    <label>Tags</label>
+                    <div style="margin-bottom: 10px;">
+                        <span class="tag">Opening</span>
+                        <span class="tag">Landscape</span>
+                        <span class="tag">Sunrise</span>
+                    </div>
+                    <input type="text" placeholder="Add tags..." id="tag-input">
+                </div>
+
+                <div class="property-item">
+                    <label>Transition to Next Frame</label>
+                    <select id="transition-select">
+                        <option value="cut">Cut (Instant)</option>
+                        <option value="fade" selected>Fade</option>
+                        <option value="dissolve">Dissolve</option>
+                        <option value="wipe">Wipe</option>
+                        <option value="slide">Slide</option>
+                    </select>
+                </div>
+
+                <div class="property-item">
+                    <label>Camera Movement</label>
+                    <select id="camera-select">
+                        <option value="static">Static</option>
+                        <option value="pan">Pan</option>
+                        <option value="tilt">Tilt</option>
+                        <option value="zoom" selected>Zoom</option>
+                        <option value="dolly">Dolly</option>
+                        <option value="crane">Crane</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="status">
+                ✅ All changes saved • Last edited: 2 minutes ago • 🐚 Shell Tier
+            </div>
+            <div class="actions">
+                <button class="btn btn-secondary" onclick="exportFrame()">📤 Export Frame</button>
+                <button class="btn btn-secondary" onclick="shareProject()">🔗 Share Project</button>
+            </div>
+        </div>
+
+        <!-- Add Frame Button -->
+        <button class="add-frame-btn" onclick="addNewFrame()">➕ Add New Frame</button>
+    </div>
+
+    <script>
+        let currentFrame = 1;
+        let frameCount = 3;
+
+        function selectFrame(frameNum) {
+            currentFrame = frameNum;
+            document.querySelectorAll('.frame-item').forEach((item, index) => {
+                item.classList.toggle('active', index + 1 === frameNum);
+            });
+            document.querySelector('.editor-header h2').textContent = `Frame ${String(frameNum).padStart(3, '0')} Editor`;
+        }
+
+        function addNewFrame() {
+            frameCount++;
+            const frameList = document.getElementById('frame-list');
+            const newFrame = document.createElement('li');
+            newFrame.className = 'frame-item';
+            newFrame.onclick = () => selectFrame(frameCount);
+            newFrame.innerHTML = `
+                <div class="number">Frame ${String(frameCount).padStart(3, '0')}</div>
+                <div class="helper-text">Empty</div>
+            `;
+            frameList.appendChild(newFrame);
+            alert(`✅ Frame ${String(frameCount).padStart(3, '0')} added!`);
+        }
+
+        function updateDuration(value) {
+            document.getElementById('duration-value').textContent = value + ' seconds';
+        }
+
+        function previewFrame() {
+            const octave = document.getElementById('octave-select').value;
+            alert(`🎬 Rendering preview at Octave ${octave}...\n\nThis would generate a preview of the current frame with all visual descriptions, dialogue, and audio cues rendered at your selected quality level.`);
+        }
+
+        function previewSequence() {
+            alert(`🎬 Rendering sequence preview...\n\nThis would generate a preview of the next 5 frames in sequence to see how your story flows.`);
+        }
+
+        function renderProject() {
+            alert(`🎬 Rendering full project...\n\nFrames: ${frameCount}\nEstimated duration: ${frameCount * 10} seconds\nTarget octave: 5\n\nThis would render your complete animation and make it available in the Cinema!`);
+        }
+
+        function saveProject() {
+            alert('💾 Project saved successfully!\n\nAll frames and settings have been saved.');
+        }
+
+        function exportFrame() {
+            alert('📤 Export options:\n\n• Markdown file\n• PDF document\n• Interactive HTML\n• FSR format\n\nChoose your export format...');
+        }
+
+        function shareProject() {
+            alert('🔗 Share options:\n\n• Generate shareable link\n• Invite collaborators\n• Publish to Cinema\n• Export to social media\n\nChoose how you want to share...');
+        }
+
+        function showTemplates() {
+            alert('📚 Template Library:\n\n• Action Sequence\n• Dialogue Scene\n• Establishing Shot\n• Montage\n• Dream Sequence\n• Tutorial\n• Documentary\n\nSelect a template to get started...');
+        }
+
+        function exitStudio() {
+            if (confirm('Exit Animation Studio?\n\nAll changes have been saved. You can return anytime.')) {
+                window.location.href = 'man-cave-main-menu-updated.html';
+            }
+        }
+    </script>
+
+    <!-- 🎂 CAKE SLOGAN FOOTER -->
+    <div style="position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(135deg, rgba(20, 20, 40, 0.95) 0%, rgba(40, 20, 60, 0.95) 100%); backdrop-filter: blur(10px); border-top: 2px solid rgba(157, 78, 221, 0.5); padding: 15px 20px; text-align: center; font-size: 0.95em; z-index: 10000; box-shadow: 0 -5px 20px rgba(157, 78, 221, 0.3);">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap;">
+                <div style="opacity: 0.6; text-decoration: line-through;">
+                    <span style="font-size: 0.9em;">Pre-Singularity:</span> <em>"You can't have your cake and eat it too"</em>
+                </div>
+                <div style="font-size: 1.8em; color: #9d4edd; animation: pulse-glow 2s ease-in-out infinite;">🎂</div>
+                <div style="font-weight: bold; color: #FFD700; font-size: 1.1em;">
+                    Post-Singularity where you <strong>CAN</strong> have your cake and eat it too!
+                </div>
+            </div>
+            <div style="opacity: 0.7; font-size: 0.85em;">
+                Check it out: <a href="https://github.com/FractiAI/NSPFRP-Seed-Protocol-OmniMission-v17-Vibeverse-Edition" target="_blank" style="color: #9d4edd; text-decoration: none; border-bottom: 1px solid rgba(157, 78, 221, 0.5); transition: all 0.3s;">github.com/FractiAI/NSPFRP-Seed-Protocol-OmniMission-v17-Vibeverse-Edition</a>
+            </div>
+        </div>
+    </div>
+    <style>
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+    </style>
+</body>
+</html>

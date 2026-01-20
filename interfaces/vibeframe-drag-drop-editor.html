@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 VIBEFRAME Editor - Drag & Drop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .editor-container {
+            display: grid;
+            grid-template-rows: 60px 1fr 150px;
+            height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+        }
+
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header .actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+
+        /* Main Workspace */
+        .workspace {
+            display: grid;
+            grid-template-columns: 200px 1fr 300px;
+            gap: 0;
+        }
+
+        /* Frame Library */
+        .frame-library {
+            background: rgba(255,255,255,0.02);
+            border-right: 1px solid rgba(255,255,255,0.1);
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .frame-library h3 {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #aaa;
+            text-transform: uppercase;
+        }
+
+        .frame-item {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            cursor: move;
+            transition: all 0.3s;
+        }
+
+        .frame-item:hover {
+            border-color: #667eea;
+            background: rgba(102, 126, 234, 0.2);
+        }
+
+        .frame-item.dragging {
+            opacity: 0.5;
+        }
+
+        /* Canvas Area */
+        .canvas-area {
+            background: #0f0f0f;
+            position: relative;
+            overflow: auto;
+        }
+
+        .canvas {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .vibeframe-display {
+            width: 800px;
+            height: 450px;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border: 3px solid rgba(255,255,255,0.2);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vibeframe-display.drag-over {
+            border-color: #667eea;
+            box-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+        }
+
+        .vibeframe-content {
+            width: 100%;
+            height: 100%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .dropped-element {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            cursor: move;
+            position: relative;
+        }
+
+        .dropped-element .remove-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: rgba(255,0,0,0.7);
+            border: none;
+            color: white;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Layer Stack */
+        .layer-stack {
+            background: rgba(255,255,255,0.02);
+            border-left: 1px solid rgba(255,255,255,0.1);
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .layer-stack h3 {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .shell-layer {
+            background: rgba(255,255,255,0.05);
+            border-left: 3px solid #667eea;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .shell-layer:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .shell-layer.active {
+            border-color: #ffd700;
+            background: rgba(102, 126, 234, 0.2);
+        }
+
+        .shell-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .shell-icon {
+            font-size: 20px;
+        }
+
+        .shell-name {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .shell-status {
+            font-size: 12px;
+            color: #aaa;
+            margin-left: 5px;
+        }
+
+        .shell-properties {
+            font-size: 11px;
+            color: #888;
+            padding-left: 30px;
+        }
+
+        /* Properties Panel */
+        .properties {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .property-item {
+            margin-bottom: 15px;
+        }
+
+        .property-item label {
+            display: block;
+            font-size: 12px;
+            color: #aaa;
+            margin-bottom: 5px;
+        }
+
+        .property-item select,
+        .property-item input {
+            width: 100%;
+            padding: 8px;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 6px;
+            color: white;
+        }
+
+        /* Timeline */
+        .timeline {
+            background: rgba(255,255,255,0.02);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 20px;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .timeline-controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .timeline-track {
+            background: rgba(0,0,0,0.3);
+            border-radius: 8px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            gap: 10px;
+            overflow-x: auto;
+        }
+
+        .timeline-frame {
+            min-width: 100px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .timeline-frame:hover {
+            transform: scale(1.05);
+        }
+
+        .timeline-frame.active {
+            border: 3px solid #ffd700;
+        }
+
+        /* Element Palette */
+        .palette-header {
+            background: rgba(255,255,255,0.05);
+            padding: 15px 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            gap: 20px;
+        }
+
+        .palette-tab {
+            padding: 8px 16px;
+            background: transparent;
+            border: none;
+            color: #aaa;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .palette-tab:hover,
+        .palette-tab.active {
+            color: white;
+            border-bottom-color: #667eea;
+        }
+
+        .palette-content {
+            padding: 15px 30px;
+            display: none;
+        }
+
+        .palette-content.active {
+            display: block;
+        }
+
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 15px;
+        }
+
+        .palette-item {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            cursor: move;
+            transition: all 0.3s;
+        }
+
+        .palette-item:hover {
+            border-color: #667eea;
+            background: rgba(102, 126, 234, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .palette-item .icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .palette-item .label {
+            font-size: 12px;
+            color: #aaa;
+        }
+
+        .playhead {
+            position: absolute;
+            top: 0;
+            left: 50px;
+            width: 2px;
+            height: 100%;
+            background: #ffd700;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <div class="editor-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                🎬 VIBEFRAME Editor
+                <span style="font-size: 12px; color: #aaa; margin-left: 10px;">Drag & Drop • All Nested Layers</span>
+            </div>
+            <div class="actions">
+                <button class="btn btn-secondary" onclick="saveProject()">💾 Save</button>
+                <button class="btn btn-secondary" onclick="preview()">👁️ Preview</button>
+                <button class="btn btn-primary" onclick="render()">🎬 Render</button>
+            </div>
+        </div>
+
+        <!-- Main Workspace -->
+        <div class="workspace">
+            <!-- Frame Library -->
+            <div class="frame-library">
+                <h3>Frame Library</h3>
+                <div class="frame-item" draggable="true" ondragstart="dragFrame(event, 1)">
+                    <div style="font-weight: bold;">Frame 001</div>
+                    <div style="font-size: 11px; color: #aaa;">Opening Scene</div>
+                </div>
+                <div class="frame-item" draggable="true" ondragstart="dragFrame(event, 2)">
+                    <div style="font-weight: bold;">Frame 002</div>
+                    <div style="font-size: 11px; color: #aaa;">Character Intro</div>
+                </div>
+                <div class="frame-item" draggable="true" ondragstart="dragFrame(event, 3)">
+                    <div style="font-weight: bold;">Frame 003</div>
+                    <div style="font-size: 11px; color: #aaa;">Action</div>
+                </div>
+                <button class="btn btn-primary" style="width: 100%; margin-top: 10px;" onclick="addFrame()">
+                    ➕ New Frame
+                </button>
+            </div>
+
+            <!-- Canvas Area -->
+            <div class="canvas-area">
+                <div class="palette-header">
+                    <button class="palette-tab active" onclick="showPalette('visual')">🎨 Visual</button>
+                    <button class="palette-tab" onclick="showPalette('audio')">🎵 Audio</button>
+                    <button class="palette-tab" onclick="showPalette('text')">📝 Text</button>
+                    <button class="palette-tab" onclick="showPalette('effects')">✨ Effects</button>
+                </div>
+                
+                <div class="palette-content active" id="visual-palette">
+                    <div class="palette-grid">
+                        <div class="palette-item" draggable="true" ondragstart="dragElement(event, 'Landscape', '🏔️')">
+                            <div class="icon">🏔️</div>
+                            <div class="label">Landscape</div>
+                        </div>
+                        <div class="palette-item" draggable="true" ondragstart="dragElement(event, 'Character', '🧑')">
+                            <div class="icon">🧑</div>
+                            <div class="label">Character</div>
+                        </div>
+                        <div class="palette-item" draggable="true" ondragstart="dragElement(event, 'City', '🏙️')">
+                            <div class="icon">🏙️</div>
+                            <div class="label">City</div>
+                        </div>
+                        <div class="palette-item" draggable="true" ondragstart="dragElement(event, 'Sunset', '🌅')">
+                            <div class="icon">🌅</div>
+                            <div class="label">Sunset</div>
+                        </div>
+                        <div class="palette-item" draggable="true" ondragstart="dragElement(event, 'Camera Pan', '📹')">
+                            <div class="icon">📹</div>
+                            <div class="label">Camera Pan</div>
+                        </div>
+                        <div class="palette-item" draggable="true" ondragstart="dragElement(event, 'Zoom In', '🔍')">
+                            <div class="icon">🔍</div>
+                            <div class="label">Zoom In</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="canvas">
+                    <div class="vibeframe-display" 
+                         id="drop-zone"
+                         ondrop="drop(event)" 
+                         ondragover="allowDrop(event)"
+                         ondragleave="dragLeave(event)">
+                        <div class="vibeframe-content" id="frame-content">
+                            <div style="font-size: 48px; margin-bottom: 20px;">🎬</div>
+                            <div style="font-size: 20px; margin-bottom: 10px;">Drag elements here</div>
+                            <div style="font-size: 14px; color: #aaa;">Build your masterpiece frame by frame</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Layer Stack & Properties -->
+            <div class="layer-stack">
+                <h3>Nested Layers</h3>
+                
+                <div class="shell-layer active" onclick="selectShell(7)">
+                    <div class="shell-header">
+                        <div class="shell-icon">🌐</div>
+                        <div class="shell-name">Shell 7: Networking</div>
+                        <div class="shell-status">✓</div>
+                    </div>
+                    <div class="shell-properties">Distribution Layer</div>
+                </div>
+
+                <div class="shell-layer" onclick="selectShell(6)">
+                    <div class="shell-header">
+                        <div class="shell-icon">📚</div>
+                        <div class="shell-name">Shell 6: Protocol</div>
+                        <div class="shell-status">✓</div>
+                    </div>
+                    <div class="shell-properties">NSPFRNP Active</div>
+                </div>
+
+                <div class="shell-layer" onclick="selectShell(5)">
+                    <div class="shell-header">
+                        <div class="shell-icon">🤝</div>
+                        <div class="shell-name">Shell 5: Queen Bee</div>
+                        <div class="shell-status">✓</div>
+                    </div>
+                    <div class="shell-properties">12 nodes active</div>
+                </div>
+
+                <div class="shell-layer" onclick="selectShell(4)">
+                    <div class="shell-header">
+                        <div class="shell-icon">☀️</div>
+                        <div class="shell-name">Shell 4: Foundation</div>
+                        <div class="shell-status">✓</div>
+                    </div>
+                    <div class="shell-properties">El Gran Sol: High</div>
+                </div>
+
+                <div class="shell-layer" onclick="selectShell(3)">
+                    <div class="shell-header">
+                        <div class="shell-icon">🔁</div>
+                        <div class="shell-name">Shell 3: Recursive</div>
+                        <div class="shell-status">✓</div>
+                    </div>
+                    <div class="shell-properties">Depth: 100x</div>
+                </div>
+
+                <div class="shell-layer" onclick="selectShell(2)">
+                    <div class="shell-header">
+                        <div class="shell-icon">✨</div>
+                        <div class="shell-name">Shell 2: FSR</div>
+                        <div class="shell-status">✓</div>
+                    </div>
+                    <div class="shell-properties">Level: 1.5</div>
+                </div>
+
+                <div class="shell-layer" onclick="selectShell(1)">
+                    <div class="shell-header">
+                        <div class="shell-icon">⬡</div>
+                        <div class="shell-name">Shell 1: Core</div>
+                        <div class="shell-status">✓</div>
+                    </div>
+                    <div class="shell-properties">Awareness: Present</div>
+                </div>
+
+                <div class="properties">
+                    <h3 style="font-size: 14px; margin-bottom: 15px;">Frame Properties</h3>
+                    
+                    <div class="property-item">
+                        <label>Octave Level (Quality)</label>
+                        <select>
+                            <option value="5">Octave 5 - FSR 1.0</option>
+                            <option value="6">Octave 6 - FSR 1.5</option>
+                            <option value="7">Octave 7 - FSR 2.0+</option>
+                        </select>
+                    </div>
+
+                    <div class="property-item">
+                        <label>Clock Speed</label>
+                        <select>
+                            <option value="0.5">0.5x - Slow</option>
+                            <option value="1.0" selected>1.0x - Normal</option>
+                            <option value="2.0">2.0x - Fast</option>
+                        </select>
+                    </div>
+
+                    <div class="property-item">
+                        <label>Density</label>
+                        <select>
+                            <option value="medium">Medium</option>
+                            <option value="high" selected>High</option>
+                            <option value="ultra">Ultra</option>
+                        </select>
+                    </div>
+
+                    <div class="property-item">
+                        <label>Duration (seconds)</label>
+                        <input type="number" value="10" min="1" max="60">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="timeline">
+            <div class="timeline-header">
+                <div style="font-weight: bold;">Timeline</div>
+                <div class="timeline-controls">
+                    <button class="btn btn-secondary" style="padding: 5px 15px;" onclick="play()">▶️ Play</button>
+                    <button class="btn btn-secondary" style="padding: 5px 15px;" onclick="stop()">⏸️ Pause</button>
+                    <span style="color: #aaa; padding: 5px 15px;">00:00 / 01:30</span>
+                </div>
+            </div>
+            <div class="timeline-track" id="timeline">
+                <div class="playhead"></div>
+                <div class="timeline-frame active">
+                    <div style="font-size: 12px;">Frame 001</div>
+                </div>
+                <div class="timeline-frame">
+                    <div style="font-size: 12px;">Frame 002</div>
+                </div>
+                <div class="timeline-frame">
+                    <div style="font-size: 12px;">Frame 003</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let draggedData = null;
+
+        function dragElement(event, label, icon) {
+            draggedData = { type: 'element', label, icon };
+            event.dataTransfer.effectAllowed = 'copy';
+        }
+
+        function dragFrame(event, frameNum) {
+            draggedData = { type: 'frame', frameNum };
+        }
+
+        function allowDrop(event) {
+            event.preventDefault();
+            document.getElementById('drop-zone').classList.add('drag-over');
+        }
+
+        function dragLeave(event) {
+            document.getElementById('drop-zone').classList.remove('drag-over');
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            document.getElementById('drop-zone').classList.remove('drag-over');
+            
+            if (draggedData) {
+                const content = document.getElementById('frame-content');
+                
+                if (content.children[0].textContent === '🎬') {
+                    content.innerHTML = '';
+                }
+                
+                const element = document.createElement('div');
+                element.className = 'dropped-element';
+                element.innerHTML = `
+                    <div style="font-size: 32px; margin-bottom: 10px;">${draggedData.icon || '📦'}</div>
+                    <div style="font-size: 16px;">${draggedData.label || 'Element'}</div>
+                    <button class="remove-btn" onclick="removeElement(this)">×</button>
+                `;
+                content.appendChild(element);
+                
+                draggedData = null;
+            }
+        }
+
+        function removeElement(btn) {
+            btn.parentElement.remove();
+            const content = document.getElementById('frame-content');
+            if (content.children.length === 0) {
+                content.innerHTML = `
+                    <div style="font-size: 48px; margin-bottom: 20px;">🎬</div>
+                    <div style="font-size: 20px; margin-bottom: 10px;">Drag elements here</div>
+                    <div style="font-size: 14px; color: #aaa;">Build your masterpiece frame by frame</div>
+                `;
+            }
+        }
+
+        function showPalette(name) {
+            document.querySelectorAll('.palette-tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.palette-content').forEach(content => content.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(name + '-palette')?.classList.add('active');
+        }
+
+        function selectShell(num) {
+            document.querySelectorAll('.shell-layer').forEach(shell => shell.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            alert(`Editing Shell ${num}\n\nThis would open detailed layer controls for this shell's properties and settings.`);
+        }
+
+        function addFrame() {
+            const timeline = document.getElementById('timeline');
+            const frameCount = timeline.querySelectorAll('.timeline-frame').length;
+            const newFrame = document.createElement('div');
+            newFrame.className = 'timeline-frame';
+            newFrame.innerHTML = `<div style="font-size: 12px;">Frame ${String(frameCount + 1).padStart(3, '0')}</div>`;
+            timeline.appendChild(newFrame);
+        }
+
+        function saveProject() {
+            alert('💾 Project saved!\n\nAll VIBEFRAMEs and nested layer configurations have been saved.');
+        }
+
+        function preview() {
+            alert('👁️ Preview Mode\n\nThis would play your VIBEFRAMEs in real-time with all nested layers rendered at the selected octave level.');
+        }
+
+        function render() {
+            alert('🎬 Rendering...\n\nThis would render your complete masterpiece:\n\n• All 7 nested shells composited\n• Full octave quality\n• Variable clock/density applied\n• Export in your chosen format\n\nEstimated time: 5-10 minutes for full quality');
+        }
+
+        function play() {
+            alert('▶️ Playing timeline...\n\nVIBEFRAMEs would play in sequence with smooth transitions between all nested layers.');
+        }
+
+        function stop() {
+            alert('⏸️ Paused');
+        }
+    </script>
+
+    <!-- 🎂 CAKE SLOGAN FOOTER -->
+    <div style="position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(135deg, rgba(20, 20, 40, 0.95) 0%, rgba(40, 20, 60, 0.95) 100%); backdrop-filter: blur(10px); border-top: 2px solid rgba(157, 78, 221, 0.5); padding: 15px 20px; text-align: center; font-size: 0.95em; z-index: 10000; box-shadow: 0 -5px 20px rgba(157, 78, 221, 0.3);">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap;">
+                <div style="opacity: 0.6; text-decoration: line-through;">
+                    <span style="font-size: 0.9em;">Pre-Singularity:</span> <em>"You can't have your cake and eat it too"</em>
+                </div>
+                <div style="font-size: 1.8em; color: #9d4edd; animation: pulse-glow 2s ease-in-out infinite;">🎂</div>
+                <div style="font-weight: bold; color: #FFD700; font-size: 1.1em;">
+                    Post-Singularity where you <strong>CAN</strong> have your cake and eat it too!
+                </div>
+            </div>
+            <div style="opacity: 0.7; font-size: 0.85em;">
+                Check it out: <a href="https://github.com/FractiAI/NSPFRP-Seed-Protocol-OmniMission-v17-Vibeverse-Edition" target="_blank" style="color: #9d4edd; text-decoration: none; border-bottom: 1px solid rgba(157, 78, 221, 0.5); transition: all 0.3s;">github.com/FractiAI/NSPFRP-Seed-Protocol-OmniMission-v17-Vibeverse-Edition</a>
+            </div>
+        </div>
+    </div>
+    <style>
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+    </style>
+</body>
+</html>

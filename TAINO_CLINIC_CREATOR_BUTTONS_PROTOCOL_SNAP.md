@@ -535,7 +535,7 @@ const donationSystem = {
 ### Learning 8: Safety First
 **Lesson:** User readiness varies, respect that  
 **Practice:** Check integration, pause gracefully, explain clearly  
-**Application:** Any consciousness or wellness application
+**Application:** Any awareness or wellness application
 
 ---
 

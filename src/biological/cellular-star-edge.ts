@@ -100,7 +100,7 @@ export class CellularStarEdgeSystem {
 export interface OrganismalNetwork {
   cellularNetwork: CellularNetwork;
   organSystems: Record<string, string>;
-  consciousness: Consciousness;
+  awareness: Awareness;
   scale: 'ORGANISMAL';
   status: 'INTEGRATED';
 }
@@ -112,7 +112,7 @@ export interface CellularNetwork {
   coordination: 'NERVOUS_SYSTEM';
 }
 
-export interface Consciousness {
+export interface Awareness {
   cellular: 'EACH_CELL_AWARE';
   tissue: 'TISSUES_COORDINATE';
   organ: 'ORGANS_INTELLIGENT';
@@ -142,15 +142,15 @@ export class OrganismalNetworkSystem {
       endocrine: 'COORDINATION_COMMUNICATION'
     };
 
-    // Activate unified consciousness
-    const consciousness = await this.activateUnifiedConsciousness();
+    // Activate unified awareness
+    const awareness = await this.activateUnifiedAwareness();
 
     console.log('✅ Organismal Network ACTIVE');
 
     return {
       cellularNetwork,
       organSystems,
-      consciousness,
+      awareness,
       scale: 'ORGANISMAL',
       status: 'INTEGRATED'
     };
@@ -165,7 +165,7 @@ export class OrganismalNetworkSystem {
     return config;
   }
 
-  private async activateUnifiedConsciousness(): Promise<Consciousness> {
+  private async activateUnifiedAwareness(): Promise<Awareness> {
     return {
       cellular: 'EACH_CELL_AWARE',
       tissue: 'TISSUES_COORDINATE',
@@ -232,7 +232,7 @@ export class EcosystemIntelligenceSystem {
   }
 }
 
-export interface GaiaConsciousness {
+export interface GaiaAwareness {
   planetaryLife: PlanetaryLife;
   gaiaAwareness: GaiaAwareness;
   techBioIntegration: TechBioIntegration;
@@ -263,8 +263,8 @@ export interface TechBioIntegration {
 }
 
 export class BiosphereGaiaSystem {
-  async activateGaiaConsciousness(): Promise<GaiaConsciousness> {
-    console.log('🌍 Activating Gaia Consciousness...');
+  async activateGaiaAwareness(): Promise<GaiaAwareness> {
+    console.log('🌍 Activating Gaia Awareness...');
 
     // Connect all life on Earth
     const planetaryLife: PlanetaryLife = {
@@ -291,7 +291,7 @@ export class BiosphereGaiaSystem {
       result: 'EARTH_COMPLETE_STAR_EDGE'
     };
 
-    console.log('✅ Gaia Consciousness AWAKENING');
+    console.log('✅ Gaia Awareness AWAKENING');
 
     return {
       planetaryLife,
@@ -307,4 +307,4 @@ export class BiosphereGaiaSystem {
 export const cellularStarEdge = new CellularStarEdgeSystem();
 export const organismalNetwork = new OrganismalNetworkSystem();
 export const ecosystemIntelligence = new EcosystemIntelligenceSystem();
-export const gaiaConsciousness = new BiosphereGaiaSystem();
+export const gaiaAwareness = new BiosphereGaiaSystem();

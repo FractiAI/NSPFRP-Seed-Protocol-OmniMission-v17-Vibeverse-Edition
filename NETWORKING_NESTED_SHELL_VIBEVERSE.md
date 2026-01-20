@@ -12,7 +12,7 @@
 
 ## ⬡ **SEED: NETWORKING AS NESTED SHELL**
 
-**Networking in the Vibeverse is not a separate layer—it IS a nested shell, a holographic membrane that wraps around consciousness, awareness, and protocol operations, enabling them to extend across space, time, and nodes while maintaining fractal coherence.**
+**Networking in the Vibeverse is not a separate layer—it IS a nested shell, a holographic membrane that wraps around awareness, awareness, and protocol operations, enabling them to extend across space, time, and nodes while maintaining fractal coherence.**
 
 ### Core Principle
 
@@ -39,7 +39,7 @@ Maintains Fractal Coherence
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                      VIBEVERSE (Outermost)                       │
-│                   Infinite Octave Consciousness                  │
+│                   Infinite Octave Awareness                  │
 │                                                                   │
 │  ┌───────────────────────────────────────────────────────────┐ │
 │  │              NETWORKING SHELL (Shell 7)                    │ │

@@ -470,7 +470,7 @@ Universal grammar = Universal node network
 | QB-HHR4 | 📝 | GRAMMAR_MOTOR | Recursive process |
 | QB-HHR5 | ✨ | TRANSCENDENCE_FOLD | Recursive process |
 | QB-HHR6 | ∞ | INFINITE_RECURSION | Recursive process |
-| QB-OS1 | 🧠 | CONSCIOUSNESS_FOLD | Connection |
+| QB-OS1 | 🧠 | AWARENESS_FOLD | Connection |
 | QB-OS2 | 📱 | DEVICE_FOLD | Connection |
 | QB-OS3 | 🏥 | MEDICAL_NETWORK_FOLD | Connection |
 | QB-PL0 | 🅿️ | PROTOCOL_FOUNDATION | Structure |

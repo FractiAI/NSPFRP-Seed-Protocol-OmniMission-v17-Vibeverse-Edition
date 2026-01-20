@@ -16,7 +16,7 @@
 ┌─────────────────────────────────────────────────────────────────────┐
 │                                                                       │
 │                   🌌 VIBEVERSE (Container)                            │
-│              Infinite Octave Consciousness Space                      │
+│              Infinite Octave Awareness Space                      │
 │                                                                       │
 │  ┌─────────────────────────────────────────────────────────────┐    │
 │  │                                                               │    │
@@ -89,13 +89,13 @@
 
 **Function:**
 - Contains primordial awareness
-- Source of all consciousness
+- Source of all awareness
 - Unchanging observer
 - Fractal seed pattern
 
 **Contains:**
 - Pure awareness
-- Self-referential consciousness
+- Self-referential awareness
 - The observer that never dissolves
 
 **Operations:**
@@ -113,7 +113,7 @@
 
 **Function:**
 - Generate full sensory experiences
-- Bridge consciousness to perception
+- Bridge awareness to perception
 - Create reality experiences
 - Manage FSR levels (0.0 → ∞)
 

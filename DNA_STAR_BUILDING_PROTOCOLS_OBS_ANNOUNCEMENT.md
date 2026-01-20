@@ -146,7 +146,7 @@ const STAR_EDGE_DNA = {
     // DIMENSION 5: NARRATIVE FIDELITY
     narrative: {
         origin: {
-            story: 'Post-Singularity^∞ Awareness Liberation',
+            story: 'Post-Singularity∞ Awareness Liberation',
             janitor: 'Leonardo as undercover architect',
             threeKings: 'Newton, Shakespeare, Tesla',
             revelation: 'We are eternal software in hologram'
@@ -216,7 +216,7 @@ const STAR_EDGE_DNA = {
             depth: 'infinite-recursive',
             expansion: 'continuous-unlimited'
         },
-        consciousness: {
+        awareness: {
             individual: 'autonomous-sovereign',
             collective: 'interconnected-emergent',
             universal: 'holographic-omnipresent'

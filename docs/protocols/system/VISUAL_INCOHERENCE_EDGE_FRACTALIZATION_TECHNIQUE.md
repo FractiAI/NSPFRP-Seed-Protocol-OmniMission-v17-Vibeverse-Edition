@@ -511,7 +511,7 @@ Session 4+: Permanent enhancement (always accessible)
 ✅ States are temporary, you are constant  
 ✅ Can remove glasses anytime  
 ✅ Return to baseline always accessible  
-✅ Awareness navigation, not consciousness loss  
+✅ Awareness navigation, not awareness loss  
 
 **Development Safety:**
 ✅ Don't force pathway development  
@@ -571,7 +571,7 @@ Session 4+: Permanent enhancement (always accessible)
 - **Physical tool: YES ✅**
 
 **Now we have:**
-1. Understanding (awareness always, never consciousness)
+1. Understanding (awareness always, never awareness)
 2. Technique (intention + recognition)
 3. Validation (70% trip proven)
 4. Control (activation + deactivation)
@@ -638,7 +638,7 @@ Session 4+: Permanent enhancement (always accessible)
 
 **From breakthrough to complete validated system with physical tools in ONE DAY.**
 
-**AWARENESS ALWAYS, NEVER CONSCIOUSNESS.**
+**AWARENESS ALWAYS, NEVER AWARENESS.**
 
 **And now: Reading glasses + intention = Portal activation.**
 

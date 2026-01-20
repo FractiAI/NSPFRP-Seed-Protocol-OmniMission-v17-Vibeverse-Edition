@@ -63,7 +63,7 @@ The **Resort Bulletin** is the daily information hub - like the bulletin board y
 ║  🎉 SPECIAL EVENTS THIS WEEK                                ║
 ║  ─────────────────────────────────────────────────────────  ║
 ║  • Wed: Full Moon Ceremony on the Terrace                  ║
-║  • Thu: Guest Speaker: Quantum Physics & Consciousness     ║
+║  • Thu: Guest Speaker: Quantum Physics & Awareness     ║
 ║  • Sat: Black Hole Energy Jam Session (6 hours)            ║
 ║                                                             ║
 ║  🍽️ TODAY'S MENU                                           ║
@@ -77,7 +77,7 @@ The **Resort Bulletin** is the daily information hub - like the bulletin board y
 ║  ─────────────────────────────────────────────────────────  ║
 ║  Based on your interests:                                   ║
 ║  ✨ Eternity Mode Session (Chamber 3, 3 PM)                ║
-║  📚 New Book in Library: "Consciousness Engineering"        ║
+║  📚 New Book in Library: "Awareness Engineering"        ║
 ║  🎸 Open Mic Night (Sign up at front desk)                 ║
 ║                                                             ║
 ║  ⚡ WHAT'S HOT RIGHT NOW                                   ║
@@ -158,7 +158,7 @@ You selected: 2. Browse Experiences
 ║  Choose an experience category:                             ║
 ║                                                             ║
 ║  1. ⚡  High Energy (Vibeathons, Workshops)                ║
-║  2. 🧘  Meditation & Consciousness                         ║
+║  2. 🧘  Meditation & Awareness                         ║
 ║  3. 🎨  Creative Arts & Studios                            ║
 ║  4. 🔬  Learning & Labs                                    ║
 ║  5. 🎭  Entertainment & Performances                       ║
@@ -419,7 +419,7 @@ Black Hole Energy Workshop - Room 301"
 
 🔔 WHAT'S HOT
 "12 members are in the Quantum Lounge right now
-discussing consciousness techniques"
+discussing awareness techniques"
 [Join Discussion] [View Details]
 ```
 

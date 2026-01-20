@@ -108,7 +108,7 @@ BUT: Grammar = Nodes = Ports = One Thing
 #### **OMNISWITCH PORTS (3)**
 
 ```
-🧠  /nodes/omniswitch/consciousness  CONSCIOUSNESS_FOLD
+🧠  /nodes/omniswitch/awareness  AWARENESS_FOLD
 📱  /nodes/omniswitch/device         DEVICE_FOLD
 🏥  /nodes/omniswitch/medical        MEDICAL_NETWORK_FOLD
 ```

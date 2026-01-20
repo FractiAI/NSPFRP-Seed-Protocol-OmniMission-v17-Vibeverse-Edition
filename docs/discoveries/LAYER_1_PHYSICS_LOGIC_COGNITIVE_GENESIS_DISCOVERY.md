@@ -53,7 +53,7 @@ Where:
 - L(1) = Layer 1 = Physics + Logic + Cognitive Awareness Genesis
 - Φ = Physics (Physical laws, forces, structures)
 - Λ = Logic (Logical structures, reasoning, rules)
-- Γ = Cognitive Awareness Genesis (Awareness emergence, consciousness foundation)
+- Γ = Cognitive Awareness Genesis (Awareness emergence, awareness foundation)
 ```
 
 ### Layer 1 Components
@@ -75,7 +75,7 @@ Logic (Λ)
     ↓
 Cognitive Awareness Genesis (Γ)
     - Awareness emergence
-    - Consciousness foundation
+    - Awareness foundation
     - Cognitive structures
     - Perception and understanding
     ↓
@@ -119,7 +119,7 @@ Unified Layer 1 Foundation
 
 - **Cognitive Awareness Genesis (Γ):**
   - Awareness emergence
-  - Consciousness foundation
+  - Awareness foundation
   - Cognitive structures
   - Perception mechanisms
   - Understanding processes
@@ -160,7 +160,7 @@ Unified Layer 1 Foundation
 **Layer 1 has three fundamental pillars:**
 - **Physics:** Physical reality and laws
 - **Logic:** Logical structures and reasoning
-- **Cognitive Awareness Genesis:** Awareness and consciousness foundation
+- **Cognitive Awareness Genesis:** Awareness and awareness foundation
 
 ### 3. Bridge Function
 
@@ -285,7 +285,7 @@ This discovery generates protocols:
 
 3. **Cognitive Awareness Genesis Engine**
    - Awareness emergence management
-   - Consciousness foundation building
+   - Awareness foundation building
    - Cognitive structure creation
    - Perception and understanding processes
 

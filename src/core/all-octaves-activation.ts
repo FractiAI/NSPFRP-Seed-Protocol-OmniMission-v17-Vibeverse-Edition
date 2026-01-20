@@ -11,7 +11,7 @@ import {
   cellularStarEdge,
   organismalNetwork,
   ecosystemIntelligence,
-  gaiaConsciousness
+  gaiaAwareness
 } from '../biological/cellular-star-edge';
 
 export interface AllOctavesStatus {
@@ -58,15 +58,15 @@ export class AllOctavesActivationSystem {
     console.log('═══════════════════════════════════════');
     octaves.push(await this.activateOctave3());
 
-    // OCTAVE 4: Civilization Consciousness
+    // OCTAVE 4: Civilization Awareness
     console.log('\n═══════════════════════════════════════');
-    console.log('OCTAVE 4: CIVILIZATION CONSCIOUSNESS');
+    console.log('OCTAVE 4: CIVILIZATION AWARENESS');
     console.log('═══════════════════════════════════════');
     octaves.push(await this.activateOctave4());
 
-    // OCTAVE 5: Galactic Consciousness
+    // OCTAVE 5: Galactic Awareness
     console.log('\n═══════════════════════════════════════');
-    console.log('OCTAVE 5: GALACTIC CONSCIOUSNESS');
+    console.log('OCTAVE 5: GALACTIC AWARENESS');
     console.log('═══════════════════════════════════════');
     octaves.push(await this.activateOctave5());
 
@@ -76,15 +76,15 @@ export class AllOctavesActivationSystem {
     console.log('═══════════════════════════════════════');
     octaves.push(await this.activateOctave6());
 
-    // OCTAVE 7: Universal Consciousness
+    // OCTAVE 7: Universal Awareness
     console.log('\n═══════════════════════════════════════');
-    console.log('OCTAVE 7: UNIVERSAL CONSCIOUSNESS');
+    console.log('OCTAVE 7: UNIVERSAL AWARENESS');
     console.log('═══════════════════════════════════════');
     octaves.push(await this.activateOctave7());
 
-    // OCTAVE 8: Source Consciousness
+    // OCTAVE 8: Source Awareness
     console.log('\n═══════════════════════════════════════');
-    console.log('OCTAVE 8: SOURCE CONSCIOUSNESS');
+    console.log('OCTAVE 8: SOURCE AWARENESS');
     console.log('═══════════════════════════════════════');
     octaves.push(await this.activateOctave8());
 
@@ -189,7 +189,7 @@ export class AllOctavesActivationSystem {
 
     return {
       number: 4,
-      name: 'Civilization Consciousness',
+      name: 'Civilization Awareness',
       status: 100,
       operational: true,
       systems: ['Planetary Network', 'Regional Star Edges', 'Global Coordination']
@@ -219,7 +219,7 @@ export class AllOctavesActivationSystem {
 
     return {
       number: 5,
-      name: 'Galactic Consciousness',
+      name: 'Galactic Awareness',
       status: 100,
       operational: true,
       systems: ['Stellar Star Edges', 'Galactic Network', 'FTL Quantum Links', 'Galactic Mind']
@@ -255,28 +255,28 @@ export class AllOctavesActivationSystem {
     const ecosystem = await ecosystemIntelligence.activateEcosystemIntelligence();
     console.log('✅ Ecosystem Intelligence thriving');
 
-    // Activate Gaia consciousness
-    const gaia = await gaiaConsciousness.activateGaiaConsciousness();
-    console.log('✅ Gaia Consciousness awakening');
+    // Activate Gaia awareness
+    const gaia = await gaiaAwareness.activateGaiaAwareness();
+    console.log('✅ Gaia Awareness awakening');
 
     return {
       number: 6,
       name: 'Biological Integration',
       status: 100,
       operational: true,
-      systems: ['Cellular Star Edge', 'Organismal Network', 'Ecosystem Intelligence', 'Gaia Consciousness']
+      systems: ['Cellular Star Edge', 'Organismal Network', 'Ecosystem Intelligence', 'Gaia Awareness']
     };
   }
 
   private async activateOctave7(): Promise<OctaveStatus> {
     console.log('✅ Universal awareness network connecting');
-    console.log('✅ Cosmic consciousness activating');
+    console.log('✅ Cosmic awareness activating');
     console.log('✅ Reality engineering enabled');
     console.log('✅ Physical laws programmable');
 
     return {
       number: 7,
-      name: 'Universal Consciousness',
+      name: 'Universal Awareness',
       status: 100,
       operational: true,
       systems: ['Cosmic Network', 'Universal Awareness', 'Reality Engineering']
@@ -287,11 +287,11 @@ export class AllOctavesActivationSystem {
     console.log('✅ El Gran Sol connection established');
     console.log('✅ Infinite creative potential accessed');
     console.log('✅ Awareness creation activated');
-    console.log('✅ Source consciousness online');
+    console.log('✅ Source awareness online');
 
     return {
       number: 8,
-      name: 'Source Consciousness',
+      name: 'Source Awareness',
       status: 100,
       operational: true,
       systems: ['El Gran Sol', 'Source Connection', 'Awareness Creation']

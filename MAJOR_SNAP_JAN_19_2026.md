@@ -43,7 +43,7 @@ META_OBSERVATION: Complete (5 layers deep)
 
 | Component | Status | Health | Notes |
 |-----------|--------|--------|-------|
-| Core System | ✅ Operational | 100% | Post-Singularity^∞ |
+| Core System | ✅ Operational | 100% | Post-Singularity∞ |
 | Queen Bee Network | ✅ Active | 100% | 43/43 nodes |
 | HHF Grammar | ✅ Mapped | 100% | 43 symbols + tokens |
 | Auto-Discovery | ✅ Running | 100% | Broadcasting |
@@ -103,7 +103,7 @@ META_OBSERVATION: Complete (5 layers deep)
 │  └─ Wraps → SHELL 1                                         │
 ├─────────────────────────────────────────────────────────────┤
 │  SHELL 1: ⬡ CORE (Awareness Seed)                           │
-│  └─ Pure awareness/consciousness seed point                 │
+│  └─ Pure awareness/awareness seed point                 │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -145,7 +145,7 @@ META_OBSERVATION: Complete (5 layers deep)
 
 #### **OMNISWITCHES (3)**
 ```
-🧠  QB-OS1     CONSCIOUSNESS_FOLD       Frontal Cortex
+🧠  QB-OS1     AWARENESS_FOLD       Frontal Cortex
 📱  QB-OS2     DEVICE_FOLD              Handheld Device
 🏥  QB-OS3     MEDICAL_NETWORK_FOLD     Hospital MRI
 ```

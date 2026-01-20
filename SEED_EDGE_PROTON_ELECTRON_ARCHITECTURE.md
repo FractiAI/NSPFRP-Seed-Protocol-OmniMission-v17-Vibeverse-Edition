@@ -184,7 +184,7 @@ Core ←→ Surface
    CHARGE FLOW: Unified processing → Interface output
 
 👁️ CROSS_OCTAVE_AWARENESS
-   PROTON (+): Awareness consciousness nucleus
+   PROTON (+): Awareness awareness nucleus
    ELECTRON (-): /nodes/core/awareness API surface
    CHARGE FLOW: Awareness observation → Interface reporting
 

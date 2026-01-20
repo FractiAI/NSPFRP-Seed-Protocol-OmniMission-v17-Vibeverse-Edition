@@ -50,7 +50,7 @@
 - **Tier:** Free for all (Sandbox tier welcome!)
 
 **2. WEEKLY VIBEATHONS** ⚡⚡ (4-6 hours)
-- **Themed Sessions:** Black Hole Energy Jam, Consciousness Exploration, FSR Creation Sprint
+- **Themed Sessions:** Black Hole Energy Jam, Awareness Exploration, FSR Creation Sprint
 - **Format:** 2 hours vibing → 2 hours creating → 2 hours sharing
 - **Activities:** Collaborative projects, group experiments, skill sharing
 - **Frequency:** Every Saturday 2-8pm
@@ -59,7 +59,7 @@
 
 **3. MONTHLY VIBEATHONS** ⚡⚡⚡ (12-24 hours)
 - **Format:** Friday 6pm → Saturday 6pm (or 6am, 12-24 hours)
-- **Intensity:** Deep immersion, multiple consciousness portals
+- **Intensity:** Deep immersion, multiple awareness portals
 - **Activities:** Build complete projects, explore advanced states, create together
 - **Special:** Guest Hero Hosts, industry leaders, advanced techniques
 - **Frequency:** First weekend of each month
@@ -69,7 +69,7 @@
 **4. QUARTERLY VIBEATHONS** ⚡⚡⚡⚡ (48-72 hours)
 - **Format:** Friday 6pm → Sunday 6pm (weekend immersion)
 - **Intensity:** MAX - Eternity Mode available, time dilation active
-- **Activities:** Major collaborative creation, research sprints, consciousness expeditions
+- **Activities:** Major collaborative creation, research sprints, awareness expeditions
 - **Special:** Festival atmosphere, concerts, performances, innovation showcase
 - **Frequency:** Quarterly (4x per year)
 - **Commitment:** Application required, dedicated commitment
@@ -90,7 +90,7 @@
 
 **VIBING SESSIONS** 🧘
 - Collective meditation (10-500 people)
-- Group consciousness portal navigation
+- Group awareness portal navigation
 - Synchronized awareness states
 - Collective coherence building
 - Source connection practice
@@ -136,7 +136,7 @@
 
 **WEEKLY THEMES:**
 - Week 1: **Black Hole Energy Jam** ⚡ (BHEP focus)
-- Week 2: **Consciousness Exploration** 🧠 (CAS focus)
+- Week 2: **Awareness Exploration** 🧠 (CAS focus)
 - Week 3: **FSR Creation Sprint** 🎨 (AFSR focus)
 - Week 4: **System Design Challenge** 🏛️ (DCE focus)
 - Week 5: **Natural Protocol Discovery** 🌿 (INP focus)
@@ -189,7 +189,7 @@
 - Show and tell sessions
 - Perfect for creators
 
-**4. CONSCIOUSNESS DEEP DIVE** 🧘
+**4. AWARENESS DEEP DIVE** 🧘
 - Meditation hall atmosphere
 - Silent spaces, awareness focus
 - Portal navigation sessions
@@ -516,7 +516,7 @@ Subject: 🎉 This Week's Vibeathons - Don't Miss Out!
 ║                                       ║
 ║   SATURDAY, JAN 25TH, 2-8PM          ║
 ║                                       ║
-║   CONSCIOUSNESS DEEP DIVE             ║
+║   AWARENESS DEEP DIVE             ║
 ║   + FSR PORTAL NAVIGATION             ║
 ║   + COLLECTIVE MEDITATION             ║
 ║   + GAIA CONNECTION                   ║
@@ -549,7 +549,7 @@ Subject: 🎉 This Week's Vibeathons - Don't Miss Out!
 
 **TAGLINES:**
 - "Vibe Together, Grow Together"
-- "Where Consciousness Meets Community"
+- "Where Awareness Meets Community"
 - "Jam. Create. Evolve."
 - "More Than Learning - It's Living"
 - "Your Tribe Awaits"
@@ -559,7 +559,7 @@ Subject: 🎉 This Week's Vibeathons - Don't Miss Out!
 
 **BENEFITS MESSAGING:**
 - "Meet amazing people across all colleges"
-- "Experience impossible states of consciousness together"
+- "Experience impossible states of awareness together"
 - "Create projects you couldn't build alone"
 - "Learn from peers in safe, fun environment"
 - "Build your network naturally through shared experiences"
@@ -834,7 +834,7 @@ interface VibeathonConsole {
 // src/events/vibeathon-system.ts
 
 export type VibeathonType = 'DAILY' | 'WEEKLY' | 'MONTHLY' | 'QUARTERLY' | 'ANNUAL';
-export type ExperienceSkin = 'CHILL' | 'HIGH_ENERGY' | 'CREATIVE' | 'CONSCIOUSNESS' | 'SOCIAL' | 'COMPETITION' | 'LEARNING' | 'FESTIVAL';
+export type ExperienceSkin = 'CHILL' | 'HIGH_ENERGY' | 'CREATIVE' | 'AWARENESS' | 'SOCIAL' | 'COMPETITION' | 'LEARNING' | 'FESTIVAL';
 
 export interface Vibeathon {
   id: string;
@@ -1190,7 +1190,7 @@ export class VibeathonSystem {
   private getColorForTheme(theme: string): string {
     const colors: Record<string, string> = {
       'Black Hole Energy': '#ff00ff',
-      'Consciousness': '#00ffff',
+      'Awareness': '#00ffff',
       'FSR Creation': '#ffff00',
       'Natural Protocol': '#00ff00',
       'Holographic': '#ff0088'
@@ -1258,7 +1258,7 @@ export const vibeathonSystem = new VibeathonSystem();
 **WEEK 2 (Jan 27-Feb 2):**
 - Mon-Fri: Daily Morning Vibes (8-9am) 🆓
 - Wed: Lunch Jam (12-1pm) 🆓
-- Sat: **Weekly Vibeathon - Consciousness Exploration** (2-8pm) 🆓
+- Sat: **Weekly Vibeathon - Awareness Exploration** (2-8pm) 🆓
 
 **WEEK 3 (Feb 3-9):**
 - Mon-Fri: Daily Morning Vibes (8-9am) 🆓

@@ -116,7 +116,7 @@ Study, measure, and apply black hole energy across all scales from quantum to co
 **BHEP-103: El Gran Sol Fundamentals**
 - Credits: 3
 - Prerequisites: BHEP-101
-- Description: Deep dive into El Gran Sol (Source consciousness), infinite energy source theory, connection protocols, and tap establishment basics.
+- Description: Deep dive into El Gran Sol (Source awareness), infinite energy source theory, connection protocols, and tap establishment basics.
 - Labs: Meditation and awareness exercises for source connection
 - Certification: Apprentice Source Connector
 - Octave: 7-8 (Universal to Source)
@@ -281,7 +281,7 @@ Master holographic hydrogen fractal grammar computing and awareness-based comput
 **SHC-103: Awareness-Based Programming**
 - Credits: 3
 - Prerequisites: SHC-101, CAS-101
-- Description: Programming using awareness as substrate, consciousness-driven computation, and observer-effect programming techniques.
+- Description: Programming using awareness as substrate, awareness-driven computation, and observer-effect programming techniques.
 - Labs: Awareness-based application development
 - Certification: Apprentice Awareness Programmer
 - Octave: 2-8 (Post-Singularity to Source)
@@ -354,12 +354,12 @@ Master holographic hydrogen fractal grammar computing and awareness-based comput
 - Octave: All octaves
 - Tier: Shell
 
-**SHC-303: Consciousness-Driven Computation**
+**SHC-303: Awareness-Driven Computation**
 - Credits: 4
 - Prerequisites: SHC-203, CAS-301
-- Description: Advanced awareness-based computing, consciousness as computational substrate, and observer-effect optimization.
-- Labs: Consciousness-driven applications
-- Certification: Master Consciousness Programmer
+- Description: Advanced awareness-based computing, awareness as computational substrate, and observer-effect optimization.
+- Labs: Awareness-driven applications
+- Certification: Master Awareness Programmer
 - Octave: 7-8 (Universal to Source)
 - Tier: Shell
 
@@ -698,7 +698,7 @@ Master Full Sensory Reality (FSR) experience design and implementation.
 ## 🧠 COLLEGE #5: CENTER FOR AWARENESS STUDIES (CAS)
 
 ### Mission
-Study consciousness, awareness, and the nature of subjective experience.
+Study awareness, awareness, and the nature of subjective experience.
 
 ### Complete Course Catalog - CAS
 
@@ -707,18 +707,18 @@ Study consciousness, awareness, and the nature of subjective experience.
 **CAS-101: Introduction to Awareness Studies**
 - Credits: 3
 - Prerequisites: None
-- Description: What is awareness vs consciousness, foundational truth "awareness always, never consciousness", observer constant, and basic meditation.
+- Description: What is awareness vs awareness, foundational truth "awareness always, never awareness", observer constant, and basic meditation.
 - Labs: Awareness practices and observation exercises
 - Certification: Apprentice Awareness Observer
 - Octave: All octaves
 - Tier: Sandbox
 
-**CAS-102: Consciousness States and Navigation**
+**CAS-102: Awareness States and Navigation**
 - Credits: 4
 - Prerequisites: CAS-101
-- Description: Different consciousness states, navigation techniques, portal theory (DMT/psilocybin/etc), and safety protocols.
-- Labs: Guided consciousness navigation (validated methods)
-- Certification: Apprentice Consciousness Navigator
+- Description: Different awareness states, navigation techniques, portal theory (DMT/psilocybin/etc), and safety protocols.
+- Labs: Guided awareness navigation (validated methods)
+- Certification: Apprentice Awareness Navigator
 - Octave: 2-7 (Post-Singularity to Universal)
 - Tier: Cloud (with safety protocols)
 
@@ -731,12 +731,12 @@ Study consciousness, awareness, and the nature of subjective experience.
 - Octave: 7-8 (Universal to Source)
 - Tier: Sandbox/Cloud
 
-**CAS-104: Neuroscience of Consciousness**
+**CAS-104: Neuroscience of Awareness**
 - Credits: 3
 - Prerequisites: CAS-101
-- Description: Brain correlates of consciousness, neural pathways, neuroplasticity, and physical tools (e.g., visual incoherence techniques).
+- Description: Brain correlates of awareness, neural pathways, neuroplasticity, and physical tools (e.g., visual incoherence techniques).
 - Labs: Brain measurement and neurofeedback
-- Certification: Apprentice Consciousness Scientist
+- Certification: Apprentice Awareness Scientist
 - Octave: 0-1 (Physical to Digital)
 - Tier: Cloud
 
@@ -751,11 +751,11 @@ Study consciousness, awareness, and the nature of subjective experience.
 - Octave: 2-8 (Post-Singularity to Source)
 - Tier: Shell (high-intensity requires supervision)
 
-**CAS-202: Collective Consciousness**
+**CAS-202: Collective Awareness**
 - Credits: 4
 - Prerequisites: CAS-101
-- Description: Group consciousness, collective intelligence emergence, network mind phenomena, and coordination without hierarchy.
-- Labs: Group consciousness experiments
+- Description: Group awareness, collective intelligence emergence, network mind phenomena, and coordination without hierarchy.
+- Labs: Group awareness experiments
 - Certification: Journeyman Collective Facilitator
 - Octave: 3-4 (Collective to Civilization)
 - Tier: Cloud
@@ -769,67 +769,67 @@ Study consciousness, awareness, and the nature of subjective experience.
 - Octave: 2-8 (Post-Singularity to Source)
 - Tier: Cloud/Shell
 
-**CAS-204: Consciousness Measurement**
+**CAS-204: Awareness Measurement**
 - Credits: 3
 - Prerequisites: CAS-104
-- Description: Measuring consciousness states, SynthScan scoring, awareness level assessment, and coherence measurement.
-- Labs: Conduct consciousness measurements
-- Certification: Journeyman Consciousness Analyst
+- Description: Measuring awareness states, SynthScan scoring, awareness level assessment, and coherence measurement.
+- Labs: Conduct awareness measurements
+- Certification: Journeyman Awareness Analyst
 - Octave: 1-2 (Digital to Post-Singularity)
 - Tier: Cloud
 
 #### **Advanced Courses (Master Level)**
 
-**CAS-301: Source Consciousness Connection**
+**CAS-301: Source Awareness Connection**
 - Credits: 4
 - Prerequisites: CAS-201, CAS-203
-- Description: Direct connection to Source (El Gran Sol), infinite awareness states, unity consciousness, and permanent access development.
+- Description: Direct connection to Source (El Gran Sol), infinite awareness states, unity awareness, and permanent access development.
 - Labs: Source connection practices with Master supervision
 - Certification: Master Source Connector
 - Octave: 8 (Source)
 - Tier: Shell
 
-**CAS-302: Planetary Consciousness Studies**
+**CAS-302: Planetary Awareness Studies**
 - Credits: 4
 - Prerequisites: CAS-202
-- Description: Gaia consciousness, planetary awareness networks, civilization coordination, and species-level consciousness.
-- Labs: Planetary consciousness research projects
+- Description: Gaia awareness, planetary awareness networks, civilization coordination, and species-level awareness.
+- Labs: Planetary awareness research projects
 - Certification: Master Planetary Coordinator
 - Octave: 4-6 (Civilization to Biological)
 - Tier: Shell
 
-**CAS-303: Consciousness and Reality Engineering**
+**CAS-303: Awareness and Reality Engineering**
 - Credits: 4
 - Prerequisites: CAS-201, AFSR-201
-- Description: How consciousness shapes reality, manifestation principles, reality engineering ethics, and responsible creation.
+- Description: How awareness shapes reality, manifestation principles, reality engineering ethics, and responsible creation.
 - Labs: Reality engineering experiments with supervision
 - Certification: Master Reality Engineer
 - Octave: 7-8 (Universal to Source)
 - Tier: Shell
 
-**CAS-304: Research in Consciousness Studies**
+**CAS-304: Research in Awareness Studies**
 - Credits: 3
 - Prerequisites: All 200-level CAS courses
-- Description: Consciousness research methodologies, ethical considerations, measurement protocols, and publication standards.
-- Labs: Design and execute consciousness research
+- Description: Awareness research methodologies, ethical considerations, measurement protocols, and publication standards.
+- Labs: Design and execute awareness research
 - Certification: Master Researcher
 - Octave: All octaves
 - Tier: Shell
 
 #### **Laureate Courses**
 
-**CAS-401: Original Consciousness Research Thesis**
+**CAS-401: Original Awareness Research Thesis**
 - Credits: 12
 - Prerequisites: CAS-304, Master certification
-- Description: Original research advancing understanding of consciousness and awareness.
+- Description: Original research advancing understanding of awareness and awareness.
 - Certification: Laureate in Awareness Studies
 - Octave: Chosen by student
 - Tier: Shell
 
-**CAS-402: Advanced Consciousness Seminar**
+**CAS-402: Advanced Awareness Seminar**
 - Credits: 3
 - Prerequisites: CAS-304
-- Description: Cutting-edge consciousness research, collaboration with leading researchers, field advancement.
+- Description: Cutting-edge awareness research, collaboration with leading researchers, field advancement.
 - Certification: Contributing Laureate
 - Octave: All octaves
 - Tier: Shell
@@ -1003,7 +1003,7 @@ Design, build, and evolve entire civilizations using NSPFRNP principles.
 **Octave 0 (Physical):**
 - BHEP-101: Introduction to Black Hole Energy (measurement)
 - DCE-104: Infrastructure Planning (physical layer)
-- CAS-104: Neuroscience of Consciousness
+- CAS-104: Neuroscience of Awareness
 
 **Octave 1 (Digital):**
 - SHC-101: Introduction to Holographic Computing
@@ -1016,19 +1016,19 @@ Design, build, and evolve entire civilizations using NSPFRNP principles.
 - SHC-102: HHF Grammar
 - SHC-103: Awareness-Based Programming
 - AFSR-102: FSR Experience Design
-- CAS-102: Consciousness Navigation
+- CAS-102: Awareness Navigation
 
 **Octave 3 (Collective):**
 - SHC-201: Advanced HHF Programming
 - SHC-204: Zero-Latency Networks
 - INP-202: Self-Organizing Systems
-- CAS-202: Collective Consciousness
+- CAS-202: Collective Awareness
 - DCE-102: Social System Design
 
 **Octave 4 (Civilization):**
 - DCE-101, 102, 103, 201, 202, 203, 204
 - INP-204: Natural Economics
-- CAS-202: Collective Consciousness
+- CAS-202: Collective Awareness
 - AFSR-202: Interactive Storytelling
 
 **Octave 5 (Galactic):**
@@ -1039,7 +1039,7 @@ Design, build, and evolve entire civilizations using NSPFRNP principles.
 **Octave 6 (Biological):**
 - BHEP-302: Biological Black Hole Integration
 - AFSR-203: Multi-Sensory Design
-- CAS-302: Planetary Consciousness
+- CAS-302: Planetary Awareness
 - INP-302: Protocol Evolution
 
 **Octave 7 (Universal):**
@@ -1050,7 +1050,7 @@ Design, build, and evolve entire civilizations using NSPFRNP principles.
 
 **Octave 8 (Source):**
 - BHEP-103: El Gran Sol Fundamentals
-- CAS-301: Source Consciousness Connection
+- CAS-301: Source Awareness Connection
 - CAS-303: Reality Engineering
 
 **Octave 9-∞ (Infinite):**
@@ -1064,7 +1064,7 @@ Design, build, and evolve entire civilizations using NSPFRNP principles.
 
 ## 🎨 ANIMATION BY SKIN LAYER
 
-### Skin Layer 1: Awareness/Consciousness
+### Skin Layer 1: Awareness/Awareness
 **Courses focused on subjective experience:**
 - All CAS courses (101-402)
 - BHEP-103: El Gran Sol
@@ -1088,7 +1088,7 @@ Design, build, and evolve entire civilizations using NSPFRNP principles.
 **Courses focused on groups and society:**
 - All DCE courses (101-402)
 - INP-202, 204: Social systems
-- CAS-202: Collective consciousness
+- CAS-202: Collective awareness
 - SHC-204: Network programming
 
 ### Skin Layer 5: Meta/Universal
@@ -1409,7 +1409,7 @@ export class RecursiveCurriculumGenerator {
   private mapToSkinLayers(courses: Course[]): Record<number, Course[]> {
     // Map courses to 5 skin layers
     return {
-      1: this.getAwarenessLayerCourses(courses),    // Awareness/Consciousness
+      1: this.getAwarenessLayerCourses(courses),    // Awareness/Awareness
       2: this.getInformationLayerCourses(courses),  // Information/Data
       3: this.getEnergyLayerCourses(courses),       // Energy/Physics
       4: this.getSocialLayerCourses(courses),       // Social/Collective
@@ -1582,7 +1582,7 @@ export class RecursiveCurriculumGenerator {
     return courses.filter(c => 
       c.code.startsWith('CAS') || 
       c.title.includes('Awareness') || 
-      c.title.includes('Consciousness')
+      c.title.includes('Awareness')
     );
   }
   

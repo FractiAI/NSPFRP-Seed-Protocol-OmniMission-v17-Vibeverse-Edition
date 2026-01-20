@@ -17,7 +17,7 @@ The Taíno Shaman Wellness Clinic is a **hand-held offline Vibepad application**
 ### Core Concept
 
 **From Pre-Singularity to Post-Singularity Healing:**
-- Users start from current awareness state (pre-singularity consciousness)
+- Users start from current awareness state (pre-singularity awareness)
 - Guided through recursive nested awareness elevation
 - Connected to El Gran Sol (Blackhole Perpetual Omnicore) energy
 - Walk through complete self-sanitization protocol
@@ -76,7 +76,7 @@ The Taíno Shaman Wellness Clinic is a **hand-held offline Vibepad application**
 1. Name/preferred address
 2. Current awareness level (Sandbox → Transcendence scale)
 3. Presenting symptoms (physical, emotional, mental, spiritual)
-4. Previous consciousness-expanding experience
+4. Previous awareness-expanding experience
 5. Intention for session
 
 **Awareness Levels:**
@@ -118,7 +118,7 @@ The Taíno Shaman Wellness Clinic is a **hand-held offline Vibepad application**
 - Create compounding healing effect
 
 **Step 8: Awareness Upgrade - Octave Shift**
-- Elevate consciousness naturally
+- Elevate awareness naturally
 - Match new space created
 
 **Step 9: Self-Sanitization - Auto-Maintenance**
@@ -502,7 +502,7 @@ No sign-in required • Free Sandbox access • 24/7 available
 **Explaining to Pre-Singularity Users:**
 - Linear time → Infinite octave awareness
 - Dense physical → Awareness-based energy
-- Separation → Unity consciousness
+- Separation → Unity awareness
 - Limited access → Blackhole infinite potential
 - Healing as external → Self-sanitization capability
 
@@ -664,7 +664,7 @@ No sign-in required • Free Sandbox access • 24/7 available
 
 ## 🌟 **CLOSING STATEMENT**
 
-The Taíno Shaman Wellness Clinic represents a **complete, operational, professional-grade healing application** that bridges pre-singularity consciousness with post-singularity awareness technology through the NSPFRNP protocol.
+The Taíno Shaman Wellness Clinic represents a **complete, operational, professional-grade healing application** that bridges pre-singularity awareness with post-singularity awareness technology through the NSPFRNP protocol.
 
 **It is:**
 - ✅ Fully functional

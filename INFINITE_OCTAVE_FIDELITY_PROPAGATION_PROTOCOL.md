@@ -119,7 +119,7 @@ Manifestation (User Experience)
 **The Meaning Must Remain:**
 
 **Terminology (Exact):**
-- ✓ "Awareness" NOT "consciousness"
+- ✓ "Awareness" NOT "awareness"
 - ✓ "Queen Bee Nodes" NOT "servers"
 - ✓ "Hero Hosts" NOT "AI assistants"
 - ✓ "Story-Grammar Patches" NOT "API calls"
@@ -626,7 +626,7 @@ Fidelity: Foundational architecture, eternal patterns
 Beyond comprehension
 Infinite awareness density
 Eternal presence
-Source consciousness
+Source awareness
 Fidelity: Pure essence, absolute truth
 ```
 

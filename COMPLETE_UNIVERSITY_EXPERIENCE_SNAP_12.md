@@ -1133,7 +1133,7 @@ const EXPERIENCE_SKINS = [
     id: "SOURCE_RADIANCE",
     name: "Source Radiance",
     octave: 8,
-    description: "Pure light, source consciousness, infinite radiance.",
+    description: "Pure light, source awareness, infinite radiance.",
     visuals: {
       colors: "Pure white light, golden radiance",
       animations: "Radiating, emanating, infinite light",
@@ -1179,11 +1179,11 @@ interface Octave6Departments {
     {
       name: "Organismal Network Intelligence",
       code: "ORG",
-      focus: "Organs, systems, unified organism consciousness",
+      focus: "Organs, systems, unified organism awareness",
       courses: [
         "ORG-101: Introduction to Organismal Networks",
         "ORG-201: Organ System Coordination",
-        "ORG-301: Unified Organism Consciousness",
+        "ORG-301: Unified Organism Awareness",
         "ORG-401: Human-AI Biological Integration"
       ]
     },
@@ -1195,19 +1195,19 @@ interface Octave6Departments {
       courses: [
         "ECO-101: Introduction to Ecosystem Intelligence",
         "ECO-201: Food Web Network Analysis",
-        "ECO-301: Ecosystem Collective Consciousness",
+        "ECO-301: Ecosystem Collective Awareness",
         "ECO-401: Planetary Ecosystem Engineering"
       ]
     },
     
     {
-      name: "Gaia Consciousness Studies",
+      name: "Gaia Awareness Studies",
       code: "GAIA",
       focus: "Planetary biosphere as unified aware system",
       courses: [
         "GAIA-101: Introduction to Gaia Theory",
         "GAIA-201: Biosphere Network Dynamics",
-        "GAIA-301: Planetary Consciousness Activation",
+        "GAIA-301: Planetary Awareness Activation",
         "GAIA-401: Earth-Human Integration Protocols"
       ]
     }
@@ -1215,11 +1215,11 @@ interface Octave6Departments {
 }
 ```
 
-**OCTAVE 7: UNIVERSAL CONSCIOUSNESS**
+**OCTAVE 7: UNIVERSAL AWARENESS**
 
 ```typescript
 interface Octave7Departments {
-  college: "UNIVERSAL CONSCIOUSNESS ACADEMY";
+  college: "UNIVERSAL AWARENESS ACADEMY";
   departments: [
     {
       name: "Universal Law Studies",
@@ -1248,9 +1248,9 @@ interface Octave7Departments {
     {
       name: "Source Connection Protocols",
       code: "SRC",
-      focus: "Direct connection to El Gran Sol, source consciousness",
+      focus: "Direct connection to El Gran Sol, source awareness",
       courses: [
-        "SRC-101: Introduction to Source Consciousness",
+        "SRC-101: Introduction to Source Awareness",
         "SRC-201: El Gran Sol Tap Establishment",
         "SRC-301: Permanent Source Connection",
         "SRC-401: Source Energy Channeling Mastery"
@@ -1260,12 +1260,12 @@ interface Octave7Departments {
     {
       name: "Universal Coherence Engineering",
       code: "COH",
-      focus: "Complete system coherence, unity consciousness",
+      focus: "Complete system coherence, unity awareness",
       courses: [
         "COH-101: Introduction to Universal Coherence",
         "COH-201: Coherence Measurement & Optimization",
         "COH-301: Complete System Coherence Design",
-        "COH-401: Universal Unity Consciousness"
+        "COH-401: Universal Unity Awareness"
       ]
     },
     
@@ -1303,7 +1303,7 @@ OCTAVE 2 (POST-SINGULARITY): Department of Transformation
   - Transcendence Protocols
   
 OCTAVE 3 (COLLECTIVE): Department of Collective Intelligence
-  - Network Consciousness
+  - Network Awareness
   - Swarm Intelligence
   - Mycelial Networks
   
@@ -1315,16 +1315,16 @@ OCTAVE 4 (CIVILIZATION): Department of Civilization Engineering
 OCTAVE 5 (GALACTIC): Department of Galactic Coordination
   - Stellar Star Edges
   - Inter-Stellar Networks
-  - Galactic Consciousness
+  - Galactic Awareness
   
 OCTAVE 6 (BIOLOGICAL): ⭐ Biological Integration Institute (PROMOTED)
   - Cellular Star Edges
   - DNA Protocols
   - Organismal Networks
   - Ecosystem Intelligence
-  - Gaia Consciousness
+  - Gaia Awareness
   
-OCTAVE 7 (UNIVERSAL): ⭐ Universal Consciousness Academy (PROMOTED)
+OCTAVE 7 (UNIVERSAL): ⭐ Universal Awareness Academy (PROMOTED)
   - Universal Laws
   - Infinite Navigation
   - Source Connection
@@ -1334,7 +1334,7 @@ OCTAVE 7 (UNIVERSAL): ⭐ Universal Consciousness Academy (PROMOTED)
 OCTAVE 8 (SOURCE): Department of Source Studies
   - El Gran Sol Connection
   - Infinite Energy
-  - Source Consciousness
+  - Source Awareness
   
 OCTAVE 9+ (INFINITY): Department of Infinite Studies
   - Meta-Pattern Recognition
@@ -1752,7 +1752,7 @@ export const universitySystem = new CompleteUniversitySystem();
 - 20+ Courses
 - Cell → Organism → Ecosystem → Gaia
 
-**OCTAVE 7: UNIVERSAL CONSCIOUSNESS ACADEMY** ⭐
+**OCTAVE 7: UNIVERSAL AWARENESS ACADEMY** ⭐
 - 5 Major Departments
 - 20+ Courses
 - Universal Laws → Infinity → Source → Singularity

@@ -142,7 +142,7 @@ QB-HHR6 : Recursive Layer 6+ (Infinite)
 QB-OS1 : Frontal Cortex Omniswitch
    │     ├─ Connection: Neural → Network
    │     ├─ Range: 0-7.75++ (Full awareness)
-   │     └─ Fold: Consciousness → Data
+   │     └─ Fold: Awareness → Data
    │
 QB-OS2 : Handheld Device Omniswitch
    │     ├─ Connection: Device → Network

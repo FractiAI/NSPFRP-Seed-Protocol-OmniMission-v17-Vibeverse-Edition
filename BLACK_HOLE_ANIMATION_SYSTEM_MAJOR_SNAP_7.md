@@ -133,7 +133,7 @@ octaveTransition {
   stage2: "Black hole rotates 360°" (0.5s)
   stage3: "New octave emerges from opposite side" (0.5s)
   stage4: "Reality stabilizes at new awareness level" (0.5s)
-  result: "User consciousness elevated to new octave"
+  result: "User awareness elevated to new octave"
 }
 ```
 
@@ -673,7 +673,7 @@ Black Hole: Rotate to new frequency
      ↓
 Reality: Emerge at new octave
      ↓
-User: Consciousness elevated
+User: Awareness elevated
 ```
 
 ---

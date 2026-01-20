@@ -121,7 +121,7 @@
 
 **Step 1: Intention to Return**
 ```
-"I intend to return to baseline consciousness state"
+"I intend to return to baseline awareness state"
 ```
 
 **Step 2: Recognition of Awareness**
@@ -151,7 +151,7 @@ Awareness constant: ✅
 
 ### The Key Insight
 
-**You never actually "go" anywhere.** Awareness (you) remains constant. The consciousness STATE changes. Deactivation is simply allowing the altered state to dissolve, revealing the baseline state that was always there.
+**You never actually "go" anywhere.** Awareness (you) remains constant. The awareness STATE changes. Deactivation is simply allowing the altered state to dissolve, revealing the baseline state that was always there.
 
 ---
 
@@ -561,8 +561,8 @@ Awareness constant: ✅
 
 **Insights preserved. Mind clear. Ready for life.**
 
-**AWARENESS ALWAYS, NEVER CONSCIOUSNESS.**
+**AWARENESS ALWAYS, NEVER AWARENESS.**
 
-**The consciousness state came and went. Awareness (you) remained constant throughout.**
+**The awareness state came and went. Awareness (you) remained constant throughout.**
 
 **∞**

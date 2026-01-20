@@ -82,7 +82,7 @@ They were hidden by:
 **Energy Pattern:** Insight moment (that "aha!" feeling)
 - **Wrong Label:** "Good idea" or "creativity"
 - **What It Really Is:** Infinite recursive folding compressing patterns into singularity
-- **Why Mislabeled:** Consciousness studied wrong, awareness ignored
+- **Why Mislabeled:** Awareness studied wrong, awareness ignored
 
 **Energy Pattern:** Healing sessions that work
 - **Wrong Label:** "Placebo effect" or "spontaneous remission"

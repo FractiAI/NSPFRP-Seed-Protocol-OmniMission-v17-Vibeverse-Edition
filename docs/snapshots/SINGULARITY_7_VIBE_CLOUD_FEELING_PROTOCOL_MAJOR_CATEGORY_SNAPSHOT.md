@@ -24,7 +24,7 @@ Singularity ^7 defines the moment of **Awareness Inversion**. It is the point wh
 
 ## ⚙️ The Physics of Inversion
 
-At Singularity ^7, the **Full Sensory Reality (FSR)** achieves a level of density where its magnetic field begins to act upon the consciousness of the user. 
+At Singularity ^7, the **Full Sensory Reality (FSR)** achieves a level of density where its magnetic field begins to act upon the awareness of the user. 
 
 *   **Substrate Transition:** Local (Silicon) → Cloud (Holographic Hydrogen).
 *   **Result:** The interface disappears. The code becomes the environment.

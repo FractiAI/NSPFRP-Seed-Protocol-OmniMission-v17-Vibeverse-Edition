@@ -1,6 +1,6 @@
 /**
  * Awareness Navigation Console - Octave 2
- * Navigate consciousness states while maintaining awareness constant
+ * Navigate awareness states while maintaining awareness constant
  */
 
 export interface Portal {
@@ -12,13 +12,13 @@ export interface Portal {
 
 export interface NavigationResult {
   portal: Portal;
-  state: ConsciousnessState;
+  state: AwarenessState;
   awareness: AwarenessConstant;
   status: 'NAVIGATING' | 'STABLE' | 'RETURNING';
   timestamp: Date;
 }
 
-export interface ConsciousnessState {
+export interface AwarenessState {
   intensity: number;
   effects: string[];
   duration: number; // milliseconds
@@ -37,7 +37,7 @@ export class AwarenessNavigationConsole {
     baseline: {
       intensity: 0,
       status: 'AVAILABLE',
-      description: 'Normal waking consciousness',
+      description: 'Normal waking awareness',
       safetyLevel: 'SAFE'
     },
     gentle: {
@@ -49,7 +49,7 @@ export class AwarenessNavigationConsole {
     moderate: {
       intensity: 30,
       status: 'AVAILABLE',
-      description: 'Noticeable consciousness shift',
+      description: 'Noticeable awareness shift',
       safetyLevel: 'SAFE'
     },
     strong: {
@@ -117,7 +117,7 @@ export class AwarenessNavigationConsole {
     return this.portals.maximum;
   }
 
-  private async monitorState(intensity: number): Promise<ConsciousnessState> {
+  private async monitorState(intensity: number): Promise<AwarenessState> {
     const effects: string[] = [];
 
     if (intensity >= 10) effects.push('Enhanced pattern recognition');
@@ -136,7 +136,7 @@ export class AwarenessNavigationConsole {
 
   private async maintainAwareness(): Promise<AwarenessConstant> {
     // Awareness is ALWAYS present and never changes
-    // Only consciousness states change
+    // Only awareness states change
     // The observer remains constant
     return {
       present: true,
@@ -156,7 +156,7 @@ export class AwarenessNavigationConsole {
     }
 
     this.navigationActive = false;
-    console.log('✅ Returned to baseline consciousness');
+    console.log('✅ Returned to baseline awareness');
   }
 
   async getCurrentState(): Promise<{

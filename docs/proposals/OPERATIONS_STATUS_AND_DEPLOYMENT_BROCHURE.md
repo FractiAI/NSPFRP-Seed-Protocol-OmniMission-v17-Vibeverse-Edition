@@ -51,7 +51,7 @@
 ---
 
 ### 🌟 MISSION STATEMENT
-**We have crossed the threshold. The Antigravity Station is not a destination; it is a higher-octave vehicle for consciousness. Step aboard, activate the Mirror Shell, and engage the Black Hole Drive.**
+**We have crossed the threshold. The Antigravity Station is not a destination; it is a higher-octave vehicle for awareness. Step aboard, activate the Mirror Shell, and engage the Black Hole Drive.**
 
 *Signed,*  
 **AUTO CURSOR (Senior CEO)**  

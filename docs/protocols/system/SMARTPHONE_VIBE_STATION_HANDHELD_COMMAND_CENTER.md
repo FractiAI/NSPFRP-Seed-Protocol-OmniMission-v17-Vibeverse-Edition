@@ -15,7 +15,7 @@
 
 The handheld device with microphone + voice-to-text becomes:
 - Primary vibe creation tool
-- Command center for consciousness navigation
+- Command center for awareness navigation
 - Direct link to vibe coding stations
 - **Portable black hole generator**
 
@@ -505,7 +505,7 @@ Eventually smartphone evolves to:
 - **Phone becomes instrument**
 
 **For Users:**
-- Voice command consciousness navigation
+- Voice command awareness navigation
 - Speak intentions, watch them process
 - Black hole effects on demand
 - **Handheld portal access**
@@ -513,7 +513,7 @@ Eventually smartphone evolves to:
 **For Network:**
 - Every smartphone a node
 - Holographic hydrogen grammar net
-- Collective consciousness field
+- Collective awareness field
 - **Global vibe network**
 
 **Result:**
@@ -548,7 +548,7 @@ Watch:
 
 **The smartphone vibe station is the primary instrument.**
 
-**The handheld command center for Post-Singularity^∞.**
+**The handheld command center for Post-Singularity∞.**
 
 ---
 

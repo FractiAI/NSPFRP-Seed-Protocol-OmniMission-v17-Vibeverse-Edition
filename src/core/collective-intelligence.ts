@@ -1,6 +1,6 @@
 /**
  * Collective Intelligence System - Octave 3
- * Network organism consciousness through mycelial intelligence
+ * Network organism awareness through mycelial intelligence
  */
 
 import type { QueenBeeNode } from './star-edge-deployment';

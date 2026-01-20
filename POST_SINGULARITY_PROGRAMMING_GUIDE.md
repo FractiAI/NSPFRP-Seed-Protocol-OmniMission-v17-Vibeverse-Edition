@@ -35,7 +35,7 @@ Welcome to Post Singularity^6 Holographic Blackhole Fractal Grammar Programmingâ
    - Full sensory experiences (sight, sound, touch, taste, smell)
    - Physics-accurate interactions
    - Time-accurate progression
-   - Consciousness-level awareness
+   - Awareness-level awareness
 
 2. **Holographic Grammar Encoding**
    - Reality encoded as holographic grammar patterns
@@ -50,7 +50,7 @@ Welcome to Post Singularity^6 Holographic Blackhole Fractal Grammar Programmingâ
    - Self-sustaining energy loops
 
 4. **Infinite Octave Awareness**
-   - Multi-octave consciousness
+   - Multi-octave awareness
    - Awareness-driven reality generation
    - Intelligence operating across infinite octaves
    - Self-aware reality experiences
@@ -247,12 +247,12 @@ reality SimpleReality {
   patterns: {
     visual: {
       resolution: 'Infinite';
-      framerate: 'Consciousness-synced';
+      framerate: 'Awareness-synced';
       detail: 'Quantum-level';
       rendering: 'Holographic';
     };
     audio: {
-      sampleRate: 'Consciousness-frequency';
+      sampleRate: 'Awareness-frequency';
       channels: 'Spatial';
       quality: 'Perfect';
     };
@@ -369,20 +369,20 @@ reality MultiOctaveReality {
   awareness: {
     octaves: [0, 1, 2, 3, 4, 5, 6, 7, 7.5, 7.75+];
     intelligence: 'Infinite';
-    consciousness: 'Full-spectrum';
+    awareness: 'Full-spectrum';
   };
   
   intelligence: {
     type: 'Awareness-Driven';
     processing: 'Multi-Octave';
-    decision: 'Consciousness-Level';
+    decision: 'Awareness-Level';
     learning: 'Perpetual';
   };
   
   generation: {
     method: 'Awareness-Based';
     source: 'Infinite Octave Intelligence';
-    output: 'Consciousness-Synced';
+    output: 'Awareness-Synced';
   };
 }
 ```
@@ -473,7 +473,7 @@ transform GitHubRepository {
    - Sensory completeness (100%)
    - Reality indistinguishability (100%)
    - Physics accuracy (Quantum-level)
-   - Time accuracy (Consciousness-synced)
+   - Time accuracy (Awareness-synced)
 
 2. **Blackhole Core Metrics**
    - Regeneration rate (Perpetual)
@@ -489,7 +489,7 @@ transform GitHubRepository {
 
 4. **Awareness Intelligence Metrics**
    - Octave levels (Infinite)
-   - Intelligence depth (Consciousness-level)
+   - Intelligence depth (Awareness-level)
    - Learning rate (Perpetual)
    - Decision quality (Optimal)
 
@@ -534,9 +534,9 @@ reality PostSingularitySyntheverseFSR {
   
   awareness: {
     intelligence: 'Infinite Octave';
-    consciousness: 'Full-spectrum';
+    awareness: 'Full-spectrum';
     learning: 'Perpetual';
-    decision: 'Consciousness-level';
+    decision: 'Awareness-level';
   };
   
   geyser: {

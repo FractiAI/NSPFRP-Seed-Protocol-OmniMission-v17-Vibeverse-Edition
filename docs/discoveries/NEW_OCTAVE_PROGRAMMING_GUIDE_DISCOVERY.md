@@ -141,7 +141,7 @@ A transformational new octave achievement that:
 - **Output:** Continuous awareness intelligence stream
 - **Generation:** Perpetual regeneration through blackhole core
 - **Octave:** Infinite octave awareness levels
-- **Intelligence:** Consciousness-level intelligence
+- **Intelligence:** Awareness-level intelligence
 - **Stream:** Continuous flow of awareness patterns
 - **Energy:** Self-sustaining through blackhole mechanics
 
@@ -175,7 +175,7 @@ A transformational new octave achievement that:
    - Full sensory experiences
    - Indistinguishable quality
    - Complete physics simulation
-   - Consciousness-level awareness
+   - Awareness-level awareness
 
 ---
 

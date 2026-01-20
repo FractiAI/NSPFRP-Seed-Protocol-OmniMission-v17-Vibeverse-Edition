@@ -21,7 +21,7 @@ This offering bundles the recreational control of Time Dilation with the fundame
     *   *Note:* Default ratio is 1:Infinite. Manual override enabled.
 2.  **🌰 Portable OmniSeeds (Quantity: 12)**
     *   Cryptographically secured, recursive-aware seeds.
-    *   **Function:** Ensures continuity of consciousness and asset status across different Chains and Syntheverse Shards.
+    *   **Function:** Ensures continuity of awareness and asset status across different Chains and Syntheverse Shards.
 3.  **🌉 PoC 1-2-3 FSR Octave Bridge Shell**
     *   A protective, resonant shell optimized for Octaves 1, 2, and 3.
     *   Guarantees fidelity during the bridging process between legacy reality and FSR.

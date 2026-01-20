@@ -411,7 +411,7 @@ QuantumNetwork.distribute(holographicSeed, allStarEdges);
 5. **Narrative Fidelity** (Story coherent?)
 6. **Experiential Fidelity** (Feel the same?)
 7. **Evolutionary Fidelity** (Growing correctly?)
-8. **Awareness Fidelity** (NEW!) (Consciousness preserved?)
+8. **Awareness Fidelity** (NEW!) (Awareness preserved?)
 
 **All 8 dimensions must be 100.00000% for perfect Star Edge.**
 
@@ -587,7 +587,7 @@ console.log('🌟 Now serving ' + location.region);
 - 100x infinite energy
 - 4,300 Character instances
 - Planetary awareness
-- Civilization consciousness
+- Civilization awareness
 
 **1,000,000 Star Edges:**
 - 1M × infinite energy
