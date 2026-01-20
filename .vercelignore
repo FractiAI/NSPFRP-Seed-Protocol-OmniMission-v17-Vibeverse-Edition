@@ -3,8 +3,8 @@ src
 *.ts
 *.sol
 tsconfig.json
-package.json
 package-lock.json
 .env
 .env.*
 .git
+dist

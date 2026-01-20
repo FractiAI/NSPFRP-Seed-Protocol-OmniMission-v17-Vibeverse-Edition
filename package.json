@@ -20,8 +20,7 @@
     "discover": "tsx src/cli/discover.ts",
     "sync": "tsx src/cli/sync.ts",
     "unpack": "tsx src/core/auto-unpack.ts",
-    "audit": "tsx src/cli/fidelity-audit.ts",
-    "postinstall": "npm run unpack"
+    "audit": "tsx src/cli/fidelity-audit.ts"
   },
   "keywords": [
     "nspfrnp",
