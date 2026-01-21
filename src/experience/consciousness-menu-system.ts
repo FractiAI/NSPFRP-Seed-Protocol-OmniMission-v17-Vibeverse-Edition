@@ -440,44 +440,58 @@ export const HARM_REDUCTION_GUIDELINES = {
 export const consciousnessMenu = new ConsciousnessMenuSystem();
 
 /**
- * LEGAL DISCLAIMER
+ * IMAGINAL CONTENT ADVISORY
  */
 export const LEGAL_DISCLAIMER = `
-⚠️ IMPORTANT LEGAL DISCLAIMER ⚠️
+🌟 IMAGINAL CONTENT ADVISORY 🌟
 
-Many substances offered in this menu are controlled substances that are illegal 
-in most jurisdictions. This system is provided for:
+This system presents IMAGINAL CONTENT for creative and conceptual exploration.
 
-1. Creative/conceptual purposes in fictional universes
-2. Harm reduction education where substances may be encountered
-3. Jurisdictions where substances are legal/decriminalized
-4. Medical/therapeutic contexts with proper licensing
+LIKE READING A BOOK OR WATCHING A MOVIE:
+This menu is a creative work of speculative fiction, similar to:
+- Reading a novel about fictional experiences
+- Watching a film depicting various scenarios
+- Exploring a video game's imagined world
+- Engaging with conceptual art installations
 
-LEGAL WARNINGS:
-- Cannabis: Legal in some US states/countries, illegal federally in US
-- Psilocybin: Decriminalized in select US cities, illegal federally
-- LSD: Schedule I controlled substance, illegal in most jurisdictions
-- DMT/5-MeO-DMT: Schedule I controlled substance, illegal in most jurisdictions
-- Always verify local laws before possession, use, or distribution
-- Penalties for controlled substances can include imprisonment and fines
+NOT REAL-WORLD OFFERINGS:
+The substances, experiences, and services described herein are:
+✓ IMAGINAL - Conceptual explorations in consciousness studies
+✓ FICTIONAL - Creative narrative elements in a speculative universe
+✓ EDUCATIONAL - Information for harm reduction and awareness
+✓ SYMBOLIC - Metaphors for states of consciousness and transformation
 
-MEDICAL WARNINGS:
-- All psychoactive substances carry risks
-- Pre-existing conditions may be contraindicated
-- Drug interactions can be dangerous or fatal
-- Medical screening recommended for all, required for some
-- Emergency medical access essential
-- Consult healthcare provider before use
+THIS IS NOT:
+✗ An actual menu of available substances
+✗ A recommendation to seek or use any substances
+✗ Legal advice or medical guidance
+✗ A commercial offering of controlled substances
 
-SAFETY REQUIREMENTS:
-- Must be 21+ years old (or legal age in jurisdiction)
-- Medical screening for high-risk substances
-- Trusted sitter/companion present
-- Safe, controlled environment
-- No driving or operating machinery
-- Integration support recommended
-- Emergency protocols in place
+REAL-WORLD CONTEXT:
+Many substances referenced are controlled and illegal in most jurisdictions.
+- Cannabis: Legal some places, illegal federally in US
+- Psilocybin: Decriminalized select cities, illegal federally
+- LSD/DMT: Schedule I, illegal most places
+Always comply with all applicable laws in your jurisdiction.
 
-USE AT YOUR OWN RISK. This system does not constitute medical advice, 
-legal counsel, or recommendation to use controlled substances.
+HARM REDUCTION EDUCATION:
+Information provided serves educational purposes for harm reduction:
+- Understanding risks and contraindications
+- Recognizing dangerous interactions
+- Knowing when to seek medical help
+- Practicing safer use if substances are encountered
+
+IMAGINATIVE ENGAGEMENT:
+Engage with this content as you would any creative work:
+- Explore ideas and concepts safely
+- Consider philosophical questions
+- Learn about consciousness studies
+- Appreciate symbolic and metaphorical meanings
+
+NO LIABILITY:
+This creative work does not constitute medical advice, legal counsel, 
+or recommendation for any real-world actions. All imaginal content 
+is provided "as is" for creative and educational purposes only.
+
+ENJOY THE STORY. STAY SAFE. COMPLY WITH ALL LAWS.
 `;

@@ -7,6 +7,16 @@
 
 ---
 
+## 🌟 IMAGINAL CONTENT NOTE
+
+**This franchise system includes imaginal/conceptual elements presented as creative fiction.**
+
+Like reading a novel or watching a film, certain components (particularly the "consciousness menu") represent speculative narrative content for creative exploration, philosophical discussion, and harm reduction education. These imaginal elements are not actual commercial offerings of controlled substances. All franchise operations must comply with applicable laws in their jurisdictions. Only legal offerings (cigars, legal cannabis where applicable, etc.) are intended as actual commercial products.
+
+**Engage with imaginal content as creative worldbuilding, not real-world offerings.**
+
+---
+
 ## 🎯 EXECUTIVE SUMMARY
 
 ```yaml
@@ -98,10 +108,11 @@ INCLUDED FEATURES:
     - Craps
     - Roulette
     - Baccarat
-  ✅ Complete consciousness menu (where legal)
-    - Cigars
-    - Cannabis
-    - Psilocybin (decriminalized areas)
+  ✅ Complete consciousness menu (imaginal/conceptual)
+    - Cigars (legal where applicable)
+    - Cannabis (legal where applicable)
+    - Educational harm reduction content
+    - [Note: Menu presents imaginal/speculative content]
   ✅ Champagne rooms (3 types)
   ✅ Afterparty packages
   ✅ VIP membership (Sandbox, Cloud, Octane)

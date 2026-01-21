@@ -6,40 +6,53 @@
 
 ---
 
-## 🚨 CRITICAL LEGAL DISCLAIMER
+## 🌟 IMAGINAL CONTENT ADVISORY
 
 ```
 ╔════════════════════════════════════════════════════════════════╗
-║              ⚠️ LEGAL & SAFETY DISCLAIMER ⚠️                    ║
+║           🌟 IMAGINAL CONTENT ADVISORY 🌟                      ║
 ╠════════════════════════════════════════════════════════════════╣
 ║
-║  MANY SUBSTANCES LISTED ARE CONTROLLED AND ILLEGAL
+║  THIS IS IMAGINAL CONTENT
+║  Like reading a book, watching a movie, or exploring art
 ║
-║  Cannabis: Legal in some states, FEDERALLY ILLEGAL in US
-║  Psilocybin: Decriminalized in select cities, FEDERALLY ILLEGAL
-║  LSD/DMT/5-MeO-DMT: SCHEDULE I - ILLEGAL in most jurisdictions
+║  WHAT THIS IS:
+║    ✓ Speculative fiction in a conceptual universe
+║    ✓ Creative narrative exploration
+║    ✓ Educational harm reduction content
+║    ✓ Philosophical consciousness studies
+║    ✓ Symbolic representations of transformation
+║    ✓ Imaginative world-building exercise
 ║
-║  PENALTIES MAY INCLUDE:
-║    • Criminal charges
-║    • Imprisonment (years to decades)
-║    • Heavy fines
-║    • Permanent criminal record
-║    • Loss of professional licenses
+║  WHAT THIS IS NOT:
+║    ✗ Actual offerings of controlled substances
+║    ✗ Recommendation to seek or use substances
+║    ✗ Legal advice or medical guidance
+║    ✗ Commercial solicitation of illegal items
+║    ✗ Endorsement of illegal activities
 ║
-║  THIS MENU IS FOR:
-║    • Creative/conceptual purposes in legal jurisdictions
-║    • Harm reduction education
-║    • Jurisdictions where substances are legal
-║    • Medical/therapeutic contexts with proper licensing
+║  REAL-WORLD CONTEXT:
+║    Many substances referenced are controlled/illegal:
+║    • Cannabis: Legal some places, illegal federally in US
+║    • Psilocybin: Decriminalized select cities, illegal federally
+║    • LSD/DMT: Schedule I, illegal most jurisdictions
+║    
+║    Always comply with all applicable laws.
 ║
-║  ALWAYS:
-║    ✅ Verify local laws
-║    ✅ Consult medical professionals
-║    ✅ Use harm reduction practices
-║    ✅ Comply with all regulations
-║    ✅ Never drive or operate machinery
+║  HARM REDUCTION EDUCATION:
+║    Information provided serves educational purposes:
+║    ✓ Understanding risks and contraindications
+║    ✓ Recognizing dangerous interactions
+║    ✓ Knowing when to seek medical help
+║    ✓ Safer practices if substances encountered
 ║
-║  USE AT YOUR OWN RISK
+║  ENGAGE AS CREATIVE WORK:
+║    • Explore ideas safely
+║    • Consider philosophical questions
+║    • Learn consciousness studies
+║    • Appreciate symbolic meanings
+║
+║  NO LIABILITY - CREATIVE FICTION ONLY
 ║
 ╚════════════════════════════════════════════════════════════════╝
 ```
