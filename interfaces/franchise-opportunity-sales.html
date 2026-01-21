@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club + Cabaret Franchise Opportunity - Own Your Own Experience Empire</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2a 100%);
+            color: #ffffff;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(147, 112, 219, 0.2) 100%);
+            padding: 100px 20px;
+            text-align: center;
+            border-bottom: 3px solid #D4AF37;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            background: linear-gradient(135deg, #D4AF37 0%, #FFD700 50%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .hero .tagline {
+            font-size: 1.8em;
+            color: #9370DB;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .hero .cta-primary {
+            display: inline-block;
+            padding: 20px 60px;
+            background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+            color: #000;
+            font-size: 1.5em;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .hero .cta-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.6);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: -50px auto 60px;
+            padding: 0 20px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 2px solid #D4AF37;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .stat-card .number {
+            font-size: 3em;
+            color: #FFD700;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stat-card .label {
+            color: #cccccc;
+            font-size: 1.1em;
+        }
+
+        /* Packages Section */
+        .packages-section {
+            max-width: 1400px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 3em;
+            color: #D4AF37;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .package-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 3px solid rgba(212, 175, 55, 0.3);
+            border-radius: 30px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            border-color: #D4AF37;
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.4);
+        }
+
+        .package-card.featured {
+            border-color: #FFD700;
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+        }
+
+        .package-card .badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .package-card h3 {
+            font-size: 2.2em;
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+
+        .package-card .price {
+            font-size: 2.5em;
+            color: #D4AF37;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .package-card .price-detail {
+            color: #999;
+            margin-bottom: 30px;
+        }
+
+        .package-card .features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .package-card .features li {
+            color: #cccccc;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            line-height: 1.6;
+        }
+
+        .package-card .features li::before {
+            content: '✓ ';
+            color: #00ff00;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .package-card .roi-badge {
+            background: rgba(0, 255, 0, 0.2);
+            border: 2px solid #00ff00;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .package-card .roi-badge .label {
+            color: #00ff00;
+            font-size: 0.9em;
+        }
+
+        .package-card .roi-badge .value {
+            color: #00ff00;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .package-card .select-button {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #9370DB 0%, #D4AF37 100%);
+            color: #ffffff;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .package-card .select-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(147, 112, 219, 0.5);
+        }
+
+        /* What You Get Section */
+        .whats-included {
+            max-width: 1400px;
+            margin: 80px auto;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 30px;
+        }
+
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .included-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(147, 112, 219, 0.5);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .included-item .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .included-item h4 {
+            color: #D4AF37;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .included-item p {
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
+        /* Revenue Calculator */
+        .revenue-calculator {
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, rgba(147, 112, 219, 0.2) 0%, rgba(212, 175, 55, 0.2) 100%);
+            border: 3px solid #D4AF37;
+            border-radius: 30px;
+        }
+
+        .calculator-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            color: #D4AF37;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(212, 175, 55, 0.5);
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 1.1em;
+        }
+
+        .calculator-results {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .result-row .label {
+            color: #cccccc;
+            font-size: 1.2em;
+        }
+
+        .result-row .value {
+            color: #FFD700;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .result-row.total {
+            border-bottom: none;
+            border-top: 3px solid #D4AF37;
+            margin-top: 20px;
+        }
+
+        .result-row.total .value {
+            color: #00ff00;
+            font-size: 2em;
+        }
+
+        /* Application Form Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 40px 20px;
+        }
+
+        .modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a0a1a 0%, #0a0a0a 100%);
+            border: 3px solid #D4AF37;
+            border-radius: 30px;
+            padding: 50px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .modal-content h2 {
+            color: #D4AF37;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            grid-column: span 1;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            display: block;
+            color: #D4AF37;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 1em;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, #00ff00 0%, #00cc00 100%);
+            color: #000;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.5em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(0, 255, 0, 0.5);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2.5em;
+            color: #D4AF37;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <div class="hero">
+        <h1>Own Your Experience Empire</h1>
+        <div class="tagline">Club + Cabaret + Wine Cave Franchise Opportunity</div>
+        <p style="font-size: 1.3em; color: #cccccc; max-width: 900px; margin: 20px auto;">
+            Deploy the complete NSPFRNP experience on any property or node you own. 
+            Turnkey system with sports betting, casino, consciousness menu, VIP experiences, and revenue sharing.
+        </p>
+        <a href="#" class="cta-primary" onclick="openApplication(); return false;">Apply Now</a>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stat-card">
+            <div class="number">35-65%</div>
+            <div class="label">Annual ROI</div>
+        </div>
+        <div class="stat-card">
+            <div class="number">60-70%</div>
+            <div class="label">Your Revenue Share</div>
+        </div>
+        <div class="stat-card">
+            <div class="number">4-32</div>
+            <div class="label">Weeks to Deploy</div>
+        </div>
+        <div class="stat-card">
+            <div class="number">100%</div>
+            <div class="label">Turnkey Solution</div>
+        </div>
+    </div>
+
+    <!-- Franchise Packages -->
+    <div class="packages-section">
+        <h2 class="section-title">Choose Your Franchise Package</h2>
+        
+        <div class="packages-grid">
+            <!-- Club Only -->
+            <div class="package-card">
+                <h3>Club Experience</h3>
+                <div class="price">150K SYNTH</div>
+                <div class="price-detail">+ 50K franchise fee</div>
+                
+                <div class="roi-badge">
+                    <div class="label">Projected Annual ROI</div>
+                    <div class="value">35%</div>
+                </div>
+
+                <ul class="features">
+                    <li>Main floor club design</li>
+                    <li>Sports betting (8 AI agents)</li>
+                    <li>Basic casino (2 games)</li>
+                    <li>Cigars & cannabis menu</li>
+                    <li>2-tier membership</li>
+                    <li>70% revenue share</li>
+                    <li>4-6 week deployment</li>
+                    <li>Assisted support</li>
+                </ul>
+
+                <button class="select-button" onclick="selectPackage('club-only')">Select Package</button>
+            </div>
+
+            <!-- Club + Cabaret -->
+            <div class="package-card featured">
+                <div class="badge">MOST POPULAR</div>
+                <h3>Club + Cabaret Premium</h3>
+                <div class="price">450K SYNTH</div>
+                <div class="price-detail">+ 100K franchise fee</div>
+                
+                <div class="roi-badge">
+                    <div class="label">Projected Annual ROI</div>
+                    <div class="value">45%</div>
+                </div>
+
+                <ul class="features">
+                    <li>Club + Cabaret lounge</li>
+                    <li>Full sports betting system</li>
+                    <li>Complete casino (5 games)</li>
+                    <li>Full consciousness menu</li>
+                    <li>Champagne rooms</li>
+                    <li>Companion hostess system</li>
+                    <li>65% revenue share</li>
+                    <li>8-12 week deployment</li>
+                    <li>Full marketing suite</li>
+                </ul>
+
+                <button class="select-button" onclick="selectPackage('club-cabaret')">Select Package</button>
+            </div>
+
+            <!-- Full Wine Cave -->
+            <div class="package-card">
+                <div class="badge">ULTRA-PREMIUM</div>
+                <h3>Full Wine Cave</h3>
+                <div class="price">1.2M SYNTH</div>
+                <div class="price-detail">+ 250K franchise fee</div>
+                
+                <div class="roi-badge">
+                    <div class="label">Projected Annual ROI</div>
+                    <div class="value">55%</div>
+                </div>
+
+                <ul class="features">
+                    <li>Club + Cabaret + Wine Cave</li>
+                    <li>Exclusive backdoor access</li>
+                    <li>Ultimate Suite (ultra-VIP)</li>
+                    <li>Whale betting systems</li>
+                    <li>High-roller casino</li>
+                    <li>Rare consciousness offerings</li>
+                    <li>Fetish suites</li>
+                    <li>5-tier membership</li>
+                    <li>60% revenue share</li>
+                    <li>White-glove support</li>
+                </ul>
+
+                <button class="select-button" onclick="selectPackage('full-wine-cave')">Select Package</button>
+            </div>
+
+            <!-- Ultimate Master -->
+            <div class="package-card">
+                <div class="badge">MASTER FRANCHISE</div>
+                <h3>Ultimate Master</h3>
+                <div class="price">3M SYNTH</div>
+                <div class="price-detail">+ 500K franchise fee</div>
+                
+                <div class="roi-badge">
+                    <div class="label">Projected Annual ROI</div>
+                    <div class="value">65%</div>
+                </div>
+
+                <ul class="features">
+                    <li>Everything in Full Wine Cave</li>
+                    <li>Territory exclusivity</li>
+                    <li>Sub-franchise rights</li>
+                    <li>Revenue from sub-franchises</li>
+                    <li>Custom design options</li>
+                    <li>Board representation</li>
+                    <li>Dedicated support team</li>
+                    <li>Priority tech updates</li>
+                    <li>55% direct revenue share</li>
+                    <li>Master training program</li>
+                </ul>
+
+                <button class="select-button" onclick="selectPackage('ultimate-package')">Select Package</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- What's Included -->
+    <div class="whats-included">
+        <h2 class="section-title">Complete Turnkey System</h2>
+        
+        <div class="included-grid">
+            <div class="included-item">
+                <div class="icon">💻</div>
+                <h4>Complete Technology</h4>
+                <p>All interfaces, backend systems, databases, and integrations. Deploy on any property or node.</p>
+            </div>
+
+            <div class="included-item">
+                <div class="icon">🎨</div>
+                <h4>Full Branding</h4>
+                <p>Logos, design guidelines, signage templates, interior design guide, and brand standards.</p>
+            </div>
+
+            <div class="included-item">
+                <div class="icon">📚</div>
+                <h4>Training & Support</h4>
+                <p>Comprehensive training materials, operations manual, staff training, and ongoing support.</p>
+            </div>
+
+            <div class="included-item">
+                <div class="icon">📈</div>
+                <h4>Marketing Suite</h4>
+                <p>Sales materials, social media kits, launch campaigns, and promotional assets.</p>
+            </div>
+
+            <div class="included-item">
+                <div class="icon">⚖️</div>
+                <h4>Legal Framework</h4>
+                <p>Franchise agreements, compliance guides, liability waivers, and territory rights.</p>
+            </div>
+
+            <div class="included-item">
+                <div class="icon">💰</div>
+                <h4>Revenue Systems</h4>
+                <p>Automated revenue sharing, payment processing, reporting dashboards, and analytics.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Revenue Calculator -->
+    <div class="revenue-calculator">
+        <h2 class="section-title">Revenue Calculator</h2>
+        
+        <div class="calculator-inputs">
+            <div class="input-group">
+                <label>Monthly Betting Volume (SYNTH)</label>
+                <input type="number" id="bettingVolume" value="500000" oninput="calculateRevenue()">
+            </div>
+            
+            <div class="input-group">
+                <label>Monthly Casino Play (SYNTH)</label>
+                <input type="number" id="casinoVolume" value="300000" oninput="calculateRevenue()">
+            </div>
+            
+            <div class="input-group">
+                <label>Monthly Memberships</label>
+                <input type="number" id="memberships" value="200" oninput="calculateRevenue()">
+            </div>
+            
+            <div class="input-group">
+                <label>Avg Membership Fee (SYNTH)</label>
+                <input type="number" id="membershipFee" value="500" oninput="calculateRevenue()">
+            </div>
+        </div>
+
+        <div class="calculator-results">
+            <div class="result-row">
+                <span class="label">Gross Monthly Revenue:</span>
+                <span class="value" id="grossRevenue">0 SYNTH</span>
+            </div>
+            <div class="result-row">
+                <span class="label">Your Share (65%):</span>
+                <span class="value" id="yourShare">0 SYNTH</span>
+            </div>
+            <div class="result-row">
+                <span class="label">Estimated Operating Costs:</span>
+                <span class="value" id="costs">0 SYNTH</span>
+            </div>
+            <div class="result-row total">
+                <span class="label">Your Monthly Profit:</span>
+                <span class="value" id="profit">0 SYNTH</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Modal -->
+    <div id="applicationModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeApplication()">×</button>
+            <h2>Franchise Application</h2>
+            
+            <form id="franchiseForm" onsubmit="submitApplication(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>First Name *</label>
+                        <input type="text" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Last Name *</label>
+                        <input type="text" required>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label>Email *</label>
+                        <input type="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Package Interest *</label>
+                        <select id="packageSelect" required>
+                            <option value="">Select Package</option>
+                            <option value="club-only">Club Experience</option>
+                            <option value="club-cabaret">Club + Cabaret Premium</option>
+                            <option value="full-wine-cave">Full Wine Cave</option>
+                            <option value="ultimate-package">Ultimate Master</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label>Property Type *</label>
+                        <select required>
+                            <option value="">Select Type</option>
+                            <option value="physical">Physical Property</option>
+                            <option value="virtual">Virtual Node</option>
+                            <option value="hybrid">Hybrid (Both)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>City *</label>
+                        <input type="text" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Country *</label>
+                        <input type="text" required>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label>Investment Capital Available (SYNTH)</label>
+                        <input type="number">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label>Tell us about your business experience</label>
+                        <textarea placeholder="Previous business ownership, management experience, relevant skills..."></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label>Why do you want to own this franchise?</label>
+                        <textarea placeholder="Your vision, goals, and what excites you about this opportunity..."></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-button">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let selectedPackage = null;
+
+        function selectPackage(packageId) {
+            selectedPackage = packageId;
+            document.getElementById('packageSelect').value = packageId;
+            openApplication();
+        }
+
+        function openApplication() {
+            document.getElementById('applicationModal').classList.add('active');
+        }
+
+        function closeApplication() {
+            document.getElementById('applicationModal').classList.remove('active');
+        }
+
+        function calculateRevenue() {
+            const bettingVolume = parseFloat(document.getElementById('bettingVolume').value) || 0;
+            const casinoVolume = parseFloat(document.getElementById('casinoVolume').value) || 0;
+            const memberships = parseFloat(document.getElementById('memberships').value) || 0;
+            const membershipFee = parseFloat(document.getElementById('membershipFee').value) || 0;
+
+            // Calculate revenues (house edge percentages)
+            const bettingRev = bettingVolume * 0.025; // 2.5% house edge
+            const casinoRev = casinoVolume * 0.03; // 3% average house edge
+            const membershipRev = memberships * membershipFee;
+
+            const grossRevenue = bettingRev + casinoRev + membershipRev;
+            const yourShare = grossRevenue * 0.65; // 65% franchise share
+            const costs = grossRevenue * 0.30; // Estimated 30% operating costs
+            const profit = yourShare - costs;
+
+            document.getElementById('grossRevenue').textContent = grossRevenue.toLocaleString() + ' SYNTH';
+            document.getElementById('yourShare').textContent = yourShare.toLocaleString() + ' SYNTH';
+            document.getElementById('costs').textContent = costs.toLocaleString() + ' SYNTH';
+            document.getElementById('profit').textContent = profit.toLocaleString() + ' SYNTH';
+        }
+
+        function submitApplication(event) {
+            event.preventDefault();
+            alert('🎉 Application Submitted!\n\nThank you for your interest in our franchise opportunity.\n\nOur franchise development team will review your application and contact you within 48 hours.\n\nNext Steps:\n• Financial review\n• Territory availability check\n• Discovery call\n• Site visit (if applicable)\n• Franchise agreement\n• Training & deployment\n\nWelcome to the family!');
+            closeApplication();
+        }
+
+        // Initialize calculator
+        calculateRevenue();
+
+        // Close modal on outside click
+        document.getElementById('applicationModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeApplication();
+            }
+        });
+    </script>
+</body>
+</html>
