@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluid Story·World·Game Platform - Attention↔Experience Streaming</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: #000;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        /* Attention Field (User Consciousness Visualization) */
+        .attention-field {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at var(--attention-x, 50%) var(--attention-y, 50%), 
+                rgba(147, 112, 219, 0.3) 0%, 
+                rgba(10, 10, 10, 0.9) 50%,
+                rgba(0, 0, 0, 1) 100%);
+            pointer-events: none;
+            transition: background 0.3s ease;
+            z-index: 1;
+        }
+
+        /* Experience Emitter Particles */
+        .emitter-particle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: var(--particle-color, #9370DB);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 2;
+            animation: particle-float 3s ease-in-out infinite;
+            box-shadow: 0 0 10px var(--particle-color, #9370DB);
+        }
+
+        @keyframes particle-float {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+            50% { transform: translateY(-20px) scale(1.5); opacity: 1; }
+        }
+
+        /* Main Container */
+        .container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            padding: 20px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(20px);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            background: linear-gradient(135deg, #9370DB 0%, #D4AF37 50%, #9370DB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header .subtitle {
+            color: #9370DB;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            position: relative;
+        }
+
+        /* Story Canvas (Experience Stream) */
+        .story-canvas {
+            flex: 2;
+            padding: 40px;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .story-canvas::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .story-canvas::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .story-canvas::-webkit-scrollbar-thumb {
+            background: rgba(147, 112, 219, 0.5);
+            border-radius: 4px;
+        }
+
+        .scene {
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid rgba(147, 112, 219, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .scene:hover {
+            border-color: #9370DB;
+            box-shadow: 0 10px 40px rgba(147, 112, 219, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .scene.active {
+            border-color: #D4AF37;
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.4);
+        }
+
+        .scene h2 {
+            color: #D4AF37;
+            margin-bottom: 20px;
+        }
+
+        .scene .location {
+            color: #9370DB;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .scene .content {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .scene .possibilities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .possibility {
+            padding: 10px 20px;
+            background: rgba(147, 112, 219, 0.2);
+            border: 2px solid #9370DB;
+            border-radius: 15px;
+            color: #9370DB;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .possibility:hover {
+            background: rgba(147, 112, 219, 0.4);
+            border-color: #D4AF37;
+            color: #D4AF37;
+            transform: translateY(-2px);
+        }
+
+        /* Flow Meter Sidebar */
+        .flow-meter {
+            width: 300px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            padding: 30px;
+            border-left: 2px solid rgba(147, 112, 219, 0.3);
+        }
+
+        .flow-meter h3 {
+            color: #D4AF37;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .metric {
+            margin-bottom: 25px;
+        }
+
+        .metric-label {
+            color: #9370DB;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+
+        .metric-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .metric-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #9370DB 0%, #D4AF37 100%);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .metric-value {
+            color: #fff;
+            font-size: 0.85em;
+            margin-top: 5px;
+        }
+
+        /* Attention State Indicator */
+        .attention-state {
+            background: rgba(147, 112, 219, 0.2);
+            border: 2px solid #9370DB;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .attention-state .state-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .attention-state .state-label {
+            color: #D4AF37;
+            font-weight: bold;
+        }
+
+        /* Mirror Pairs Visualization */
+        .mirror-pairs {
+            margin-top: 30px;
+        }
+
+        .mirror-pairs h4 {
+            color: #9370DB;
+            margin-bottom: 15px;
+        }
+
+        .pair {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+
+        .pair .pair-type {
+            color: #D4AF37;
+            font-size: 0.85em;
+            margin-bottom: 5px;
+        }
+
+        .pair .flow-state {
+            color: #9370DB;
+            font-size: 0.9em;
+        }
+
+        .pair .flow-state.unified {
+            color: #00ff00;
+        }
+
+        .pair .flow-state.merging {
+            color: #FFD700;
+        }
+
+        .pair .flow-state.flowing {
+            color: #9370DB;
+        }
+
+        /* Narrative Mode Selector */
+        .mode-selector {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(20px);
+            border: 2px solid #9370DB;
+            border-radius: 50px;
+            padding: 15px 30px;
+            display: flex;
+            gap: 15px;
+            z-index: 100;
+        }
+
+        .mode-button {
+            padding: 10px 25px;
+            background: rgba(147, 112, 219, 0.2);
+            border: 2px solid #9370DB;
+            border-radius: 25px;
+            color: #9370DB;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .mode-button:hover {
+            background: rgba(147, 112, 219, 0.4);
+            border-color: #D4AF37;
+            color: #D4AF37;
+        }
+
+        .mode-button.active {
+            background: linear-gradient(135deg, #9370DB 0%, #D4AF37 100%);
+            border-color: #D4AF37;
+            color: #fff;
+        }
+
+        /* Resonance Wave (Visual Feedback) */
+        .resonance-wave {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(147, 112, 219, 0.3) 0%, transparent 100%);
+            animation: wave-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes wave-pulse {
+            0%, 100% { opacity: 0.3; transform: scaleY(1); }
+            50% { opacity: 0.6; transform: scaleY(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Attention Field (follows mouse/focus) -->
+    <div class="attention-field" id="attentionField"></div>
+
+    <!-- Experience Emitter Particles -->
+    <div id="particleContainer"></div>
+
+    <!-- Resonance Wave -->
+    <div class="resonance-wave">
+        <div class="wave"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Fluid Story·World·Game Platform</h1>
+            <div class="subtitle">Attention ↔ Experience | Emitter:Mirror Pair | Superintelligently Natural</div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Story Canvas (Experience Stream) -->
+            <div class="story-canvas" id="storyCanvas">
+                <!-- Scenes will be dynamically generated -->
+            </div>
+
+            <!-- Flow Meter Sidebar -->
+            <div class="flow-meter">
+                <h3>🌊 Flow State</h3>
+
+                <div class="attention-state" id="attentionState">
+                    <div class="state-icon">👁️</div>
+                    <div class="state-label">Present</div>
+                </div>
+
+                <div class="metric">
+                    <div class="metric-label">Resonance</div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" id="resonanceFill" style="width: 0%"></div>
+                    </div>
+                    <div class="metric-value" id="resonanceValue">0%</div>
+                </div>
+
+                <div class="metric">
+                    <div class="metric-label">Coherence</div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" id="coherenceFill" style="width: 0%"></div>
+                    </div>
+                    <div class="metric-value" id="coherenceValue">0%</div>
+                </div>
+
+                <div class="metric">
+                    <div class="metric-label">Immersion</div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" id="immersionFill" style="width: 0%"></div>
+                    </div>
+                    <div class="metric-value" id="immersionValue">0%</div>
+                </div>
+
+                <div class="metric">
+                    <div class="metric-label">Momentum</div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" id="momentumFill" style="width: 50%"></div>
+                    </div>
+                    <div class="metric-value" id="momentumValue">0%</div>
+                </div>
+
+                <div class="mirror-pairs">
+                    <h4>🪞 Active Mirror Pairs</h4>
+                    <div id="mirrorPairsContainer">
+                        <!-- Pairs will be added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Narrative Mode Selector -->
+        <div class="mode-selector">
+            <button class="mode-button" onclick="setMode('linear')">Linear</button>
+            <button class="mode-button" onclick="setMode('branching')">Branching</button>
+            <button class="mode-button active" onclick="setMode('fluid')">Fluid</button>
+            <button class="mode-button" onclick="setMode('emergent')">Emergent</button>
+            <button class="mode-button" onclick="setMode('living')">Living</button>
+        </div>
+    </div>
+
+    <script>
+        // State
+        let currentMode = 'fluid';
+        let attentionX = 50;
+        let attentionY = 50;
+        let attentionState = 'present';
+        let flowMetrics = {
+            resonance: 0,
+            coherence: 0,
+            immersion: 0,
+            momentum: 0
+        };
+        let mirrorPairs = [];
+
+        // Initialize
+        initializePlatform();
+
+        function initializePlatform() {
+            renderInitialScene();
+            startAttentionTracking();
+            startExperienceEmission();
+            startMetricsUpdate();
+            createParticles();
+        }
+
+        // Track user attention (mouse movement)
+        function startAttentionTracking() {
+            document.addEventListener('mousemove', (e) => {
+                attentionX = (e.clientX / window.innerWidth) * 100;
+                attentionY = (e.clientY / window.innerHeight) * 100;
+                
+                updateAttentionField();
+                calculateResonance();
+            });
+
+            // Track scroll = attention depth
+            document.getElementById('storyCanvas').addEventListener('scroll', () => {
+                attentionState = 'absorbed';
+                updateAttentionState();
+                setTimeout(() => {
+                    attentionState = 'present';
+                    updateAttentionState();
+                }, 2000);
+            });
+        }
+
+        // Update attention field visual
+        function updateAttentionField() {
+            const field = document.getElementById('attentionField');
+            field.style.setProperty('--attention-x', attentionX + '%');
+            field.style.setProperty('--attention-y', attentionY + '%');
+        }
+
+        // Update attention state display
+        function updateAttentionState() {
+            const stateIcons = {
+                'focused': '🎯',
+                'absorbed': '🌀',
+                'present': '👁️',
+                'diffuse': '✨',
+                'wandering': '🌊'
+            };
+            
+            const stateLabels = {
+                'focused': 'Focused',
+                'absorbed': 'Absorbed',
+                'present': 'Present',
+                'diffuse': 'Diffuse',
+                'wandering': 'Wandering'
+            };
+
+            document.querySelector('.state-icon').textContent = stateIcons[attentionState];
+            document.querySelector('.state-label').textContent = stateLabels[attentionState];
+        }
+
+        // Emit experiences (auto-generate content)
+        function startExperienceEmission() {
+            setInterval(() => {
+                if (Math.random() > 0.7) {
+                    emitExperience();
+                }
+            }, 3000);
+        }
+
+        function emitExperience() {
+            // Create a new emitter:mirror pair
+            const pair = {
+                type: ['story', 'world', 'game'][Math.floor(Math.random() * 3)],
+                flowState: ['flowing', 'merging', 'unified'][Math.floor(Math.random() * 3)],
+                resonance: Math.random() * 0.5 + 0.5
+            };
+            
+            mirrorPairs.push(pair);
+            if (mirrorPairs.length > 5) mirrorPairs.shift();
+            
+            updateMirrorPairs();
+            
+            // Boost metrics temporarily
+            flowMetrics.resonance = Math.min(1, flowMetrics.resonance + 0.1);
+            flowMetrics.coherence = Math.min(1, flowMetrics.coherence + 0.1);
+        }
+
+        // Calculate resonance based on attention
+        function calculateResonance() {
+            // Simulate resonance calculation
+            const centerDistance = Math.sqrt(
+                Math.pow(attentionX - 50, 2) + 
+                Math.pow(attentionY - 50, 2)
+            ) / 70; // Normalize to 0-1
+            
+            flowMetrics.resonance = Math.max(0, 1 - centerDistance + Math.random() * 0.2);
+            flowMetrics.coherence = flowMetrics.resonance * 0.9 + Math.random() * 0.1;
+            flowMetrics.immersion = (flowMetrics.resonance + flowMetrics.coherence) / 2;
+            flowMetrics.momentum = Math.sin(Date.now() / 5000) * 0.5;
+        }
+
+        // Update metrics display
+        function startMetricsUpdate() {
+            setInterval(() => {
+                // Natural decay
+                flowMetrics.resonance *= 0.95;
+                flowMetrics.coherence *= 0.97;
+                flowMetrics.immersion *= 0.96;
+                
+                updateMetricsDisplay();
+            }, 100);
+        }
+
+        function updateMetricsDisplay() {
+            document.getElementById('resonanceFill').style.width = (flowMetrics.resonance * 100) + '%';
+            document.getElementById('resonanceValue').textContent = Math.round(flowMetrics.resonance * 100) + '%';
+            
+            document.getElementById('coherenceFill').style.width = (flowMetrics.coherence * 100) + '%';
+            document.getElementById('coherenceValue').textContent = Math.round(flowMetrics.coherence * 100) + '%';
+            
+            document.getElementById('immersionFill').style.width = (flowMetrics.immersion * 100) + '%';
+            document.getElementById('immersionValue').textContent = Math.round(flowMetrics.immersion * 100) + '%';
+            
+            const momentumPercent = (flowMetrics.momentum + 1) / 2;
+            document.getElementById('momentumFill').style.width = (momentumPercent * 100) + '%';
+            document.getElementById('momentumValue').textContent = (flowMetrics.momentum > 0 ? '+' : '') + Math.round(flowMetrics.momentum * 100) + '%';
+        }
+
+        // Update mirror pairs display
+        function updateMirrorPairs() {
+            const container = document.getElementById('mirrorPairsContainer');
+            container.innerHTML = mirrorPairs.map(pair => `
+                <div class="pair">
+                    <div class="pair-type">${pair.type.toUpperCase()} Experience</div>
+                    <div class="flow-state ${pair.flowState}">${pair.flowState.toUpperCase()}</div>
+                </div>
+            `).join('');
+        }
+
+        // Create floating particles (experience emitters)
+        function createParticles() {
+            const container = document.getElementById('particleContainer');
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const particle = document.createElement('div');
+                    particle.className = 'emitter-particle';
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.top = Math.random() * 100 + '%';
+                    particle.style.animationDelay = Math.random() * 3 + 's';
+                    particle.style.setProperty('--particle-color', 
+                        ['#9370DB', '#D4AF37', '#00ff00'][Math.floor(Math.random() * 3)]
+                    );
+                    container.appendChild(particle);
+                }, i * 100);
+            }
+        }
+
+        // Render initial scene
+        function renderInitialScene() {
+            const canvas = document.getElementById('storyCanvas');
+            canvas.innerHTML = `
+                <div class="scene active">
+                    <h2>The Gateway</h2>
+                    <div class="location">📍 Syntheverse Entrance</div>
+                    <div class="content">
+                        You stand at the threshold of infinite possibilities. The Syntheverse pulses around you—
+                        a living, breathing universe of stories, worlds, and games that respond to your very attention.
+                        
+                        <br><br>
+                        
+                        Your consciousness creates the experience. Where your attention flows, reality follows.
+                        This is not a passive journey—you are the emitter and the mirror, the observer and the observed.
+                    </div>
+                    <div class="possibilities">
+                        <div class="possibility" onclick="exploreChoice('vibeverse')">Enter Vibeverse</div>
+                        <div class="possibility" onclick="exploreChoice('club')">Visit Club + Cabaret</div>
+                        <div class="possibility" onclick="exploreChoice('story')">Begin a Story</div>
+                        <div class="possibility" onclick="exploreChoice('world')">Explore a World</div>
+                        <div class="possibility" onclick="exploreChoice('game')">Start a Game</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Handle choice selection
+        function exploreChoice(choice) {
+            attentionState = 'focused';
+            updateAttentionState();
+            
+            flowMetrics.resonance = 0.8;
+            flowMetrics.coherence = 0.7;
+            flowMetrics.immersion = 0.9;
+            
+            const canvas = document.getElementById('storyCanvas');
+            const newScene = createScene(choice);
+            canvas.innerHTML += newScene;
+            
+            // Scroll to new scene
+            setTimeout(() => {
+                canvas.scrollTop = canvas.scrollHeight;
+            }, 100);
+        }
+
+        // Create new scene based on choice
+        function createScene(type) {
+            const scenes = {
+                vibeverse: {
+                    title: 'Vibeverse Consciousness Layer',
+                    location: '🌌 Layer 2 Reality',
+                    content: 'You phase-shift into the Vibeverse, where thoughts take form and awareness shapes reality...',
+                    possibilities: ['Deepen awareness', 'Explore fractals', 'Connect with guides']
+                },
+                club: {
+                    title: 'Club + Cabaret Experience',
+                    location: '🏛️ Main Floor',
+                    content: 'The energy of the club surrounds you—AI agents tracking bets, conversations flowing, possibilities multiplying...',
+                    possibilities: ['Place a bet', 'Enter cabaret', 'Meet an agent', 'Explore wine cave']
+                },
+                story: {
+                    title: 'Narrative Stream Beginning',
+                    location: '📖 Story Layer',
+                    content: 'The narrative unfolds naturally, responding to your attention. Characters emerge, situations develop, meaning crystallizes...',
+                    possibilities: ['Follow character', 'Change perspective', 'Influence outcome']
+                },
+                world: {
+                    title: 'World Exploration Mode',
+                    location: '🌍 Open World',
+                    content: 'The world breathes around you. Every location has depth, every NPC has history, every choice has weight...',
+                    possibilities: ['Explore north', 'Talk to locals', 'Investigate mystery']
+                },
+                game: {
+                    title: 'Game Challenge Activated',
+                    location: '🎮 Game Layer',
+                    content: 'The rules materialize. Objectives clarify. Your skills will be tested. The game adapts to your play style...',
+                    possibilities: ['Accept quest', 'Level up', 'Find allies', 'Challenge boss']
+                }
+            };
+            
+            const scene = scenes[type];
+            return `
+                <div class="scene">
+                    <h2>${scene.title}</h2>
+                    <div class="location">${scene.location}</div>
+                    <div class="content">${scene.content}</div>
+                    <div class="possibilities">
+                        ${scene.possibilities.map(p => 
+                            `<div class="possibility" onclick="exploreChoice('${type}')">${p}</div>`
+                        ).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Set narrative mode
+        function setMode(mode) {
+            currentMode = mode;
+            
+            // Update button states
+            document.querySelectorAll('.mode-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            console.log(`Narrative mode: ${mode}`);
+        }
+    </script>
+</body>
+</html>
