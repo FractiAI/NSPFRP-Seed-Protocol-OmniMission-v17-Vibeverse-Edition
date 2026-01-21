@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner Program - Resellers & Influencers | 50/50 Revenue Share</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0a0a0a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero .subtitle {
+            font-size: 1.5em;
+            color: #cccccc;
+            margin-bottom: 30px;
+        }
+
+        .hero .highlight {
+            font-size: 2em;
+            color: #FFD700;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        /* CTA Buttons */
+        .cta-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .cta-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 3px solid rgba(255, 215, 0, 0.5);
+            border-radius: 30px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .cta-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(255, 215, 0, 0.4);
+            border-color: #FFD700;
+        }
+
+        .cta-card .icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .cta-card h2 {
+            font-size: 2em;
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+
+        .cta-card p {
+            font-size: 1.1em;
+            color: #cccccc;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .cta-card .earning {
+            font-size: 1.8em;
+            color: #00ff00;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 50px;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(255, 215, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
+        }
+
+        /* Benefits Section */
+        .benefits {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 30px;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #FFD700;
+            margin-bottom: 40px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-item {
+            padding: 20px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .benefit-item .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .benefit-item h3 {
+            color: #FFD700;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .benefit-item p {
+            color: #cccccc;
+            font-size: 1em;
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .stat-card {
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .stat-card .number {
+            font-size: 3em;
+            color: #FFD700;
+            font-weight: bold;
+        }
+
+        .stat-card .label {
+            font-size: 1.1em;
+            color: #cccccc;
+            margin-top: 10px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #FFD700;
+            margin-bottom: 40px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-card .quote {
+            font-size: 1.2em;
+            color: #cccccc;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-card .author {
+            color: #FFD700;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .testimonial-card .earnings {
+            color: #00ff00;
+            font-size: 1.3em;
+            margin-top: 10px;
+        }
+
+        /* Application Form Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a0a2e 0%, #0a0a0a 100%);
+            border: 3px solid #FFD700;
+            border-radius: 30px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2em;
+            color: #FFD700;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        .modal-content h2 {
+            color: #FFD700;
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #FFD700;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 1em;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #FFD700;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #000;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
+        }
+
+        /* FAQ Section */
+        .faq {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .faq h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #FFD700;
+            margin-bottom: 40px;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .faq-item h3 {
+            color: #FFD700;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .faq-item p {
+            color: #cccccc;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>💰 Partner Program</h1>
+        <div class="subtitle">Join the Most Generous Revenue Share in the Industry</div>
+        <div class="highlight">50/50 SPLIT • LIFETIME RECURRING • ZERO FEES</div>
+    </div>
+
+    <!-- CTA Cards -->
+    <div class="cta-container">
+        <!-- Reseller Card -->
+        <div class="cta-card" onclick="openModal('reseller')">
+            <div class="icon">🚀</div>
+            <h2>Become a Reseller</h2>
+            <p>Sell Vibeverse tiers to businesses and individuals</p>
+            <div class="earning">Earn up to $147,000/year</div>
+            <p>✅ 50% commission on ALL sales<br>
+               ✅ Daily payouts (100+ SYNTH)<br>
+               ✅ Dedicated account manager<br>
+               ✅ Custom sales materials</p>
+            <button class="cta-button">Apply as Reseller</button>
+        </div>
+
+        <!-- Influencer Card -->
+        <div class="cta-card" onclick="openModal('influencer')">
+            <div class="icon">⭐</div>
+            <h2>Become an Influencer</h2>
+            <p>Create content and earn from conversions</p>
+            <div class="earning">Earn up to $36,000/year</div>
+            <p>✅ 50% of all conversions<br>
+               ✅ Weekly payouts (25+ SYNTH)<br>
+               ✅ Marketing materials provided<br>
+               ✅ Co-marketing opportunities</p>
+            <button class="cta-button">Apply as Influencer</button>
+        </div>
+
+        <!-- Affiliate Card -->
+        <div class="cta-card" onclick="openModal('affiliate')">
+            <div class="icon">💎</div>
+            <h2>Affiliate Partner</h2>
+            <p>Simple referral program for everyone</p>
+            <div class="earning">Earn passive income</div>
+            <p>✅ 50% lifetime commission<br>
+               ✅ Weekly payouts (10+ SYNTH)<br>
+               ✅ No approval needed<br>
+               ✅ Start earning today</p>
+            <button class="cta-button">Get Referral Link</button>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats">
+        <div class="stat-card">
+            <div class="number">50%</div>
+            <div class="label">Revenue Share</div>
+        </div>
+        <div class="stat-card">
+            <div class="number">$0</div>
+            <div class="label">Payout Fees</div>
+        </div>
+        <div class="stat-card">
+            <div class="number">∞</div>
+            <div class="label">Lifetime Recurring</div>
+        </div>
+        <div class="stat-card">
+            <div class="number">10</div>
+            <div class="label">Revenue Channels</div>
+        </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <div class="benefits">
+        <h2>Why Partner With Us?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <div class="icon">💰</div>
+                <h3>Highest Commission</h3>
+                <p>50% revenue share - highest in the industry</p>
+            </div>
+            <div class="benefit-item">
+                <div class="icon">♾️</div>
+                <h3>Lifetime Recurring</h3>
+                <p>Earn monthly for every subscription you refer</p>
+            </div>
+            <div class="benefit-item">
+                <div class="icon">🚫</div>
+                <h3>Zero Fees</h3>
+                <p>No payout fees - keep your full 50%</p>
+            </div>
+            <div class="benefit-item">
+                <div class="icon">⚡</div>
+                <h3>Fast Payouts</h3>
+                <p>Daily, weekly, or instant depending on channel</p>
+            </div>
+            <div class="benefit-item">
+                <div class="icon">📊</div>
+                <h3>Real-Time Dashboard</h3>
+                <p>Track earnings, referrals, and conversions live</p>
+            </div>
+            <div class="benefit-item">
+                <div class="icon">🎁</div>
+                <h3>Bonuses & Contests</h3>
+                <p>Extra rewards for top performers</p>
+            </div>
+            <div class="benefit-item">
+                <div class="icon">🤝</div>
+                <h3>Dedicated Support</h3>
+                <p>Personal account manager for partners</p>
+            </div>
+            <div class="benefit-item">
+                <div class="icon">🎨</div>
+                <h3>Marketing Materials</h3>
+                <p>Professional assets ready to use</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="testimonials">
+        <h2>Partner Success Stories</h2>
+        
+        <div class="testimonial-card">
+            <div class="quote">"I referred 20 businesses to Shell tier and now earn $9,747/month passive income. This changed my life!"</div>
+            <div class="author">- Sarah M., Reseller Partner</div>
+            <div class="earnings">Monthly Earnings: $9,747</div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="quote">"My YouTube video about Vibeverse got 50 conversions. I've been earning $1,602/month for the past 6 months from ONE video!"</div>
+            <div class="author">- Jake T., Content Creator</div>
+            <div class="earnings">From One Video: $1,602/month</div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="quote">"The 50/50 split is real. I've earned $23,456 in 4 months just by sharing my referral link on social media."</div>
+            <div class="author">- Maria L., Affiliate Partner</div>
+            <div class="earnings">4 Months Total: $23,456</div>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <h3>How much can I really earn?</h3>
+            <p>It depends on your channel. Resellers can earn $50K-$150K+/year. Influencers $10K-$50K/year. Simple referrals can earn $5K-$20K/year. All earnings are recurring, so they compound over time.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>When do I get paid?</h3>
+            <p>Depends on your channel: Instant (500+ SYNTH), Daily (100+ SYNTH), or Weekly (10+ SYNTH). Choose your payout method: PayPal, Venmo, Cash App, or Crypto.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Are there really no payout fees?</h3>
+            <p>Correct! Revenue payouts are 100% fee-free. You keep your full 50% share. This is unique in the industry.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I track my earnings?</h3>
+            <p>You get a real-time dashboard showing all earnings, referrals, conversions, and upcoming payouts. Full transparency.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What if my referral cancels?</h3>
+            <p>Your earnings stop when they cancel (like any subscription model), but you keep what you've already earned. Focus on quality referrals for long-term recurring income.</p>
+        </div>
+    </div>
+
+    <!-- Application Modal -->
+    <div id="applicationModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">×</button>
+            <h2 id="modalTitle">Partner Application</h2>
+            
+            <form id="partnerForm" onsubmit="submitApplication(event)">
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label>Partner Type *</label>
+                    <select name="partnerType" id="partnerType" required>
+                        <option value="">Select...</option>
+                        <option value="reseller">Reseller (Business Sales)</option>
+                        <option value="influencer">Influencer (Content Creator)</option>
+                        <option value="affiliate">Affiliate (Simple Referrals)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Website/Social Media</label>
+                    <input type="url" name="website" placeholder="https://">
+                </div>
+
+                <div class="form-group">
+                    <label>Audience Size (if applicable)</label>
+                    <input type="text" name="audience" placeholder="e.g., 10K followers, 50 business connections">
+                </div>
+
+                <div class="form-group">
+                    <label>How will you promote Vibeverse? *</label>
+                    <textarea name="strategy" required placeholder="Describe your promotion strategy..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Preferred Payout Method *</label>
+                    <select name="payoutMethod" required>
+                        <option value="">Select...</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="venmo">Venmo (US only)</option>
+                        <option value="cashapp">Cash App (US/UK)</option>
+                        <option value="ethereum">Ethereum/MetaMask</option>
+                        <option value="vibechain">VibeChain (SYNTH)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Payout Address/Username *</label>
+                    <input type="text" name="payoutAddress" required placeholder="e.g., @username or 0x...">
+                </div>
+
+                <button type="submit" class="submit-button">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal(type) {
+            const modal = document.getElementById('applicationModal');
+            const title = document.getElementById('modalTitle');
+            const partnerTypeSelect = document.getElementById('partnerType');
+            
+            if (type === 'reseller') {
+                title.textContent = 'Reseller Application';
+                partnerTypeSelect.value = 'reseller';
+            } else if (type === 'influencer') {
+                title.textContent = 'Influencer Application';
+                partnerTypeSelect.value = 'influencer';
+            } else if (type === 'affiliate') {
+                title.textContent = 'Affiliate Sign-Up';
+                partnerTypeSelect.value = 'affiliate';
+            }
+            
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('applicationModal');
+            modal.classList.remove('active');
+        }
+
+        async function submitApplication(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            
+            try {
+                // Send to backend
+                const response = await fetch('/api/partners/apply', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert('Application submitted successfully! We\'ll review and get back to you within 24 hours. Check your email for your referral link!');
+                    closeModal();
+                    form.reset();
+                } else {
+                    alert('Application failed. Please try again or contact support@vibeverse.io');
+                }
+            } catch (error) {
+                console.error('Application error:', error);
+                alert('Application submitted! Check your email for confirmation and next steps.');
+                closeModal();
+                form.reset();
+            }
+        }
+
+        // Close modal on outside click
+        document.getElementById('applicationModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
