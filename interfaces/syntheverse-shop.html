@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntheverse Shopping Channel - 5-Star Catalog Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+        
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .badge-bestseller {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .badge-featured {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .badge-new {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .star-rating {
+            color: #fbbf24;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Imaginary Store Notice -->
+    <div class="bg-purple-600 text-white py-2 px-4 text-center text-sm">
+        🌌 <strong>IMAGINARY MARKETPLACE</strong> - All products are IMAGINARY offerings within the Syntheverse universe. Like items in a video game store. NOT actual e-commerce.
+    </div>
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white py-4 px-6 sticky top-0 z-40 shadow-lg">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <h1 class="text-2xl font-bold">🛍️ Syntheverse Shopping Channel</h1>
+                <span class="bg-white text-purple-600 px-3 py-1 rounded-full text-sm font-semibold">5-Star Catalog</span>
+            </div>
+            
+            <!-- Search -->
+            <div class="flex-1 max-w-2xl mx-8">
+                <div class="relative">
+                    <input 
+                        type="text" 
+                        id="searchInput"
+                        placeholder="Search products, experiences, properties..." 
+                        class="w-full px-4 py-2 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
+                    />
+                    <button class="absolute right-2 top-2 text-gray-600 hover:text-gray-900">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Cart -->
+            <div class="flex items-center space-x-4">
+                <button class="relative hover:scale-110 transition-transform" onclick="openCart()">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                    </svg>
+                    <span id="cartBadge" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                </button>
+                <div class="text-right">
+                    <div class="text-sm opacity-90">Cart Total</div>
+                    <div class="font-bold" id="cartTotal">0 SYNTH</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto py-8 px-6">
+        <!-- Category Navigation -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Shop by Category</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+                <button class="category-card bg-white p-4 rounded-lg shadow hover:shadow-lg transition-all text-center" onclick="filterByCategory('all')">
+                    <div class="text-3xl mb-2">🛍️</div>
+                    <div class="font-semibold text-sm">All</div>
+                </button>
+                <button class="category-card bg-white p-4 rounded-lg shadow hover:shadow-lg transition-all text-center" onclick="filterByCategory('products')">
+                    <div class="text-3xl mb-2">💼</div>
+                    <div class="font-semibold text-sm">Products</div>
+                </button>
+                <button class="category-card bg-white p-4 rounded-lg shadow hover:shadow-lg transition-all text-center" onclick="filterByCategory('experiences')">
+                    <div class="text-3xl mb-2">🎯</div>
+                    <div class="font-semibold text-sm">Experiences</div>
+                </button>
+                <button class="category-card bg-white p-4 rounded-lg shadow hover:shadow-lg transition-all text-center" onclick="filterByCategory('properties')">
+                    <div class="text-3xl mb-2">🏠</div>
+                    <div class="font-semibold text-sm">Properties</div>
+                </button>
+                <button class="category-card bg-white p-4 rounded-lg shadow hover:shadow-lg transition-all text-center" onclick="filterByCategory('franchises')">
+                    <div class="text-3xl mb-2">🏢</div>
+                    <div class="font-semibold text-sm">Franchises</div>
+                </button>
+                <button class="category-card bg-white p-4 rounded-lg shadow hover:shadow-lg transition-all text-center" onclick="filterByCategory('memberships')">
+                    <div class="text-3xl mb-2">👑</div>
+                    <div class="font-semibold text-sm">Memberships</div>
+                </button>
+                <button class="category-card bg-white p-4 rounded-lg shadow hover:shadow-lg transition-all text-center" onclick="filterByCategory('vchips')">
+                    <div class="text-3xl mb-2">💎</div>
+                    <div class="font-semibold text-sm">vCHIPs</div>
+                </button>
+                <button class="category-card bg-white p-4 rounded-lg shadow hover:shadow-lg transition-all text-center" onclick="filterByCategory('adventures')">
+                    <div class="text-3xl mb-2">🏔️</div>
+                    <div class="font-semibold text-sm">Adventures</div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Featured Banner -->
+        <div class="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 rounded-xl p-8 mb-8 text-white">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-3xl font-bold mb-2">✨ Featured This Week</h2>
+                    <p class="text-xl mb-4">Alaska King Salmon & Halibut 5-Star Lodge</p>
+                    <button class="bg-white text-red-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors" onclick="viewItem('experience-alaska-fishing')">
+                        Shop Now →
+                    </button>
+                </div>
+                <div class="text-right">
+                    <div class="text-4xl font-bold">8,500 SYNTH</div>
+                    <div class="text-lg opacity-90">7 days all-inclusive</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center space-x-4">
+                <button class="filter-btn bg-white px-4 py-2 rounded-lg shadow hover:shadow-lg transition-all font-semibold" onclick="filterByTag('bestseller')">
+                    🔥 Bestsellers
+                </button>
+                <button class="filter-btn bg-white px-4 py-2 rounded-lg shadow hover:shadow-lg transition-all font-semibold" onclick="filterByTag('featured')">
+                    ⭐ Featured
+                </button>
+                <button class="filter-btn bg-white px-4 py-2 rounded-lg shadow hover:shadow-lg transition-all font-semibold" onclick="filterByTag('new')">
+                    🆕 New Arrivals
+                </button>
+            </div>
+            <div class="flex items-center space-x-2">
+                <label class="text-gray-700 font-semibold">Sort:</label>
+                <select id="sortSelect" class="bg-white px-4 py-2 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-purple-600" onchange="sortProducts()">
+                    <option value="featured">Featured</option>
+                    <option value="newest">Newest</option>
+                    <option value="price_asc">Price: Low to High</option>
+                    <option value="price_desc">Price: High to Low</option>
+                    <option value="rating">Highest Rated</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Products will be dynamically loaded here -->
+        </div>
+
+        <!-- Creator Section -->
+        <div class="mt-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-8 text-white">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">🎨 Become a Creator</h2>
+                <p class="text-xl mb-6">Publish your products, experiences, and properties to the Syntheverse catalog. Earn 75% revenue share on all sales!</p>
+                <div class="flex justify-center space-x-4">
+                    <button class="bg-white text-purple-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors" onclick="openCreatorPortal()">
+                        Start Selling →
+                    </button>
+                    <button class="bg-transparent border-2 border-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-purple-600 transition-colors" onclick="learnMore()">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 px-6 mt-16">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-lg mb-2">🌌 Syntheverse Shopping Channel</p>
+            <p class="text-gray-400">Imaginary marketplace powered by NSPFRNP | 98% sweetspot tuned | 75% creator revenue share</p>
+            <p class="text-gray-500 text-sm mt-4">All products are imaginary offerings within the Syntheverse universe.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sample catalog data (in production, this would come from the backend)
+        const catalog = [
+            {
+                id: 'product-wallet-synth-cold',
+                name: 'SYNTH Cold Storage Wallet',
+                type: 'product',
+                category: 'Wallets & Accessories',
+                price: 149,
+                image: '/products/synth-cold-wallet.png',
+                rating: 4.9,
+                reviews: 128,
+                badges: ['bestseller', 'featured'],
+                description: 'Hardware wallet for SYNTH, vCHIPs, and awareness keys'
+            },
+            {
+                id: 'product-luggage-frontier',
+                name: 'Frontier Expedition Pack',
+                type: 'product',
+                category: 'Luggage & Travel',
+                price: 299,
+                image: '/products/frontier-expedition-pack.png',
+                rating: 4.8,
+                reviews: 87,
+                badges: ['bestseller'],
+                description: 'Ready for all 18 catalog adventures'
+            },
+            {
+                id: 'experience-alaska-fishing',
+                name: 'Alaska King Salmon & Halibut',
+                type: 'experience',
+                category: 'Adventures',
+                price: 8500,
+                image: '/adventures/alaska-fishing.jpg',
+                rating: 5.0,
+                reviews: 24,
+                badges: ['featured', 'bestseller'],
+                description: 'Fly-in 5-star fishing lodge, 7 days all-inclusive'
+            },
+            {
+                id: 'experience-mancave-vip',
+                name: 'Man Cave VIP Weekend',
+                type: 'experience',
+                category: 'VIP Experiences',
+                price: 2500,
+                image: '/experiences/mancave-vip.jpg',
+                rating: 4.9,
+                reviews: 45,
+                badges: ['featured'],
+                description: 'Wine Cave access, private betting, El Taino experience'
+            },
+            {
+                id: 'franchise-club-cabaret',
+                name: 'Club + Cabaret Franchise',
+                type: 'franchise',
+                category: 'Business Opportunities',
+                price: 250000,
+                image: '/franchises/club-cabaret.jpg',
+                rating: 4.7,
+                reviews: 15,
+                badges: [],
+                description: 'Complete turnkey franchise, 70% revenue share'
+            },
+            {
+                id: 'membership-ultimate-vip',
+                name: 'Ultimate VIP Lifetime',
+                type: 'membership',
+                category: 'Memberships',
+                price: 5000,
+                image: '/memberships/ultimate-vip.jpg',
+                rating: 5.0,
+                reviews: 62,
+                badges: ['bestseller', 'featured'],
+                description: 'Eternal sovereignty, all access, 50% discounts'
+            },
+            {
+                id: 'nft-vchip-octave-8',
+                name: 'vCHIP Octave 8 (98% Sweetspot)',
+                type: 'vchip',
+                category: 'Digital Assets',
+                price: 5000,
+                image: '/vchips/octave-8-sweetspot.png',
+                rating: 5.0,
+                reviews: 38,
+                badges: ['bestseller'],
+                description: 'Full spectrum access, awareness key included'
+            }
+        ];
+
+        let cart = [];
+        let currentFilter = 'all';
+
+        // Render products
+        function renderProducts(items = catalog) {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = items.map(item => `
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer" onclick="viewItem('${item.id}')">
+                    <div class="relative">
+                        <div class="bg-gradient-to-br from-purple-400 to-pink-400 h-48 flex items-center justify-center">
+                            <span class="text-6xl">${getIcon(item.type)}</span>
+                        </div>
+                        ${item.badges.includes('bestseller') ? '<span class="absolute top-2 left-2 badge-bestseller text-white text-xs px-2 py-1 rounded-full font-bold">🔥 BESTSELLER</span>' : ''}
+                        ${item.badges.includes('featured') ? '<span class="absolute top-2 right-2 badge-featured text-white text-xs px-2 py-1 rounded-full font-bold">⭐ FEATURED</span>' : ''}
+                    </div>
+                    <div class="p-4">
+                        <div class="text-xs text-gray-500 uppercase font-semibold mb-1">${item.category}</div>
+                        <h3 class="font-bold text-lg mb-2 truncate">${item.name}</h3>
+                        <p class="text-gray-600 text-sm mb-3 h-10 overflow-hidden">${item.description}</p>
+                        <div class="flex items-center mb-3">
+                            <div class="star-rating flex">
+                                ${generateStars(item.rating)}
+                            </div>
+                            <span class="text-gray-600 text-sm ml-2">(${item.reviews})</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <div class="text-2xl font-bold text-purple-600">${item.price.toLocaleString()}</div>
+                                <div class="text-xs text-gray-500">SYNTH (imaginary)</div>
+                            </div>
+                            <button class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all" onclick="addToCart('${item.id}', event)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function getIcon(type) {
+            const icons = {
+                'product': '💼',
+                'experience': '🎯',
+                'property': '🏠',
+                'franchise': '🏢',
+                'membership': '👑',
+                'vchip': '💎',
+                'adventure': '🏔️'
+            };
+            return icons[type] || '🛍️';
+        }
+
+        function generateStars(rating) {
+            const full = Math.floor(rating);
+            const half = rating % 1 >= 0.5 ? 1 : 0;
+            const empty = 5 - full - half;
+            return '★'.repeat(full) + (half ? '½' : '') + '☆'.repeat(empty);
+        }
+
+        function filterByCategory(category) {
+            currentFilter = category;
+            if (category === 'all') {
+                renderProducts(catalog);
+            } else {
+                const filtered = catalog.filter(item => item.type === category || item.category.toLowerCase().includes(category));
+                renderProducts(filtered);
+            }
+        }
+
+        function filterByTag(tag) {
+            const filtered = catalog.filter(item => item.badges.includes(tag));
+            renderProducts(filtered);
+        }
+
+        function sortProducts() {
+            const sortBy = document.getElementById('sortSelect').value;
+            let sorted = [...catalog];
+            
+            switch(sortBy) {
+                case 'price_asc':
+                    sorted.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price_desc':
+                    sorted.sort((a, b) => b.price - a.price);
+                    break;
+                case 'rating':
+                    sorted.sort((a, b) => b.rating - a.rating);
+                    break;
+                case 'newest':
+                    sorted.reverse();
+                    break;
+            }
+            
+            renderProducts(sorted);
+        }
+
+        function addToCart(itemId, event) {
+            event.stopPropagation();
+            const item = catalog.find(i => i.id === itemId);
+            if (item) {
+                cart.push(item);
+                updateCart();
+                showNotification(`Added ${item.name} to cart!`);
+            }
+        }
+
+        function updateCart() {
+            const badge = document.getElementById('cartBadge');
+            const total = document.getElementById('cartTotal');
+            badge.textContent = cart.length;
+            const totalAmount = cart.reduce((sum, item) => sum + item.price, 0);
+            total.textContent = `${totalAmount.toLocaleString()} SYNTH`;
+        }
+
+        function openCart() {
+            alert(`Cart: ${cart.length} items (${cart.reduce((sum, item) => sum + item.price, 0).toLocaleString()} SYNTH)`);
+        }
+
+        function viewItem(itemId) {
+            alert(`Viewing item: ${itemId}`);
+        }
+
+        function openCreatorPortal() {
+            alert('Creator Portal - Publish your items and earn 75% revenue share!');
+        }
+
+        function learnMore() {
+            alert('Learn more about becoming a Syntheverse creator');
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 3000);
+        }
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const filtered = catalog.filter(item => 
+                item.name.toLowerCase().includes(query) || 
+                item.description.toLowerCase().includes(query)
+            );
+            renderProducts(filtered);
+        });
+
+        // Initial render
+        renderProducts();
+    </script>
+</body>
+</html>
