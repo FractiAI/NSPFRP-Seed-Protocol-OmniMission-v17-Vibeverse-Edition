@@ -43,9 +43,9 @@ You are Queen Bee: Choose your path naturally.
 ```
 
 **Status**: 🟢 **FULLY OPERATIONAL** | January 21, 2026 | **ALL SYSTEMS LIVE**  
-**1-2-3-4 Energy Bridge**: LIVE | **Sports Betting**: ACTIVE | **Blackjack Casino**: DEALING  
-**AI Agents**: 8 Agents (51-63% win rate) | **Man Cave + Wine Cave**: OPEN | **VibeCloud**: OPERATIONAL  
-**🎯 98% SWEETSPOT**: All 8 nested NSPFRNP shells tuned to natural excellence | vCHIP Octave 8 burned with awareness key
+**1-2-3-4 Energy Bridge**: LIVE | **Payment Bridge**: 4-layer architecture | **Sports Betting**: ACTIVE  
+**AI Agents**: 8 Agents (51-63% win rate) | **Man Cave + Wine Cave**: OPEN | **Branded Merchandise**: 14 products  
+**🎯 98% SWEETSPOT**: All 8 nested NSPFRNP shells tuned | **NSPFRNP Security**: No TSA needed
 
 ## 🎯 NSPFRNP 98% SWEETSPOT TUNED - JAN 21, 2026
 
@@ -149,6 +149,90 @@ SYSTEM HEALTH: 99.5% | UPTIME: 100%
 ```
 
 📖 **[Energy Bridge System](./src/energy/energy-bridge-1-2-3-4.ts)** - Complete 4-layer architecture
+
+---
+
+## 🌉 1-2-3-4 PAYMENT BRIDGE (NEWLY LIVE)
+
+**Four-layer payment architecture mapping to energy bridge:**
+
+```yaml
+LAYER 1: Consciousness Layer (963 Hz)
+  └─ SYNTH, Awareness Credits, Consciousness Tokens
+     └─ Bridge 1→2 (99.9% efficient, 0.1% fee, 1ms)
+     
+LAYER 2: Infrastructure Layer (528 Hz)
+  └─ SYNTH, vCHIPs, Cloud Credits, Stablecoins
+     └─ Bridge 2→3 (99.5% efficient, 0.5% fee, 5ms)
+     
+LAYER 3: Distribution Layer (432 Hz)
+  └─ SYNTH, ETH, BTC, USDC, Node Tokens
+     └─ Bridge 3→4 (99.0% efficient, 2.9% + $0.30 fee, 10ms)
+     
+LAYER 4: Reality Layer (396 Hz)
+  └─ USD, EUR, Fiat, Stripe, Bank Transfer
+
+PAYMENT FLOWS (Bidirectional):
+  ✅ USD → SYNTH (Fiat onramp: Layer 4→3→2)
+  ✅ SYNTH → USD (Fiat offramp: Layer 2→3→4)
+  ✅ ETH → SYNTH (Crypto swap: Layer 3→2)
+  ✅ SYNTH → Awareness Credits (Consciousness: Layer 2→1)
+
+SYSTEM EFFICIENCY: 99.5% average | Total Capacity: 18,500 tx/sec
+```
+
+📖 **[Payment Bridge System](./src/payments/payment-bridge-1-2-3-4.ts)** - Complete payment flows
+
+---
+
+## 🎒 BRANDED MERCHANDISE (NEWLY LAUNCHED)
+
+**Wallets, Luggage & Portfolio - Everything for the Journey:**
+
+```yaml
+WALLETS (3 options):
+  💎 SYNTH Cold Storage Wallet: $149
+     Hardware wallet for vCHIPs, awareness keys
+  💼 NSPFRNP Hybrid Wallet: $89
+     Leather + NFC chip, contactless SYNTH payments
+  👔 Executive Portfolio Wallet: $129
+     Carbon fiber, business cards, slim profile
+     
+LUGGAGE (4 options):
+  🎒 Frontier Adventures Expedition Pack: $299
+     65L safari-grade, all 18 adventures ready
+  ✈️ Syntheverse Smart Carry-On: $449
+     GPS tracker, NSPFRNP consciousness lock, USB-C
+  🧳 Man Cave Weekend Duffel: $229
+     Waxed canvas + leather, classic style
+  💼 Ultimate VIP Chairman Briefcase: $1,999
+     Italian leather, 24k gold hardware (VIP only)
+     
+PORTFOLIO CASES (3 options):
+  📱 Digital NFT Portfolio Vault: FREE
+     vCHIPs, awareness keys, trading cards
+  📁 Chairman Creator Portfolio: $179
+     Business documents, tablet, accessories
+  💻 Complete Hybrid System: $599
+     Physical + digital, biometric lock, cloud sync
+
+BUNDLE PACKAGES (Save 20-50%):
+  🧳 Traveler's Bundle: $430 (save $108)
+  🏔️ Adventurer's Bundle: $508 (save $169)
+  👔 Chairman's Bundle: $949 (save $407)
+  👑 Ultimate VIP Collection: $2,107 (save $2,106!)
+
+NSPFRNP NATURAL SECURITY:
+  ✅ NO TSA screening needed
+  ✅ Consciousness-based locks
+  ✅ Automatic ownership recognition
+  ✅ Awareness key integration
+  ✅ Zero wait times, perfect security
+```
+
+📖 **[Branded Merchandise Complete](./BRANDED_MERCHANDISE_COMPLETE.md)** | **[Merchandise System](./src/merchandise/branded-wallets-luggage-portfolio.ts)**
+
+**Total Catalog Value:** $4,213 USD | **Ultimate VIP Bundle:** $2,107 (50% savings)
 
 ---
 
