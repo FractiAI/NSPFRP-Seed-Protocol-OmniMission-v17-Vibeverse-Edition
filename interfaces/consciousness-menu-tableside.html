@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consciousness Experience Menu - Tableside Service</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 100%);
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        /* Legal Warning Banner */
+        .legal-warning {
+            background: rgba(255, 0, 0, 0.2);
+            border: 3px solid #ff0000;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            max-width: 1400px;
+            margin: 0 auto 40px;
+        }
+
+        .legal-warning .icon {
+            font-size: 4em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .legal-warning h2 {
+            color: #ff6666;
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .legal-warning p {
+            color: #ffcccc;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .legal-warning ul {
+            color: #ffcccc;
+            margin-left: 30px;
+            line-height: 2;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            background: linear-gradient(135deg, #D4AF37 0%, #9370DB 50%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .header .subtitle {
+            font-size: 1.3em;
+            color: #D4AF37;
+            font-style: italic;
+        }
+
+        /* Menu Categories */
+        .menu-section {
+            max-width: 1400px;
+            margin: 60px auto;
+        }
+
+        .category-header {
+            font-size: 2.5em;
+            color: #D4AF37;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .offerings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .offering-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 3px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .offering-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+            border-color: #D4AF37;
+        }
+
+        .offering-card.illegal {
+            border-color: rgba(255, 0, 0, 0.5);
+        }
+
+        .offering-card.decriminalized {
+            border-color: rgba(255, 165, 0, 0.5);
+        }
+
+        .bbhe-symbol {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3em;
+            color: #9370DB;
+            opacity: 0.7;
+        }
+
+        .offering-card h3 {
+            color: #FFD700;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .offering-card .strain {
+            color: #9370DB;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .offering-card .description {
+            color: #cccccc;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .potency-indicator {
+            display: inline-block;
+            padding: 8px 15px;
+            background: rgba(147, 112, 219, 0.3);
+            border: 2px solid #9370DB;
+            border-radius: 20px;
+            color: #9370DB;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .potency-indicator.heroic {
+            background: rgba(255, 0, 0, 0.3);
+            border-color: #ff6666;
+            color: #ff6666;
+        }
+
+        .effects {
+            margin: 20px 0;
+        }
+
+        .effects h4 {
+            color: #D4AF37;
+            margin-bottom: 10px;
+        }
+
+        .effects ul {
+            list-style: none;
+            color: #cccccc;
+        }
+
+        .effects ul li::before {
+            content: '✨ ';
+            color: #9370DB;
+        }
+
+        .legal-status {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .legal-status .status-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .legal-status .status-badge.legal {
+            background: rgba(0, 255, 0, 0.3);
+            color: #00ff00;
+        }
+
+        .legal-status .status-badge.decriminalized {
+            background: rgba(255, 165, 0, 0.3);
+            color: #FFA500;
+        }
+
+        .legal-status .status-badge.illegal {
+            background: rgba(255, 0, 0, 0.3);
+            color: #ff6666;
+        }
+
+        .legal-status .details {
+            color: #999;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .pricing {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .pricing .price {
+            color: #FFD700;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .pricing .duration {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .order-button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #9370DB 0%, #D4AF37 100%);
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .order-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(147, 112, 219, 0.5);
+        }
+
+        /* Safety Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 40px;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a0a1a 0%, #0a0a0a 100%);
+            border: 3px solid #D4AF37;
+            border-radius: 30px;
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .modal-content h2 {
+            color: #D4AF37;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .safety-section {
+            background: rgba(255, 0, 0, 0.1);
+            border: 2px solid rgba(255, 0, 0, 0.5);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .safety-section h3 {
+            color: #ff6666;
+            margin-bottom: 15px;
+        }
+
+        .safety-section ul {
+            color: #ffcccc;
+            margin-left: 20px;
+            line-height: 2;
+        }
+
+        .consent-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .consent-checkbox input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        .consent-checkbox label {
+            color: #ffffff;
+            line-height: 1.8;
+            cursor: pointer;
+        }
+
+        .confirm-button {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #00ff00 0%, #00cc00 100%);
+            color: #000;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.4em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .confirm-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(0, 255, 0, 0.5);
+        }
+
+        .confirm-button:disabled {
+            background: rgba(100, 100, 100, 0.5);
+            cursor: not-allowed;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2em;
+            color: #D4AF37;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Legal Warning -->
+    <div class="legal-warning">
+        <div class="icon">⚠️</div>
+        <h2>LEGAL & SAFETY DISCLAIMER</h2>
+        <p><strong>Many substances listed are controlled and illegal in most jurisdictions.</strong></p>
+        <ul>
+            <li>Cannabis: Legal in some states/countries, federally illegal in US</li>
+            <li>Psilocybin: Decriminalized in select US cities (Oakland, Denver, etc.), federally illegal</li>
+            <li>LSD/DMT/5-MeO-DMT: Schedule I controlled substances, illegal in most jurisdictions</li>
+            <li>Always verify and comply with local laws</li>
+            <li>Must be 21+ or legal age in jurisdiction</li>
+            <li>Medical screening required for high-risk substances</li>
+            <li>Trusted companion/sitter essential</li>
+            <li>Consult healthcare provider before use</li>
+            <li>Use at your own risk - penalties may include imprisonment</li>
+        </ul>
+        <p style="margin-top: 20px;"><strong>This menu is for creative/educational purposes in legal jurisdictions only.</strong></p>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>∞ Consciousness Experience Menu</h1>
+        <div class="subtitle">Tableside Service • BBHE Symbol Mapped • Club + Cabaret</div>
+    </div>
+
+    <!-- Cigars (Legal) -->
+    <div class="menu-section">
+        <div class="category-header">🚬 Premium Cigars (Legal 21+)</div>
+        
+        <div class="offerings-grid">
+            <div class="offering-card" onclick="openOrderModal('cigar-cohiba')">
+                <div class="bbhe-symbol">∞</div>
+                <h3>Cohiba Behike ∞</h3>
+                <div class="strain">Premium Cuban</div>
+                <div class="potency-indicator">STRONG</div>
+                
+                <div class="description">
+                    Premium Cuban cigar mapped to infinite consciousness symbol. 
+                    Full-bodied with rich complexity.
+                </div>
+                
+                <div class="effects">
+                    <h4>Experience:</h4>
+                    <ul>
+                        <li>Deep relaxation</li>
+                        <li>Social lubrication</li>
+                        <li>Contemplative state</li>
+                    </ul>
+                </div>
+
+                <div class="legal-status">
+                    <div class="status-badge legal">LEGAL 21+</div>
+                    <div class="details">Legal with age restriction. Health warnings apply.</div>
+                </div>
+                
+                <div class="pricing">
+                    <div class="price">75 SYNTH</div>
+                    <div class="duration">60-90 min</div>
+                </div>
+                
+                <button class="order-button">Order Tableside</button>
+            </div>
+
+            <div class="offering-card" onclick="openOrderModal('cigar-davidoff')">
+                <div class="bbhe-symbol">○</div>
+                <h3>Davidoff Millennium ○</h3>
+                <div class="strain">Dominican Blend</div>
+                <div class="potency-indicator">MODERATE</div>
+                
+                <div class="description">
+                    Smooth Dominican blend mapped to wholeness symbol. 
+                    Balanced and refined.
+                </div>
+                
+                <div class="effects">
+                    <h4>Experience:</h4>
+                    <ul>
+                        <li>Smooth relaxation</li>
+                        <li>Mental clarity</li>
+                        <li>Present moment awareness</li>
+                    </ul>
+                </div>
+
+                <div class="legal-status">
+                    <div class="status-badge legal">LEGAL 21+</div>
+                    <div class="details">Legal with age restriction. Health warnings apply.</div>
+                </div>
+                
+                <div class="pricing">
+                    <div class="price">50 SYNTH</div>
+                    <div class="duration">45-60 min</div>
+                </div>
+                
+                <button class="order-button">Order Tableside</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vape Pens / 420 (Legal where cannabis legal) -->
+    <div class="menu-section">
+        <div class="category-header">💨 Cannabis Experience (Legal Jurisdictions Only)</div>
+        
+        <div class="offerings-grid">
+            <div class="offering-card" onclick="openOrderModal('vape-clarity')">
+                <div class="bbhe-symbol">☉</div>
+                <h3>Clarity Sativa ☉</h3>
+                <div class="strain">Blue Dream</div>
+                <div class="potency-indicator">MODERATE</div>
+                
+                <div class="description">
+                    Uplifting sativa blend for solar consciousness. 
+                    Energizing and creative.
+                </div>
+                
+                <div class="effects">
+                    <h4>Experience:</h4>
+                    <ul>
+                        <li>Energy & motivation</li>
+                        <li>Creativity boost</li>
+                        <li>Focus enhancement</li>
+                        <li>Euphoria</li>
+                    </ul>
+                </div>
+
+                <div class="legal-status">
+                    <div class="status-badge decriminalized">VARIES BY STATE</div>
+                    <div class="details">Legal in cannabis-legal states only. Still federally illegal in US. Must be 21+.</div>
+                </div>
+                
+                <div class="pricing">
+                    <div class="price">35 SYNTH</div>
+                    <div class="duration">2-3 hours</div>
+                </div>
+                
+                <button class="order-button">Check Availability</button>
+            </div>
+
+            <div class="offering-card" onclick="openOrderModal('vape-lunar')">
+                <div class="bbhe-symbol">☽</div>
+                <h3>Lunar Indica ☽</h3>
+                <div class="strain">Granddaddy Purple</div>
+                <div class="potency-indicator">STRONG</div>
+                
+                <div class="description">
+                    Deep relaxation indica for lunar consciousness. 
+                    Body-focused tranquility.
+                </div>
+                
+                <div class="effects">
+                    <h4>Experience:</h4>
+                    <ul>
+                        <li>Deep body relaxation</li>
+                        <li>Sedation & calm</li>
+                        <li>Pain relief</li>
+                        <li>Sleep aid</li>
+                    </ul>
+                </div>
+
+                <div class="legal-status">
+                    <div class="status-badge decriminalized">VARIES BY STATE</div>
+                    <div class="details">Legal in cannabis-legal states only. Still federally illegal in US. Must be 21+.</div>
+                </div>
+                
+                <div class="pricing">
+                    <div class="price">35 SYNTH</div>
+                    <div class="duration">3-4 hours</div>
+                </div>
+                
+                <button class="order-button">Check Availability</button>
+            </div>
+
+            <div class="offering-card" onclick="openOrderModal('cannabis-triangle')">
+                <div class="bbhe-symbol">△</div>
+                <h3>Triangle Kush △</h3>
+                <div class="strain">OG Kush Lineage</div>
+                <div class="potency-indicator">STRONG</div>
+                
+                <div class="description">
+                    Sacred geometry strain for expanded awareness. 
+                    Balanced hybrid experience.
+                </div>
+                
+                <div class="effects">
+                    <h4>Experience:</h4>
+                    <ul>
+                        <li>Euphoric high</li>
+                        <li>Creative thinking</li>
+                        <li>Social enhancement</li>
+                        <li>Giggly & fun</li>
+                    </ul>
+                </div>
+
+                <div class="legal-status">
+                    <div class="status-badge decriminalized">VARIES BY STATE</div>
+                    <div class="details">Legal in cannabis-legal states only. Still federally illegal in US. Must be 21+.</div>
+                </div>
+                
+                <div class="pricing">
+                    <div class="price">45 SYNTH</div>
+                    <div class="duration">3-4 hours</div>
+                </div>
+                
+                <button class="order-button">Check Availability</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Psilocybin (Decriminalized in select areas) -->
+    <div class="menu-section">
+        <div class="category-header">🍄 Psilocybin Experience (Select Cities Only)</div>
+        
+        <div class="offerings-grid">
+            <div class="offering-card" onclick="openOrderModal('psilocybin-hex')">
+                <div class="bbhe-symbol">⬡</div>
+                <h3>Hexagon Harmony ⬡</h3>
+                <div class="strain">Golden Teacher</div>
+                <div class="potency-indicator">MODERATE</div>
+                
+                <div class="description">
+                    Sacred mushroom for geometric consciousness exploration. 
+                    Gentle teacher plant.
+                </div>
+                
+                <div class="effects">
+                    <h4>Experience:</h4>
+                    <ul>
+                        <li>Visual geometric patterns</li>
+                        <li>Emotional release</li>
+                        <li>Spiritual insights</li>
+                        <li>Feeling of connection</li>
+                    </ul>
+                </div>
+
+                <div class="legal-status">
+                    <div class="status-badge decriminalized">DECRIMINALIZED SELECT CITIES</div>
+                    <div class="details">Decriminalized in Oakland, Denver, Seattle, etc. Still federally illegal. Medical trials ongoing. Therapeutic setting recommended.</div>
+                </div>
+                
+                <div class="pricing">
+                    <div class="price">100 SYNTH</div>
+                    <div class="duration">4-6 hours</div>
+                </div>
+                
+                <button class="order-button">Requires Screening</button>
+            </div>
+
+            <div class="offering-card" onclick="openOrderModal('psilocybin-diamond')">
+                <div class="bbhe-symbol">◇</div>
+                <h3>Diamond Mind ◇</h3>
+                <div class="strain">Penis Envy</div>
+                <div class="potency-indicator heroic">HEROIC</div>
+                
+                <div class="description">
+                    High-potency mushroom for deep consciousness work. 
+                    Experienced users only.
+                </div>
+                
+                <div class="effects">
+                    <h4>Experience:</h4>
+                    <ul>
+                        <li>Profound insights</li>
+                        <li>Ego dissolution</li>
+                        <li>Mystical experience</li>
+                        <li>Transformative potential</li>
+                    </ul>
+                </div>
+
+                <div class="legal-status">
+                    <div class="status-badge decriminalized">DECRIMINALIZED SELECT CITIES</div>
+                    <div class="details">Not for first-time users. Therapeutic setting strongly recommended. Guide/sitter mandatory.</div>
+                </div>
+                
+                <div class="pricing">
+                    <div class="price">200 SYNTH</div>
+                    <div class="duration">6-8 hours</div>
+                </div>
+                
+                <button class="order-button">Expert Level Only</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Natural Entheogens (Illegal - Educational Info) -->
+    <div class="menu-section">
+        <div class="category-header">🌿 Natural Entheogens (Illegal - Educational Reference)</div>
+        
+        <div class="offerings-grid">
+            <div class="offering-card illegal" onclick="showLegalWarning()">
+                <div class="bbhe-symbol">⊕</div>
+                <h3>Source Code ⊕</h3>
+                <div class="strain">N,N-DMT</div>
+                <div class="potency-indicator heroic">HEROIC</div>
+                
+                <div class="description">
+                    Direct source consciousness contact. 
+                    Intense, brief, profound.
+                </div>
+                
+                <div class="effects">
+                    <h4>Reported Effects:</h4>
+                    <ul>
+                        <li>Complete reality shift</li>
+                        <li>Entity encounters</li>
+                        <li>Geometric visions</li>
+                        <li>Time dissolution</li>
+                    </ul>
+                </div>
+
+                <div class="legal-status">
+                    <div class="status-badge illegal">SCHEDULE I - ILLEGAL</div>
+                    <div class="details">Federally illegal. Severe penalties. Ceremonial use in some traditional contexts. Medical research ongoing.</div>
+                </div>
+                
+                <div class="pricing">
+                    <div class="price">N/A</div>
+                    <div class="duration">15-30 min</div>
+                </div>
+                
+                <button class="order-button" style="background: rgba(100, 100, 100, 0.5);" disabled>Illegal - Info Only</button>
+            </div>
+
+            <div class="offering-card illegal" onclick="showLegalWarning()">
+                <div class="bbhe-symbol">●</div>
+                <h3>Void Experience ●</h3>
+                <div class="strain">5-MeO-DMT (Bufo)</div>
+                <div class="potency-indicator heroic">HEROIC</div>
+                
+                <div class="description">
+                    Ego death and oneness experience. 
+                    Most intense known to human consciousness.
+                </div>
+                
+                <div class="effects">
+                    <h4>Reported Effects:</h4>
+                    <ul>
+                        <li>Complete ego dissolution</li>
+                        <li>Unity consciousness</li>
+                        <li>Void state</li>
+                        <li>Mystical oneness</li>
+                    </ul>
+                </div>
+
+                <div class="legal-status">
+                    <div class="status-badge illegal">SCHEDULE I - ILLEGAL</div>
+                    <div class="details">Federally illegal. Endangered species concern (Bufo toad). Synthetic alternatives exist. Medical supervision ESSENTIAL if legal use.</div>
+                </div>
+                
+                <div class="pricing">
+                    <div class="price">N/A</div>
+                    <div class="duration">20-60 min</div>
+                </div>
+                
+                <button class="order-button" style="background: rgba(100, 100, 100, 0.5);" disabled>Illegal - Info Only</button>
+            </div>
+
+            <div class="offering-card illegal" onclick="showLegalWarning()">
+                <div class="bbhe-symbol">⊗</div>
+                <h3>Matrix Vision ⊗</h3>
+                <div class="strain">LSD-25</div>
+                <div class="potency-indicator">STRONG</div>
+                
+                <div class="description">
+                    Classic consciousness exploration compound. 
+                    Extended journey through perception.
+                </div>
+                
+                <div class="effects">
+                    <h4>Reported Effects:</h4>
+                    <ul>
+                        <li>Visual geometry</li>
+                        <li>Thought expansion</li>
+                        <li>Interconnectedness</li>
+                        <li>Time distortion</li>
+                    </ul>
+                </div>
+
+                <div class="legal-status">
+                    <div class="status-badge illegal">SCHEDULE I - ILLEGAL</div>
+                    <div class="details">Federally illegal. Clinical research ongoing (MAPS, etc.). Therapeutic potential being studied.</div>
+                </div>
+                
+                <div class="pricing">
+                    <div class="price">N/A</div>
+                    <div class="duration">8-12 hours</div>
+                </div>
+                
+                <button class="order-button" style="background: rgba(100, 100, 100, 0.5);" disabled>Illegal - Info Only</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Safety Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">×</button>
+            <h2>⚠️ Safety & Consent</h2>
+            
+            <div class="safety-section">
+                <h3>⚠️ Contraindications</h3>
+                <ul>
+                    <li>Pregnancy or breastfeeding</li>
+                    <li>Heart conditions</li>
+                    <li>Psychotic disorders or family history</li>
+                    <li>Severe anxiety or depression</li>
+                    <li>Currently on SSRIs or MAOIs</li>
+                    <li>Liver or kidney disease</li>
+                </ul>
+            </div>
+
+            <div class="safety-section">
+                <h3>🛡️ Safety Requirements</h3>
+                <ul>
+                    <li>Must be 21+ years old</li>
+                    <li>Medical screening for high-risk substances</li>
+                    <li>Trusted companion must be present</li>
+                    <li>Safe, comfortable environment</li>
+                    <li>No driving for 24 hours minimum</li>
+                    <li>Clear next day (no obligations)</li>
+                    <li>Emergency support available</li>
+                </ul>
+            </div>
+
+            <div class="safety-section">
+                <h3>📋 Harm Reduction</h3>
+                <ul>
+                    <li>Start with lowest dose</li>
+                    <li>Test substances when possible</li>
+                    <li>Stay hydrated</li>
+                    <li>Never mix substances</li>
+                    <li>Set clear intentions</li>
+                    <li>Integration support after</li>
+                </ul>
+            </div>
+
+            <div class="consent-checkbox">
+                <input type="checkbox" id="consent1">
+                <label for="consent1">I confirm I am 21+ years old and legally able to consume this in my jurisdiction</label>
+            </div>
+
+            <div class="consent-checkbox">
+                <input type="checkbox" id="consent2">
+                <label for="consent2">I have read and understand all safety warnings and contraindications</label>
+            </div>
+
+            <div class="consent-checkbox">
+                <input type="checkbox" id="consent3">
+                <label for="consent3">I understand the legal status and accept all risks</label>
+            </div>
+
+            <div class="consent-checkbox">
+                <input type="checkbox" id="consent4">
+                <label for="consent4">I have a trusted companion/sitter present</label>
+            </div>
+
+            <button class="confirm-button" id="confirmButton" disabled onclick="confirmOrder()">
+                Confirm Order
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let currentOffering = null;
+
+        function openOrderModal(offeringId) {
+            currentOffering = offeringId;
+            document.getElementById('orderModal').classList.add('active');
+            updateConfirmButton();
+        }
+
+        function closeModal() {
+            document.getElementById('orderModal').classList.remove('active');
+            // Reset checkboxes
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+            updateConfirmButton();
+        }
+
+        function updateConfirmButton() {
+            const allChecked = Array.from(document.querySelectorAll('input[type="checkbox"]'))
+                .every(cb => cb.checked);
+            document.getElementById('confirmButton').disabled = !allChecked;
+        }
+
+        function showLegalWarning() {
+            alert('⚠️ ILLEGAL SUBSTANCE\n\nThis substance is a Schedule I controlled substance and is illegal in most jurisdictions.\n\nPossession, use, or distribution can result in:\n• Criminal charges\n• Imprisonment\n• Fines\n• Permanent criminal record\n\nThis information is provided for educational/harm reduction purposes only.\n\nAlways comply with local laws.');
+        }
+
+        function confirmOrder() {
+            alert('✅ Order Confirmed\n\nYour experience will be prepared with care.\n\n• Medical staff notified\n• Safe space prepared\n• Companion confirmed\n• Integration support scheduled\n\nPlease proceed to the designated area.\n\nRemember: Set and setting are everything.');
+            closeModal();
+        }
+
+        // Update confirm button when checkboxes change
+        document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+            cb.addEventListener('change', updateConfirmButton);
+        });
+
+        // Close modal on outside click
+        document.getElementById('orderModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
