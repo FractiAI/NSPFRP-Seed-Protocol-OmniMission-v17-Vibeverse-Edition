@@ -30,8 +30,25 @@ export interface AuthState {
  * Client ID: 767219028146-ti4gsu6j6lpgrgjm4uhplc4dnf8ogmad.apps.googleusercontent.com
  * Project: Syntheverse Whole Brain AI Project
  */
-export const GOOGLE_CLIENT_ID = '767219028146-ti4gsu6j6lpgrgjm4uhplc4dnf8ogmad.apps.googleusercontent.com';
-export const GOOGLE_CLIENT_SECRET = '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';
+/**
+ * ✅ SECURE: Google OAuth credentials from environment variables
+ * Add these to .env file or Vercel environment variables:
+ * - GOOGLE_OAUTH_CLIENT_ID
+ * - GOOGLE_OAUTH_CLIENT_SECRET
+ */
+export const GOOGLE_CLIENT_ID = 
+  process.env.GOOGLE_OAUTH_CLIENT_ID || 
+  process.env.NEXT_PUBLIC_GOOGLE_OAUTH_CLIENT_ID || 
+  '767219028146-ti4gsu6j6lpgrgjm4uhplc4dnf8ogmad.apps.googleusercontent.com'; // Fallback for development
+
+export const GOOGLE_CLIENT_SECRET = 
+  process.env.GOOGLE_OAUTH_CLIENT_SECRET || 
+  ''; // Never hardcode in production - set via environment variable
+
+// Validation warning
+if (!process.env.GOOGLE_OAUTH_CLIENT_SECRET && process.env.NODE_ENV === 'production') {
+  console.error('🔴 SECURITY WARNING: GOOGLE_OAUTH_CLIENT_SECRET not set in environment variables!');
+}
 
 export class GoogleOAuth {
   private config: GoogleAuthConfig;
