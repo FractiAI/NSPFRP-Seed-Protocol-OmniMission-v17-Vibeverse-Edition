@@ -127,8 +127,8 @@ export class FourXFourProtocolPricing {
         id: 'shell',
         name: 'Shell',
         octane: 'SHELL',
-        monthlyPrice: 1000, // 1,000 SYNTH/month
-        annualPrice: 10000, // 2 months free
+        monthlyPrice: 999, // 999 SYNTH/month (3's and 9's pricing)
+        annualPrice: 9999, // 2 months free
         oneTimePrice: 165000, // 165,000 SYNTH to own
         features: [
           'Everything in Cloud',
@@ -242,7 +242,7 @@ export class FourXFourProtocolPricing {
         octane: 'ULTIMATE',
         monthlyPrice: 5000, // 5,000 SYNTH/month
         annualPrice: 50000, // 2 months free
-        oneTimePrice: 1000000, // 1,000,000 SYNTH to own
+        oneTimePrice: 999999, // 999,999 SYNTH to own (3's and 9's magic)
         features: [
           'Everything in Shell',
           'Ultimate Chairman Console',

@@ -227,7 +227,7 @@ export class CommercialCatalogButtonSnapshot {
             'Snap & CaptureDiscovery logging',
             'SeedSynthesizer / MakeAsProtocol spin-offs'
           ],
-          requirements: ['Monthly Access Fee: $1,000+', 'Revenue Share: 15%', 'Bonus Participation Available']
+          requirements: ['Monthly Access Fee: $999+', 'Revenue Share: 15%', 'Bonus Participation Available']
         }
       ]
     });

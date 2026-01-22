@@ -659,7 +659,7 @@ export const CHAMPAGNE_MENU = {
   },
   ultimate: {
     name: 'Louis Roederer Cristal',
-    pricePerBottle: 1000,
+    pricePerBottle: 999,
     region: 'Champagne, France',
     notes: 'The ultimate luxury'
   }
