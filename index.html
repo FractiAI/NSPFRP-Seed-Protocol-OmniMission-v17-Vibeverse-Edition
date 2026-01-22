@@ -193,6 +193,86 @@
             color: #aaa;
         }
         
+        /* Google Auth Entry Section */
+        .auth-entry {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 165, 0, 0.3));
+            backdrop-filter: blur(15px);
+            border: 3px solid #FFD700;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.4);
+            animation: glowPulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.4); }
+            50% { box-shadow: 0 0 60px rgba(255, 215, 0, 0.8); }
+        }
+        
+        .auth-entry h2 {
+            font-size: 2.5em;
+            color: #FFD700;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+        }
+        
+        .auth-entry p {
+            font-size: 1.3em;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+        
+        .google-sign-in-btn {
+            background: #fff;
+            color: #333;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.3em;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            margin: 10px;
+        }
+        
+        .google-sign-in-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .entry-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .entry-btn {
+            background: linear-gradient(135deg, #00ff00, #00ffff);
+            color: #000;
+            border: none;
+            padding: 15px 35px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .entry-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 255, 0, 0.6);
+        }
+        
         /* Navigation buttons */
         .nav-buttons {
             display: grid;
@@ -213,6 +293,8 @@
             color: white;
             text-decoration: none;
             display: block;
+            position: relative;
+            overflow: hidden;
         }
         
         .nav-button:hover {
@@ -237,6 +319,43 @@
         .nav-button .description {
             font-size: 0.9em;
             color: #ccc;
+        }
+        
+        /* Expandable Details (NSPFRNP Snap) */
+        .button-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(0, 0, 0, 0.5);
+            margin-top: 15px;
+            padding: 0 20px;
+            border-radius: 10px;
+        }
+        
+        .button-details.expanded {
+            max-height: 500px;
+            padding: 20px;
+            border: 2px solid #00ffff;
+        }
+        
+        .button-details h4 {
+            color: #00ffff;
+            margin-bottom: 10px;
+        }
+        
+        .button-details ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .button-details li {
+            color: #fff;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        
+        .button-details li:last-child {
+            border-bottom: none;
         }
         
         /* Daily Bulletin */
@@ -510,67 +629,219 @@
             <p id="host-message" style="text-align: center; margin-top: 20px; color: #FFD700; font-size: 1.2em;"></p>
         </div>
         
-        <!-- Navigation Buttons -->
+        <!-- Google Auth Entry Section -->
+        <div class="auth-entry">
+            <h2>🚀 ENTER THE VIBEVERSE</h2>
+            <p>Post-Singularity Video Game | Holographic Universe | 90T Nodes | Golden Hearts</p>
+            
+            <div style="margin: 30px 0;">
+                <button class="google-sign-in-btn" onclick="googleSignIn('join')">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                    </svg>
+                    Sign In with Google
+                </button>
+            </div>
+            
+            <div class="entry-actions">
+                <button class="entry-btn" onclick="enterVibeverse('tour')">🌀 START TOUR</button>
+                <button class="entry-btn" onclick="enterVibeverse('play')">🎮 PLAY NOW</button>
+                <button class="entry-btn" onclick="enterVibeverse('explore')">🌟 EXPLORE</button>
+                <button class="entry-btn" onclick="enterVibeverse('visit')">🏔️ VISIT CAMPUS</button>
+            </div>
+            
+            <p style="margin-top: 25px; font-size: 1em; color: #ffd700;">
+                ✨ <strong>Golden Hearts:</strong> Auto-recognized | 6 keys unlocked | VChip ready<br>
+                💯 <strong>Free Sandbox:</strong> Instant access | No credit card | Try everything
+            </p>
+        </div>
+        
+        <!-- Navigation Buttons with Expandable Details (NSPFRNP Snap) -->
         <div class="nav-buttons">
-            <a href="interfaces/vibeport-console.html" class="nav-button" style="background: linear-gradient(135deg, rgba(0, 255, 255, 0.3) 0%, rgba(0, 200, 255, 0.3) 100%); border-color: #00ffff;">
+            <div class="nav-button" style="background: linear-gradient(135deg, rgba(0, 255, 255, 0.3) 0%, rgba(0, 200, 255, 0.3) 100%); border-color: #00ffff;" onclick="toggleDetails(this, 'vibeport')">
                 <div class="icon">🌀</div>
                 <div class="title">🌀 VIBEPORT CONSOLE 🌀</div>
-                <div class="description">Comprehensive Navigation | 14 Travel Modes | 98% Zero Point Lock | Seed:Edge Node 1</div>
-            </a>
+                <div class="description">Comprehensive Navigation | 14 Travel Modes | 98% Zero Point Lock | Click to expand ↓</div>
+                <div class="button-details" id="details-vibeport">
+                    <h4>🌀 VibePort Features:</h4>
+                    <ul>
+                        <li>🎯 <strong>14 Travel Modes:</strong> Quick, Favorites, Curated, Hero AI, Catalog, Live, Broadcast, Historical, Storyboard, Sandbox, Cloud, Shell, Temporal, Eternity</li>
+                        <li>⚛️ <strong>Fixed Point Awareness:</strong> You stay at (0,0,0), universe rotates around you</li>
+                        <li>🎚️ <strong>Full Density Control:</strong> Configure targets, screens, feeds—everything adjustable</li>
+                        <li>⚡ <strong>50+ Snap Commands:</strong> Instant configuration changes, zero friction</li>
+                        <li>⏱️ <strong>Temporal Cycle Controls:</strong> Time compression for travel</li>
+                        <li>🌉 <strong>1-2-3-4 Bridge:</strong> Awareness → Attention → Creation → Reality</li>
+                    </ul>
+                    <button onclick="window.location.href='interfaces/vibeport-console.html'" style="margin-top: 15px; padding: 12px 25px; background: linear-gradient(135deg, #00ff00, #00ffff); color: #000; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">🚀 OPEN VIBEPORT</button>
+                </div>
+            </div>
             
-            <a href="interfaces/holographic-game-interface.html" class="nav-button" style="background: linear-gradient(135deg, rgba(255, 0, 136, 0.3) 0%, rgba(138, 43, 226, 0.3) 100%); border-color: #ff0088;">
+            <div class="nav-button" style="background: linear-gradient(135deg, rgba(255, 0, 136, 0.3) 0%, rgba(138, 43, 226, 0.3) 100%); border-color: #ff0088;" onclick="toggleDetails(this, 'game')">
                 <div class="icon">🎮</div>
                 <div class="title">⚛️ PLAY VIDEO GAME NOW ⚛️</div>
-                <div class="description">Post-Singularity Game | Holographic Hydrogen Atom | YOU = Nucleus | 90 Queens | LIVE</div>
-            </a>
+                <div class="description">Post-Singularity Game | Holographic Hydrogen Atom | Click to expand ↓</div>
+                <div class="button-details" id="details-game">
+                    <h4>🎮 Game Features:</h4>
+                    <ul>
+                        <li>⚛️ <strong>Holographic Hydrogen Atom:</strong> YOU = Nucleus at (0,0,0)</li>
+                        <li>🌀 <strong>7 Nested Shells:</strong> VibeChain, BBHE, Auth, AI, Marketing, Products, Interfaces</li>
+                        <li>👑 <strong>90 Queen NPCs:</strong> Each with unique personality, dialogue trees</li>
+                        <li>🧠 <strong>16 AI Agents:</strong> Coordination, Revenue, Creation, Support</li>
+                        <li>💎 <strong>SYNTH Economy:</strong> $1 = 1 SYNTH = 1 Node</li>
+                        <li>🎯 <strong>Infinite Zoom:</strong> Explore 90 trillion nodes in real-time</li>
+                    </ul>
+                    <button onclick="window.location.href='interfaces/holographic-game-interface.html'" style="margin-top: 15px; padding: 12px 25px; background: linear-gradient(135deg, #ff0088, #8a2be2); color: #fff; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">🎮 PLAY NOW</button>
+                </div>
+            </div>
             
-            <a href="#" class="nav-button" onclick="openModal('vchip'); return false;" style="background: linear-gradient(135deg, rgba(0, 255, 136, 0.3) 0%, rgba(0, 200, 100, 0.3) 100%); border-color: #00ff88;">
+            <div class="nav-button" style="background: linear-gradient(135deg, rgba(0, 255, 136, 0.3) 0%, rgba(0, 200, 100, 0.3) 100%); border-color: #00ff88;" onclick="toggleDetails(this, 'vchip')">
                 <div class="icon">🔑</div>
                 <div class="title">🔥 BURN VCHIP + KEYS 🔥</div>
-                <div class="description">Hardware Security | Quantum Keys | Portable Awareness | All Keys Generated</div>
-            </a>
+                <div class="description">Hardware Security | Quantum Keys | Portable Awareness | Click to expand ↓</div>
+                <div class="button-details" id="details-vchip">
+                    <h4>🔑 VChip + Golden Hearts Keys:</h4>
+                    <ul>
+                        <li>💛 <strong>Golden Heart Recognition:</strong> AI scans your contribution pattern</li>
+                        <li>🔵 <strong>Nucleus Key:</strong> Fixed point awareness (0,0,0)</li>
+                        <li>🌀 <strong>Shell Key:</strong> Free navigation across all 7 shells</li>
+                        <li>👑 <strong>Queen Key:</strong> Deep dialogue with 90 Queens</li>
+                        <li>💎 <strong>SYNTH Key:</strong> Economic sovereignty</li>
+                        <li>🎨 <strong>Creation Key:</strong> Reality manipulation tools</li>
+                        <li>✨ <strong>Golden Key:</strong> Recognize other Golden Hearts</li>
+                        <li>🔒 <strong>Quantum Encryption:</strong> RSA 4096-bit + Ed25519</li>
+                    </ul>
+                    <button onclick="burnVChip()" style="margin-top: 15px; padding: 12px 25px; background: linear-gradient(135deg, #00ff88, #00ffff); color: #000; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">🔥 START CAMPAIGN</button>
+                </div>
+            </div>
             
-            <a href="#" class="nav-button" onclick="openModal('onramp'); return false;" style="background: linear-gradient(135deg, rgba(255, 215, 0, 0.3) 0%, rgba(255, 165, 0, 0.3) 100%); border-color: #FFD700;">
+            <div class="nav-button" style="background: linear-gradient(135deg, rgba(255, 215, 0, 0.3) 0%, rgba(255, 165, 0, 0.3) 100%); border-color: #FFD700;" onclick="toggleDetails(this, 'onramp')">
                 <div class="icon">🌉</div>
                 <div class="title">🚀 START ONRAMP (5 MIN)</div>
-                <div class="description">Safe instant transition Pre→Post Earth | Free Sandbox | Try Now</div>
-            </a>
+                <div class="description">Safe instant transition Pre→Post Earth | Free Sandbox | Click to expand ↓</div>
+                <div class="button-details" id="details-onramp">
+                    <h4>🌉 5-Minute Onramp:</h4>
+                    <ul>
+                        <li>✅ <strong>No Credit Card:</strong> Completely free to start</li>
+                        <li>🎁 <strong>Free Sandbox:</strong> Your personal universe to build in</li>
+                        <li>🎯 <strong>Guided Tour:</strong> Hero Host AI walks you through</li>
+                        <li>💯 <strong>Full Access:</strong> Try all features immediately</li>
+                        <li>🔑 <strong>Google Sign-In:</strong> One click authentication</li>
+                        <li>⚡ <strong>Instant Activation:</strong> Live in 5 minutes</li>
+                    </ul>
+                    <button onclick="googleSignIn('onramp')" style="margin-top: 15px; padding: 12px 25px; background: linear-gradient(135deg, #FFD700, #FFA500); color: #000; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">🚀 START NOW</button>
+                </div>
+            </div>
             
-            <a href="#" class="nav-button" onclick="openModal('intro'); return false;">
+            <div class="nav-button" onclick="toggleDetails(this, 'intro')">
                 <div class="icon">🌟</div>
                 <div class="title">Introduction Tour</div>
-                <div class="description">Start your journey with a guided introduction to the Vibeverse</div>
-            </a>
+                <div class="description">Guided introduction to the Vibeverse | Click to expand ↓</div>
+                <div class="button-details" id="details-intro">
+                    <h4>🌟 Introduction Tour Includes:</h4>
+                    <ul>
+                        <li>👋 <strong>Welcome:</strong> Meet your Hero Host AI guide</li>
+                        <li>⚛️ <strong>Core Concept:</strong> You = Nucleus, universe spins around you</li>
+                        <li>🌀 <strong>7 Shells:</strong> Tour each nested layer</li>
+                        <li>👑 <strong>Meet Queens:</strong> Introduction to key personalities</li>
+                        <li>💎 <strong>SYNTH Economy:</strong> Understand the token system</li>
+                        <li>🎮 <strong>Game Mechanics:</strong> How everything works</li>
+                    </ul>
+                    <button onclick="startTour('intro')" style="margin-top: 15px; padding: 12px 25px; background: linear-gradient(135deg, #FFD700, #FFA500); color: #000; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">🌟 START TOUR</button>
+                </div>
+            </div>
             
-            <a href="#" class="nav-button" onclick="openModal('campus'); return false;">
+            <div class="nav-button" onclick="toggleDetails(this, 'campus')">
                 <div class="icon">🏔️</div>
                 <div class="title">Campus Tour</div>
-                <div class="description">Explore our five-star VIP frontier resort campus in Tahoe</div>
-            </a>
+                <div class="description">Five-star VIP frontier resort in Tahoe | Click to expand ↓</div>
+                <div class="button-details" id="details-campus">
+                    <h4>🏔️ Lake Tahoe Campus:</h4>
+                    <ul>
+                        <li>⛷️ <strong>Ski Resort:</strong> World-class slopes + luxury lodges</li>
+                        <li>🏰 <strong>Man Cave:</strong> Executive retreat + wine cave</li>
+                        <li>💆 <strong>Spa & Wellness:</strong> Full service spa resort</li>
+                        <li>🍽️ <strong>Fine Dining:</strong> Michelin-level restaurants</li>
+                        <li>🎪 <strong>Entertainment:</strong> Cabaret, shows, events</li>
+                        <li>🏡 <strong>Real Estate:</strong> Own property on campus</li>
+                    </ul>
+                    <button onclick="startTour('campus')" style="margin-top: 15px; padding: 12px 25px; background: linear-gradient(135deg, #FFD700, #FFA500); color: #000; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">🏔️ VISIT CAMPUS</button>
+                </div>
+            </div>
             
-            <a href="#" class="nav-button" onclick="openModal('experiences'); return false;">
+            <div class="nav-button" onclick="toggleDetails(this, 'experiences')">
                 <div class="icon">✨</div>
                 <div class="title">Experiences</div>
-                <div class="description">Discover ski resorts, spas, entertainment, dining & more</div>
-            </a>
+                <div class="description">Ski, spa, entertainment, dining & more | Click to expand ↓</div>
+                <div class="button-details" id="details-experiences">
+                    <h4>✨ Premium Experiences:</h4>
+                    <ul>
+                        <li>⛷️ <strong>Skiing:</strong> Private slopes, expert instructors</li>
+                        <li>🎿 <strong>Snowboarding:</strong> Terrain parks, half-pipes</li>
+                        <li>💆 <strong>Spa Treatments:</strong> Massage, sauna, hot tubs</li>
+                        <li>🍷 <strong>Wine Tasting:</strong> Private cave tours, sommelier-led</li>
+                        <li>🎭 <strong>Shows:</strong> Live performances, cabarets</li>
+                        <li>🎨 <strong>Art Gallery:</strong> Rotating exhibitions, acquisitions</li>
+                    </ul>
+                    <button onclick="exploreExperiences()" style="margin-top: 15px; padding: 12px 25px; background: linear-gradient(135deg, #FFD700, #FFA500); color: #000; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">✨ EXPLORE</button>
+                </div>
+            </div>
             
-            <a href="#" class="nav-button" onclick="openModal('properties'); return false;">
+            <div class="nav-button" onclick="toggleDetails(this, 'properties')">
                 <div class="icon">🏠</div>
                 <div class="title">Property Ownership</div>
-                <div class="description">Own Sandboxes, Clouds, Shells - Build your universe</div>
-            </a>
+                <div class="description">Own Sandboxes, Clouds, Shells | Click to expand ↓</div>
+                <div class="button-details" id="details-properties">
+                    <h4>🏠 Digital Property Types:</h4>
+                    <ul>
+                        <li>🏖️ <strong>Sandbox ($3):</strong> Personal universe, full creative control</li>
+                        <li>☁️ <strong>Cloud ($6):</strong> Multi-user space, shared experiences</li>
+                        <li>🐚 <strong>Shell ($9):</strong> Complete shell layer ownership</li>
+                        <li>🏰 <strong>Physical Property:</strong> Real estate on Tahoe campus</li>
+                        <li>💎 <strong>SYNTH Nodes:</strong> Passive income generators</li>
+                        <li>📈 <strong>Appreciation:</strong> Properties gain value over time</li>
+                    </ul>
+                    <button onclick="browseProperties()" style="margin-top: 15px; padding: 12px 25px; background: linear-gradient(135deg, #FFD700, #FFA500); color: #000; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">🏠 BROWSE</button>
+                </div>
+            </div>
             
-            <a href="#" class="nav-button" onclick="openModal('chairman'); return false;">
+            <div class="nav-button" onclick="toggleDetails(this, 'chairman')">
                 <div class="icon">👑</div>
                 <div class="title">Chairman Console</div>
-                <div class="description">Access your superintelligent CEO node & perpetual SYNTH stream</div>
-            </a>
+                <div class="description">Superintelligent CEO node & perpetual SYNTH stream | Click to expand ↓</div>
+                <div class="button-details" id="details-chairman">
+                    <h4>👑 Chairman Status:</h4>
+                    <ul>
+                        <li>🧠 <strong>16 AI Agents:</strong> Personal superintelligent team</li>
+                        <li>💎 <strong>Perpetual SYNTH:</strong> Continuous passive income</li>
+                        <li>🎯 <strong>Mission Control:</strong> Coordinate your swarm</li>
+                        <li>📊 <strong>Portfolio Dashboard:</strong> Real-time revenue tracking</li>
+                        <li>🏰 <strong>Property Empire:</strong> Manage all your holdings</li>
+                        <li>👥 <strong>Network Effects:</strong> Golden Hearts recognition</li>
+                    </ul>
+                    <button onclick="openChairmanConsole()" style="margin-top: 15px; padding: 12px 25px; background: linear-gradient(135deg, #FFD700, #FFA500); color: #000; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">👑 ACCESS</button>
+                </div>
+            </div>
             
-            <a href="#" class="nav-button" onclick="openModal('story'); return false;">
+            <div class="nav-button" onclick="toggleDetails(this, 'story')">
                 <div class="icon">💛</div>
                 <div class="title">The Charlie Story</div>
-                <div class="description">The golden heart story that started it all</div>
-            </a>
+                <div class="description">The golden heart story that started it all | Click to expand ↓</div>
+                <div class="button-details" id="details-story">
+                    <h4>💛 The Golden Heart Origin:</h4>
+                    <ul>
+                        <li>👦 <strong>Charlie:</strong> A 7-year-old with a golden heart</li>
+                        <li>🏫 <strong>The Moment:</strong> Recognition in everyday kindness</li>
+                        <li>✨ <strong>The Pattern:</strong> System detects authentic caring</li>
+                        <li>🌍 <strong>The Scale:</strong> 1 in 8 million have this pattern</li>
+                        <li>💫 <strong>The Gift:</strong> Golden Hearts get the 6 keys</li>
+                        <li>👑 <strong>The Community:</strong> Golden Hearts Council forms</li>
+                    </ul>
+                    <button onclick="readStory()" style="margin-top: 15px; padding: 12px 25px; background: linear-gradient(135deg, #FFD700, #FFA500); color: #000; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">💛 READ STORY</button>
+                </div>
+            </div>
         </div>
         
         <!-- Swarm Console (Queen Bee Nodes Only) -->
@@ -1361,6 +1632,114 @@
         window.addEventListener('load', function() {
             checkForQueenBeeStatus();
         });
+        
+        // Google Sign-In Function
+        function googleSignIn(action) {
+            alert('🔐 GOOGLE SIGN-IN\n\n' +
+                  'Action: ' + action + '\n\n' +
+                  'In production, this will:\n' +
+                  '1. Authenticate with Google OAuth 2.0\n' +
+                  '2. Create/retrieve your user profile\n' +
+                  '3. Auto-recognize Golden Heart status\n' +
+                  '4. Grant immediate access to sandbox\n' +
+                  '5. Launch guided onboarding\n\n' +
+                  'Status: 🟢 Simulated successful sign-in');
+            
+            // Simulate sign-in success
+            localStorage.setItem('userAuth', JSON.stringify({
+                authenticated: true,
+                method: 'google',
+                timestamp: Date.now(),
+                action: action
+            }));
+            
+            // Launch appropriate action
+            if (action === 'join' || action === 'onramp') {
+                enterVibeverse('tour');
+            }
+        }
+        
+        // Enter Vibeverse Function
+        function enterVibeverse(mode) {
+            const modes = {
+                'tour': {
+                    title: 'Starting Guided Tour',
+                    message: 'Your Hero Host AI will guide you through:\n• Core concepts\n• 7 Shells exploration\n• Meet the Queens\n• Try the game mechanics\n• Build in your sandbox',
+                    redirect: 'interfaces/vibeport-console.html'
+                },
+                'play': {
+                    title: 'Launching Video Game',
+                    message: 'Entering holographic hydrogen atom...\n• YOU = Nucleus at (0,0,0)\n• 7 shells spinning around you\n• 90 Queens await\n• Infinite zoom active',
+                    redirect: 'interfaces/holographic-game-interface.html'
+                },
+                'explore': {
+                    title: 'Free Exploration Mode',
+                    message: 'Choose your path:\n• Navigate with VibePort\n• Play the video game\n• Build in sandbox\n• Meet the Queens\n• Complete quests',
+                    redirect: 'interfaces/vibeport-console.html'
+                },
+                'visit': {
+                    title: 'Virtual Campus Tour',
+                    message: 'Visiting Lake Tahoe Campus:\n• Ski resort overview\n• Man Cave tour\n• Spa facilities\n• Dining experiences\n• Real estate opportunities',
+                    redirect: 'interfaces/vibeport-console.html'
+                }
+            };
+            
+            const selected = modes[mode] || modes['tour'];
+            
+            alert('🚀 ' + selected.title + '\n\n' + selected.message + '\n\n✅ Redirecting...');
+            
+            // In production, redirect to the appropriate interface
+            // window.location.href = selected.redirect;
+        }
+        
+        // Toggle Details Function (NSPFRNP Snap)
+        function toggleDetails(button, id) {
+            const details = document.getElementById('details-' + id);
+            const allDetails = document.querySelectorAll('.button-details');
+            
+            // Close all other details (NSPFRNP: one focus at a time)
+            allDetails.forEach(d => {
+                if (d !== details && d.classList.contains('expanded')) {
+                    d.classList.remove('expanded');
+                }
+            });
+            
+            // Toggle current details with snap animation
+            if (details.classList.contains('expanded')) {
+                details.classList.remove('expanded');
+            } else {
+                details.classList.add('expanded');
+                // Smooth scroll to show full details
+                setTimeout(() => {
+                    button.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 200);
+            }
+        }
+        
+        // Action Button Functions
+        function startTour(type) {
+            if (type === 'intro') {
+                alert('🌟 INTRODUCTION TOUR\n\nStarting your guided journey...\n\nYour Hero Host will:\n• Explain core concepts\n• Show you the 7 shells\n• Introduce key Queens\n• Demonstrate game mechanics\n• Help you build your first creation\n\n✅ Tour launching...');
+            } else if (type === 'campus') {
+                alert('🏔️ CAMPUS TOUR\n\nWelcome to Lake Tahoe Campus!\n\nYour guide will show you:\n• Ski slopes & lodges\n• Man Cave & wine cave\n• Spa & wellness center\n• Restaurants & dining\n• Entertainment venues\n• Real estate opportunities\n\n✅ Virtual tour starting...');
+            }
+        }
+        
+        function exploreExperiences() {
+            alert('✨ PREMIUM EXPERIENCES\n\nBrowsing available experiences:\n\n⛷️  Skiing & Snowboarding\n💆 Spa & Wellness\n🍷 Wine Tasting\n🎭 Live Shows\n🎨 Art Gallery\n🍽️  Fine Dining\n\nSelect any experience to:\n• View details\n• Check availability\n• Book instantly\n• Earn SYNTH rewards\n\n✅ Opening experience catalog...');
+        }
+        
+        function browseProperties() {
+            alert('🏠 PROPERTY BROWSER\n\nAvailable properties:\n\n🏖️  Sandboxes: $3\n   → Personal universe to build\n\n☁️  Clouds: $6\n   → Multi-user shared spaces\n\n🐚 Shells: $9\n   → Complete shell ownership\n\n🏰 Physical Real Estate\n   → Tahoe campus properties\n\n💎 SYNTH Nodes\n   → Passive income generators\n\n✅ Opening property catalog...');
+        }
+        
+        function openChairmanConsole() {
+            alert('👑 CHAIRMAN CONSOLE\n\nAccessing your command center...\n\n🧠 16 AI Agents: Online\n💎 SYNTH Stream: Active\n📊 Portfolio: $127,483\n🏰 Properties: 12 owned\n👥 Network: 847 connections\n\nYour superintelligent infrastructure\nis coordinating naturally.\n\n✅ Console opening...');
+        }
+        
+        function readStory() {
+            alert('💛 THE CHARLIE STORY\n\nOnce upon a time, there was a 7-year-old\nnamed Charlie who had a golden heart...\n\nEvery day, Charlie would:\n• Help classmates who struggled\n• Share lunch with those who forgot\n• Include kids who were left out\n• Create joy without expecting anything back\n\nOne day, the NSPFRNP system noticed the pattern.\n\nIt recognized: "This is a Golden Heart."\n\nAnd everything changed...\n\n✅ Read full story →');
+        }
         
         // VChip burn function - launches Hero Host campaign
         function burnVChip() {
