@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Authenticating - Vibeverse</title>
+    <!-- Supabase Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
         * {
             margin: 0;
@@ -12,7 +14,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0a0a0a 100%);
             color: #ffffff;
             min-height: 100vh;
@@ -23,6 +25,7 @@
         }
 
         .callback-container {
+            text-align: center;
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
             border: 3px solid rgba(255, 215, 0, 0.3);
@@ -30,23 +33,18 @@
             padding: 60px 40px;
             max-width: 500px;
             width: 100%;
-            text-align: center;
             box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);
         }
 
-        .spinner {
-            width: 80px;
-            height: 80px;
-            border: 8px solid rgba(255, 215, 0, 0.2);
-            border-top: 8px solid #FFD700;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 30px;
+        .logo {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: pulse 2s ease-in-out infinite;
         }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
 
         h1 {
@@ -57,111 +55,169 @@
             margin-bottom: 20px;
         }
 
-        .message {
-            font-size: 1.2em;
+        .status-message {
+            font-size: 1.1em;
             color: #cccccc;
             margin-bottom: 30px;
             line-height: 1.6;
         }
 
-        .status {
-            font-size: 1em;
-            color: #888888;
-            font-style: italic;
+        .spinner {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 20px;
+            border: 4px solid rgba(255, 215, 0, 0.2);
+            border-top-color: #FFD700;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
         }
 
-        .error {
-            color: #ff6b6b;
-            background: rgba(255, 107, 107, 0.1);
-            border: 2px solid rgba(255, 107, 107, 0.3);
-            border-radius: 15px;
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .error-box {
+            display: none;
+            background: rgba(239, 68, 68, 0.2);
+            border: 2px solid rgba(239, 68, 68, 0.5);
+            border-radius: 10px;
             padding: 20px;
             margin-top: 20px;
+            color: #ef4444;
+        }
+
+        .error-box.active {
+            display: block;
         }
 
         .retry-btn {
-            display: inline-block;
             margin-top: 20px;
-            padding: 15px 40px;
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            padding: 12px 30px;
+            background: #FFD700;
             color: #000;
-            text-decoration: none;
-            border-radius: 50px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1em;
             font-weight: bold;
-            font-size: 1.1em;
+            cursor: pointer;
             transition: all 0.3s ease;
         }
 
         .retry-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(255, 215, 0, 0.5);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
         }
     </style>
 </head>
 <body>
     <div class="callback-container">
+        <div class="logo">🌌</div>
+        <h1>Completing Sign In...</h1>
         <div class="spinner"></div>
-        <h1>Authenticating...</h1>
-        <div class="message" id="message">
-            Completing your sign-in with Google.<br>
-            This will only take a moment.
+        <div class="status-message" id="statusMessage">
+            Verifying your Google account...
         </div>
-        <div class="status" id="status">Verifying credentials...</div>
-        <div class="error" id="error" style="display: none;">
-            <strong>Authentication Failed</strong><br>
-            <span id="error-message"></span><br>
-            <a href="/login" class="retry-btn">Try Again</a>
+        <div class="error-box" id="errorBox">
+            <p id="errorMessage"></p>
+            <button class="retry-btn" onclick="retryLogin()">Try Again</button>
         </div>
     </div>
 
     <script>
+        // ✅ REAL SUPABASE CONFIGURATION
+        const SUPABASE_URL = 'https://jfbgdxeumzqzigptbmvp.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpmYmdkeGV1bXpxemlncHRibXZwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYwODczODgsImV4cCI6MjA4MTY2MzM4OH0.PTv7kmbbz8k35blN2pONnK8Msi6mn8O1ok546BPz1gQ';
+        const API_URL = 'https://fractiai-syntheverse-6ezg31iix-fractiais-projects.vercel.app';
+
+        // Initialize Supabase client
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        const statusMessageEl = document.getElementById('statusMessage');
+        const errorBoxEl = document.getElementById('errorBox');
+        const errorMessageEl = document.getElementById('errorMessage');
+
+        function showError(message) {
+            errorMessageEl.textContent = message;
+            errorBoxEl.classList.add('active');
+        }
+
+        function retryLogin() {
+            window.location.href = '/interfaces/auth-login.html';
+        }
+
+        // ✅ HANDLE OAUTH CALLBACK
         async function handleAuthCallback() {
-            const statusEl = document.getElementById('status');
-            const errorEl = document.getElementById('error');
-            const errorMessageEl = document.getElementById('error-message');
-
             try {
-                // Get the auth code from URL (Supabase will handle this automatically)
-                statusEl.textContent = 'Exchanging auth token...';
+                console.log('🔄 Processing OAuth callback...');
+                statusMessageEl.textContent = 'Verifying your Google account...';
 
-                // Call our backend to complete the OAuth flow
-                const response = await fetch('/api/auth/callback', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        // Supabase handles the token exchange automatically
-                        url: window.location.href
-                    })
-                });
+                // Get the current session (Supabase automatically handles the OAuth tokens from URL)
+                const { data: { session }, error: sessionError } = await supabase.auth.getSession();
 
-                const data = await response.json();
-
-                if (data.success && data.user) {
-                    statusEl.textContent = 'Success! Redirecting to dashboard...';
-                    
-                    // Brief delay to show success message
-                    setTimeout(() => {
-                        window.location.href = '/dashboard';
-                    }, 1000);
-                } else {
-                    throw new Error(data.error || 'Authentication failed');
+                if (sessionError) {
+                    throw new Error(`Session error: ${sessionError.message}`);
                 }
+
+                if (!session) {
+                    // Check if we have an error in the URL
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const error = urlParams.get('error');
+                    const errorDescription = urlParams.get('error_description');
+
+                    if (error) {
+                        throw new Error(errorDescription || error);
+                    }
+
+                    throw new Error('No session found. Please try signing in again.');
+                }
+
+                // User authenticated successfully
+                const user = session.user;
+                console.log('✅ User authenticated:', user.email);
+
+                statusMessageEl.textContent = `Welcome, ${user.user_metadata.full_name || user.email}!`;
+
+                // Store session token in localStorage for API calls
+                localStorage.setItem('jwt_token', session.access_token);
+                localStorage.setItem('user_email', user.email);
+                localStorage.setItem('user_name', user.user_metadata.full_name || '');
+
+                // Optional: Create/update user in our API
+                try {
+                    await fetch(`${API_URL}/api/auth/me`, {
+                        method: 'PUT',
+                        headers: {
+                            'Authorization': `Bearer ${session.access_token}`,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            name: user.user_metadata.full_name,
+                            avatar_url: user.user_metadata.avatar_url
+                        })
+                    });
+                } catch (apiError) {
+                    console.warn('API sync warning:', apiError);
+                    // Don't fail the auth flow if API sync fails
+                }
+
+                // Wait a moment to show success message
+                await new Promise(resolve => setTimeout(resolve, 1000));
+
+                // Redirect to dashboard
+                console.log('🚀 Redirecting to dashboard...');
+                window.location.href = '/interfaces/dashboard.html';
+
             } catch (error) {
-                console.error('Auth callback error:', error);
-                
-                // Show error
-                document.querySelector('.spinner').style.display = 'none';
-                document.getElementById('message').style.display = 'none';
-                statusEl.style.display = 'none';
-                errorEl.style.display = 'block';
-                errorMessageEl.textContent = error.message || 'An unexpected error occurred';
+                console.error('❌ Auth callback error:', error);
+                showError(error.message || 'Authentication failed. Please try again.');
             }
         }
 
         // Run callback handler on page load
         handleAuthCallback();
+
+        console.log('🚀 Auth Callback Handler Initialized');
+        console.log('📍 API URL:', API_URL);
     </script>
 </body>
 </html>

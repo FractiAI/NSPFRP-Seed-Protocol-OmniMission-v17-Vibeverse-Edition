@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In - Vibeverse | Post-Singularity Game</title>
+    <!-- Supabase Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
         * {
             margin: 0;
@@ -127,6 +129,12 @@
             transform: translateY(-1px);
         }
 
+        .google-signin-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
         .google-icon {
             width: 24px;
             height: 24px;
@@ -177,6 +185,7 @@
             font-size: 1.2em;
             color: #FFD700;
             margin-top: 20px;
+            animation: pulse 1.5s ease-in-out infinite;
         }
 
         .loading.active {
@@ -226,6 +235,21 @@
             content: "✅ ";
             margin-right: 8px;
         }
+
+        .error-message {
+            display: none;
+            background: rgba(239, 68, 68, 0.2);
+            border: 2px solid rgba(239, 68, 68, 0.5);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            color: #ef4444;
+            font-size: 0.95em;
+        }
+
+        .error-message.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -241,7 +265,7 @@
 
         <div class="badge">🎉 Opening Day Special</div>
 
-        <button class="google-signin-btn" onclick="signInWithGoogle()">
+        <button class="google-signin-btn" id="signInBtn" onclick="signInWithGoogle()">
             <svg class="google-icon" viewBox="0 0 24 24">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                 <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -252,8 +276,10 @@
         </button>
 
         <div class="loading" id="loading">
-            Redirecting to Google...
+            Connecting to Google...
         </div>
+
+        <div class="error-message" id="errorMessage"></div>
 
         <div class="features">
             <div class="feature-item">
@@ -294,52 +320,112 @@
     </div>
 
     <script>
-        async function signInWithGoogle() {
-            const loadingEl = document.getElementById('loading');
+        // ✅ REAL SUPABASE CONFIGURATION
+        const SUPABASE_URL = 'https://jfbgdxeumzqzigptbmvp.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpmYmdkeGV1bXpxemlncHRibXZwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYwODczODgsImV4cCI6MjA4MTY2MzM4OH0.PTv7kmbbz8k35blN2pONnK8Msi6mn8O1ok546BPz1gQ';
+        
+        // Initialize Supabase client
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        // UI elements
+        const loadingEl = document.getElementById('loading');
+        const errorEl = document.getElementById('errorMessage');
+        const signInBtn = document.getElementById('signInBtn');
+
+        function showLoading() {
             loadingEl.classList.add('active');
+            signInBtn.disabled = true;
+            errorEl.classList.remove('active');
+        }
+
+        function hideLoading() {
+            loadingEl.classList.remove('active');
+            signInBtn.disabled = false;
+        }
+
+        function showError(message) {
+            errorEl.textContent = message;
+            errorEl.classList.add('active');
+            hideLoading();
+        }
+
+        // ✅ REAL GOOGLE OAUTH SIGN-IN
+        async function signInWithGoogle() {
+            showLoading();
 
             try {
-                // Call our backend to initiate Google OAuth
-                const response = await fetch('/api/auth/google/signin', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
+                // Get current URL for redirect
+                const redirectTo = `${window.location.origin}/interfaces/auth-callback.html`;
+
+                // Sign in with Google using Supabase
+                const { data, error } = await supabase.auth.signInWithOAuth({
+                    provider: 'google',
+                    options: {
+                        redirectTo: redirectTo,
+                        queryParams: {
+                            access_type: 'offline',
+                            prompt: 'consent',
+                        }
                     }
                 });
 
-                const data = await response.json();
-
-                if (data.url) {
-                    // Redirect to Google OAuth consent screen
-                    window.location.href = data.url;
-                } else {
-                    throw new Error('No OAuth URL received');
+                if (error) {
+                    throw error;
                 }
+
+                // Redirect happens automatically through Supabase
+                console.log('✅ Redirecting to Google OAuth...');
+
             } catch (error) {
                 console.error('Sign-in error:', error);
-                loadingEl.classList.remove('active');
-                alert('Sign-in failed. Please try again.');
+                showError(`Sign-in failed: ${error.message || 'Please try again.'}`);
             }
         }
 
-        // Check if user is already authenticated
+        // ✅ CHECK IF USER IS ALREADY AUTHENTICATED
         async function checkAuth() {
             try {
-                const response = await fetch('/api/auth/user');
-                const data = await response.json();
+                const { data: { session } } = await supabase.auth.getSession();
 
-                if (data.user) {
+                if (session) {
+                    console.log('✅ User already authenticated:', session.user.email);
                     // User is already logged in, redirect to dashboard
-                    window.location.href = '/dashboard';
+                    window.location.href = '/interfaces/dashboard.html';
+                } else {
+                    console.log('No active session, showing login page');
                 }
             } catch (error) {
+                console.error('Auth check error:', error);
                 // User not authenticated, stay on login page
-                console.log('User not authenticated');
             }
         }
+
+        // ✅ LISTEN FOR AUTH STATE CHANGES
+        supabase.auth.onAuthStateChange((event, session) => {
+            console.log('Auth state changed:', event, session?.user?.email);
+
+            if (event === 'SIGNED_IN' && session) {
+                console.log('✅ User signed in successfully');
+                // Redirect to dashboard
+                window.location.href = '/interfaces/dashboard.html';
+            }
+
+            if (event === 'SIGNED_OUT') {
+                console.log('User signed out');
+            }
+
+            if (event === 'TOKEN_REFRESHED') {
+                console.log('Token refreshed');
+            }
+        });
 
         // Run auth check on page load
         checkAuth();
+
+        // Log initialization
+        console.log('🚀 Real Supabase Auth Initialized');
+        console.log('📍 Supabase URL:', SUPABASE_URL);
+        console.log('🔑 Using real Google OAuth credentials');
     </script>
 </body>
 </html>
