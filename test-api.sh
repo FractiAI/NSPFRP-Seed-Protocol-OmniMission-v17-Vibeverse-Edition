@@ -3,7 +3,7 @@
 # 🧪 FractiAI Syntheverse API - Complete Test Suite
 # Tests all touchpoints and connection points
 
-API_URL="https://fractiai-syntheverse-d8631t31t-fractiais-projects.vercel.app"
+API_URL="https://syntheverse-poc.vercel.app"
 
 echo "🧪 ============================================"
 echo "🧪 FRACTIAI SYNTHEVERSE API TEST SUITE"
