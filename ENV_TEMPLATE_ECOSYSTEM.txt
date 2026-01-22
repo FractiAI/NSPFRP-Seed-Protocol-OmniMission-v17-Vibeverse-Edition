@@ -1,0 +1,76 @@
+# ============================================
+# FRACTIAI SYNTHEVERSE ECOSYSTEM
+# CENTRAL DATABASE CONFIGURATION
+# ============================================
+# 
+# USE THESE SAME VALUES IN ALL APPLICATIONS:
+# - Web applications
+# - Mobile apps
+# - Backend APIs  
+# - Microservices
+# - Any other services
+#
+# Copy this to .env.local in each application
+# ============================================
+
+# ============================================
+# SUPABASE - CENTRAL DATABASE
+# ============================================
+# Get these from: https://supabase.com/dashboard/project/_/settings/api
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key-here
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key-here
+
+# Direct Database Connection (for migrations, admin tasks)
+# Get from: https://supabase.com/dashboard/project/_/settings/database
+DATABASE_URL=postgresql://postgres:[PASSWORD]@db.[PROJECT].supabase.co:5432/postgres
+
+# ============================================
+# GOOGLE OAUTH - AUTHENTICATION
+# ============================================
+# Project: Syntheverse Whole Brain AI Project
+GOOGLE_OAUTH_CLIENT_ID=767219028146-ti4gsu6j6lpgrgjm4uhplc4dnf8ogmad.apps.googleusercontent.com
+GOOGLE_OAUTH_CLIENT_SECRET=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
+
+# ============================================
+# STRIPE - PAYMENTS & SUBSCRIPTIONS
+# ============================================
+# Get from: https://dashboard.stripe.com/apikeys
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_or_pk_live_xxxxx
+STRIPE_SECRET_KEY=sk_test_or_sk_live_xxxxx
+
+# Webhook Secret (for Stripe webhooks)
+# Get from: https://dashboard.stripe.com/webhooks
+STRIPE_WEBHOOK_SECRET=whsec_xxxxx
+
+# Pricing Table ID (optional)
+NEXT_PUBLIC_STRIPE_PRICING_TABLE_ID=prctbl_xxxxx
+
+# ============================================
+# APPLICATION URLS
+# ============================================
+# Main website/app URL (for OAuth redirects)
+NEXT_PUBLIC_WEBSITE_URL=http://localhost:3000
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+
+# API Base URL (if separate)
+NEXT_PUBLIC_API_URL=http://localhost:3000/api
+
+# ============================================
+# ENVIRONMENT
+# ============================================
+NODE_ENV=development
+# Options: development, production, test
+
+# ============================================
+# NOTES
+# ============================================
+# 
+# 1. NEVER commit .env files with real values to git
+# 2. Copy to .env.local for Next.js apps
+# 3. Copy to .env for Node.js/Express apps
+# 4. Add to Vercel/Netlify environment variables
+# 5. Keep backup in secure password manager
+# 6. Rotate keys regularly for security
+# 
+# ============================================
