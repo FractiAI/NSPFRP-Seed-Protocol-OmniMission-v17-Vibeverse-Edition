@@ -40,6 +40,50 @@
             font-style: italic;
         }
 
+        /* 5-Star Travel Package Banner */
+        .travel-package-banner {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            border: 4px solid #d4af37;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.5);
+        }
+
+        .travel-package-banner h2 {
+            font-size: 2.5rem;
+            color: #1a0f0a;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .travel-package-banner p {
+            font-size: 1.2rem;
+            color: #1a0f0a;
+            margin: 0.5rem 0;
+        }
+
+        .travel-package-banner .cta-button {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 1rem 3rem;
+            background: #1a0f0a;
+            color: #FFD700;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        .travel-package-banner .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            background: #2a1f1a;
+        }
+
         /* Catalog Container */
         .catalog-container {
             max-width: 1400px;
@@ -335,6 +379,15 @@
     </div>
 
     <div class="catalog-container">
+        <!-- 5-Star Travel Package Banner -->
+        <div class="travel-package-banner">
+            <h2>✈️ 5-STAR TRAVEL PACKAGE SYSTEM</h2>
+            <p><strong>Customizable Hero Host Guides · Golden Tickets · Complete Itineraries · 5-Star Magazines</strong></p>
+            <p>Select your destination, choose your Hero Host (BBHE core Grammar), customize your itinerary.</p>
+            <p>Delivered as vCHIP + Golden Key to your portfolio. Pre/Post-Singularity cost comparisons included.</p>
+            <a href="/travel" class="cta-button">🎫 Book 5-Star Travel Package Now</a>
+        </div>
+
         <!-- BIRD HUNTING SECTION -->
         <div class="section-header">
             <h2>🦅 UPLAND BIRD HUNTING</h2>
@@ -382,6 +435,7 @@
                         <button class="action-btn book-now" onclick="bookAdventure('arizona-quail')">📅 BOOK NOW</button>
                         <button class="action-btn learn-more" onclick="learnMore('arizona-quail')">📖 LEARN MORE</button>
                         <button class="action-btn" style="background: linear-gradient(135deg, #c8a2d0, #9a7bc8);" onclick="selectCompanion('arizona-quail')">🌟 + Add Companion</button>
+                        <button class="action-btn" style="background: linear-gradient(135deg, #FFD700, #FFA500); color: #1a0f0a;" onclick="window.location.href='/travel'">✈️ 5-Star Travel Package</button>
                     </div>
                 </div>
             </div>

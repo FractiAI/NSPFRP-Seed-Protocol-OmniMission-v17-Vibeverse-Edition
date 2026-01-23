@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio & Wallet Dashboard · NSPFRNP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1410 0%, #2d1810 50%, #1a1410 100%);
+            color: #f4e4c1;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .dashboard-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(45, 24, 16, 0.8);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+
+        .header .subtitle {
+            color: #d4af37;
+            font-size: 1.1em;
+        }
+
+        .wallet-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .summary-card {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 16px;
+            padding: 25px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .summary-card h3 {
+            color: #FFD700;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .summary-card .value {
+            font-size: 2em;
+            color: #d4af37;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .summary-card .label {
+            color: #9ca3af;
+            font-size: 0.9em;
+        }
+
+        .portfolio-section {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .portfolio-section h2 {
+            color: #FFD700;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .vchips-grid, .keys-grid, .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .asset-card {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        .asset-card:hover {
+            border-color: #FFD700;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(255, 215, 0, 0.2);
+        }
+
+        .asset-card h4 {
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+
+        .asset-card .id {
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            color: #9ca3af;
+            margin-bottom: 10px;
+            word-break: break-all;
+        }
+
+        .asset-card .value {
+            color: #d4af37;
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            border: 2px solid #FFD700;
+            border-radius: 12px;
+            color: #FFD700;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #7c3aed, #db2777);
+            border-color: #a78bfa;
+            color: #fff;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #d4af37;
+        }
+
+        .error {
+            background: rgba(255, 0, 0, 0.2);
+            border: 2px solid rgba(255, 0, 0, 0.5);
+            border-radius: 12px;
+            padding: 20px;
+            color: #ff6b6b;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="header">
+            <h1>💼 Portfolio & Wallet Dashboard</h1>
+            <p class="subtitle">Unified vCHIP · Key · Portfolio · Wallet System</p>
+        </div>
+
+        <div id="ownerInput" style="margin-bottom: 20px; text-align: center;">
+            <input 
+                type="text" 
+                id="ownerField" 
+                placeholder="Enter owner ID (e.g., 'fractiai')"
+                style="padding: 12px 20px; font-size: 1em; border-radius: 8px; border: 2px solid rgba(255, 215, 0, 0.3); background: rgba(0,0,0,0.4); color: #f4e4c1; width: 300px;"
+            />
+            <button class="btn" onclick="loadPortfolio()" style="margin-left: 10px;">Load Portfolio</button>
+        </div>
+
+        <div id="dashboardContent">
+            <div class="loading">Enter owner ID and click "Load Portfolio" to view</div>
+        </div>
+    </div>
+
+    <script>
+        async function loadPortfolio() {
+            const owner = document.getElementById('ownerField').value.trim();
+            if (!owner) {
+                alert('Please enter an owner ID');
+                return;
+            }
+
+            const contentDiv = document.getElementById('dashboardContent');
+            contentDiv.innerHTML = '<div class="loading">Loading portfolio...</div>';
+
+            try {
+                // Initialize portfolio if needed
+                await fetch(`/api/portfolio/${owner}/initialize`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({})
+                });
+
+                // Get portfolio
+                const response = await fetch(`/api/portfolio/${owner}`);
+                const data = await response.json();
+
+                if (!data.success) {
+                    throw new Error(data.error || 'Failed to load portfolio');
+                }
+
+                const portfolio = data.portfolio;
+                renderPortfolio(portfolio);
+            } catch (error) {
+                contentDiv.innerHTML = `
+                    <div class="error">
+                        <strong>Error:</strong> ${error.message}
+                    </div>
+                `;
+            }
+        }
+
+        function renderPortfolio(portfolio) {
+            const contentDiv = document.getElementById('dashboardContent');
+            
+            contentDiv.innerHTML = `
+                <div class="wallet-summary">
+                    <div class="summary-card">
+                        <h3>💰 Total Value</h3>
+                        <div class="value">$${portfolio.totalValueUSD.toLocaleString()}</div>
+                        <div class="label">${portfolio.totalValueSYNTH.toLocaleString()} SYNTH</div>
+                    </div>
+                    <div class="summary-card">
+                        <h3>💳 Wallet Balance</h3>
+                        <div class="value">${portfolio.wallet.balance.toLocaleString()}</div>
+                        <div class="label">SYNTH</div>
+                    </div>
+                    <div class="summary-card">
+                        <h3>📊 Staked SYNTH</h3>
+                        <div class="value">${portfolio.walletSnapshot.stakedSYNTH.toLocaleString()}</div>
+                        <div class="label">${portfolio.walletSnapshot.stakingAPY}% APY</div>
+                    </div>
+                    <div class="summary-card">
+                        <h3>🔑 Awareness Keys</h3>
+                        <div class="value">${portfolio.awarenessKeys.length}</div>
+                        <div class="label">${portfolio.totalKeyValue.toLocaleString()} SYNTH value</div>
+                    </div>
+                    <div class="summary-card">
+                        <h3>🎨 vCHIPs</h3>
+                        <div class="value">${portfolio.vchips.length}</div>
+                        <div class="label">${portfolio.totalVChipValue.toLocaleString()} SYNTH value</div>
+                    </div>
+                    <div class="summary-card">
+                        <h3>🃏 Trading Cards</h3>
+                        <div class="value">${portfolio.tradingCards.length}</div>
+                        <div class="label">${portfolio.totalCardValue.toLocaleString()} SYNTH value</div>
+                    </div>
+                </div>
+
+                <div class="portfolio-section">
+                    <h2>🎨 vCHIPs (${portfolio.vchips.length})</h2>
+                    <div class="vchips-grid">
+                        ${portfolio.vchips.map(vchip => `
+                            <div class="asset-card">
+                                <h4>${vchip.vchipId}</h4>
+                                <div class="id">Node: ${vchip.nodeId}</div>
+                                <div style="margin: 10px 0; color: #9ca3af;">
+                                    Capabilities: ${vchip.capabilities.length} systems
+                                </div>
+                                <div class="value">${vchip.synthValue.toLocaleString()} SYNTH</div>
+                                ${vchip.nftId ? `<div style="margin-top: 8px; font-size: 0.85em; color: #9ca3af;">NFT: ${vchip.nftId}</div>` : ''}
+                            </div>
+                        `).join('')}
+                        ${portfolio.vchips.length === 0 ? '<div style="color: #9ca3af; text-align: center; padding: 40px;">No vCHIPs yet. Burn one to get started!</div>' : ''}
+                    </div>
+                </div>
+
+                <div class="portfolio-section">
+                    <h2>🔑 Awareness Keys (${portfolio.awarenessKeys.length})</h2>
+                    <div class="keys-grid">
+                        ${portfolio.awarenessKeys.map(key => `
+                            <div class="asset-card">
+                                <h4>${key.id}</h4>
+                                <div class="id">Type: ${key.type}</div>
+                                <div style="margin: 10px 0; color: #9ca3af;">
+                                    Octaves: ${key.capabilities.octaveAccess.length} access levels
+                                </div>
+                                <div class="value">${key.type === 'ULTIMATE' ? '10,000' : key.type === 'OCTANE' ? '5,000' : '2,500'} SYNTH</div>
+                                <div style="margin-top: 8px; font-size: 0.85em; color: ${key.status === 'active' ? '#00ff00' : '#ff6b6b'};">Status: ${key.status}</div>
+                            </div>
+                        `).join('')}
+                        ${portfolio.awarenessKeys.length === 0 ? '<div style="color: #9ca3af; text-align: center; padding: 40px;">No awareness keys yet. Burn one to get started!</div>' : ''}
+                    </div>
+                </div>
+
+                <div class="portfolio-section">
+                    <h2>🃏 Trading Cards (${portfolio.tradingCards.length})</h2>
+                    <div class="cards-grid">
+                        ${portfolio.tradingCards.map(card => `
+                            <div class="asset-card">
+                                <h4>${card.name || card.id}</h4>
+                                <div class="id">${card.id}</div>
+                                <div style="margin: 10px 0; color: #9ca3af;">
+                                    Rarity: ${card.rarity || 'N/A'}
+                                </div>
+                                <div class="value">${(card.currentValue || 0).toLocaleString()} SYNTH</div>
+                            </div>
+                        `).join('')}
+                        ${portfolio.tradingCards.length === 0 ? '<div style="color: #9ca3af; text-align: center; padding: 40px;">No trading cards yet.</div>' : ''}
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button class="btn btn-primary" onclick="burnVChip('${portfolio.owner}')">🔥 Burn vCHIP</button>
+                    <button class="btn btn-primary" onclick="burnKey('${portfolio.owner}')">🔑 Burn Awareness Key</button>
+                    <button class="btn btn-primary" onclick="burnComplete('${portfolio.owner}')">⚡ Complete Burn (vCHIP + Key)</button>
+                    <button class="btn" onclick="loadPortfolio()">🔄 Refresh</button>
+                </div>
+            `;
+        }
+
+        async function burnVChip(owner) {
+            if (!confirm(`Burn a new vCHIP for ${owner}?`)) return;
+
+            try {
+                const response = await fetch(`/api/portfolio/${owner}/burn-vchip`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({})
+                });
+                const data = await response.json();
+                
+                if (data.success) {
+                    alert('✅ vCHIP burned successfully!');
+                    loadPortfolio();
+                } else {
+                    alert('❌ Error: ' + (data.error || 'Unknown error'));
+                }
+            } catch (error) {
+                alert('❌ Error: ' + error.message);
+            }
+        }
+
+        async function burnKey(owner) {
+            if (!confirm(`Burn a new Awareness Key for ${owner}?`)) return;
+
+            try {
+                const response = await fetch(`/api/portfolio/${owner}/burn-key`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ keyType: 'dual', octaveAccess: [1, 2, 3, 4, 5, 6, 7, 8] })
+                });
+                const data = await response.json();
+                
+                if (data.success) {
+                    alert('✅ Awareness Key burned successfully!');
+                    loadPortfolio();
+                } else {
+                    alert('❌ Error: ' + (data.error || 'Unknown error'));
+                }
+            } catch (error) {
+                alert('❌ Error: ' + error.message);
+            }
+        }
+
+        async function burnComplete(owner) {
+            if (!confirm(`Perform complete burn operation (vCHIP + Key) for ${owner}?`)) return;
+
+            try {
+                const response = await fetch(`/api/portfolio/${owner}/burn-complete`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({})
+                });
+                const data = await response.json();
+                
+                if (data.success) {
+                    alert('✅ Complete burn operation successful!\n\n' + data.visualSnap);
+                    loadPortfolio();
+                } else {
+                    alert('❌ Error: ' + (data.error || 'Unknown error'));
+                }
+            } catch (error) {
+                alert('❌ Error: ' + error.message);
+            }
+        }
+
+        // Allow Enter key to load portfolio
+        document.getElementById('ownerField').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                loadPortfolio();
+        });
+    </script>
+</body>
+</html>

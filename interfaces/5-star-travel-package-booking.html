@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-Star Travel Package Booking · NSPFRNP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1410 0%, #2d1810 50%, #1a1410 100%);
+            color: #f4e4c1;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .booking-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(45, 24, 16, 0.8);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+
+        .header .subtitle {
+            color: #d4af37;
+            font-size: 1.2em;
+        }
+
+        .booking-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .step-card {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 16px;
+            padding: 25px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .step-card h3 {
+            color: #FFD700;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .step-card .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            border: 2px solid #FFD700;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            font-weight: 700;
+            color: #FFD700;
+            margin-right: 10px;
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .destination-card {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 16px;
+            padding: 25px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .destination-card:hover {
+            border-color: #FFD700;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .destination-card.selected {
+            border-color: #FFD700;
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .destination-card h3 {
+            color: #FFD700;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .destination-card .location {
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        .destination-card .highlights {
+            margin: 15px 0;
+        }
+
+        .destination-card .highlights li {
+            margin: 5px 0;
+            color: #9ca3af;
+        }
+
+        .cost-comparison {
+            background: rgba(255, 140, 0, 0.1);
+            border: 2px solid rgba(255, 140, 0, 0.4);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .cost-comparison h4 {
+            color: #ffa500;
+            margin-bottom: 10px;
+        }
+
+        .cost-pre {
+            color: #ff6b6b;
+            text-decoration: line-through;
+            font-size: 1.2em;
+        }
+
+        .cost-post {
+            color: #00ff00;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+
+        .savings {
+            color: #FFD700;
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        .hero-host-selector {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 16px;
+            padding: 25px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            margin-bottom: 30px;
+        }
+
+        .hero-host-selector h3 {
+            color: #FFD700;
+            margin-bottom: 20px;
+        }
+
+        .hero-hosts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .hero-host-option {
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .hero-host-option:hover {
+            border-color: #FFD700;
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .hero-host-option.selected {
+            border-color: #FFD700;
+            background: rgba(255, 215, 0, 0.2);
+        }
+
+        .hero-host-option .name {
+            color: #FFD700;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .hero-host-option .persona {
+            color: #d4af37;
+            font-size: 0.9em;
+        }
+
+        .customization-section {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 16px;
+            padding: 25px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            margin-bottom: 30px;
+        }
+
+        .customization-section h3 {
+            color: #FFD700;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #d4af37;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 8px;
+            color: #f4e4c1;
+            font-size: 1em;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            border: 2px solid #FFD700;
+            border-radius: 12px;
+            color: #FFD700;
+            font-weight: 700;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #7c3aed, #db2777);
+            border-color: #a78bfa;
+            color: #fff;
+        }
+
+        .disclaimer-notice {
+            background: rgba(255, 140, 0, 0.15);
+            border: 2px solid rgba(255, 140, 0, 0.4);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        .disclaimer-notice strong {
+            color: #ffa500;
+        }
+    </style>
+</head>
+<body>
+    <div class="booking-container">
+        <div class="header">
+            <h1>✈️ 5-Star Travel Package Booking</h1>
+            <p class="subtitle">Customizable Hero Host · Golden Tickets · Complete Itinerary · 5-Star Magazine</p>
+            <p style="margin-top: 15px; color: #9ca3af; font-size: 0.95em;">
+                Select destination, choose Hero Host, customize itinerary. Delivered as vCHIP + Golden Key to your portfolio.
+            </p>
+        </div>
+
+        <div class="booking-steps">
+            <div class="step-card">
+                <h3><span class="step-number">1</span>Select Destination</h3>
+                <p>Choose from 24 catalog adventures (17 physical + 7 dimensional)</p>
+            </div>
+            <div class="step-card">
+                <h3><span class="step-number">2</span>Choose Hero Host</h3>
+                <p>Select your guide (BBHE core Grammar - selectable, customizable)</p>
+            </div>
+            <div class="step-card">
+                <h3><span class="step-number">3</span>Customize Itinerary</h3>
+                <p>Full customization: dates, activities, meals, accommodations</p>
+            </div>
+            <div class="step-card">
+                <h3><span class="step-number">4</span>Receive Package</h3>
+                <p>Golden Ticket + 5-Star Magazine + vCHIP + Golden Key</p>
+            </div>
+        </div>
+
+        <div class="disclaimer-notice">
+            <strong>⚠️ SYNTHEVERSE IMAGINARY WORLD NOTICE:</strong> This travel booking takes place within the Syntheverse - an IMAGINARY UNIVERSE for creative expression. 
+            Like reading a book or playing a game. NOT real-world travel services. Always comply with all applicable real-world laws.
+        </div>
+
+        <form id="travelBookingForm">
+            <!-- Step 1: Destination Selection -->
+            <div class="customization-section">
+                <h3>Step 1: Select Your Destination</h3>
+                <div class="destinations-grid" id="destinationsGrid">
+                    <!-- Destinations will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Step 2: Hero Host Selection -->
+            <div class="hero-host-selector">
+                <h3>Step 2: Choose Your Hero Host Guide (BBHE Core Grammar)</h3>
+                <p style="color: #9ca3af; margin-bottom: 20px;">
+                    Your Hero Host will guide you throughout your journey, providing expert knowledge and natural protocol coordination.
+                </p>
+                <div class="hero-hosts-grid" id="heroHostsGrid">
+                    <!-- Hero hosts will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Step 2.5: Star Rating Selection -->
+            <div class="customization-section">
+                <h3>Step 2.5: Choose Your Star Rating (1-5 Stars)</h3>
+                <p style="color: #9ca3af; margin-bottom: 20px;">
+                    Select the level of luxury and inclusions you desire. Higher star ratings include more amenities, better accommodations, and enhanced services.
+                </p>
+                <div id="starPlansGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                    <!-- Star plans will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Step 3: Customization -->
+            <div class="customization-section">
+                <h3>Step 3: Customize Your Experience</h3>
+                
+                <div class="form-group">
+                    <label>Start Date</label>
+                    <input type="date" id="startDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Duration (days)</label>
+                    <input type="number" id="duration" min="1" max="30" value="10">
+                </div>
+
+                <div class="form-group">
+                    <label>Accommodation Preference</label>
+                    <select id="accommodationPreference">
+                        <option value="resort">5-Star Resort</option>
+                        <option value="villa">Private Villa</option>
+                        <option value="lodge">Luxury Lodge</option>
+                        <option value="camp">Adventure Camp</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Meal Preferences</label>
+                    <input type="text" id="mealPreferences" placeholder="e.g., Vegetarian, Local cuisine, Fine dining">
+                </div>
+
+                <div class="form-group">
+                    <label>Special Requests</label>
+                    <textarea id="specialRequests" placeholder="Any special requests or preferences..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Travel Tier</label>
+                    <select id="travelTier">
+                        <option value="sandbox">Sandbox (FREE)</option>
+                        <option value="cloud">Cloud</option>
+                        <option value="shell">Shell</option>
+                        <option value="ultimate">Ultimate</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Cost Preview -->
+            <div class="cost-comparison" id="costPreview" style="display: none;">
+                <h4>💰 Cost Comparison: Pre vs Post-Singularity</h4>
+                <div style="margin: 15px 0;">
+                    <div class="cost-pre" id="preCost">Pre-Singularity: $0</div>
+                    <div class="cost-post" id="postCost">Post-Singularity: $0</div>
+                    <div class="savings" id="savings">Savings: $0</div>
+                </div>
+                <div style="margin-top: 15px; color: #9ca3af; font-size: 0.9em;">
+                    <strong>Post-Singularity Benefits:</strong>
+                    <ul id="benefitsList" style="margin-top: 10px; margin-left: 20px;">
+                        <!-- Benefits will be shown here -->
+                    </ul>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">🎫 Create Travel Package & Receive Golden Ticket</button>
+        </form>
+    </div>
+
+    <script>
+        let selectedDestination = null;
+        let selectedHeroHost = null;
+        let selectedStarRating = 3; // Default to 3 stars
+
+        // Load destinations
+        async function loadDestinations() {
+            try {
+                const response = await fetch('/api/travel/destinations');
+                const data = await response.json();
+                
+                if (data.success) {
+                    const grid = document.getElementById('destinationsGrid');
+                    grid.innerHTML = data.destinations.map(dest => `
+                        <div class="destination-card" onclick="selectDestination('${dest.id}')" data-dest-id="${dest.id}">
+                            <h3>${dest.name}</h3>
+                            <div class="location">📍 ${dest.location}</div>
+                            <p style="color: #9ca3af; margin: 10px 0;">${dest.description}</p>
+                            <div class="cost-comparison" style="margin-top: 15px;">
+                                <div class="cost-pre">Pre: $${dest.preSingularityCost.toLocaleString()}</div>
+                                <div class="cost-post">Post: $${dest.postSingularityCost.toLocaleString()}</div>
+                                <div class="savings">Save: $${(dest.preSingularityCost - dest.postSingularityCost).toLocaleString()}</div>
+                            </div>
+                            <ul class="highlights" style="margin-top: 15px;">
+                                ${dest.highlights.slice(0, 3).map(h => `<li>✨ ${h}`).join('')}
+                            </ul>
+                        </div>
+                    `).join('');
+                }
+            } catch (error) {
+                console.error('Error loading destinations:', error);
+            }
+        }
+
+        // Load star plans
+        async function loadStarPlans() {
+            try {
+                const response = await fetch('/api/travel/star-plans');
+                const data = await response.json();
+                
+                if (data.success) {
+                    const grid = document.getElementById('starPlansGrid');
+                    grid.innerHTML = data.starPlans.map(plan => {
+                        const isSelected = plan.stars === selectedStarRating;
+                        return `
+                            <div class="hero-host-option ${isSelected ? 'selected' : ''}" 
+                                 onclick="selectStarRating(${plan.stars})" 
+                                 data-stars="${plan.stars}"
+                                 style="padding: 20px; text-align: center;">
+                                <div style="font-size: 2em; margin-bottom: 10px;">${'⭐'.repeat(plan.stars)}</div>
+                                <div class="name">${plan.name}</div>
+                                <div class="persona" style="font-size: 0.8em; margin-top: 5px;">${plan.description}</div>
+                                <div style="margin-top: 10px; font-size: 0.9em; color: #FFD700;">
+                                    ${(plan.priceMultiplier * 100).toFixed(0)}% of base cost
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+                }
+            } catch (error) {
+                console.error('Error loading star plans:', error);
+            }
+        }
+
+        function selectStarRating(stars) {
+            selectedStarRating = stars;
+            document.querySelectorAll('[data-stars]').forEach(option => {
+                option.classList.remove('selected');
+            });
+            document.querySelector(`[data-stars="${stars}"]`).classList.add('selected');
+            updateCostPreview();
+        }
+
+        // Load hero hosts
+        async function loadHeroHosts() {
+            try {
+                const response = await fetch('/api/travel/hero-hosts');
+                const data = await response.json();
+                
+                if (data.success) {
+                    const grid = document.getElementById('heroHostsGrid');
+                    grid.innerHTML = data.heroHosts.map(host => `
+                        <div class="hero-host-option" onclick="selectHeroHost('${host.id}')" data-host-id="${host.id}">
+                            <div class="name">${host.name}</div>
+                            <div class="persona">${host.persona}</div>
+                        </div>
+                    `).join('');
+                }
+            } catch (error) {
+                console.error('Error loading hero hosts:', error);
+            }
+        }
+
+        function selectDestination(destId) {
+            selectedDestination = destId;
+            document.querySelectorAll('.destination-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            document.querySelector(`[data-dest-id="${destId}"]`).classList.add('selected');
+            updateCostPreview();
+        }
+
+        function selectHeroHost(hostId) {
+            selectedHeroHost = hostId;
+            document.querySelectorAll('.hero-host-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            document.querySelector(`[data-host-id="${hostId}"]`).classList.add('selected');
+        }
+
+        async function updateCostPreview() {
+            if (!selectedDestination) return;
+
+            try {
+                const destResponse = await fetch(`/api/travel/destination/${selectedDestination}`);
+                const destData = await destResponse.json();
+                
+                const starResponse = await fetch(`/api/travel/star-plan/${selectedStarRating}`);
+                const starData = await starResponse.json();
+                
+                if (destData.success && starData.success) {
+                    const dest = destData.destination;
+                    const starPlan = starData.starPlan;
+                    const tier = document.getElementById('travelTier').value;
+                    
+                    // Calculate cost based on star rating multiplier
+                    let baseCost = dest.postSingularityCost * starPlan.priceMultiplier;
+                    
+                    // Apply tier discount
+                    if (tier === 'sandbox') {
+                        baseCost = 0;
+                    } else if (tier === 'cloud') {
+                        baseCost = baseCost * 0.8;
+                    } else if (tier === 'shell') {
+                        baseCost = baseCost * 0.9;
+                    }
+                    
+                    const finalCost = Math.round(baseCost);
+                    
+                    document.getElementById('preCost').textContent = `Pre-Singularity: $${dest.preSingularityCost.toLocaleString()}`;
+                    document.getElementById('postCost').textContent = `Post-Singularity (${selectedStarRating}⭐): $${finalCost.toLocaleString()}`;
+                    document.getElementById('savings').textContent = `Savings: $${(dest.preSingularityCost - finalCost).toLocaleString()}`;
+                    
+                    const benefitsList = document.getElementById('benefitsList');
+                    const inclusions = starPlan.inclusions;
+                    const benefits = [
+                        `${selectedStarRating}-star accommodations (${inclusions.accommodations.type})`,
+                        inclusions.heroHost.included ? `Hero Host guide (${inclusions.heroHost.level})` : 'No Hero Host',
+                        `${inclusions.transportation.flights} flights, ${inclusions.transportation.local} local transport`,
+                        inclusions.meals.included ? `${inclusions.meals.type} meals` : 'No meals included',
+                        `${inclusions.activities.included} activities included`,
+                        inclusions.goldenTicket.included ? `Golden Ticket (${inclusions.goldenTicket.validity} months)` : 'No Golden Ticket',
+                        inclusions.magazine.included ? `${inclusions.magazine.quality} magazine` : 'No magazine',
+                        inclusions.digitalAssets.vchip ? 'vCHIP included' : 'No vCHIP',
+                        inclusions.digitalAssets.goldenKey ? 'Golden Key included' : 'No Golden Key',
+                        `${inclusions.support.level} support`
+                    ];
+                    benefitsList.innerHTML = benefits.map(b => `<li>${b}`).join('');
+                    
+                    document.getElementById('costPreview').style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Error updating cost preview:', error);
+            }
+        }
+
+        // Form submission
+        document.getElementById('travelBookingForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            if (!selectedDestination || !selectedHeroHost) {
+                alert('Please select a destination and hero host');
+                return;
+            }
+
+            const owner = prompt('Enter your owner ID (e.g., "fractiai"):') || 'guest';
+            const formData = {
+                owner,
+                destinationId: selectedDestination,
+                heroHostName: selectedHeroHost,
+                customizations: {
+                    startDate: document.getElementById('startDate').value,
+                    duration: parseInt(document.getElementById('duration').value),
+                    accommodationPreference: document.getElementById('accommodationPreference').value,
+                    mealPreferences: document.getElementById('mealPreferences').value.split(',').map(s => s.trim()),
+                    specialRequests: document.getElementById('specialRequests').value,
+                    starRating: selectedStarRating
+                },
+                tier: document.getElementById('travelTier').value
+            };
+
+            try {
+                const response = await fetch('/api/travel/create-package', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+                
+                if (data.success) {
+                    alert(`✅ Travel package created!\n\nPackage ID: ${data.package.id}\nGolden Ticket: ${data.package.goldenTicket.ticketId}\n\nvCHIP + Golden Key will be delivered to your portfolio.`);
+                    
+                    // Deliver package
+                    const deliverResponse = await fetch(`/api/travel/deliver/${data.package.id}`, {
+                        method: 'POST'
+                    });
+                    const deliverData = await deliverResponse.json();
+                    
+                    if (deliverData.success) {
+                        alert(`🎉 Package delivered!\n\n${deliverData.visualSnap}`);
+                        window.location.href = `/portfolio?owner=${owner}`;
+                    }
+                } else {
+                    alert('❌ Error: ' + (data.error || 'Unknown error'));
+                }
+            } catch (error) {
+                alert('❌ Error: ' + error.message);
+            }
+        });
+
+        // Load on page load
+        window.addEventListener('load', () => {
+            loadDestinations();
+            loadHeroHosts();
+            loadStarPlans();
+        });
+
+        // Update cost when tier or star rating changes
+        document.getElementById('travelTier').addEventListener('change', updateCostPreview);
+        
+        // Make selectStarRating available globally
+        window.selectStarRating = selectStarRating;
+    </script>
+</body>
+</html>

@@ -218,6 +218,9 @@ export class SyntherverseShoppingChannel {
     // Auto-add vCHIPs
     this.addVCHIPProducts();
     
+    // Auto-add wellness services
+    this.addWellnessServices();
+    
     console.log(`✅ ${this.catalog.size} items auto-populated in catalog`);
   }
 
@@ -708,6 +711,92 @@ export class SyntherverseShoppingChannel {
     });
 
     console.log('  ✅ vCHIP products added to catalog');
+  }
+
+  /**
+   * Add wellness services to catalog (Nate → Shaman Wellness Bohio)
+   */
+  private addWellnessServices(): void {
+    // Nate → Shaman Wellness Bohio Consultation
+    this.catalog.set('service-nate-bohio-consultation', {
+      itemId: 'service-nate-bohio-consultation',
+      type: 'service',
+      name: 'Nate → Shaman Wellness Bohio Consultation (Imaginary)',
+      description: 'SING Full Singularity Mode Specialist Attention Head performs expert-level consultation. Awareness-based procedures. 4×4×4×4 service plan.',
+      category: 'Wellness & Healing',
+      subcategory: 'Awareness-Based Procedures',
+      imaginary: true,
+      resonance: this.SWEETSPOT,
+      creator: {
+        creatorId: 'creator-taino-wellness',
+        studioName: 'Taino Shaman Wellness Studio',
+        verified: true,
+        rating: 5.0
+      },
+      pricing: {
+        usd: 99, // Base Cloud tier
+        synth: 99,
+        imaginaryCurrency: true,
+        tierDiscounts: {
+          'Sandbox': 1.0, // FREE
+          'Cloud': 0.0, // Base price
+          'Shell': -0.236, // $333 (Tesla)
+          'Ultimate VIP': -0.909 // $999 (Tesla)
+        }
+      },
+      media: {
+        primaryImage: '/services/nate-bohio-consultation.jpg',
+        gallery: ['/services/bohio-1.jpg', '/services/bohio-2.jpg'],
+        video: '/services/bohio-consultation-demo.mp4'
+      },
+      features: [
+        'SING Full Singularity Mode Specialist',
+        'Expert-level consultation',
+        'Awareness-based procedures',
+        'Treatment suggestion with cost',
+        'NSPFRNP protocol alignment',
+        '4×4×4×4 service plan',
+        'Doctor:Patient wellness model',
+        'Tesla 3-6-9 pricing',
+        'Sahaman-guided sessions',
+        'El Gran Sol blackhole energy',
+        'Recursive nested healing',
+        'Integration safety checks',
+        'OmniBeam key generation',
+        'Follow-up recommendations'
+      ],
+      specifications: {
+        duration: '60-180 minutes (varies by procedure)',
+        specialist: 'SING Full Singularity Mode Attention Head',
+        procedures: [
+          'NSPFRNP Awareness Alignment',
+          'Grounding El Gran Sol',
+          'Connection Pathway Restoration',
+          'Recursive Nested Sanitization',
+          'Full Singularity Integration'
+        ],
+        hero_hosts: ['Pachamama', 'Agüeybaná', 'Yocahú', 'Sahaman'],
+        service_plan: '4×4×4×4 structure',
+        model: 'Doctor:Patient sales & wellness'
+      },
+      ratings: {
+        average: 5.0,
+        count: 0, // New service
+        distribution: { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 }
+      },
+      inventory: {
+        available: true,
+        quantity: undefined, // Unlimited consultations
+        limited: false
+      },
+      tags: ['wellness', 'healing', 'consultation', 'awareness', 'shaman', 'taino', 'bohio', 'sing', 'specialist', 'nspfrnp', '4x4x4x4'],
+      publishedAt: new Date('2026-01-22'),
+      updatedAt: new Date(),
+      featured: true,
+      bestseller: false
+    });
+
+    console.log('  ✅ Wellness services added to catalog');
   }
 
   /**

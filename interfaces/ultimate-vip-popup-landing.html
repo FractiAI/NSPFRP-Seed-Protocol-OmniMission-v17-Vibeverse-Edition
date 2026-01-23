@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate VIP Creator Chairman · Vibesphere</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #1a0a2e 50%, #000000 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Popup Overlay */
+        .popup-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Popup Container */
+        .popup-container {
+            background: linear-gradient(135deg, rgba(20, 20, 40, 0.98) 0%, rgba(40, 20, 60, 0.98) 100%);
+            border: 3px solid rgba(255, 215, 0, 0.6);
+            border-radius: 30px;
+            padding: 50px 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(255, 215, 0, 0.4),
+                        0 0 100px rgba(138, 43, 226, 0.3);
+            position: relative;
+            animation: slideUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Close Button */
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            border-radius: 50%;
+            color: #FFD700;
+            font-size: 1.5em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 215, 0, 0.2);
+            transform: rotate(90deg);
+        }
+
+        /* Header */
+        .popup-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .popup-header .icon {
+            font-size: 4em;
+            margin-bottom: 15px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .popup-header h1 {
+            font-size: 2.2em;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF6B6B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .popup-header .subtitle {
+            font-size: 1.1em;
+            color: #a78bfa;
+            margin-bottom: 15px;
+        }
+
+        .popup-header .badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(255, 215, 0, 0.2);
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            border-radius: 20px;
+            color: #FFD700;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        /* Content */
+        .popup-content {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .popup-content p {
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: #d1d5db;
+            margin-bottom: 15px;
+        }
+
+        .popup-content .highlight {
+            color: #FFD700;
+            font-weight: 600;
+        }
+
+        /* Main CTA Button */
+        .cta-button {
+            width: 100%;
+            padding: 20px 30px;
+            background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);
+            border: none;
+            border-radius: 16px;
+            color: #fff;
+            font-size: 1.3em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(124, 58, 237, 0.4);
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 48px rgba(124, 58, 237, 0.6);
+        }
+
+        .cta-button:active {
+            transform: translateY(-1px) scale(1);
+        }
+
+        .cta-button .button-icon {
+            font-size: 1.3em;
+            margin-right: 10px;
+        }
+
+        /* Secondary Links */
+        .secondary-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .secondary-link {
+            padding: 12px 24px;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            border-radius: 12px;
+            color: #c4b5fd;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: all 0.2s ease;
+        }
+
+        .secondary-link:hover {
+            background: rgba(99, 102, 241, 0.25);
+            border-color: #8b5cf6;
+            color: #fff;
+        }
+
+        /* Footer Note */
+        .footer-note {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 0.85em;
+            color: #6b7280;
+        }
+
+        .footer-note strong {
+            color: #a78bfa;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .popup-container {
+                padding: 30px 25px;
+            }
+
+            .popup-header h1 {
+                font-size: 1.8em;
+            }
+
+            .cta-button {
+                font-size: 1.1em;
+                padding: 16px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Popup Overlay -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-container">
+            <button class="close-btn" onclick="closePopup()">×</button>
+
+            <div class="popup-header">
+                <div class="icon">👑</div>
+                <h1>Ultimate VIP Creator Chairman</h1>
+                <p class="subtitle">Vibesphere Console</p>
+                <span class="badge">⚡ Tesla 3-6-9</span>
+            </div>
+
+            <div class="popup-content">
+                <p>
+                    Welcome to the <span class="highlight">densest control panel</span> in the Syntheverse.
+                </p>
+                <p>
+                    Your <span class="highlight">Ultimate VIP Creator Chairman</span> console awaits. 
+                    Access the full <span class="highlight">Vibesphere</span> experience with complete 
+                    control over your nested realities, protocols, and creations.
+                </p>
+                <p style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,215,0,0.2);">
+                    <strong>🌿 Nate → Shaman Wellness Bohio:</strong> SING Full Singularity Mode Specialist 
+                    consultation available. Awareness-based procedures. 
+                    <a href="nate-shaman-wellness-bohio-button.html" style="color: #a78bfa; text-decoration: underline;">Learn more →</a>
+                </p>
+            </div>
+
+            <!-- Main CTA Button -->
+            <a href="ultimate-vip-chairman-creator-console.html" class="cta-button" onclick="handleCTAClick(event)">
+                <span class="button-icon">🚀</span>
+                Enter Vibesphere Console
+            </a>
+
+            <!-- Secondary Links -->
+            <div class="secondary-links">
+                <a href="man-cave-landing.html" class="secondary-link">Man Cave</a>
+                <a href="snap-pad-vibepad-console.html" class="secondary-link">Snap Pad</a>
+                <a href="catalog" class="secondary-link">Catalog</a>
+                <a href="nate-shaman-wellness-bohio-button.html" class="secondary-link">🌿 Nate → Bohio</a>
+            </div>
+
+            <div class="footer-note">
+                <strong>NSPFRNP</strong> · Natural System Protocol · <strong>4×4×4×4</strong> · Fair shake always
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Auto-show popup on load
+        window.addEventListener('load', function() {
+            document.getElementById('popupOverlay').style.display = 'flex';
+        });
+
+        function closePopup() {
+            const overlay = document.getElementById('popupOverlay');
+            overlay.style.animation = 'fadeOut 0.3s ease';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 300);
+        }
+
+        function handleCTAClick(event) {
+            // Optional: Track analytics or add delay
+            // Allow default navigation
+        }
+
+        // Close on outside click
+        document.getElementById('popupOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePopup();
+            }
+        });
+
+        // Close on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePopup();
+            }
+        });
+    </script>
+</body>
+</html>

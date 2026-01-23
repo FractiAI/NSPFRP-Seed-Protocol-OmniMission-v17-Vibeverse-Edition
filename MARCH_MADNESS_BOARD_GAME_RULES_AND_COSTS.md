@@ -85,39 +85,39 @@ HOW TO PLAY:
 │  ├─ Cost: $10 per team pick                    │
 │  ├─ Pick 8 winners (8 games)                   │
 │  ├─ Total cost: $80 for all picks              │
-│  ├─ Win: Get 1,000 SYNTH per correct pick      │
+│  ├─ Win: Get 999 SYNTH per correct pick        │
 │  └─ Advance to Round 4                         │
 │                                                 │
 │  ROUND 4 (Octave 4) - Elite 8                  │
 │  ├─ Cost: $25 per team pick                    │
 │  ├─ Pick 4 winners (4 games)                   │
-│  ├─ Total cost: $100 for all picks             │
-│  ├─ Win: Get 2,500 SYNTH per correct pick      │
+│  ├─ Total cost: $99 for all picks              │
+│  ├─ Win: Get 2,499 SYNTH per correct pick      │
 │  └─ Advance to Round 5                         │
 │                                                 │
 │  ROUND 5 (Octave 5) - Final Four               │
 │  ├─ Cost: $50 per team pick                    │
 │  ├─ Pick 2 winners (2 games)                   │
-│  ├─ Total cost: $100 for all picks             │
-│  ├─ Win: Get 5,000 SYNTH per correct pick      │
+│  ├─ Total cost: $99 for all picks              │
+│  ├─ Win: Get 4,999 SYNTH per correct pick      │
 │  └─ Advance to Championship                    │
 │                                                 │
 │  ROUND 6 (Octave 6) - Championship             │
-│  ├─ Cost: $100 to pick winner                  │
+│  ├─ Cost: $99 to pick winner                   │
 │  ├─ Pick 1 winner (1 game)                     │
-│  ├─ Total cost: $100 for pick                  │
-│  ├─ Win: Get 10,000 SYNTH if correct           │
+│  ├─ Total cost: $99 for pick                   │
+│  ├─ Win: Get 9,999 SYNTH if correct            │
 │  └─ Game Over!                                 │
 │                                                 │
 │  PERFECT BRACKET BONUS (Octave 7)              │
 │  ├─ Cost: $19 extra (optional)                 │
-│  ├─ If ALL picks correct: +50,000 SYNTH        │
+│  ├─ If ALL picks correct: +49,999 SYNTH         │
 │  ├─ PLUS: Spin out your reality!               │
 │  └─ Ultimate grand prize!                      │
 └─────────────────────────────────────────────────┘
 
-TOTAL COST: $443 (to play complete game)
-POTENTIAL WINNINGS: 104,400 SYNTH (~$104,400)
+TOTAL COST: $439 (to play complete game) ⚡ Tesla 3-6-9
+POTENTIAL WINNINGS: 103,995 SYNTH (~$103,995) ⚡ Tesla 3-6-9
 ```
 
 ---
@@ -132,12 +132,12 @@ OPTION 1: PAY ROUND BY ROUND
 │  Round 1:  $64  (32 picks × $2)     │
 │  Round 2:  $80  (16 picks × $5)     │
 │  Round 3:  $80  (8 picks × $10)     │
-│  Round 4:  $100 (4 picks × $25)     │
-│  Round 5:  $100 (2 picks × $50)     │
-│  Round 6:  $100 (1 pick × $100)     │
+│  Round 4:  $99  (4 picks × $25)     │
+│  Round 5:  $99  (2 picks × $50)     │
+│  Round 6:  $99  (1 pick × $99)      │
 │  Bonus:    $19  (perfect bracket)    │
 │  ────────────────────────────────    │
-│  TOTAL:    $443                      │
+│  TOTAL:    $439 ⚡ Tesla 3-6-9       │
 └──────────────────────────────────────┘
 
 Benefits:
@@ -163,8 +163,8 @@ OPTION 3: CASUAL PLAY
 ┌──────────────────────────────────────┐
 │  Just Round 1:     $64               │
 │  Just Round 1-3:   $224              │
-│  Just Final Four:  $100              │
-│  Just Championship: $100             │
+│  Just Final Four:  $99               │
+│  Just Championship: $99             │
 └──────────────────────────────────────┘
 
 Benefits:
@@ -299,7 +299,7 @@ SMALL WINS (Every Round):
 
 MEDIUM WIN (Top 10%):
 ├─ Finish in top 10% of all players
-├─ Bonus: +5,000 SYNTH
+├─ Bonus: +4,999 SYNTH ⚡
 ├─ Recognition: Featured on leaderboard
 ├─ Invitation: Next year's VIP tier
 └─ Example: Pick Final Four correctly = likely top 10%
@@ -315,7 +315,7 @@ BIG WIN (Top 3):
 PERFECT GAME (Octave 7):
 ├─ ALL picks correct (63/63 or 67/67 with First Four)
 ├─ Odds: ~1 in 9.2 quintillion (very rare!)
-├─ Prize: 50,000 SYNTH bonus ($50K+)
+├─ Prize: 49,999 SYNTH bonus ($49,999+) ⚡
 ├─ Prize: SPIN OUT reality fully funded
 ├─ Prize: Next year free + lifetime VIP
 ├─ Glory: LEGEND status forever
@@ -338,14 +338,14 @@ Store them, learn from them, manifest later.
 ╠══════════════════════════════════════════════════════════╣
 ║  Round 1     │    $2       │  250 SYNTH │   32    │ 8,000║
 ║  Round 2     │    $5       │  500 SYNTH │   16    │ 8,000║
-║  Sweet 16    │   $10       │  1,000 SYNTH│   8    │ 8,000║
-║  Elite 8     │   $25       │  2,500 SYNTH│   4    │10,000║
-║  Final Four  │   $50       │  5,000 SYNTH│   2    │10,000║
-║  Championship│  $100       │ 10,000 SYNTH│   1    │10,000║
-║  Perfect     │   $19       │ 50,000 SYNTH│  ALL   │50,000║
+║  Sweet 16    │   $10       │  999 SYNTH  │   8    │ 7,992║
+║  Elite 8     │   $25       │  2,499 SYNTH│   4    │ 9,996║
+║  Final Four  │   $50       │  4,999 SYNTH│   2    │ 9,998║
+║  Championship│   $99       │  9,999 SYNTH│   1    │ 9,999║
+║  Perfect     │   $19       │ 49,999 SYNTH│  ALL   │49,999║
 ╠══════════════════════════════════════════════════════════╣
-║  TOTAL INVESTMENT:              $443                     ║
-║  TOTAL POSSIBLE:                104,400 SYNTH            ║
+║  TOTAL INVESTMENT:              $439 ⚡ Tesla 3-6-9      ║
+║  TOTAL POSSIBLE:                103,995 SYNTH ⚡ Tesla   ║
 ║  ROI IF PERFECT:                235x return!             ║
 ╚══════════════════════════════════════════════════════════╝
 ```
@@ -617,7 +617,7 @@ OPTIONAL:
 ║                                                          ║
 ║             MARCH MADNESS OCTAVE BOARD GAME              ║
 ║                                                          ║
-║  COST:          $443 (complete bracket)                  ║
+║  COST:          $439 ⚡ Tesla 3-6-9 (complete bracket)   ║
 ║  TIME:          3 weeks (March 15 - April 7)             ║
 ║  DIFFICULTY:    Easy to learn, hard to master            ║
 ║  PLAYERS:       You + 100,000 others (compete!)          ║
@@ -650,7 +650,7 @@ OPTIONAL:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           🏀 MARCH MADNESS OCTAVE BOARD GAME 🏀
                   
-          $443 to Play | 104,400 SYNTH to Win
+          $439 ⚡ Tesla 3-6-9 to Play | 103,995 SYNTH ⚡ to Win
           64 → 32 → 16 → 8 → 4 → 2 → 1 Champion!
                   
           Pick Teams. Watch Games. Earn SYNTH.

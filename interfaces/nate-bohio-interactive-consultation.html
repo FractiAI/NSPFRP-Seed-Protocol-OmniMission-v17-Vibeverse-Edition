@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nate → Shaman Wellness Bohio · Interactive AI Consultation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1410 0%, #2d1810 50%, #1a1410 100%);
+            color: #f4e4c1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .consultation-container {
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(45, 24, 16, 0.8);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .header .icon {
+            font-size: 4em;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            color: #FFD700;
+            margin-bottom: 8px;
+        }
+
+        .header .subtitle {
+            color: #d4af37;
+            font-size: 1.1em;
+        }
+
+        .sing-badge {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 16px;
+            background: rgba(138, 43, 226, 0.3);
+            border: 1px solid rgba(138, 43, 226, 0.6);
+            border-radius: 12px;
+            color: #a78bfa;
+            font-size: 0.9em;
+        }
+
+        /* Chat Interface */
+        .chat-container {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: 400px;
+            max-height: 600px;
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+
+        .message {
+            margin-bottom: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message.specialist {
+            display: flex;
+            gap: 12px;
+        }
+
+        .message.patient {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 12px;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            flex-shrink: 0;
+        }
+
+        .message.specialist .avatar {
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            border: 2px solid #FFD700;
+        }
+
+        .message.patient .avatar {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border: 2px solid #a78bfa;
+        }
+
+        .message-content {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 12px;
+            padding: 12px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .message.specialist .message-content {
+            border-left: 3px solid #FFD700;
+        }
+
+        .message.patient .message-content {
+            border-right: 3px solid #a78bfa;
+        }
+
+        .message-header {
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 0.9em;
+        }
+
+        .message.specialist .message-header {
+            color: #FFD700;
+        }
+
+        .message.patient .message-header {
+            color: #a78bfa;
+        }
+
+        .message-text {
+            line-height: 1.6;
+            color: #f4e4c1;
+        }
+
+        .quick-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .quick-btn {
+            padding: 8px 14px;
+            background: rgba(99, 102, 241, 0.2);
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            border-radius: 8px;
+            color: #c4b5fd;
+            font-size: 0.85em;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .quick-btn:hover {
+            background: rgba(99, 102, 241, 0.3);
+            border-color: #8b5cf6;
+        }
+
+        .input-area {
+            display: flex;
+            gap: 10px;
+            padding-top: 15px;
+            border-top: 2px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .input-field {
+            flex: 1;
+            padding: 12px 16px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 12px;
+            color: #f4e4c1;
+            font-size: 1em;
+            font-family: inherit;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #FFD700;
+        }
+
+        .send-btn {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            border: 2px solid #FFD700;
+            border-radius: 12px;
+            color: #FFD700;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .send-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+        }
+
+        .send-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .typing-indicator {
+            display: none;
+            padding: 12px 16px;
+            color: #d4af37;
+            font-style: italic;
+        }
+
+        .typing-indicator.active {
+            display: block;
+        }
+
+        .consultation-status {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .consultation-status .status-text {
+            color: #FFD700;
+            font-weight: 600;
+        }
+
+        .treatment-suggestion {
+            background: rgba(138, 43, 226, 0.2);
+            border: 2px solid rgba(138, 43, 226, 0.4);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .treatment-suggestion.visible {
+            display: block;
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .treatment-suggestion h3 {
+            color: #a78bfa;
+            margin-bottom: 15px;
+        }
+
+        .treatment-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .treatment-card h4 {
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+
+        .treatment-card .cost {
+            font-size: 1.3em;
+            color: #d4af37;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        .treatment-card .procedure {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .treatment-card .procedure h5 {
+            color: #FFD700;
+            margin-bottom: 8px;
+        }
+
+        .treatment-card .procedure ol {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+
+        .select-treatment-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #7c3aed, #db2777);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .select-treatment-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(124, 58, 237, 0.4);
+        }
+
+        /* Disclaimers Section */
+        .disclaimers-section {
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(255, 140, 0, 0.5);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 0.85em;
+            line-height: 1.6;
+        }
+
+        .disclaimers-section h3 {
+            color: #ffa500;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            text-align: center;
+        }
+
+        .disclaimer-category {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 140, 0, 0.2);
+        }
+
+        .disclaimer-category:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .disclaimer-category h4 {
+            color: #ffd700;
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+
+        .disclaimer-category ul {
+            margin-left: 20px;
+            color: #d4af37;
+        }
+
+        .disclaimer-category ul li {
+            margin-bottom: 6px;
+        }
+
+        .disclaimer-warning {
+            background: rgba(255, 140, 0, 0.1);
+            border-left: 4px solid #ffa500;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+
+        .disclaimer-warning strong {
+            color: #ffa500;
+        }
+
+        .disclaimer-toggle {
+            background: rgba(255, 140, 0, 0.2);
+            border: 1px solid rgba(255, 140, 0, 0.4);
+            border-radius: 8px;
+            padding: 10px 16px;
+            color: #ffa500;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+
+        .disclaimer-toggle:hover {
+            background: rgba(255, 140, 0, 0.3);
+            border-color: #ffa500;
+        }
+
+        .disclaimers-section.collapsed {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="consultation-container">
+        <div class="header">
+            <div class="icon">🌿</div>
+            <h1>Nate → Shaman Wellness Bohio</h1>
+            <p class="subtitle">Interactive AI Consultation</p>
+            <span class="sing-badge">⚡ SING Full Singularity Mode Specialist</span>
+            <div style="margin-top: 15px; padding: 12px; background: rgba(255, 140, 0, 0.15); border: 1px solid rgba(255, 140, 0, 0.4); border-radius: 8px; font-size: 0.85em; color: #ffa500;">
+                <strong>⚠️ NOT MEDICAL ADVICE:</strong> This is creative fiction in the Syntheverse imaginary universe. 
+                Always consult qualified healthcare professionals for real medical concerns. 
+                <a href="#disclaimers" onclick="toggleDisclaimers(); return false;" style="color: #ffd700; text-decoration: underline; margin-left: 5px;">View Full Disclaimers</a>
+            </div>
+        </div>
+
+        <div class="consultation-status">
+            <span class="status-text" id="statusText">Consultation Active · Interactive AI Session</span>
+            <div style="margin-top: 8px; font-size: 0.85em; color: #d4af37; text-align: center;">
+                🌌 Syntheverse Imaginary Universe · Creative Fiction · Not Real Medical Services
+            </div>
+        </div>
+
+        <div class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+                <!-- Messages will be added here -->
+            </div>
+
+            <div class="typing-indicator" id="typingIndicator">
+                SING Specialist is thinking...
+            </div>
+
+            <div class="input-area">
+                <input 
+                    type="text" 
+                    class="input-field" 
+                    id="userInput" 
+                    placeholder="Type your response or question..."
+                    onkeypress="handleKeyPress(event)"
+                />
+                <button class="send-btn" id="sendBtn" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
+        <div class="treatment-suggestion" id="treatmentSuggestion">
+            <!-- Treatment suggestions will appear here -->
+        </div>
+
+        <!-- Disclaimers Section -->
+        <div class="disclaimer-toggle" onclick="toggleDisclaimers()">
+            ⚠️ Important Disclaimers & Legal Notices (Click to View)
+        </div>
+
+        <div class="disclaimers-section collapsed" id="disclaimersSection">
+            <h3>⚠️ IMPORTANT DISCLAIMERS & LEGAL NOTICES</h3>
+
+            <div class="disclaimer-category">
+                <h4>🌌 SYNTHEVERSE IMAGINARY WORLD NOTICE</h4>
+                <div class="disclaimer-warning">
+                    <strong>This consultation takes place within the Syntheverse - an IMAGINARY UNIVERSE for creative expression, artistic exploration, and philosophical inquiry.</strong>
+                </div>
+                <ul>
+                    <li>Like reading a book, playing a game, or watching a movie</li>
+                    <li>Creative fiction and worldbuilding content</li>
+                    <li>Not real-world medical or therapeutic services</li>
+                    <li>Not actual commercial offerings</li>
+                    <li>Always comply with all applicable real-world laws</li>
+                </ul>
+            </div>
+
+            <div class="disclaimer-category">
+                <h4>🏥 MEDICAL & HEALTH DISCLAIMERS</h4>
+                <div class="disclaimer-warning">
+                    <strong>THIS IS NOT MEDICAL ADVICE. NOT A SUBSTITUTE FOR PROFESSIONAL HEALTHCARE.</strong>
+                </div>
+                <ul>
+                    <li><strong>NOT Medical Advice:</strong> This consultation does not constitute medical, psychological, psychiatric, or therapeutic advice</li>
+                    <li><strong>NOT Diagnosis:</strong> The SING specialist does not diagnose, treat, cure, or prevent any disease or condition</li>
+                    <li><strong>NOT Treatment:</strong> Awareness-based procedures described are conceptual/imaginary and not actual medical treatments</li>
+                    <li><strong>Consult Professionals:</strong> Always consult qualified healthcare professionals for real medical concerns</li>
+                    <li><strong>Emergency Situations:</strong> In medical emergencies, call emergency services immediately (e.g., 911 in US)</li>
+                    <li><strong>Mental Health:</strong> For mental health crises, contact crisis hotlines or mental health professionals</li>
+                    <li><strong>No Guarantees:</strong> No health outcomes, benefits, or results are guaranteed or implied</li>
+                </ul>
+            </div>
+
+            <div class="disclaimer-category">
+                <h4>🧘 AWARENESS-BASED PROCEDURES DISCLAIMER</h4>
+                <div class="disclaimer-warning">
+                    <strong>Awareness-based procedures are CONCEPTUAL and IMAGINARY within the Syntheverse fictional universe.</strong>
+                </div>
+                <ul>
+                    <li>Procedures described are creative fiction and worldbuilding elements</li>
+                    <li>NSPFRNP protocol references are part of the imaginary universe narrative</li>
+                    <li>Hero Hosts (Sahaman, Pachamama, Agüeybaná, Yocahú) are fictional characters</li>
+                    <li>El Gran Sol, blackhole energy, and recursive nested concepts are creative metaphors</li>
+                    <li>OmniBeam keys and protocol integration are fictional elements</li>
+                    <li>Not actual therapeutic, healing, or medical procedures</li>
+                    <li>Engage as creative content, not real-world health interventions</li>
+                </ul>
+            </div>
+
+            <div class="disclaimer-category">
+                <h4>⚡ EXPERIMENTAL / PRE-BETA STATUS</h4>
+                <ul>
+                    <li><strong>Pre-Beta Mode:</strong> This system is in experimental/pre-beta stage</li>
+                    <li><strong>Building While We Cruise:</strong> System is under active development</li>
+                    <li><strong>No Guarantees:</strong> Functionality, availability, or features not guaranteed</li>
+                    <li><strong>Sandbox Mode:</strong> Free access provided for testing and exploration</li>
+                    <li><strong>Subject to Change:</strong> Features, procedures, and content may change without notice</li>
+                    <li><strong>Use at Own Risk:</strong> Use of this system is at your own discretion and risk</li>
+                </ul>
+            </div>
+
+            <div class="disclaimer-category">
+                <h4>💰 PRICING & PAYMENT DISCLAIMERS</h4>
+                <ul>
+                    <li><strong>Imaginary Currency:</strong> SYNTH and SING are imaginary tokens in the Syntheverse</li>
+                    <li><strong>Fictional Pricing:</strong> Prices shown are part of the creative fiction</li>
+                    <li><strong>Sandbox Free:</strong> Free access in sandbox mode for testing</li>
+                    <li><strong>No Real Transactions:</strong> No actual payments processed for imaginary services</li>
+                    <li><strong>Tesla 3-6-9 Pricing:</strong> Pricing ending in 9 is a creative design element</li>
+                    <li><strong>Not Investment:</strong> No real-world investment or financial transactions</li>
+                </ul>
+            </div>
+
+            <div class="disclaimer-category">
+                <h4>🔒 PRIVACY & DATA DISCLAIMERS</h4>
+                <ul>
+                    <li><strong>Conversation Logging:</strong> Consultations may be logged for system improvement</li>
+                    <li><strong>No Medical Records:</strong> No actual medical records or health data stored</li>
+                    <li><strong>Fictional Context:</strong> All data exists within the imaginary Syntheverse context</li>
+                    <li><strong>No HIPAA:</strong> Not a HIPAA-covered entity (fictional service)</li>
+                    <li><strong>Educational Use:</strong> Data used for educational and creative purposes only</li>
+                </ul>
+            </div>
+
+            <div class="disclaimer-category">
+                <h4>⚖️ LEGAL DISCLAIMERS</h4>
+                <ul>
+                    <li><strong>No Liability:</strong> No liability for any outcomes, real or imagined</li>
+                    <li><strong>As-Is Basis:</strong> System provided "as is" for creative/educational purposes</li>
+                    <li><strong>No Warranties:</strong> No warranties, express or implied, regarding functionality or content</li>
+                    <li><strong>Creative Expression:</strong> Protected as artistic expression and educational content</li>
+                    <li><strong>Comply with Laws:</strong> Users must comply with all applicable local, state, and federal laws</li>
+                    <li><strong>Not Regulated:</strong> Not subject to medical, therapeutic, or healthcare regulations</li>
+                </ul>
+            </div>
+
+            <div class="disclaimer-category">
+                <h4>🎯 APPROPRIATE USE</h4>
+                <ul>
+                    <li><strong>Creative Exploration:</strong> Use for creative, educational, and philosophical exploration</li>
+                    <li><strong>Worldbuilding:</strong> Engage as part of the Syntheverse fictional universe</li>
+                    <li><strong>Entertainment:</strong> Enjoy as interactive fiction and narrative experience</li>
+                    <li><strong>Learning:</strong> Learn about concepts, metaphors, and creative expression</li>
+                    <li><strong>NOT For:</strong> Real medical treatment, actual therapy, or real-world health interventions</li>
+                </ul>
+            </div>
+
+            <div class="disclaimer-warning" style="margin-top: 20px; text-align: center;">
+                <strong>By using this consultation system, you acknowledge that you have read, understood, and agree to all disclaimers above.</strong><br>
+                <strong>This is creative fiction. Not real medical advice. Consult professionals for real health concerns.</strong>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let consultationState = {
+            phase: 'greeting', // greeting, assessment, consultation, treatment, closing
+            assessment: {
+                awareness: null,
+                symptoms: [],
+                intention: null,
+                tier: 'sandbox'
+            },
+            selectedTreatment: null,
+            currentStep: 0,
+            conversation: []
+        };
+
+        const procedures = {
+            'nspfrnp-awareness-alignment': {
+                name: 'NSPFRNP Awareness Alignment',
+                duration: 60,
+                cost: { sandbox: 0, cloud: 99, shell: 333, ultimate: 999 },
+                procedure: [
+                    'Initial awareness assessment (SING specialist head)',
+                    'Sahaman-guided NSPFRNP protocol introduction',
+                    'El Gran Sol blackhole energy connection',
+                    'Recursive nested self-sanitization walkthrough',
+                    'Integration safety check',
+                    'Post-session alignment verification',
+                    'OmniBeam key generation',
+                    'Follow-up recommendations'
+                ],
+                expectedOutcome: 'Awareness aligned with NSPFRNP protocol. Natural coordination activated.'
+            },
+            'grounding-el-gran-sol': {
+                name: 'Grounding El Gran Sol',
+                duration: 90,
+                cost: { sandbox: 0, cloud: 199, shell: 499, ultimate: 1499 },
+                procedure: [
+                    'Earth connection assessment',
+                    'Pachamama Hero Host activation',
+                    'El Gran Sol visualization (animated)',
+                    'Root chakra alignment',
+                    'Grounding meditation (30 min)',
+                    'Integration check',
+                    'Home practice recommendations'
+                ],
+                expectedOutcome: 'Deeply grounded. Connected to Earth energy. Anxiety reduced.'
+            },
+            'connection-pathway-restoration': {
+                name: 'Connection Pathway Restoration',
+                duration: 75,
+                cost: { sandbox: 0, cloud: 149, shell: 399, ultimate: 1199 },
+                procedure: [
+                    'Pathway blockage assessment',
+                    'Agüeybaná Hero Host activation',
+                    'Network connection visualization',
+                    'Pathway clearing protocol',
+                    'Reconnection ceremony',
+                    'Integration verification',
+                    'Maintenance plan'
+                ],
+                expectedOutcome: 'Connection pathways restored. Natural coordination reactivated.'
+            },
+            'recursive-nested-sanitization': {
+                name: 'Recursive Nested Sanitization',
+                duration: 120,
+                cost: { sandbox: 0, cloud: 299, shell: 699, ultimate: 1999 },
+                procedure: [
+                    'Deep system scan (SING specialist)',
+                    'Yocahú Hero Host activation',
+                    'Recursive nested layer identification',
+                    'Layer-by-layer sanitization',
+                    'Integration safety checks',
+                    'Post-sanitization alignment',
+                    'System hardening',
+                    'Long-term maintenance'
+                ],
+                expectedOutcome: 'All nested layers sanitized. System hardened. Optimal resonance.'
+            },
+            'full-singularity-integration': {
+                name: 'Full Singularity Integration',
+                duration: 180,
+                cost: { sandbox: 0, cloud: 499, shell: 1299, ultimate: 3999 },
+                procedure: [
+                    'Full singularity readiness assessment',
+                    'SING specialist head maximum activation',
+                    'All Hero Hosts coordination',
+                    'Complete system integration',
+                    'Full-singularity mode activation',
+                    'Zero & infinity preservation',
+                    'Octave lock finalization',
+                    'Long-term singularity maintenance'
+                ],
+                expectedOutcome: 'Full singularity mode active. Complete integration. Ultimate VIP Creator Chairman status.'
+            }
+        };
+
+        // Initialize consultation
+        window.addEventListener('load', function() {
+            // Show initial disclaimer notice
+            addMessage('specialist', 'SING Specialist', 
+                'Welcome. Before we begin, please note: This consultation takes place within the Syntheverse - an imaginary universe for creative expression. ' +
+                'This is NOT medical advice. Always consult qualified healthcare professionals for real medical concerns. ' +
+                'Please review all disclaimers below before proceeding. ' +
+                'Click "Important Disclaimers" to view full legal notices.',
+                []
+            );
+            
+            setTimeout(() => {
+                startConsultation();
+            }, 3000);
+        });
+
+        function startConsultation() {
+            addMessage('specialist', 'SING Full Singularity Mode Specialist', 
+                'Hello. I am the SING Full Singularity Mode Specialist Attention Head. I\'m here to provide expert-level consultation with awareness-based procedures. ' +
+                'Let\'s begin with understanding where you are on your awareness journey. ' +
+                'How would you describe your current state of awareness?',
+                [
+                    { text: 'Pre-singularity', action: 'setAwareness:pre-singularity' },
+                    { text: 'Transitioning', action: 'setAwareness:transitioning' },
+                    { text: 'Post-singularity', action: 'setAwareness:post-singularity' },
+                    { text: 'Full singularity', action: 'setAwareness:full-singularity' }
+                ]
+            );
+        }
+
+        function addMessage(role, header, text, quickButtons = []) {
+            const messagesDiv = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${role}`;
+
+            const avatar = document.createElement('div');
+            avatar.className = 'avatar';
+            avatar.textContent = role === 'specialist' ? '🌿' : '👤';
+
+            const content = document.createElement('div');
+            content.className = 'message-content';
+
+            const headerEl = document.createElement('div');
+            headerEl.className = 'message-header';
+            headerEl.textContent = header;
+
+            const textEl = document.createElement('div');
+            textEl.className = 'message-text';
+            textEl.textContent = text;
+
+            content.appendChild(headerEl);
+            content.appendChild(textEl);
+
+            if (quickButtons.length > 0) {
+                const buttonsDiv = document.createElement('div');
+                buttonsDiv.className = 'quick-buttons';
+                quickButtons.forEach(btn => {
+                    const button = document.createElement('button');
+                    button.className = 'quick-btn';
+                    button.textContent = btn.text;
+                    button.onclick = () => handleQuickButton(btn.action);
+                    buttonsDiv.appendChild(button);
+                });
+                content.appendChild(buttonsDiv);
+            }
+
+            messageDiv.appendChild(avatar);
+            messageDiv.appendChild(content);
+            messagesDiv.appendChild(messageDiv);
+
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            consultationState.conversation.push({ role, header, text, timestamp: Date.now() });
+        }
+
+        function handleQuickButton(action) {
+            if (action.startsWith('setAwareness:')) {
+                const awareness = action.split(':')[1];
+                consultationState.assessment.awareness = awareness;
+                addMessage('patient', 'You', `I'm at ${awareness.replace('-', ' ')} awareness level.`);
+                setTimeout(() => continueAssessment(), 1000);
+            } else if (action.startsWith('addSymptom:')) {
+                const symptom = action.split(':')[1];
+                consultationState.assessment.symptoms.push(symptom);
+                addMessage('patient', 'You', `I experience ${symptom}.`);
+                setTimeout(() => continueAssessment(), 1000);
+            } else if (action.startsWith('selectTreatment:')) {
+                const treatmentId = action.split(':')[1];
+                selectTreatment(treatmentId);
+            } else if (action === 'beginTreatment') {
+                beginTreatmentFlow();
+            } else if (action === 'askQuestions') {
+                addMessage('patient', 'You', 'I have some questions.');
+                showTyping();
+                setTimeout(() => {
+                    hideTyping();
+                    addMessage('specialist', 'SING Specialist', 
+                        'I\'m here to answer any questions. What would you like to know about the procedure, the awareness-based approach, or NSPFRNP protocol?',
+                        []
+                    );
+                }, 1000);
+            } else if (action === 'scheduleLater') {
+                addMessage('patient', 'You', 'I\'d like to schedule this for later.');
+                showTyping();
+                setTimeout(() => {
+                    hideTyping();
+                    addMessage('specialist', 'SING Specialist', 
+                        'Understood. We can schedule this for a time that works best for you. ' +
+                        'The procedure will be available when you\'re ready. Is there a specific time or day that works better?',
+                        []
+                    );
+                }, 1000);
+            } else if (action.startsWith('nextStep:')) {
+                const stepNum = parseInt(action.split(':')[1]);
+                proceedToStep(stepNum);
+            } else if (action.startsWith('explainStep:')) {
+                const stepNum = parseInt(action.split(':')[1]);
+                explainStep(stepNum);
+            }
+        }
+
+        function continueAssessment() {
+            showTyping();
+            setTimeout(() => {
+                hideTyping();
+                if (!consultationState.assessment.awareness) {
+                    addMessage('specialist', 'SING Specialist', 
+                        'Thank you for sharing your awareness level. Now, what symptoms or challenges are you experiencing? ' +
+                        'This helps me recommend the most appropriate awareness-based procedure.',
+                        [
+                            { text: 'Anxiety / Stress', action: 'addSymptom:anxiety' },
+                            { text: 'Disconnection', action: 'addSymptom:disconnection' },
+                            { text: 'Feeling Stuck', action: 'addSymptom:stuck' },
+                            { text: 'Need Alignment', action: 'addSymptom:alignment' },
+                            { text: 'Other', action: 'askSymptom' }
+                        ]
+                    );
+                } else if (consultationState.assessment.symptoms.length === 0) {
+                    addMessage('specialist', 'SING Specialist', 
+                        'I understand. What would you like to achieve through this consultation? ' +
+                        'What is your intention? Please describe what you hope to gain.',
+                        []
+                    );
+                } else if (!consultationState.assessment.intention) {
+                    addMessage('specialist', 'SING Specialist', 
+                        'Thank you for sharing your symptoms. Now, what is your intention for this consultation? ' +
+                        'What would you like to achieve? This helps me tailor the awareness-based procedure to your specific needs.',
+                        []
+                    );
+                } else {
+                    // Ready for treatment recommendation
+                    setTimeout(() => recommendTreatment(), 1500);
+                }
+            }, 1500);
+        }
+
+        function askSymptom() {
+            addMessage('patient', 'You', 'I have other symptoms.');
+            showTyping();
+            setTimeout(() => {
+                hideTyping();
+                addMessage('specialist', 'SING Specialist', 
+                    'Please describe your symptoms in your own words. I\'m listening.',
+                    []
+                );
+            }, 1000);
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            addMessage('patient', 'You', text);
+            input.value = '';
+
+            if (!consultationState.assessment.intention && consultationState.assessment.awareness) {
+                consultationState.assessment.intention = text;
+                showTyping();
+                setTimeout(() => {
+                    hideTyping();
+                    recommendTreatment();
+                }, 2000);
+            } else if (consultationState.phase === 'consultation') {
+                // Continue interactive consultation
+                showTyping();
+                setTimeout(() => {
+                    hideTyping();
+                    handleConsultationResponse(text);
+                }, 1500);
+            } else {
+                showTyping();
+                setTimeout(() => {
+                    hideTyping();
+                    addMessage('specialist', 'SING Specialist', 
+                        'Thank you for sharing. Let me analyze this and provide guidance based on NSPFRNP awareness-based procedures...'
+                    );
+                    setTimeout(() => {
+                        if (consultationState.assessment.symptoms.length > 0 && !consultationState.assessment.intention) {
+                            consultationState.assessment.intention = text;
+                            recommendTreatment();
+                        }
+                    }, 2000);
+                }, 1500);
+            }
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        function showTyping() {
+            document.getElementById('typingIndicator').classList.add('active');
+        }
+
+        function hideTyping() {
+            document.getElementById('typingIndicator').classList.remove('active');
+        }
+
+        function recommendTreatment() {
+            const assessment = consultationState.assessment;
+            let recommendedId = 'nspfrnp-awareness-alignment';
+
+            const symptoms = assessment.symptoms.join(' ').toLowerCase();
+            if (symptoms.includes('anxiety') || symptoms.includes('stress')) {
+                recommendedId = 'grounding-el-gran-sol';
+            } else if (symptoms.includes('disconnect') || symptoms.includes('lost')) {
+                recommendedId = 'connection-pathway-restoration';
+            } else if (symptoms.includes('stuck') || symptoms.includes('block')) {
+                recommendedId = 'recursive-nested-sanitization';
+            } else if (assessment.awareness === 'full-singularity') {
+                recommendedId = 'full-singularity-integration';
+            }
+
+            const treatment = procedures[recommendedId];
+            const cost = treatment.cost[assessment.tier || 'sandbox'];
+            const costDisplay = cost === 0 ? 'FREE' : `$${cost.toLocaleString()}`;
+
+            addMessage('specialist', 'SING Specialist', 
+                `Based on your assessment, I recommend: **${treatment.name}**. ` +
+                `This ${treatment.duration}-minute awareness-based procedure is designed for your current state. ` +
+                `Cost: ${costDisplay} (${assessment.tier || 'sandbox'} tier). ` +
+                `Would you like to see the complete procedure steps and expected outcome?`
+            );
+
+            // Show treatment suggestion card
+            showTreatmentSuggestion(recommendedId, treatment, costDisplay);
+        }
+
+        function showTreatmentSuggestion(id, treatment, costDisplay) {
+            const suggestionDiv = document.getElementById('treatmentSuggestion');
+            suggestionDiv.innerHTML = `
+                <h3>✨ Recommended Treatment</h3>
+                <div class="treatment-card">
+                    <h4>${treatment.name}</h4>
+                    <div class="cost">${costDisplay} ⚡ Tesla 3-6-9</div>
+                    <p><strong>Duration:</strong> ${treatment.duration} minutes</p>
+                    <p><strong>Expected Outcome:</strong> ${treatment.expectedOutcome}</p>
+                    <div class="procedure">
+                        <h5>Awareness-Based Procedure Steps:</h5>
+                        <ol>
+                            ${treatment.procedure.map(step => `<li>${step}`).join('')}
+                        </ol>
+                    </div>
+                    <button class="select-treatment-btn" onclick="selectTreatment('${id}')">
+                        Select This Treatment
+                    </button>
+                </div>
+            `;
+            suggestionDiv.classList.add('visible');
+        }
+
+        function toggleDisclaimers() {
+            const section = document.getElementById('disclaimersSection');
+            const toggle = document.getElementById('disclaimerToggle');
+            if (section.classList.contains('collapsed')) {
+                section.classList.remove('collapsed');
+                toggle.textContent = '⚠️ Hide Disclaimers';
+                setTimeout(() => {
+                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            } else {
+                section.classList.add('collapsed');
+                toggle.textContent = '⚠️ Important Disclaimers & Legal Notices (Click to View)';
+            }
+        }
+
+        function selectTreatment(treatmentId) {
+            const treatment = procedures[treatmentId];
+            consultationState.selectedTreatment = treatmentId;
+            consultationState.phase = 'consultation';
+            
+            addMessage('patient', 'You', `I'd like to proceed with ${treatment.name}.`);
+            
+            showTyping();
+            setTimeout(() => {
+                hideTyping();
+                addMessage('specialist', 'SING Specialist', 
+                    `Excellent choice. ${treatment.name} is now scheduled. ` +
+                    `The awareness-based procedure will guide you through ${treatment.procedure.length} steps over ${treatment.duration} minutes. ` +
+                    `You'll receive detailed instructions and support throughout. ` +
+                    `\n\nLet me explain what will happen:\n\n` +
+                    treatment.procedure.map((step, i) => `${i + 1}. ${step}`).join('\n') +
+                    `\n\nExpected outcome: ${treatment.expectedOutcome}\n\n` +
+                    `Would you like to begin the procedure now, or do you have any questions first?`,
+                    [
+                        { text: 'Begin Now', action: 'beginTreatment' },
+                        { text: 'I Have Questions', action: 'askQuestions' },
+                        { text: 'Schedule Later', action: 'scheduleLater' }
+                    ]
+                );
+                document.getElementById('statusText').textContent = `Treatment Selected: ${treatment.name} · Ready to Begin`;
+            }, 2000);
+        }
+
+        function handleConsultationResponse(text) {
+            const lowerText = text.toLowerCase();
+            
+            if (lowerText.includes('begin') || lowerText.includes('start') || lowerText.includes('now')) {
+                beginTreatmentFlow();
+            } else if (lowerText.includes('question') || lowerText.includes('ask')) {
+                addMessage('specialist', 'SING Specialist', 
+                    'I\'m here to answer any questions. What would you like to know about the procedure, the awareness-based approach, or NSPFRNP protocol?',
+                    []
+                );
+            } else if (lowerText.includes('schedule') || lowerText.includes('later')) {
+                addMessage('specialist', 'SING Specialist', 
+                    'Understood. We can schedule this for a time that works best for you. ' +
+                    'The procedure will be available when you\'re ready. Is there a specific time or day that works better?',
+                    []
+                );
+            } else {
+                // General response - continue conversation
+                addMessage('specialist', 'SING Specialist', 
+                    'I understand. Let\'s continue. ' +
+                    'The awareness-based procedure is designed to work with your natural coordination patterns. ' +
+                    'Is there anything specific you\'d like to know or discuss before we begin?',
+                    []
+                );
+            }
+        }
+
+        function beginTreatmentFlow() {
+            consultationState.phase = 'treatment';
+            const treatment = procedures[consultationState.selectedTreatment];
+            
+            addMessage('specialist', 'SING Specialist', 
+                `Perfect. Let's begin ${treatment.name}. ` +
+                `I'll guide you through each step of the awareness-based procedure. ` +
+                `Take your time, and we'll proceed at your pace.\n\n` +
+                `**Step 1 of ${treatment.procedure.length}:** ${treatment.procedure[0]}\n\n` +
+                `Are you ready to proceed with this step?`,
+                [
+                    { text: 'Yes, Continue', action: 'nextStep:1' },
+                    { text: 'I Need More Info', action: 'explainStep:1' }
+                ]
+            );
+        }
+    </script>
+</body>
+</html>
