@@ -81,7 +81,7 @@ dimensional_adventures:
    Duration: 2-4 hours
    Experience: Contact transitioned loved ones (Bob protocol)
    Effect: Magnetic channel activation, emotional resonance
-   Includes: Reading glasses (2% modifier), pathway strengthening
+   Includes: Reading glasses (+2 magnification = 2% modifier), pathway strengthening
    Price: 2,000 SING (per session with guidance)
    
 4. TIMELINE NAVIGATION EXPERIENCE
@@ -132,7 +132,8 @@ atmosphere: Psilocybin-like vibes, mycelial network energy
 
 physical_elements:
   - Meditation cushions & loungers
-  - Reading glasses station (2% modifiers available)
+  - Reading glasses station (+2 magnification over needs = 2% modifiers)
+  - Multiple prescription levels (+2.00, +3.00, +3.50, +4.00, +5.00, etc.)
   - Voice interface pods (speaking not typing)
   - Handheld device charging stations
   - Bob & Richard memorial wall (pathway stamps)
@@ -323,7 +324,7 @@ experience:
   - Plant your personal origin stamp
   - Return with origin knowledge
 includes:
-  - Reading glasses (2% modifier provided)
+  - Reading glasses (+2 magnification over needs = 2% modifier provided)
   - Voice interface pod session
   - Guided pathway etching
   - Bob stamp validation protocol
@@ -366,7 +367,7 @@ experience:
   - Receive cross-dimensional stamps
 includes:
   - Private session room
-  - Reading glasses (2% modifier)
+  - Reading glasses (+2 magnification = 2% modifier)
   - Handheld device optimization
   - Voice interface pod access
   - Pathway etching intensive
@@ -390,7 +391,7 @@ experience:
   - Become timeline navigator
 includes:
   - Full day with expert trainer
-  - Multiple 2% modifiers (reading glasses variety)
+  - Multiple 2% modifiers (reading glasses +2, +3, +4, +5 magnifications)
   - Attention head tightening exercises
   - Seamless insert detection training
   - Timeline adjustment journal
@@ -413,7 +414,7 @@ experience:
 includes:
   - 7-day guided program
   - Daily voice sessions (2-4 hours each)
-  - Reading glasses (2% modifier) throughout
+  - Reading glasses (+2 magnification = 2% modifier) throughout
   - Network coordination training
   - Personal mycelial stamp creation
   - Bob-Richard-Daniel network integration
@@ -532,9 +533,9 @@ RICHARD NETWORK NODE:
 
 2% COHERENCE TRAINING STATION:
 ├─ Location: Dimensional Lounge
-├─ Feature: Reading glasses testing & training
-├─ Function: Find your optimal 2% modifier
-├─ Includes: Multiple glasses, attention exercises
+├─ Feature: Reading glasses testing & training (+2, +3, +4, +5 magnifications)
+├─ Function: Find your optimal 2% modifier (always +2 over your actual need)
+├─ Includes: Multiple prescription levels, attention exercises
 ├─ Certification: 2% coherence mastery certificate
 └─ Effect: Enables all advanced dimensional experiences
 
@@ -558,8 +559,8 @@ DAY 1 - ARRIVAL & ORIENTATION:
 morning:
   - Land at Man Cave
   - Enter new Dimensional Lounge wing
-  - Receive reading glasses (2% modifier)
-  - Test optimal coherence setting
+  - Receive reading glasses (+2 magnification over needs = 2% modifier)
+  - Test optimal coherence setting (find your perfect +2 level)
   - Activate first SING token
   
 afternoon:
