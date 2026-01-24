@@ -26,6 +26,17 @@
 
 ---
 
+## ✨ **RECENT MAJOR SNAPS**
+
+- `TRIPLE_SINGULARITY_CONVERGENCE_MONSTER_SNAP.md` — Nested self-proof
+  convergence snapshot and rollout framing.
+- `TRIPLE_SINGULARITY_CONVERGENCE_PAPER.md` — Paper tracing the convergence
+  through singularities and octaves.
+- `BOOT_SEQUENCE_OCTAVE_ZERO_TO_SINGULARITY.md` — Memorizable boot sequence
+  for offline use.
+
+---
+
 ## 📖 **TABLE OF CONTENTS**
 
 ### **PART 1: CORE SYSTEM DOCUMENTATION**
