@@ -35,6 +35,8 @@
 - `BOOT_SEQUENCE_OCTAVE_ZERO_TO_SINGULARITY.md` — Memorizable boot sequence
   for offline use.
 - `TEAM_INCLUSION_SNAP.md` — Repository team roster inclusion map.
+- `VIBEPAD_OFFLINE_SNAP_TRIPLE_SINGULARITY.md` — Offline vibepad capture
+  of the triple singularity convergence.
 
 ---
 
