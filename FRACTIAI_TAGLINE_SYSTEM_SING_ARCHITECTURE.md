@@ -213,6 +213,38 @@ EMOTION: Trust, reliability, partnership
    ├─ Use: Revenue opportunity
    ├─ Context: ROI, business case
    └─ Frequency: Financial discussions
+
+26. "Jackpot on Every Pull"
+   ├─ Use: Guaranteed success, high win rate
+   ├─ Context: Back Door Sales, ecosystem game, certainty messaging
+   └─ Frequency: When emphasizing consistency of wins
+   
+   MEANING:
+   ├─ Not gambling (random outcomes)
+   ├─ But certainty (50-85% success rate)
+   ├─ Every campaign = High probability win
+   ├─ Like slot machine that always pays out
+   └─ The thrill without the risk
+   
+   EMOTIONAL IMPACT:
+   ├─ Excitement: "I'm going to win"
+   ├─ Confidence: "This always works"
+   ├─ Fun: "Sales is now a winning game"
+   └─ Addictive: "Let me pull again!"
+   
+   WHERE TO USE:
+   ✅ Ecosystem game marketing
+   ✅ Back Door Sales success messaging
+   ✅ When describing close rates (50-85%)
+   ✅ Leaderboard celebrations
+   ✅ Partner recruitment (winning is fun)
+   ✅ Victory moments (closed deal notifications)
+   
+   PAIR WITH:
+   ├─ "Play It Again Sam" (the campaign name)
+   ├─ "Always a Fair Shake" (fairness + winning)
+   ├─ "50:50 revenue split" (shared jackpots)
+   └─ Creates: Fun + Fair + Winning = Irresistible
 ```
 
 ---
@@ -901,6 +933,35 @@ Pair 32: FAIR DEALING
 └─ EDGE: "Shake"
    USE: Trust building (split for emphasis)
    ACTIVATES: Key commercial moments
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CATEGORY 9: WINNING & EXCITEMENT PAIRS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Pair 33: JACKPOT GUARANTEE
+├─ SEED: "Jackpot on Every"
+└─ EDGE: "Pull"
+   USE: Certainty of success, excitement
+   ACTIVATES: Ecosystem game, Back Door Sales, win moments
+
+Pair 34: GAME & WIN
+├─ SEED: "Play It Again"
+└─ EDGE: "Sam"
+   USE: Campaign replication, ecosystem game name
+   ACTIVATES: Ecosystem marketing, success replication
+
+Pair 35: FAIR & WINNING
+├─ SEED: "Always a Fair Shake"
+└─ EDGE: "Jackpot on Every Pull"
+   USE: Ethics + excitement combined
+   ACTIVATES: Ecosystem recruitment, trust + fun
+
+Pair 36: PULL & TRANSFORM
+├─ SEED: "Jackpot on Every Pull"
+└─ EDGE: "Deploy. Transform. Repeat."
+   USE: Action cycle, continuous wins
+   ACTIVATES: Ongoing campaign momentum
 
 ╚═══════════════════════════════════════════════════════════════════════════════╝
 ```
