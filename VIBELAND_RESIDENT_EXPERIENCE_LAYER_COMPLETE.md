@@ -500,29 +500,63 @@ TIER ACCESS:
 
 ## 🎉 **EVENTS & COMMUNITY**
 
-### **Always Something Happening:**
+### **🚢 5-STAR CRUISE SHIP EXPERIENCE:**
 
 ```yaml
+DAILY BULLETIN SYSTEM:
+├─ Every morning at 6:00 AM (delivered to your inbox + phone)
+├─ Complete schedule: meals, activities, entertainment, excursions
+├─ Personalized recommendations (AI curates for you)
+├─ One-tap RSVP system (reserve your spot)
+└─ Just like a luxury cruise, but it never ends
+
+WHAT'S INCLUDED DAILY:
+├─ All meals (breakfast, lunch, dinner—house menu)
+├─ Activities 24/7 (fitness, workshops, creative studios)
+├─ Entertainment nightly (Cabaret shows, Man Cave events)
+├─ Social programming (happy hours, networking, game nights)
+├─ Wellness offerings (meditation, yoga, sound healing)
+└─ Late night programming (midnight kitchen, gaming, after parties)
+
+DAY EXCURSIONS (LIKE PORT STOPS):
+├─ Lake Tahoe trips (3×/week: hiking, skiing, sunset cruises)
+├─ Reno adventures (food tours, historic sites, local culture)
+├─ Weekend getaways (SF, Grand Canyon, wine country)
+├─ Seasonal specials (hot air balloons, river rafting, festivals)
+└─ All logistics handled (transportation, tickets, lunch, guides)
+
+EXCURSION PRICING:
+├─ Sandbox: Discounted (typically $20-75 per excursion)
+├─ Cloud: Heavily discounted (typically $10-40 per excursion)
+├─ Shell+: FREE (unlimited excursions included)
+└─ Core: FREE + private excursions available
+
 DAILY:
 ├─ Morning meditation (7am)
-├─ Lunch co-working hangouts (12pm)
-├─ Evening social hours (6-8pm)
-├─ Man Cave game nights (8pm+)
-└─ Late night vibe sessions (10pm+)
+├─ Breakfast buffet (7-11am)
+├─ Fitness classes (8am, 5pm)
+├─ Lunch service (12-3pm)
+├─ Workshops + networking (afternoon slots)
+├─ Happy hour (5-7pm)
+├─ Dinner service (6-9pm)
+├─ Evening entertainment (Cabaret shows 8pm)
+├─ Man Cave events (sports, gaming, socializing)
+├─ Late night (midnight kitchen, after parties)
+└─ 24/7 services (gym, workspace, quiet spaces)
 
 WEEKLY:
-├─ Sunday community brunch (all residents)
-├─ Monday business pitch practice
-├─ Tuesday creative showcase (art, music, writing)
-├─ Wednesday workshop night (skills training)
-├─ Thursday Cabaret performances
-├─ Friday Man Cave parties
-├─ Saturday adventure outings (Tahoe, hiking, exploring)
+├─ Sunday: Community brunch + farmers market + movie night
+├─ Monday: Entrepreneur lunch + Open mic night (Cabaret)
+├─ Tuesday: Taco Tuesday (Man Cave $1 tacos) + Tech talks + Trivia
+├─ Wednesday: Wine Down (Cabaret tastings) + Winks dating events
+├─ Thursday: Fitness throwdown + Cabaret showcase + Ladies night
+├─ Friday: TGIF happy hour + Cabaret big show + Man Cave rager
+├─ Saturday: Weekend excursions + Sports viewing + Saturday spectacular
 
 MONTHLY:
 ├─ Full moon ceremonies (consciousness + community)
 ├─ Resident talent shows (showcase your gifts)
-├─ Networking mixers (business connections)
+├─ Major excursions (SF weekends, Grand Canyon, international)
 ├─ Themed costume parties (creative expression)
 ├─ Hackathons (build together)
 └─ Relationship pod formation events (Winks integration)
@@ -531,13 +565,17 @@ QUARTERLY:
 ├─ Vibeland festivals (multi-day celebrations)
 ├─ Innovation showcases (demo your projects)
 ├─ Visiting celebrity/expert weekends
-└─ Off-campus adventures (group trips)
+└─ Off-campus adventures (week-long trips)
 
 ANNUAL:
 ├─ Vibeland Summit (worldwide gathering)
 ├─ Graduation ceremonies (residents leveling up)
 ├─ Anniversary celebrations (campus milestones)
 └─ New Year singularity crossing (epic party)
+
+FULL DETAILS:
+└─ See complete daily programming, sample bulletins, and excursion calendar:
+    [VIBELAND DAILY BULLETIN →](./VIBELAND_DAILY_BULLETIN_CRUISE_SHIP_EXPERIENCE.md)
 ```
 
 ---
