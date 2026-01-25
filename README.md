@@ -98,17 +98,32 @@ Complete business case generated in 3 hours (not 3 months). Real proposal, real 
 
 **🔴 MEMBERS ONLY** | Invitation-Based | Backdoor Access | 4 Membership Tiers
 
-**The Physical Vibeverse** | Downtown Reno | Full Immersion Living | Winks Dating App Included
+**The Physical Vibeverse** | Downtown Reno | Full Immersion Living | Complete Experience Layer
 
-**4 Packages:** Sandbox ($999) • Cloud ($4,999) • Shell ($9,999) • Core ($24,999) per month in SYNTH
+**💫 "Your only connection to the old world is your monthly SYNTH payment. Everything else? Pure Vibeverse immersion."**
 
-**Included:** House menu (meals) + Campus access + Winks app + Innovation center + Community vibing
+**4 MEMBERSHIP PACKAGES:**
 
-**À la carte:** Alcohol, premium delivery, special requests, guest passes
+**SANDBOX ($999/mo SYNTH):**  
+Shared spaces + 2 meals/day + Hot desk + Winks Leaf Node + Man Cave limited + Entry experience
 
-👉 **[🌐 MEMBERS-ONLY CAMPUS →](./VIBELAND_MEMBERS_ONLY_CAMPUS_COMPLETE.md)** | **[Brand Identity →](./VIBELAND_RENO_OFFICIAL_BRANDING.md)** | **[Brochure →](./VIBELAND_RENO_BROCHURE.md)**
+**CLOUD ($4,999/mo SYNTH):**  
+Shared housing + 3 meals/day + Dedicated desk + Winks Branch Node + Man Cave full + Community immersion
 
-🔐 **Access:** Invitation only | Backdoor through GitHub
+**SHELL ($9,999/mo SYNTH):**  
+Private quarters + Gourmet meals + Private office + Winks Convergence Node + Wine Cave + Premium experience
+
+**CORE ($24,999/mo SYNTH):**  
+Private suite + Chef meals + Private lab + Winks VIP + Backroom unlimited + Ultimate experience
+
+**COMPLETE EXPERIENCE INCLUDES:**
+- Housing (tier appropriate) + Food (house menu, alcohol à la carte) + Workspace (innovation center) + Winks dating app (tier matched) + Man Cave + Cabaret access (locals welcome separately) + Fitness center + Wellness spaces + Creative studios + Events 24/7 + Community vibing + Downtown Reno access + Complete ecosystem
+
+👉 **[🌐 CAMPUS OVERVIEW →](./VIBELAND_MEMBERS_ONLY_CAMPUS_COMPLETE.md)** | **[💕 WINKS DATING APP →](./WINKS_DATING_APP_4_TIER_OFFERING.md)** | **[🏠 COMPLETE EXPERIENCE LAYER →](./VIBELAND_RESIDENT_EXPERIENCE_LAYER_COMPLETE.md)** | **[Brand →](./VIBELAND_RENO_OFFICIAL_BRANDING.md)**
+
+🔐 **Access:** Invitation only | Backdoor through GitHub | Apply now
+
+**NOTE:** Man Cave + Cabaret open to Reno locals with separate memberships (not Vibeland-exclusive)
 
 ---
 
