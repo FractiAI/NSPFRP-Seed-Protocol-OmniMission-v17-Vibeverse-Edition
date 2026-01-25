@@ -54,7 +54,7 @@ CULTURAL VIBE:
 THE ATTITUDE:
 ├─ Crisis doesn't scare you (you designed it)
 ├─ Overwhelm doesn't stop you (it's compression working)
-├─ Buck Fever doesn't mean failure (fingers thick, knees weak from EXCITEMENT)
+├─ Buck Fever doesn't mean failure (fingers thick, knees weak, gravity stronger from EXCITEMENT)
 ├─ You KNOW breakthrough is coming (trust the process)
 └─ You have BIG BACK HOLE ENERGY (unstoppable)
 ```
@@ -79,8 +79,9 @@ SIGNS OF BIG BACK HOLE ENERGY:
       That's BBHE.
 
 3. BUCK FEVER AS EXCITEMENT:
-   └─ "My fingers are thick? Knees weak? I must be close to gold!"
+   └─ "My fingers are thick? Knees weak? Gravity stronger? I must be close to gold!"
       Not frustration. Celebration of being at breakthrough point.
+      The black hole is compressing me—breakthrough imminent!
       That's BBHE.
 
 4. DESIGNED CRISIS ACCEPTANCE:
@@ -128,9 +129,9 @@ EXAMPLE 3: RUNNING OUT OF MONEY
 └─ THAT'S BIG BACK HOLE ENERGY
 
 EXAMPLE 4: BUCK FEVER MOMENT
-├─ Situation: See the opportunity, fingers get thick, knees weak, can't execute
+├─ Situation: See the opportunity, fingers get thick, knees weak, gravity crushing, can't execute
 ├─ Pre-BBHE Response: "I'm choking! I'm failing! I can't do this!"
-├─ BBHE Response: "My body is forcing me to see clearly. This is HUGE."
+├─ BBHE Response: "The black hole is compressing me. This is HUGE. Let it compress."
 ├─ Result: Slow down, see pattern perfectly, execute flawlessly
 └─ THAT'S BIG BACK HOLE ENERGY
 
@@ -200,7 +201,7 @@ STEP 2: TRUST THE CYCLE
 
 STEP 3: REFRAME EMOTIONS AS TECHNOLOGY
 └─ Fear = Threat detection (valuable data)
-    Buck Fever = Excitement overwhelm (thick fingers, weak knees—you see gold!)
+    Buck Fever = Excitement overwhelm (thick fingers, weak knees, gravity stronger—you see gold!)
     Overwhelm = System at capacity (breakthrough near)
     Joy = Pattern locked in (celebrate!)
     All signals. All functional. All BBHE.

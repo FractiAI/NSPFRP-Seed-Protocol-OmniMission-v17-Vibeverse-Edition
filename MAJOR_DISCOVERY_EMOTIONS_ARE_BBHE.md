@@ -69,6 +69,7 @@ WHAT BUCK FEVER ACTUALLY IS:
 └─ EXCITEMENT OVERWHELM
     Fingers get THICK
     Weak in the knees
+    Gravity feels STRONGER
     Body won't respond
     Not from fear—from EXCITEMENT
     "I SEE IT! I WANT IT! BUT MY HANDS WON'T WORK!"
@@ -79,6 +80,7 @@ THE MECHANISM:
 ├─ So much positive energy the body shorts out
 ├─ Fingers literally feel thick, clumsy, unresponsive
 ├─ Knees go weak, legs won't hold steady
+├─ Gravity feels stronger, body pulled down by intensity
 ├─ Can't pull trigger even though mind wants to
 └─ Paralysis not from fear, but from OVERWHELMING EXCITEMENT
 
@@ -106,12 +108,12 @@ STAGE 1: VERTIGO
 └─ This is the BLACK HOLE OPENING
 
 STAGE 2: BUCK FEVER
-├─ Emotion: Overwhelming excitement, fingers thick, weak in knees, can't execute
+├─ Emotion: Overwhelming excitement, fingers thick, weak in knees, gravity stronger, can't execute
 ├─ BBHE Function: Compression of consciousness to force clarity
-├─ Physical: Trembling, thick fingers, weak knees, body won't respond
+├─ Physical: Trembling, thick fingers, weak knees, gravity pulling down, body won't respond
 ├─ Purpose: Prevent premature action, force SEEING before DOING
 ├─ Example: "I see the opportunity! But I can't move!" / "Right there! Can't press button!"
-└─ This is the BLACK HOLE COMPRESSION PEAK
+└─ This is the BLACK HOLE COMPRESSION PEAK (literally feels like gravity increased)
 
 STAGE 3: GOLD STRIKE!
 ├─ Emotion: Breakthrough, clarity, explosive joy, "I GET IT!"
@@ -319,9 +321,9 @@ STAGE 1 - VERTIGO:
 STAGE 2 - BUCK FEVER:
 ├─ Emotion: "I see $1.5T value but... can I really...?"
 ├─ BBHE Function: Prevent premature claiming, force clarity
-├─ Compression: Fingers thick on keyboard, knees weak at desk, can't quite believe it
+├─ Compression: Fingers thick on keyboard, knees weak at desk, gravity pulling down, can't quite believe it
 ├─ Purpose: Make sure pattern is REAL before acting
-└─ Result: System double-checks, confirms, REAL
+└─ Result: System double-checks, confirms, REAL (the weight of the moment was the black hole compressing)
 
 STAGE 3 - GOLD STRIKE!:
 ├─ Emotion: "IT'S REAL! OH MY GOD IT WORKS!"
@@ -360,7 +362,8 @@ EVERY EMOTION WAS BBHE.
    └─ All compressions leading to breakthrough
 
 3. BUCK FEVER IS EXCITEMENT, NOT FEAR:
-   └─ Thick fingers + weak knees = too much POSITIVE energy
+   └─ Thick fingers + weak knees + gravity stronger = too much POSITIVE energy
+   └─ Black hole compression (literally feels like increased gravity)
    └─ Can't execute = system forcing clarity
    └─ Not a failure, a DESIGNED pause
    └─ The hunter who experiences buck fever SAW the deer
@@ -401,8 +404,8 @@ STAGE 1 - VERTIGO (Real emotion):
 
 STAGE 2 - BUCK FEVER (Real emotion):
 └─ Gold target visible, button in front of them
-    Feeling: "I SEE IT! I WANT IT! MY FINGERS WON'T WORK! MY KNEES ARE WEAK!"
-    BBHE: Excitement overwhelm, thick fingers, weak knees, forced clarity
+    Feeling: "I SEE IT! I WANT IT! MY FINGERS WON'T WORK! MY KNEES ARE WEAK! GRAVITY IS CRUSHING ME!"
+    BBHE: Excitement overwhelm, thick fingers, weak knees, gravity stronger, forced clarity
 
 STAGE 3 - GOLD STRIKE! (Real emotion):
 └─ Pattern snaps into focus, golden path appears
