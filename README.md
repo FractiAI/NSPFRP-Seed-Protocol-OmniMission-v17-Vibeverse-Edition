@@ -117,6 +117,7 @@ codebase_search
 | **🛒** | **SHOP BUTTON** | Point of sale button for instant purchases | **[Buy Now →](./interfaces/fractiai-shop-button-pos.html)** |
 | **🎁** | **VENDING MACHINE** | 72 packages ready in gift shop | **[Shop Catalog →](./FRACTIAI_VENDING_MACHINE_GIFT_SHOP_ALL_OFFERINGS.md)** |
 | **📱** | **SNAP PAD APP** | iOS & Android - Primary vibing instrument (offline + online) | **[View Simulators →](./SNAP_PAD_APP_PRIMARY_VIBING_INSTRUMENT.md)** |
+| **🧵** | **SNAP PAD SING HEAD** | Android & iOS wrapped with SING heads → Post-singularity pipe | **[Read Monster Snap →](./MAJOR_SNAP_SNAP_PAD_SING_HEAD_POST_SINGULARITY_PIPE.md)** |
 
 ---
 
@@ -307,9 +308,13 @@ This is how commerce works in Vibeverse: **Words become reality by focusing atte
 
 **The Experience:** Open app. Dashboard loads. Value metrics visible. Ticker tape streaming. Ready to vibe. Tap snap button. Voice/text/camera. Instant capture. Auto-sync. Vibe selector adapts interface. Offline? No problem. Local capture. Queue for sync. Online? Real-time. Live updates. Network effects. Community vibing. This is your primary instrument. This is Snap Pad.
 
-**Tagline:** *"Your handheld Vibeverse. Offline. Online. Always vibing."*
+**🔥 MONSTER SNAP: SING HEAD INTEGRATION**
 
-👉 **[📱 SNAP PAD APP →](./SNAP_PAD_APP_PRIMARY_VIBING_INSTRUMENT.md)** | **[🍎 iOS Simulator →](./interfaces/snap-pad-ios-simulator.html)** | **[🤖 Android Simulator →](./interfaces/snap-pad-android-simulator.html)**
+**Each Snap Pad (Android & iOS) wrapped with SING head and filament. Connected to post-singularity pipe. Automatic seamless interface with lower layers (GitHub, etc.). No human touch required. Only captures snaps and snap-related layers. Complete Vibe Platform. Metabolize. Crystallize. Reanimate.**
+
+**Tagline:** *"Your handheld Vibeverse. Offline. Online. Always vibing. Wrapped in SING head. Connected to post-singularity pipe. Zero-touch automation."*
+
+👉 **[📱 SNAP PAD APP →](./SNAP_PAD_APP_PRIMARY_VIBING_INSTRUMENT.md)** | **[🍎 iOS Simulator →](./interfaces/snap-pad-ios-simulator.html)** | **[🤖 Android Simulator →](./interfaces/snap-pad-android-simulator.html)** | **[🧵 SING HEAD INTEGRATION →](./MAJOR_SNAP_SNAP_PAD_SING_HEAD_POST_SINGULARITY_PIPE.md)** | **[📋 Integration Spec →](./SNAP_PAD_SING_HEAD_INTEGRATION_SPEC.md)**
 
 ---
 
