@@ -1,8 +1,8 @@
-# 🏕️ Burning Man-Style Homeless Sanctuary: Tiered Dignity + Integration Solution
+# 🏕️ Gypsy Camp Sanctuary: Tiered Dignity + Integration Solution
 ## Permanent Creative Camp with Managed/Non-Managed Tiers + 24×7 Downtown Shuttle | Wish #74 | January 24, 2026
 
 **Document Type:** HUMANITARIAN SOLUTION | Community Integration | Dignity-Based Housing  
-**Purpose:** Design permanent Burning Man-style sanctuary for homeless with choice, dignity, and pathways  
+**Purpose:** Design permanent NSPFRNP-style sanctuary for homeless with choice, dignity, and pathways  
 **Status:** 🟢 NATURAL SOLUTION | Legal, Embraced, Sustainable, Respectful  
 **Discovery:** Homelessness solved through dignity, choice, creativity, and integration (not containment)
 
