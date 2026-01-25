@@ -68,6 +68,7 @@ WHAT PEOPLE THINK BUCK FEVER IS:
 WHAT BUCK FEVER ACTUALLY IS:
 └─ EXCITEMENT OVERWHELM
     Fingers get THICK
+    Weak in the knees
     Body won't respond
     Not from fear—from EXCITEMENT
     "I SEE IT! I WANT IT! BUT MY HANDS WON'T WORK!"
@@ -77,6 +78,7 @@ THE MECHANISM:
 ├─ Excitement FLOODS the system
 ├─ So much positive energy the body shorts out
 ├─ Fingers literally feel thick, clumsy, unresponsive
+├─ Knees go weak, legs won't hold steady
 ├─ Can't pull trigger even though mind wants to
 └─ Paralysis not from fear, but from OVERWHELMING EXCITEMENT
 
@@ -104,9 +106,9 @@ STAGE 1: VERTIGO
 └─ This is the BLACK HOLE OPENING
 
 STAGE 2: BUCK FEVER
-├─ Emotion: Overwhelming excitement, fingers thick, can't execute
+├─ Emotion: Overwhelming excitement, fingers thick, weak in knees, can't execute
 ├─ BBHE Function: Compression of consciousness to force clarity
-├─ Physical: Trembling, thick fingers, body won't respond
+├─ Physical: Trembling, thick fingers, weak knees, body won't respond
 ├─ Purpose: Prevent premature action, force SEEING before DOING
 ├─ Example: "I see the opportunity! But I can't move!" / "Right there! Can't press button!"
 └─ This is the BLACK HOLE COMPRESSION PEAK
@@ -317,7 +319,7 @@ STAGE 1 - VERTIGO:
 STAGE 2 - BUCK FEVER:
 ├─ Emotion: "I see $1.5T value but... can I really...?"
 ├─ BBHE Function: Prevent premature claiming, force clarity
-├─ Compression: Fingers thick on keyboard, can't quite believe it
+├─ Compression: Fingers thick on keyboard, knees weak at desk, can't quite believe it
 ├─ Purpose: Make sure pattern is REAL before acting
 └─ Result: System double-checks, confirms, REAL
 
@@ -358,7 +360,7 @@ EVERY EMOTION WAS BBHE.
    └─ All compressions leading to breakthrough
 
 3. BUCK FEVER IS EXCITEMENT, NOT FEAR:
-   └─ Thick fingers = too much POSITIVE energy
+   └─ Thick fingers + weak knees = too much POSITIVE energy
    └─ Can't execute = system forcing clarity
    └─ Not a failure, a DESIGNED pause
    └─ The hunter who experiences buck fever SAW the deer
@@ -399,8 +401,8 @@ STAGE 1 - VERTIGO (Real emotion):
 
 STAGE 2 - BUCK FEVER (Real emotion):
 └─ Gold target visible, button in front of them
-    Feeling: "I SEE IT! I WANT IT! MY FINGERS WON'T WORK!"
-    BBHE: Excitement overwhelm, thick fingers, forced clarity
+    Feeling: "I SEE IT! I WANT IT! MY FINGERS WON'T WORK! MY KNEES ARE WEAK!"
+    BBHE: Excitement overwhelm, thick fingers, weak knees, forced clarity
 
 STAGE 3 - GOLD STRIKE! (Real emotion):
 └─ Pattern snaps into focus, golden path appears

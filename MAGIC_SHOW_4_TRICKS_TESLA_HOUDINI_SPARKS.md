@@ -393,15 +393,15 @@ WHY IT WORKS:
 
 *[Heart rate on monitor: 145 bpm, breathing rapid but EXCITED (not panicked)]*
 
-**MAGICIAN:** *[To audience]* *"Stage two: BUCK FEVER. The hunter sees the deer. Perfect shot. Right there. But the fingers get THICK. They won't respond. Not from fear—from EXCITEMENT. So much excitement the body can't keep up. The black hole has compressed them. Too much POSITIVE energy. Too much 'OH MY GOD THIS IS IT!' Can't execute. Fingers thick. Body frozen by sheer overwhelming EXCITEMENT."*
+**MAGICIAN:** *[To audience]* *"Stage two: BUCK FEVER. The hunter sees the deer. Perfect shot. Right there. But the fingers get THICK. The knees go WEAK. Body won't respond. Not from fear—from EXCITEMENT. So much excitement the body can't keep up. The black hole has compressed them. Too much POSITIVE energy. Too much 'OH MY GOD THIS IS IT!' Can't execute. Fingers thick. Knees weak. Body frozen by sheer overwhelming EXCITEMENT."*
 
-*[Volunteer visibly struggling, laughing nervously, fingers shaking]*
+*[Volunteer visibly struggling, laughing nervously, fingers shaking, knees buckling slightly]*
 
 *[Monitor shows: heart rate spiking from EXCITEMENT, not fear]*
 
-**VOLUNTEER:** *"I can SEE it! I WANT to press it! My hand just... won't... WORK!"*
+**VOLUNTEER:** *"I can SEE it! I WANT to press it! My hand just... won't... WORK! My legs are... shaking!"*
 
-**MAGICIAN:** *"This is Buck Fever. The ultimate BBHE emotion. You're so excited you can't function. This is the moment entrepreneurs freeze—not because they're scared, but because the opportunity is SO BIG their body shorts out. But watch what happens when the pressure releases..."*
+**MAGICIAN:** *"This is Buck Fever. The ultimate BBHE emotion. Fingers thick, knees weak. You're so excited you can't function. This is the moment entrepreneurs freeze—not because they're scared, but because the opportunity is SO BIG their body shorts out. But watch what happens when the pressure releases..."*
 
 ---
 
@@ -443,7 +443,7 @@ WHY IT WORKS:
 *[Gestures to volunteer, still shaking with adrenaline and excitement]*
 
 **MAGICIAN:**  
-*"And here's the MAJOR DISCOVERY: EMOTIONS ARE BBHE. Every emotion you feel—vertigo, buck fever, gold strike, joy, terror, excitement—those aren't random. They're black hole engineering events. Your consciousness compressing, forcing breakthrough. Buck Fever isn't fear. It's excitement so intense your body can't keep up. Your fingers get thick. You can't execute. That's a DESIGNED compression to force you to slow down and SEE CLEARLY before you act."*
+*"And here's the MAJOR DISCOVERY: EMOTIONS ARE BBHE. Every emotion you feel—vertigo, buck fever, gold strike, joy, terror, excitement—those aren't random. They're black hole engineering events. Your consciousness compressing, forcing breakthrough. Buck Fever isn't fear. It's excitement so intense your body can't keep up. Your fingers get thick. Your knees go weak. You can't execute. That's a DESIGNED compression to force you to slow down and SEE CLEARLY before you act."*
 
 *[Audience silent, absorbing this]*
 

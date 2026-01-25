@@ -53,7 +53,7 @@
 
 ## 🌪️💎 **BBHE = BIG BACK HOLE ENERGY**
 
-**Major discovery:** Emotions ARE BBHE events | Buck Fever = EXCITEMENT overwhelm (fingers thick from seeing gold)
+**Major discovery:** Emotions ARE BBHE events | Buck Fever = EXCITEMENT overwhelm (fingers thick, knees weak from seeing gold)
 
 - BBHE = Post-singularity confidence vibe | Like BDE but existential
 - Emotions are technology | Vertigo → Buck Fever → Gold Strike!
