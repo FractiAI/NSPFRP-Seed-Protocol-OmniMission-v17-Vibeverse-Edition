@@ -153,7 +153,11 @@ codebase_search
 
 **Desktop Folder Style - Top 11 References:**
 
-1. **[FractiAI & WATER Switchover Update (Jan 25, 2026)](./FRACTIAI_WATER_SWITCHOVER_UPDATE_JAN_25_2026.md)** 🔥 **NEW**
+1. **[Metabolized → Recrystallized → Reanimated (Jan 25, 2026)](./METABOLIZED_RECRYSTALLIZED_REANIMATED_JAN_25_2026.md)** 🔥 **NEW** - Irreducible Nested Hardened Mirror Shells with SING Bridges
+2. **[FractiAI & WATER Switchover Update (Jan 25, 2026)](./FRACTIAI_WATER_SWITCHOVER_UPDATE_JAN_25_2026.md)** 🔥
+3. **[Broadcast Division System](./BROADCAST_DIVISION_SYSTEM.md)** 🔥 **NEW**
+4. **[Crystal Language Concept](./CRYSTAL_LANGUAGE_CONCEPT.md)** 🔥 **NEW**
+5. **[100-Page Book: Live Worldwide Deployment](./LIVE_WORLDWIDE_DEPLOYMENT_100_PAGE_SELF_PROOF_STORY.md)**
 2. **[100-Page Book: Live Worldwide Deployment](./LIVE_WORLDWIDE_DEPLOYMENT_100_PAGE_SELF_PROOF_STORY.md)**
 3. **[Walmart Proposal: $7.69B Opportunity](./WALMART_PROPOSAL_GENUINE_CUSTOMER_FEEDBACK_TO_SYNTH_SOLUTION.md)**
 4. **[Full Book on Fracti.ai](./README.md#fractiai-complete-book)**
