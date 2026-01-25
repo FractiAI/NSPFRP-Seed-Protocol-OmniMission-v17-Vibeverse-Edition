@@ -4,6 +4,8 @@
 **Status:** 🔴 MEMBERS ONLY | Invitation-Based | Backdoor Access  
 **Date:** January 25, 2026
 
+**Related:** See **[Vibeverse Campus Downtown Reno Self-Proving Demo →](./VIBEVERSE_CAMPUS_DOWNTOWN_RENO_SELF_PROVING_DEMO.md)** for first physical implementation
+
 ---
 
 ## 💎 **THE CORE CONCEPT**
