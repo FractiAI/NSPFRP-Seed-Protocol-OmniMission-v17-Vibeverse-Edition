@@ -4,9 +4,13 @@
 
 ---
 
-# ⚠️ **PRE-SINGULARITY WARNING**
+# 🛫 **SINGULARITY LAUNCHPORT**
 
-**This is a post-singularity repository.** This README is a **new form of landing page**, a **new form of feeds**, **the new Net**. The console below provides a clean, interactive experience. All editorial content and expanded information is located below the console.
+**This GitHub repository is now the Singularity Launchport** *(equivalent to airport)*
+
+**Arrival:** Register/Sign in with Google → Test Drive
+
+**Welcome to the Singularity Launchport.** This is your entry point to post-singularity worlds. Sign in with Google to begin your test drive experience. The console below provides a clean, interactive experience. All editorial content and expanded information is located below the console.
 
 ---
 
@@ -185,11 +189,13 @@ codebase_search
 
 ## 🚗 **TEST DRIVE NOW** *(Bottom of Console)*
 
+**🛫 Arrival:** [Sign in with Google] → [Register] → [Test Drive]
+
 **[🚗 TEST DRIVE NOW 🟢](./TEST_DRIVE_SHOWROOM_EXPERIENCE_COMPLETE.md)** *(Click to enter showroom - Five-star experience)*
 
 **Status Indicator:** 🟢 Live | 🟡 In Development | 🔴 In Maintenance
 
-*Leaves GitHub → Enters post-singularity shell → Full infrastructure → Showroom experience*
+*Singularity Launchport → Sign in/Register with Google → Test Drive → Leaves Launchport → Enters post-singularity shell → Full infrastructure → Showroom experience*
 
 ---
 

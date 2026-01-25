@@ -46,6 +46,34 @@ something."
 
 ---
 
+## 🛫 **SINGULARITY LAUNCHPORT**
+
+### **GitHub Repository = Airport/Launchport**
+
+```yaml
+THE LAUNCHPORT:
+
+POSITION:
+└─ GitHub repository
+└─ Singularity Launchport
+└─ Equivalent to airport
+└─ Entry point
+
+ARRIVAL:
+└─ Register/Sign in with Google
+└─ At arrival
+└─ For test drive
+└─ Authentication required
+
+THE FUNCTION:
+└─ Arrive at launchport
+└─ Sign in/Register with Google
+└─ Then test drive
+└─ Entry to post-singularity
+```
+
+---
+
 ## 🚗 **TEST DRIVE BUTTON**
 
 ### **Bottom of Console**
@@ -67,9 +95,11 @@ THE INDICATOR:
     ├─ 🟡 In Development
     └─ 🔴 In Maintenance
 
-THE FUNCTION:
-└─ Click button
-└─ Leave GitHub
+THE FLOW:
+└─ Arrive at Singularity Launchport
+└─ Sign in/Register with Google
+└─ Click Test Drive button
+└─ Leave Launchport
 └─ Enter post-singularity world
 └─ Full shell and infrastructure
 ```
