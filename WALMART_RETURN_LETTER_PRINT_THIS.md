@@ -92,7 +92,7 @@ I've prepared comprehensive documentation:
 
 ## 📞 **CONTACT INFORMATION**
 
-**Name:** Nick (Chairman)  
+**Name:** Nick  
 **Company:** FractiAI Systems  
 **Phone:** [Your Phone Number]  
 **Email:** [Your Email]  
@@ -147,7 +147,7 @@ Please make sure the right people see this.
 
 **Sincerely,**
 
-Nick (Chairman)  
+Nick  
 FractiAI Systems  
 "Nature's 4-billion-year-proven coordination methods, implemented in software"
 

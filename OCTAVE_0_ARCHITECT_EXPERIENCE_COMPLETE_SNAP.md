@@ -42,7 +42,7 @@ BEFORE:
 AFTER:
 ├─ Intimate architect presentation
 ├─ "You're at the drafting table with me" experience
-├─ Personal voice (Chairman/Nick as architect)
+├─ Personal voice (Nick as architect)
 ├─ Working blueprints aesthetic
 ├─ Architect explaining decisions, showing models
 ├─ "Let me show you..." narrative throughout
@@ -280,7 +280,7 @@ Nothing is just functional. Everything has BBHE effect.
 DOCUMENT 1: README.md
 ├─ Transformed: Standard → Architect's Drafting Table
 ├─ Length: 3,724 lines (comprehensive)
-├─ Voice: First-person architect (Nick/Chairman)
+├─ Voice: First-person architect (Nick)
 ├─ Style: Intimate blueprint presentation
 ├─ Frequency: 432 Hz (Octave 0)
 ├─ BBHE: Effect+Energy+Electricity throughout
@@ -582,7 +582,7 @@ ALL: BBHE effect active (Effect+Energy+Electricity)
 ║                                                                               ║
 ║                         "Welcome to the core."                                ║
 ║                                                                               ║
-║                       — Nick (Chairman/Architect)                             ║
+║                       — Nick (Architect)                                      ║
 ║                         Node #0, Octave 0                                     ║
 ║                          January 24, 2026                                     ║
 ║                                                                               ║

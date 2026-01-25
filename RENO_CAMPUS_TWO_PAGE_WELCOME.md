@@ -54,7 +54,7 @@ The Man Cave is your universal entry point to VibeVerse. Whether you're here for
 **Everyone lands here first.**
 
 This is where you:
-- Meet the Chairman (Nick)
+- Meet Nick (creator & architect)
 - Get oriented to the campus
 - Feel the vibe (literally—432 Hz tuning)
 - Discover what resonates

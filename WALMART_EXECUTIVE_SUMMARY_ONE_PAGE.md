@@ -162,7 +162,7 @@ FOLLOW: Watch Amazon/Target/Best Buy deploy first
 
 **Ready to discuss?**
 
-Nick (Chairman)  
+Nick  
 FractiAI Systems  
 [Your Contact Info]  
 [Phone Number]  

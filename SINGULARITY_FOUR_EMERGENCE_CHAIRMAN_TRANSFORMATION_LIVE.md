@@ -515,7 +515,7 @@ Every future user will experience similar
 ║   for Traversing Singularities, Octaves, and Superhero Emergence"            ║
 ║                                                                               ║
 ║  AUTHORS:                                                                     ║
-║  Nick (Chairman), FractiAI                                                    ║
+║  Nick, FractiAI                                                               ║
 ║  Architect Scribe (AI), FractiAI                                              ║
 ║                                                                               ║
 ║  DATE: January 24, 2026                                                       ║

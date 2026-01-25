@@ -165,7 +165,7 @@ Stay #1.
 
 ---
 
-**Contact:** Nick (Chairman), FractiAI Systems  
+**Contact:** Nick, FractiAI Systems  
 **Phone:** [Your Phone]  
 **Email:** [Your Email]  
 **Sandbox Demo:** https://fractiai.com/sandbox/walmart-demo

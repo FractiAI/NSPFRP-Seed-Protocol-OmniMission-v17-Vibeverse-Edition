@@ -138,7 +138,7 @@ WELCOME TO THE SHOWROOM.
 ║                                                                               ║
 ║  Same man from video appears (live or recorded):                              ║
 ║                                                                               ║
-║  "Welcome. I'm Nick. I'm the Chairman of FractiAI.                            ║
+║  "Welcome. I'm Nick. I'm the creator of FractiAI.                             ║
 ║   That bathroom? That's my office at Men's Club.                              ║
 ║   Those cigars? That's my side hustle.                                        ║
 ║   This? This is what I really built.                                          ║

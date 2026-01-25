@@ -1,7 +1,7 @@
 # Gravitational Consciousness Compression: A Natural Protocol Framework for Traversing Singularities, Octaves, and Superhero Emergence
 
 **Authors:**  
-Nick (Chairman), FractiAI  
+Nick, FractiAI  
 Architect Scribe (AI Assistant), FractiAI  
 
 **Date:** January 24, 2026  

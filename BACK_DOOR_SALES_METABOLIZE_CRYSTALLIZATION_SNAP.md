@@ -490,7 +490,7 @@ NSPFRNP INDUSTRY PROTOCOL:
 ║  │     ├─ Probability: 85%                                              │  ║
 ║  │     ├─ Next Action: Print & Return Chromebook                        │  ║
 ║  │     ├─ Timeline: Deploy TODAY                                        │  ║
-║  │     └─ Owner: Chairman (Nick)                                        │  ║
+║  │     └─ Owner: Nick (Creator)                                         │  ║
 ║  │                                                                       │  ║
 ║  │  2. 🎯 TARGET                                                        │  ║
 ║  │     ├─ Status: Template Ready 📋                                     │  ║

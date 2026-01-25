@@ -34,7 +34,7 @@
 **What It Is:**
 ```
 Octave 0 landing page and foundation experience.
-Chairman (Nick/Architect) personally walks you through 
+Nick (Creator/Architect) personally walks you through 
 the core architectural vision at the drafting table.
 
 Intimate. Personal. Foundational.

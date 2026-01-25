@@ -154,7 +154,7 @@ RESULT: Walmart becomes AI retail leader, Amazon's nightmare
 
 ---
 
-**Contact:** Nick (Chairman), FractiAI | [Phone] | [Email]  
+**Contact:** Nick, FractiAI | [Phone] | [Email]  
 **Demo:** https://fractiai.com/sandbox/walmart-demo  
 **Attached:** Full cost analysis, proposal, Sam campaign
 

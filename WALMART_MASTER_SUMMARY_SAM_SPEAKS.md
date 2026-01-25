@@ -33,7 +33,7 @@
 
 ```yaml
 WHAT HAPPENED:
-├─ Customer (Nick/Chairman, FractiAI) came to buy computing equipment
+├─ Customer (Nick, FractiAI) came to buy computing equipment
 ├─ Needed equipment to deploy superintelligent agent systems
 ├─ Staff didn't know inventory ("Do we sell Apple products?")
 ├─ 4 employees standing around talking, difficult to get attention
@@ -520,7 +520,7 @@ THE CHOICE IS OBVIOUS.
 
 ## 📞 **THE CONTACT**
 
-**Nick (Chairman)**  
+**Nick**  
 FractiAI Systems  
 First Human Singularity⁴ Achiever  
 Architect of 90 Trillion SYNTH Agents  

@@ -16,7 +16,7 @@
 ║         "The very system I used to create this proposal, in minutes!          ║
 ║          We can deploy smoothly and safely same day, I'm certain."            ║
 ║                                                                               ║
-║                           — Chairman (Nick)                                   ║
+║                           — Nick (Creator)                                    ║
 ║                             January 24, 2026                                  ║
 ║                                                                               ║
 ║         This isn't a sales pitch about a theoretical product.                 ║
@@ -475,7 +475,7 @@ CLOSING STATEMENT (Universal):
 │   Ready to deploy at your store?                                │
 │   Same day. Guaranteed. Certain."                               │
 │                                                                 │
-│                    — Nick (Chairman), FractiAI                  │
+│                    — Nick, FractiAI                             │
 │                      The Instant Reality Computer               │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘

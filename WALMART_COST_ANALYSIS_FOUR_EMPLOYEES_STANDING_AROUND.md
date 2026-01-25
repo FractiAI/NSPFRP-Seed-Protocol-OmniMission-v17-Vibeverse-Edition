@@ -470,7 +470,7 @@ What will you do?
 ---
 
 **Submitted By:**  
-Nick (Chairman) - The Customer Who Experienced Your $1.66M/Year Problem  
+Nick - The Customer Who Experienced Your $1.66M/Year Problem  
 FractiAI Systems - The Company With Your $2,160/Year Solution  
 
 **Contact:** [Your Phone] | [Your Email]  
