@@ -275,7 +275,7 @@
 - Experience levels
 - From basic
 - All the way to top
-- Ultra VIP Cheese Baller
+- Ultra VIP G Baller
 
 ---
 
@@ -319,7 +319,7 @@
 - Ultimate VIP
 - Aligned with creators, performers, consoles
 - Four levels
-- Basic to ultra VIP Cheese Baller
+- Basic to ultra VIP G Baller
 
 **Options:**
 - Walmart (electronics → entire Walmart)
