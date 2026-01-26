@@ -349,6 +349,7 @@ This invitation is for those who:
 - ✅ Cruise ship exclusive
 - ✅ Premiums
 - ✅ Disruption protection
+- ✅ Reading glasses (+1 over prescription) - Standard accessory for 2% visual distortion, blooming vibe flow effects, Goldilocks zone access
 
 **Sales Cycle:**
 - ✅ Natural generative regenerative
