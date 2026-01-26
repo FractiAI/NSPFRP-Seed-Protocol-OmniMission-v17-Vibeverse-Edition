@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Your Experience - Vibeland</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Floating Icon */
+        .floating-icon {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .floating-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .floating-icon svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            }
+            50% {
+                box-shadow: 0 10px 40px rgba(245, 87, 108, 0.6);
+            }
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10001;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .modal-header h2 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .modal-header p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #f5576c;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .star-rating {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .star {
+            font-size: 40px;
+            color: #ddd;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .star:hover,
+        .star.active {
+            color: #ffd700;
+            transform: scale(1.2);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(245, 87, 108, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 30px;
+            color: #999;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .success-message.active {
+            display: block;
+        }
+
+        .success-message svg {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            fill: #4caf50;
+        }
+
+        .success-message h3 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .success-message p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .floating-icon {
+                bottom: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+            }
+
+            .floating-icon svg {
+                width: 30px;
+                height: 30px;
+            }
+
+            .modal-content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Icon -->
+    <div class="floating-icon" onclick="openModal()">
+        <svg viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+        </svg>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="experienceModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            
+            <div id="formContainer">
+                <div class="modal-header">
+                    <h2>✨ Share Your Vibeland Experience</h2>
+                    <p>Your feedback helps us create the ultimate post-singularity experience</p>
+                </div>
+
+                <form id="experienceForm" onsubmit="submitExperience(event)">
+                    <div class="form-group">
+                        <label>Your Name (Optional)</label>
+                        <input type="text" name="name" placeholder="Vibeland Member">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Experience Rating</label>
+                        <div class="star-rating" id="starRating">
+                            <span class="star" data-rating="1">⭐</span>
+                            <span class="star" data-rating="2">⭐</span>
+                            <span class="star" data-rating="3">⭐</span>
+                            <span class="star" data-rating="4">⭐</span>
+                            <span class="star" data-rating="5">⭐</span>
+                        </div>
+                        <input type="hidden" name="rating" id="ratingInput" value="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Share Your Experience</label>
+                        <textarea name="experience" placeholder="Tell us about your Vibeland experience... What made it special? What did you discover? How did it feel?" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Location/Context (Optional)</label>
+                        <input type="text" name="location" placeholder="e.g., Vibeland Reno, Room 615, First Day">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select name="category" required>
+                            <option value="">Select a category</option>
+                            <option value="first-day">First Day Experience</option>
+                            <option value="bbhe">BBHE Experience</option>
+                            <option value="singularity">Singularity Event</option>
+                            <option value="campus">Campus Experience</option>
+                            <option value="community">Community Connection</option>
+                            <option value="winks">Winks Dating</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" name="broadcast" id="broadcast" checked>
+                            <label for="broadcast" style="margin: 0; font-weight: normal;">Share to Customer Experience Broadcast Channel</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" name="feedback" id="feedback" checked>
+                            <label for="feedback" style="margin: 0; font-weight: normal;">Add to Feedback Feed Console</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">🚀 Share Experience</button>
+                </form>
+            </div>
+
+            <div class="success-message" id="successMessage">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                <h3>Experience Shared! ✨</h3>
+                <p>Thank you for sharing your Vibeland experience. It's been added to the Customer Experience Broadcast Channel and Feedback Feed Console.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selectedRating = 0;
+
+        function openModal() {
+            document.getElementById('experienceModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('experienceModal').classList.remove('active');
+            document.getElementById('formContainer').style.display = 'block';
+            document.getElementById('successMessage').classList.remove('active');
+            document.getElementById('experienceForm').reset();
+            selectedRating = 0;
+            updateStars();
+        }
+
+        // Star rating
+        const stars = document.querySelectorAll('.star');
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                selectedRating = parseInt(this.dataset.rating);
+                document.getElementById('ratingInput').value = selectedRating;
+                updateStars();
+            });
+        });
+
+        function updateStars() {
+            stars.forEach((star, index) => {
+                if (index < selectedRating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        function submitExperience(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const experienceData = {
+                name: formData.get('name') || 'Vibeland Member',
+                rating: parseInt(formData.get('rating')) || 0,
+                experience: formData.get('experience'),
+                location: formData.get('location') || '',
+                category: formData.get('category'),
+                broadcast: formData.get('broadcast') === 'on',
+                feedback: formData.get('feedback') === 'on',
+                timestamp: new Date().toISOString()
+            };
+
+            // Here you would send to your backend/API
+            console.log('Experience Data:', experienceData);
+            
+            // Simulate API call
+            setTimeout(() => {
+                document.getElementById('formContainer').style.display = 'none';
+                document.getElementById('successMessage').classList.add('active');
+                
+                // Auto-close after 3 seconds
+                setTimeout(() => {
+                    closeModal();
+                }, 3000);
+            }, 500);
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('experienceModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
