@@ -16,10 +16,22 @@ The Enterprise Sales Console is a fully integrated NSPFRP system for venue nodes
 
 ### 1. Onboard Venue
 
+**Dual Naming System:** Every venue has two names:
+- **Vibeverse Name**: The brand/experience name (e.g., "Man Cave + Cabaret")
+- **Local Venue Name**: The physical location hosting it (e.g., "The Men's Club Reno")
+
+This allows Vibeverse experiences to naturally overlay anywhere while maintaining brand identity.
+
 ```typescript
+import { createVenueNaming } from '../types/venue-naming.js';
+
 const venueConfig = {
   id: 'cleve-canepa-gallery',
-  name: 'Cleve Canepa Gallery',
+  naming: createVenueNaming(
+    'Cleve Canepa Gallery',        // Vibeverse name
+    'Half Moon Bay Gallery Space'  // Local venue name
+  ),
+  name: 'Cleve Canepa Gallery at Half Moon Bay Gallery Space', // Display name
   type: 'gallery',
   heroHostPersona: 'cleve-canepa',
   transmissionGear: AwarenessOctave.RESONANCE,

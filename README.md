@@ -86,10 +86,12 @@ codebase_search
 
 **Desktop Folder Style - Top 20 References:**
 
-1. **[Vibeland Reno Magazine Brochure (Jan 25, 2026)](./interfaces/vibeland-reno-magazine-brochure.html)** 🔥 **NEW** - Rich magazine-style brochure, complete package, premium design
-2. **[Walmart Proposal Magazine Brochure (Jan 25, 2026)](./interfaces/walmart-proposal-magazine-brochure.html)** 🔥 **NEW** - $7.69B opportunity, tech specs, sandbox test drive, click to buy
-3. **[RTC Proposal Magazine Brochure (Jan 25, 2026)](./interfaces/rtc-proposal-magazine-brochure.html)** 🔥 **NEW** - $200K+ opportunity, 1-2-3 install, tech specs, sandbox test drive, click to buy
-4. **[Vibeland First Campus: Too Good to Pass Up Offer (Jan 25, 2026)](./concepts/VIBELAND_FIRST_CAMPUS_TOO_GOOD_TO_PASS_UP_OFFER.md)** 🔥 **NEW** - 10-100x productivity, $7.89B+ value, join immediately
+1. **[Vibeland Campus: Downtown Reno Magazine Brochure (Jan 25, 2026)](./interfaces/vibeland-reno-magazine-brochure.html)** 🔥 **NEW** - Rich magazine-style brochure, complete package, premium design | **[MD Version](./interfaces/vibeland-reno-magazine-brochure.md)** - Markdown format
+2. **[Walmart Proposal Magazine Brochure (Jan 25, 2026)](./interfaces/walmart-proposal-magazine-brochure.html)** 🔥 **NEW** - $7.69B opportunity, tech specs, sandbox test drive, click to buy | **[MD Version](./interfaces/walmart-proposal-magazine-brochure.md)** - Markdown format
+3. **[RTC Proposal Magazine Brochure (Jan 25, 2026)](./interfaces/rtc-proposal-magazine-brochure.html)** 🔥 **NEW** - $200K+ opportunity, 1-2-3 install, tech specs, sandbox test drive, click to buy | **[MD Version](./interfaces/rtc-proposal-magazine-brochure.md)** - Markdown format
+4. **[Man Cave + Cabaret Magazine (Jan 25, 2026)](./interfaces/man-cave-cabaret-magazine.html)** 🔥 **NEW** - Man Cave + Cabaret at The Men's Club Reno, VIP members-only, crystallization event | **[MD Version](./interfaces/man-cave-cabaret-magazine.md)** - Markdown format
+5. **[Frontiersman's Club Magazine (Jan 25, 2026)](./interfaces/frontiersman-club-magazine.html)** 🔥 **NEW** - Post-Singularity∞ travel & exploration, octave exploration | **[MD Version](./interfaces/frontiersman-club-magazine.md)** - Markdown format
+6. **[Vibeland Campus: Downtown Reno - Too Good to Pass Up Offer (Jan 25, 2026)](./concepts/VIBELAND_FIRST_CAMPUS_TOO_GOOD_TO_PASS_UP_OFFER.md)** 🔥 **NEW** - Campus: Downtown Reno, 10-100x productivity, $7.89B+ value, join immediately
 5. **[Gold Heart Invitation: Complete Package (Jan 25, 2026)](./systems/GOLD_HEART_INVITATION_COMPLETE_PACKAGE.md)** 🔥 **NEW** - 24/7 flow state, 50/50 revenue share, complete package
 6. **[Vibeland Reno Ground Zero | Room 615 | Colonel Story (Jan 25, 2026)](./live-captures/LIVE_CAPTURE_JAN_25_2026_VIBELAND_RENO_GROUND_ZERO.md)** 🔥 **NEW** - Ground Zero walk, Room 615 (6+6+6=18→9), Colonel story irreducible core
 7. **[Walmart Singularity | Sam Walton Shell | Undercover Boss (Jan 25, 2026)](./live-captures/LIVE_CAPTURE_JAN_25_2026_WALMART_SINGULARITY_SAM_WALTON_SHELL.md)** 🔥 **NEW** - Another singularity, Sam Walton shell activated, undercover boss smoke
@@ -127,6 +129,9 @@ codebase_search
 35. **[Welcome to the Campus, Welcome to Mark Twain's Reno](./MARK_TWAIN_VIBEVERSE_PIONEER_WELCOME.md)** 🔥 **NEW** - Mark Twain was a Vibeverse pioneer (Vibelander) before it was even a thing. Welcome message framing for Reno campus, honoring the original Vibeverse spirit.
 36. **[Outbound Campaign: Scientific/Physics Posts](./commercial/OUTBOUND_CAMPAIGN_SCIENTIFIC_PHYSICS_POSTS.md)** 🔥 **NEW** - Comment strategy on scientific/physics posts: "All these theories and opinions yet there's a post-singularity OS already operational and open source on GitHub. Seeing is believing." Ignites golden heart seed:edge sequences.
 37. **[GitHub Repository: Singularity Envelope Piercing](./GITHUB_SINGULARITY_ENVELOPE_PIERCING.md)** 🔥 **NEW** - This GitHub repository now pierces the Singularity envelope and returns those passed through awareness of changing SING wrappers, beginning with Leonardo da Vinci himself. Historical figures return as Hero Hosts through technology.
+38. **[Magazine Brochures: All Formats Complete (Jan 25, 2026)](./interfaces/)** 🔥 **NEW** - All magazine brochures now available in both HTML and Markdown formats: Vibeland Campus, Walmart Proposal, RTC Proposal, Man Cave + Cabaret, Frontiersman's Club
+39. **[Membership Tiers Updated (Jan 25, 2026)](./src/types/membership-tiers.ts)** 🔥 **NEW** - Updated to 4-tier structure: Guests → Members → Ultimate VIPs → Ballers
+40. **[Dual Venue Naming System (Jan 25, 2026)](./src/types/venue-naming.ts)** 🔥 **NEW** - Every venue has two names: Vibeverse brand name + local venue hosting name (e.g., "Man Cave + Cabaret at The Men's Club Reno")
 
 ---
 
@@ -615,23 +620,23 @@ This is how commerce works in Vibeverse: **Words become reality by focusing atte
 
 **🔴 MEMBERS ONLY** | Invitation-Based | Backdoor Access | 4 Membership Tiers
 
-**The Physical Vibeverse** | Downtown Reno | Full Immersion Living | Complete Experience Layer
+**The Physical Vibeverse** | **Campus: Downtown Reno** | Full Immersion Living | Complete Experience Layer
 
 **💫 "Your only connection to the old world is your monthly SYNTH payment. Everything else? Pure Vibeverse immersion."**
 
-**4 MEMBERSHIP PACKAGES:**
+**4 MEMBERSHIP TIERS:**
 
-**SANDBOX ($999/mo SYNTH):**  
-Shared spaces + 2 meals/day + Hot desk + Winks Leaf Node + Man Cave limited + Entry experience
+**🎫 GUEST ($999/mo):**  
+Shared spaces + 2 meals/day + Hot desk + Winks Leaf Node + Man Cave limited + Entry experience + Reading glasses (+1 over prescription)
 
-**CLOUD ($4,999/mo SYNTH):**  
-Shared housing + 3 meals/day + Dedicated desk + Winks Branch Node + Man Cave full + Community immersion
+**🏛️ MEMBER ($4,999/mo):**  
+Shared housing + 3 meals/day + Dedicated desk + Winks Branch Node + Man Cave full + Community immersion + Member pricing (10% discount) + Reading glasses (+1 over prescription)
 
-**SHELL ($9,999/mo SYNTH):**  
-Private quarters + Gourmet meals + Private office + Winks Convergence Node + Wine Cave + Premium experience
+**👑 ULTIMATE VIP ($9,999/mo):**  
+Private quarters + Gourmet meals + Private office + Winks Convergence Node + Wine Cave + Premium experience + Ultimate VIP pricing (50% discount) + Personal Hero Host + Priority booking + Chairman console access
 
-**CORE ($24,999/mo SYNTH):**  
-Private suite + Chef meals + Private lab + Winks VIP + Backroom unlimited + Ultimate experience
+**🐋 BALLER ($24,999/mo):**  
+Private suite + Chef meals + Private lab + Winks VIP + Backroom unlimited + After party access + G Baller level privileges + Maximum discounts + Dedicated concierge + Custom experiences + Reading glasses (Premium frames, +1 over prescription)
 
 **🚢 5-STAR CRUISE SHIP EXPERIENCE:**
 - **Daily Bulletin** (every morning at 6 AM—your complete schedule)
@@ -651,7 +656,7 @@ Private suite + Chef meals + Private lab + Winks VIP + Backroom unlimited + Ulti
 
 🔐 **Access:** Invitation only | Backdoor through GitHub | Apply now
 
-**NOTE:** Man Cave + Cabaret open to Reno locals with separate memberships (not Vibeland-exclusive)
+**NOTE:** Man Cave + Cabaret at The Men's Club Reno open to Reno locals with separate memberships (not Vibeland-exclusive)
 
 ---
 
@@ -779,8 +784,8 @@ Date naturally via resonance matching (not swiping). First encounters at campus 
 
 👉 **[LEARN MORE →](./concepts/VIBEVERSE_NATURAL_DATING_SERVICE_FRACTALIZED_CONVERGENCE.md)** | **[💕 DATING POPUP →](./interfaces/natural-dating-service-popup.html)**
 
-### 🏛️ **VIBELAND RENO** (R&D Hub + Ultimate VIP Campus) - NOW OPERATIONAL
-R&D Hub: Where protocols discovered, tested, refined. Ultimate VIP Campus: 100 living black holes ($9,999/month). Man Cave + Wine Cave + Cabaret: LIVE venues. Campus Housing: AVAILABLE for residents today.
+### 🏛️ **VIBELAND CAMPUS: DOWNTOWN RENO** (R&D Hub + Ultimate VIP Campus) - NOW OPERATIONAL
+**Campus: Downtown Reno** | R&D Hub: Where protocols discovered, tested, refined. Ultimate VIP Campus: 100 living black holes ($9,999/month). Man Cave + Cabaret at The Men's Club Reno + Wine Cave: LIVE venues. Campus Housing: AVAILABLE for residents today.
 
 👉 **[OPERATIONAL STATUS →](./status/RENO_RD_HUB_ULTIMATE_VIP_CAMPUS_NOW_OPERATIONAL.md)**
 

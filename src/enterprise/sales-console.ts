@@ -18,10 +18,20 @@ import { ProtocolSnapshotManager } from '../protocols/protocol-snapshot.js';
 import { CloudDeploymentProtocol } from '../protocols/cloud-deploy.js';
 import { GitOperations } from '../git/git-operations.js';
 import { SeedWithIdentityManager } from '../seeds/seed-with-identity.js';
+import { createVenueNaming, formatVenueName, parseVenueName, type VenueNaming } from '../types/venue-naming.js';
+
+/**
+ * Membership Tiers
+ * Guests → Members → Ultimate VIPs → Ballers
+ */
+export type MembershipTier = 'guest' | 'member' | 'ultimate-vip' | 'baller';
 
 export interface VenueConfig {
   id: string;
-  name: string;
+  // Dual naming system: Vibeverse brand name + local venue hosting name
+  // This allows Vibeverse experiences to naturally overlay anywhere
+  naming: VenueNaming; // Dual naming structure
+  name: string; // Display name (computed from naming.displayName)
   type: 'gallery' | 'museum' | 'theater' | 'venue' | 'custom';
   heroHostPersona?: string; // 'cleve-canepa' | 'venue-persona' | custom
   transmissionGear?: AwarenessOctave;
@@ -194,6 +204,14 @@ export class EnterpriseSalesConsole {
     consoleUrl: string;
     repositoryUrl?: string;
   }> {
+    // Ensure naming is set up correctly
+    if (!config.naming) {
+      // If name exists but no naming structure, parse it
+      config.naming = parseVenueName(config.name);
+    }
+    // Update name from naming structure
+    config.name = config.naming.displayName;
+    
     // Store venue config
     this.venues.set(config.id, config);
 
@@ -302,8 +320,11 @@ export class EnterpriseSalesConsole {
 
     // Write files (would need fs operations)
     // For now, commit the structure
-    const commitMessage = `GitSeed: Enterprise Sales Console for ${venue.name}\n\n` +
+    const venueDisplayName = formatVenueName(venue.naming, 'full');
+    const commitMessage = `GitSeed: Enterprise Sales Console for ${venueDisplayName}\n\n` +
       `Venue ID: ${venue.id}\n` +
+      `Vibeverse Name: ${venue.naming.vibeverseName}\n` +
+      `Local Venue: ${venue.naming.localVenueName}\n` +
       `Type: ${venue.type}\n` +
       `Hero Host: ${venue.heroHostPersona || 'venue-persona'}\n` +
       `Transmission Gear: ${venue.transmissionGear || AwarenessOctave.HARMONY}\n` +
@@ -349,13 +370,15 @@ export class EnterpriseSalesConsole {
    * Create console protocol
    */
   private async createConsoleProtocol(venue: VenueConfig): Promise<Protocol> {
+    const venueDisplayName = formatVenueName(venue.naming, 'full');
     return {
       id: `console-${venue.id}`,
-      name: `${venue.name} Enterprise Sales Console`,
+      name: `${venueDisplayName} Enterprise Sales Console`,
       version: '1.0.0',
       type: 'integration',
       content: JSON.stringify({
         venue: venue,
+        naming: venue.naming,
         salesButtons: Array.from(this.salesButtons.values()),
         revenuePlan: venue.revenuePlan
       }),
@@ -366,10 +389,10 @@ export class EnterpriseSalesConsole {
       },
       metadata: {
         id: `console-${venue.id}`,
-        name: `${venue.name} Enterprise Sales Console`,
-        description: `Enterprise Sales Console for ${venue.name}`,
+        name: `${venueDisplayName} Enterprise Sales Console`,
+        description: `Enterprise Sales Console for ${venueDisplayName}`,
         author: 'NSPFRP OmniMission Station',
-        tags: ['enterprise', 'sales', 'console', venue.type],
+        tags: ['enterprise', 'sales', 'console', venue.type, venue.naming.vibeverseName, venue.naming.localVenueName],
         category: 'enterprise-sales',
         network: 'NSPFRP'
       },
@@ -425,8 +448,9 @@ export class EnterpriseSalesConsole {
     );
 
     // Perform FSR retrieval for opportunities
+    const venueDisplayName = formatVenueName(venue.naming, 'full');
     const query = {
-      text: context?.query || `Discover sales opportunities for ${venue.name}`,
+      text: context?.query || `Discover sales opportunities for ${venueDisplayName}`,
       intent: {
         type: 'discover' as const,
         goal: 'Find sales opportunities'
