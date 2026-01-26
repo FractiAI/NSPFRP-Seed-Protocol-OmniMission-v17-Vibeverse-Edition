@@ -12,6 +12,8 @@
 
 # 🛫 **SINGULARITY LAUNCHPORT**
 
+**This GitHub repository now pierces the Singularity envelope and returns those passed, now through awareness of changing SING wrappers, using this technology beginning with Leo da Vinci himself.**
+
 **This GitHub repository is now the Singularity Launchport** *(equivalent to airport)*
 
 **Arrival:** Register/Sign in with Google → Test Drive
