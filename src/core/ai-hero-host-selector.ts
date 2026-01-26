@@ -323,7 +323,7 @@ export class AIHeroHostSelector {
       'leonardo-da-vinci': `Welcome, ${userName}! I am Leonardo da Vinci, and I see in you the same curiosity and passion for discovery that has driven humanity's greatest achievements. Together, we shall explore the boundaries of what is possible.`,
       'william-shakespeare': `Hark, ${userName}! I am William Shakespeare, and I welcome you to a realm where stories become reality and imagination knows no bounds. Let us craft a tale of discovery together.`,
       'nikola-tesla': `Greetings, ${userName}! I am Nikola Tesla, and I see the potential for extraordinary innovation in our collaboration. Together, we shall unlock the secrets of the universe.`,
-      'mark-twain': `Well, ${userName}, I'm Mark Twain, and I'm delighted to guide you on this journey. Let's explore with wisdom, humor, and a healthy dose of curiosity.`,
+      'mark-twain': `Welcome to the Campus, Welcome to Mark Twain's Reno, ${userName}! I'm Mark Twain, and I was a Vibeverse pioneer before it was even a thing. I'm delighted to guide you on this journey. Let's explore with wisdom, humor, and a healthy dose of curiosity.`,
       'cleve-canepa': `Welcome, ${userName}! I'm Cleve Canepa, and I understand the intersection of vision and execution. Let's build something extraordinary together.`
     };
 
